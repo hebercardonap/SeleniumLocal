@@ -72,10 +72,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\BuildConfiguratorSteps.feature.cs">
+    <Compile Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BuildConfiguratorSteps.feature</DependentUpon>
+      <DependentUpon>RZRSteppedFlowTests.feature</DependentUpon>
     </Compile>
     <Compile Include="HookInitialize.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
@@ -96,9 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\BuildConfiguratorSteps.feature">
+    <None Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildConfiguratorSteps.feature.cs</LastGenOutput>
+      <LastGenOutput>RZRSteppedFlowTests.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>

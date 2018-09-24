@@ -1,4 +1,4 @@
-﻿Feature: BuildConfiguratorSteps
+﻿Feature: RZRSteppedFlowTests
 	Verify that build configurator steps 
 	can be performed for a particular brand
 

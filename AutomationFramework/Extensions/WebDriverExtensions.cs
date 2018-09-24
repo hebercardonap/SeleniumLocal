@@ -21,7 +21,7 @@ namespace AutomationFramework.Extensions
 
         public static void waitForElementToBeEnabled(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(DriverContext.Driver, TimeSpan.FromSeconds(40));
+            WebDriverWait wait = new WebDriverWait(DriverContext.Driver, TimeSpan.FromSeconds(50));
             wait.Until(ExpectedConditions.ElementToBeClickable(locator));
         }
 

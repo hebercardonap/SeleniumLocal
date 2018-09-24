@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BuildConfigurator.Features
+namespace BuildConfigurator.Features.BuildConfiguratorSteps
 {
     using TechTalk.SpecFlow;
     
@@ -18,14 +18,14 @@ namespace BuildConfigurator.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class BuildConfiguratorStepsFeature
+    public partial class RZRSteppedFlowTestsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-#line 1 "BuildConfiguratorSteps.feature"
+#line 1 "RZRSteppedFlowTests.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -44,7 +44,7 @@ namespace BuildConfigurator.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BuildConfiguratorSteps", "\tVerify that build configurator steps \r\n\tcan be performed for a particular brand", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RZRSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a particular brand", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -59,9 +59,9 @@ namespace BuildConfigurator.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "BuildConfiguratorSteps")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "RZRSteppedFlowTests")))
             {
-                global::BuildConfigurator.Features.BuildConfiguratorStepsFeature.FeatureSetup(null);
+                global::BuildConfigurator.Features.BuildConfiguratorSteps.RZRSteppedFlowTestsFeature.FeatureSetup(null);
             }
         }
         
@@ -89,7 +89,7 @@ namespace BuildConfigurator.Features
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RZR build stepped process one seat")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BuildConfiguratorSteps")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Verify")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("build")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RZR build stepped process two seat")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BuildConfiguratorSteps")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Verify")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("build")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
@@ -187,7 +187,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RZR build stepped process four seat")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BuildConfiguratorSteps")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Verify")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("build")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
