@@ -17,6 +17,7 @@ namespace BuildConfigurator.Pages
 
         // Accessory sub categories selectors
         private static By BY_ROOFS_SUBCATEGORY = By.XPath("//button[@title='View Roofs']");
+        private static By BY_WINDSHIELDS_SUBCATEGORY = By.XPath("//button[@title='View Windshields']");
 
         // Accessory Cards selectors
         private static By BY_ACCESSORY_CARD = By.CssSelector("div[class='flickity-slider'] div[ng-repeat^='product']");
@@ -38,6 +39,11 @@ namespace BuildConfigurator.Pages
         public void clickRoofSubcategory()
         {
             WebElementExtensions.clickElement(BY_ROOFS_SUBCATEGORY);
+        }
+
+        public void clickWindShieldsSubcategory()
+        {
+            WebElementExtensions.clickElement(BY_WINDSHIELDS_SUBCATEGORY);
         }
 
         private void getRandomAccessoryCard()

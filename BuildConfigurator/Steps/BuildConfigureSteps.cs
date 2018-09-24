@@ -24,5 +24,14 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryCardAddButton();
         }
 
+        [When(@"I add widshield accessory")]
+        public void WhenIAddWidshieldAccessory()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickProtectionCategory();
+            CurrentPage.As<BuildConfigurePage>().clickWindShieldsSubcategory();
+            CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryCardAddButton();
+        }
+
+
     }
 }

@@ -45,7 +45,7 @@ Scenario: Verify RZR build stepped process four seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory
+	And I add widshield accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form
