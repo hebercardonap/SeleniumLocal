@@ -31,7 +31,7 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildQuotePage>().setPhoneNumber();
             CurrentPage.As<BuildQuotePage>().setPostalCode();
             CurrentPage.As<BuildQuotePage>().clickAgeCheckBox();
-            CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
+            //CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
         }
 
     }
