@@ -72,12 +72,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\BuildConfiguratorSteps\RangerSteppedFlowProcess.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RangerSteppedFlowProcess.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RZRSteppedFlowTests.feature</DependentUpon>
     </Compile>
-    <Compile Include="HookInitialize.cs" />
+    <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
     <Compile Include="Pages\BuildConfigurePage.cs" />
     <Compile Include="Pages\BuildConfirmationPage.cs" />
@@ -91,11 +96,14 @@
     <Compile Include="Steps\BuildTrimSteps.cs" />
     <Compile Include="Steps\BuildModelSteps.cs" />
     <Compile Include="Steps\ExtendedSteps.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\BuildConfiguratorSteps\RangerSteppedFlowProcess.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RangerSteppedFlowProcess.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RZRSteppedFlowTests.feature.cs</LastGenOutput>

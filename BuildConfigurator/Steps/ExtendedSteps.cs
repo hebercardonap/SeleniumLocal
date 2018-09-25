@@ -1,4 +1,6 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.UrlBuilderSites;
+using AutomationFramework.Utils;
 using BuildConfigurator.Pages;
 using System;
 using System.Collections.Generic;
@@ -12,27 +14,24 @@ namespace BuildConfigurator.Steps
     [Binding]
     internal class ExtendedSteps : BasePage
     {
-        /// <summary>
-        /// Method to select the number of seats on the build model page
-        /// </summary>
-        /// <param name="numberOfSeats">one, two, three...</param>
-        //[Given(@"I select (.*) seat option")]
-        //public void GivenISelectSeatOption(string numberOfSeats)
-        //{
-        //    if(numberOfSeats.Equals("one"))
-        //        CurrentPage.As<BuildModelPage>().clickOneSeat();
-        //    if (numberOfSeats.Equals("two"))
-        //        CurrentPage.As<BuildModelPage>().clickOneSeat();
-        //    if (numberOfSeats.Equals("three"))
-        //        CurrentPage.As<BuildModelPage>().clickOneSeat();
-        //    if (numberOfSeats.Equals("four"))
-        //        CurrentPage.As<BuildModelPage>().clickOneSeat();
-        //    if (numberOfSeats.Equals("six"))
-        //        CurrentPage.As<BuildModelPage>().clickOneSeat();
-        //}
+
+        [Given(@"I have navigated to (.*) build model page")]
+        public void GivenIHaveNavigatedToBrandBuildModelPage(string brandName)
+        {
+            if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getRzrBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+            if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getRangerBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+        }
 
         [When(@"I select (.*) seat option")]
-        public void WhenISelectOneSeatOption(string numberOfSeats)
+        public void WhenISelectSeatOption(string numberOfSeats)
         {
             if (numberOfSeats.Equals("one"))
                 CurrentPage.As<BuildModelPage>().clickOneSeat();

@@ -32,6 +32,22 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryCardAddButton();
         }
 
+        [When(@"I add random ranger tires accessory")]
+        public void WhenIAddRandomRangerTiresAccessory()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickRangerTiresCategory();
+            CurrentPage.As<BuildConfigurePage>().clickRangerTrailSubcategory();
+            CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryCardAddButton();
+        }
+
+        [When(@"I add random accessory avoid PRP")]
+        public void WhenIAddRandomAccessoryAvoidPRP()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryAvoidPRP();
+        }
+
+
+
 
     }
 }

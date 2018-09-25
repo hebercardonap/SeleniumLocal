@@ -13,11 +13,13 @@ namespace BuildConfigurator.Pages
     {
         // Accessory categories selectors
         private static By BY_PROTECTION_CATEGORY = By.XPath("//button[@title='View Protection']");
+        private static By BY_RAN_TIRES_CATEGORY = By.XPath("//button[@title='View Wheel & Tire Sets']");
 
 
         // Accessory sub categories selectors
         private static By BY_ROOFS_SUBCATEGORY = By.XPath("//button[@title='View Roofs']");
         private static By BY_WINDSHIELDS_SUBCATEGORY = By.XPath("//button[@title='View Windshields']");
+        private static By BY_RAN_TRAIL_SUBCATEGORY = By.XPath("//button[@title='View Trail']");
 
         // Accessory Cards selectors
         private static By BY_ACCESSORY_CARD = By.CssSelector("div[class='flickity-slider'] div[ng-repeat^='product']");
@@ -25,6 +27,10 @@ namespace BuildConfigurator.Pages
 
 
         private static By BY_FINISHED_BUTTON = By.XPath("//div[@class='summary-accessory-quote btn btn-color-primary btn-md btn-square']");
+        private static By BY_PRP_CONTAINER = By.XPath("//div[@class='part-require-part']");
+        private static By BY_BUILD_SUBCATEGORIES = By.XPath("//div[@id='build-subCategory']//div[@class='flickity-slider']//button");
+        private static By By_REMOVE_LINK_PRP = By.CssSelector("div[class='summary-accessory-info-remove '][role='button']");
+
 
         private static Random rnd = new Random();
         private static IWebElement SelectedAccessoryCard;
@@ -68,6 +74,55 @@ namespace BuildConfigurator.Pages
         public void clickIamFinishedButton()
         {
             WebElementExtensions.clickElement(BY_FINISHED_BUTTON);
+        }
+
+        public void clickRangerTiresCategory()
+        {
+            WebElementExtensions.clickElement(BY_RAN_TIRES_CATEGORY);
+        }
+
+        public void clickRangerTrailSubcategory()
+        {
+            WebElementExtensions.clickElement(BY_RAN_TRAIL_SUBCATEGORY);
+        }
+
+        public void clickRandomAccessoryCategory()
+        {
+            List<IWebElement> categories = driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            WebElementExtensions.clickElement(categories[rnd.Next(0, categories.Count)]);
+        }
+
+        public void clickRandomAccessorySubcategory()
+        {
+            List<IWebElement> subcategories = driver.FindElements(BY_BUILD_SUBCATEGORIES).ToList();
+            WebElementExtensions.clickElement(subcategories[rnd.Next(0, subcategories.Count)]);
+        }
+
+        public void clickRandomAccessoryAvoidPRP()
+        {
+            addRandomAccessory();
+            while (true)
+            {
+                
+                if (!WebElementExtensions.IsElementPresent(BY_PRP_CONTAINER))
+                {
+                    break;
+                }
+                clickRemoveLinkPRP();
+                addRandomAccessory();
+            }
+        }
+
+        public void addRandomAccessory()
+        {
+            clickRandomAccessoryCategory();
+            clickRandomAccessorySubcategory();
+            clickRandomAccessoryCardAddButton();
+        }
+
+        public void clickRemoveLinkPRP()
+        {
+            WebElementExtensions.clickElement(By_REMOVE_LINK_PRP);
         }
 
     }

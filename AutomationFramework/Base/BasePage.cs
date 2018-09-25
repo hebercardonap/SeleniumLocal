@@ -10,6 +10,9 @@ namespace AutomationFramework.Base
 {
     public abstract class BasePage : Base
     {
-        WebDriverWait wait;
+        public bool stringEqualsIgnoreCase(string a, string b)
+        {
+            return string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

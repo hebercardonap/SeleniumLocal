@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Utils
 {
-    class Brand
+    public class Brand
     {
         public static string RZR { get { return "RZR"; } }
         public static string IND { get { return "IND"; } }

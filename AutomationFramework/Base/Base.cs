@@ -10,7 +10,6 @@ namespace AutomationFramework.Base
 {
     public class Base
     {
-        //public BasePage CurrentPage { get; set; }
 
         public BasePage CurrentPage
         {
