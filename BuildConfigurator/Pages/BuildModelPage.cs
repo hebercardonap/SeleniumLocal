@@ -11,11 +11,11 @@ namespace BuildConfigurator.Pages
 {
     public class BuildModelPage : BasePage
     {
-        private static By BY_ONE_SEAT = By.XPath("//label[@title='Select 1-Seat']");
-        private static By BY_TWO_SEAT = By.XPath("//label[@title='Select 2-Seat']");
-        private static By BY_THREE_SEAT = By.XPath("//label[@title='Select 3-Seat']");
-        private static By BY_FOUR_SEAT = By.XPath("//label[@title='Select 4-Seat']");
-        private static By BY_SIX_SEAT = By.XPath("//label[@title='Select 6-Seat']");
+        private static By BY_ONE_SEAT = By.XPath("//label[contains(@title, '1-Seat')]");
+        private static By BY_TWO_SEAT = By.XPath("//label[contains(@title, '2-Seat')]");
+        private static By BY_THREE_SEAT = By.XPath("//label[contains(@title, '3-Seat')]");
+        private static By BY_FOUR_SEAT = By.XPath("//label[contains(@title, '4-Seat')]");
+        private static By BY_SIX_SEAT = By.XPath("//label[contains(@title, '6-Seat')]");
 
         private static By BY_MODELS_SECTION = By.XPath("//section[@class='wholegood-models-section']");
 

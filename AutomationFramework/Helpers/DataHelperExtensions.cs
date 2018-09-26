@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Helpers
 {
-    class DataHelperExtensions
+    public static class DataHelperExtensions
     {
     }
 }

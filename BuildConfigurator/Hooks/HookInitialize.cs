@@ -1,4 +1,8 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Utils;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Gherkin.Model;
+using AventStack.ExtentReports.Reporter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +15,100 @@ namespace BuildConfigurator
     [Binding]
     public class HookInitialize : TestInitializeHook
     {
+        private static ExtentTest featureName;
+        private static ExtentTest scenario;
+        private static ExtentReports extent;
+        private static KlovReporter klov;
+
+        [AfterStep]
+        public void AfterEachStep()
+        {
+            var stepName = ScenarioContext.Current.StepContext.StepInfo.Text;
+            var featureName = FeatureContext.Current.FeatureInfo.Title;
+            var scenarioName = ScenarioContext.Current.ScenarioInfo.Title;
+
+            var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
+
+            if (ScenarioContext.Current.TestError == null)
+            {
+                if (stepType == "Given")
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
+                else if (stepType == "When")
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
+                else if (stepType == "Then")
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
+                else if (stepType == "And")
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
+            }
+            else if (ScenarioContext.Current.TestError != null)
+            {
+                if (stepType == "Given")
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                else if (stepType == "When")
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                else if (stepType == "And")
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                else if (stepType == "Then")
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+            }
+        }
+
+        [BeforeTestRun]
+        public static void TestInitalize()
+        {
+
+            //Initialize Extent report before test starts
+            var htmlReporter = new ExtentHtmlReporter(@"C:\Selenium\Polaris\Reports\ExtentReport.html");
+            htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
+            //Attach report to reporter
+            extent = new ExtentReports();
+            //klov = new KlovReporter();
+
+            //klov.InitMongoDbConnection("localhost", 27017);
+
+            //klov.ProjectName = "ExecuteAutomation Test";
+
+            // URL of the KLOV server
+            //klov.KlovUrl = "http://localhost:5689";
+
+            //klov.ReportName = "Karthik KK" + DateTime.Now.ToString();
+            extent.AttachReporter(htmlReporter);
+
+            //extent.AttachReporter(htmlReporter, klov);
+        }
 
         [BeforeScenario]
-        public static void TestInitialize()
+        public void Initialize()
         {
             InitializeSettings();
+            //Create dynamic scenario name
+            scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
         }
 
         [AfterScenario]
         public void TestCleanUp()
         {
+            getFailedLog();
             DriverContext.Driver.Quit();
+            extent.Flush();
         }
+
+        [BeforeFeature]
+        public static void BeforeFeature()
+        {
+            //Create dynamic feature name
+            featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+        }
+
+        private void getFailedLog()
+        {
+
+            if (ScenarioContext.Current.TestError != null)
+            {
+                string screenShotName = ScenarioContext.Current.ScenarioInfo.Title;
+                TakeScreenshot.Capture(screenShotName);
+            }
+        }
+
     }
 }

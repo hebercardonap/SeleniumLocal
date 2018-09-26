@@ -28,7 +28,7 @@ Scenario: Verify RAN build stepped process three seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random ranger tires accessory
+	And I add random accessory avoid PRP
 	And I click finished button
 	And I get to build quote page
 	And I fill the form

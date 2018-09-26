@@ -2,6 +2,7 @@
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,11 +44,13 @@ namespace BuildConfigurator.Steps
                 CurrentPage.As<BuildModelPage>().clickFourSeat();
             if (numberOfSeats.Equals("six"))
                 CurrentPage.As<BuildModelPage>().clickSixSeat();
+            else
+                Assert.Fail("Seat option {0} is not available", numberOfSeats);
         }
 
 
         [When(@"I click (.*) button")]
-        public void WhenIClickNextButton(string buttonName)
+        public void WhenIClickButton(string buttonName)
         {
             if (buttonName.Equals("next"))
                 CurrentPage.As<BuildColorPage>().clickNextButton();
