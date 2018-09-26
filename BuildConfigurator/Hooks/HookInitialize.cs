@@ -88,7 +88,7 @@ namespace BuildConfigurator
         [AfterScenario]
         public void TestCleanUp()
         {
-            getFailedLog();
+            logFailureAndTakeScreenshot();
             DriverContext.Driver.Quit();
             extent.Flush();
         }
@@ -100,7 +100,7 @@ namespace BuildConfigurator
             featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
         }
 
-        private void getFailedLog()
+        private void logFailureAndTakeScreenshot()
         {
 
             if (ScenarioContext.Current.TestError != null)

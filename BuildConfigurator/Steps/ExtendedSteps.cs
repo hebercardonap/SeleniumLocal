@@ -36,13 +36,13 @@ namespace BuildConfigurator.Steps
         {
             if (numberOfSeats.Equals("one"))
                 CurrentPage.As<BuildModelPage>().clickOneSeat();
-            if (numberOfSeats.Equals("two"))
+            else if (numberOfSeats.Equals("two"))
                 CurrentPage.As<BuildModelPage>().clickTwoSeat();
-            if (numberOfSeats.Equals("three"))
+            else if (numberOfSeats.Equals("three"))
                 CurrentPage.As<BuildModelPage>().clickThreeSeat();
-            if (numberOfSeats.Equals("four"))
+            else if (numberOfSeats.Equals("four"))
                 CurrentPage.As<BuildModelPage>().clickFourSeat();
-            if (numberOfSeats.Equals("six"))
+            else if (numberOfSeats.Equals("six"))
                 CurrentPage.As<BuildModelPage>().clickSixSeat();
             else
                 Assert.Fail("Seat option {0} is not available", numberOfSeats);
