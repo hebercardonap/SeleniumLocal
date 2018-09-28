@@ -15,6 +15,7 @@ namespace BuildConfigurator.Pages
         private static By BY_TRIM_SECTION = By.XPath("//section[@class='trim-models']");
         private static string A_TAG_NAME = "a";
         private static string LABEL_TAG_NAME = "label";
+        private static string GENERAL_COLOR_OPTION = "Deluxe";
         private static Random rnd = new Random();
         private static string[] RANGER_PACKAGE_TRIM = new[] { "1000 EPS Premium", "1000 EPS NorthStar Edition" };
 
@@ -44,6 +45,23 @@ namespace BuildConfigurator.Pages
                 if (!isFound)
                 {
                     trims[trim].Click();
+                    break;
+                }
+            }
+        }
+
+        public void clickRangerModelWithColorOption()
+        {
+            List<IWebElement> models = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+
+            while (true)
+            {
+                int model = rnd.Next(0, models.Count);
+                string modelName = models[model].FindElement(By.TagName(LABEL_TAG_NAME)).Text;
+
+                if (modelName.Contains(GENERAL_COLOR_OPTION))
+                {
+                    models[model].Click();
                     break;
                 }
             }

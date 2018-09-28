@@ -108,6 +108,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACESteppedFlowTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\BuildConfiguratorSteps\GENSteppedFlowTest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GENSteppedFlowTest.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\BuildConfiguratorSteps\RangerSteppedFlowProcess.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +146,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ACESteppedFlowTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildConfiguratorSteps\GENSteppedFlowTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GENSteppedFlowTest.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\BuildConfiguratorSteps\RangerSteppedFlowProcess.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RangerSteppedFlowProcess.feature.cs</LastGenOutput>

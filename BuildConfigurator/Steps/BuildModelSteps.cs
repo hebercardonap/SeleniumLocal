@@ -20,5 +20,20 @@ namespace BuildConfigurator.Steps
         {
             CurrentPage.As<BuildModelPage>().clickRandomModel();
         }
+
+        [When(@"I select unique color General model")]
+        public void WhenISelectUniqueColorGeneralModel()
+        {
+            CurrentPage.As<BuildModelPage>().clickUniqueColorGeneralModel();
+        }
+
+        [When(@"I select General model color pick")]
+        public void WhenISelectGeneralModelColorPick()
+        {
+            CurrentPage.As<BuildModelPage>().clickRangerModelMultipleColorAvailable();
+        }
+
+
+
     }
 }

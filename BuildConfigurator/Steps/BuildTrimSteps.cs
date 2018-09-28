@@ -20,7 +20,6 @@ namespace BuildConfigurator.Steps
         [When(@"I select trim")]
         public void GivenISelectTrim()
         {
-            //CurrentPage = GetInstance<BuildTrimPage>();
             CurrentPage.As<BuildTrimPage>().clickRandomTrim();
         }
 
@@ -29,6 +28,13 @@ namespace BuildConfigurator.Steps
         {
             CurrentPage.As<BuildTrimPage>().clickRangerNonPackageTrim();
         }
+
+        [When(@"I select General trim color pick")]
+        public void WhenISelectGeneralTrimColorPick()
+        {
+            CurrentPage.As<BuildTrimPage>().clickRangerModelWithColorOption();
+        }
+
 
 
     }

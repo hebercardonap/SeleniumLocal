@@ -20,7 +20,8 @@ namespace BuildConfigurator.Pages
         private static By BY_MODELS_SECTION = By.XPath("//section[@class='wholegood-models-section']");
 
         private static string A_TAG_NAME = "a";
-        
+        private static string LABEL_TAG_NAME = "label";
+        private static string GENERAL_COLOR_OPTION = "Deluxe";
 
         private static Random rnd = new Random();
 
@@ -53,7 +54,41 @@ namespace BuildConfigurator.Pages
         {
             List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
             int model = rnd.Next(0, models.Count);
-            models[2].Click();
+            models[model].Click();
+        }
+
+        public void clickUniqueColorGeneralModel()
+        {
+            List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+
+            while (true)
+            {
+                int model = rnd.Next(0, models.Count);
+                string modelName = models[model].FindElement(By.TagName(LABEL_TAG_NAME)).Text;
+
+                if (!modelName.Contains(GENERAL_COLOR_OPTION))
+                {
+                    models[model].Click();
+                    break;
+                }
+            }
+        }
+
+        public void clickRangerModelMultipleColorAvailable()
+        {
+            List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+
+            while (true)
+            {
+                int model = rnd.Next(0, models.Count);
+                string modelName = models[model].FindElement(By.TagName(LABEL_TAG_NAME)).Text;
+
+                if (modelName.Contains(GENERAL_COLOR_OPTION))
+                {
+                    models[model].Click();
+                    break;
+                }
+            }
         }
 
     }

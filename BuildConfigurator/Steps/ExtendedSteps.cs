@@ -24,9 +24,19 @@ namespace BuildConfigurator.Steps
                 DriverContext.Browser.GoToUrl(UrlBuilder.getRzrBuildModelUrl());
                 CurrentPage = GetInstance<BuildModelPage>();
             }
-            if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+            else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 DriverContext.Browser.GoToUrl(UrlBuilder.getRangerBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getAceBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
                 CurrentPage = GetInstance<BuildModelPage>();
             }
         }
@@ -34,15 +44,15 @@ namespace BuildConfigurator.Steps
         [When(@"I select (.*) seat option")]
         public void WhenISelectSeatOption(string numberOfSeats)
         {
-            if (numberOfSeats.Equals("one"))
+            if (stringEqualsIgnoreCase(numberOfSeats, "one"))
                 CurrentPage.As<BuildModelPage>().clickOneSeat();
-            else if (numberOfSeats.Equals("two"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, "two"))
                 CurrentPage.As<BuildModelPage>().clickTwoSeat();
-            else if (numberOfSeats.Equals("three"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, "three"))
                 CurrentPage.As<BuildModelPage>().clickThreeSeat();
-            else if (numberOfSeats.Equals("four"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, "four"))
                 CurrentPage.As<BuildModelPage>().clickFourSeat();
-            else if (numberOfSeats.Equals("six"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, "six"))
                 CurrentPage.As<BuildModelPage>().clickSixSeat();
             else
                 Assert.Fail("Seat option {0} is not available", numberOfSeats);
@@ -52,11 +62,11 @@ namespace BuildConfigurator.Steps
         [When(@"I click (.*) button")]
         public void WhenIClickButton(string buttonName)
         {
-            if (buttonName.Equals("next"))
+            if (stringEqualsIgnoreCase(buttonName, "next"))
                 CurrentPage.As<BuildColorPage>().clickNextButton();
-            if (buttonName.Equals("finished"))
+            if (stringEqualsIgnoreCase(buttonName, "finished"))
                 CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
-            if (buttonName.Equals("getinternetprice"))
+            if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
                 CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
         }
     }
