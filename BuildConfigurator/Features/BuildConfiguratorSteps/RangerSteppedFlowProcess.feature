@@ -24,7 +24,7 @@ Scenario: Verify RAN build stepped process three seat
 	Given I have navigated to RAN build model page
 	When I select three seat option
 	And I select random model
-	And I select trim
+	And I select ranger non package trim
 	And I select random color
 	And I click next button
 	And I get to build page

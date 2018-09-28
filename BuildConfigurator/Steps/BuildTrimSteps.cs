@@ -24,5 +24,12 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildTrimPage>().clickRandomTrim();
         }
 
+        [When(@"I select ranger non package trim")]
+        public void WhenISelectRangerNonPackageTrim()
+        {
+            CurrentPage.As<BuildTrimPage>().clickRangerNonPackageTrim();
+        }
+
+
     }
 }

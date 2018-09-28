@@ -30,5 +30,6 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildColorPage>().getToBuildPage();
         }
 
+
     }
 }

@@ -20,6 +20,7 @@ namespace BuildConfigurator.Pages
         private static By BY_MODELS_SECTION = By.XPath("//section[@class='wholegood-models-section']");
 
         private static string A_TAG_NAME = "a";
+        
 
         private static Random rnd = new Random();
 
@@ -52,7 +53,8 @@ namespace BuildConfigurator.Pages
         {
             List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
             int model = rnd.Next(0, models.Count);
-            models[model].Click();
+            models[2].Click();
         }
+
     }
 }

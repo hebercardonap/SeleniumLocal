@@ -14,13 +14,39 @@ namespace BuildConfigurator.Pages
 
         private static By BY_TRIM_SECTION = By.XPath("//section[@class='trim-models']");
         private static string A_TAG_NAME = "a";
+        private static string LABEL_TAG_NAME = "label";
         private static Random rnd = new Random();
+        private static string[] RANGER_PACKAGE_TRIM = new[] { "1000 EPS Premium", "1000 EPS NorthStar Edition" };
 
         public void clickRandomTrim()
         {
             List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
             int trim = rnd.Next(0, trims.Count);
             trims[trim].Click();
+        }
+
+        public void clickRangerNonPackageTrim()
+        {
+            List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            while (true)
+            {
+                bool isFound = false;
+                int trim = rnd.Next(0, trims.Count);
+                string modelName = trims[trim].FindElement(By.TagName(LABEL_TAG_NAME)).Text;
+                foreach (var ranger in RANGER_PACKAGE_TRIM)
+                {
+                    if (modelName.Contains(ranger))
+                    {
+                        isFound = true;
+                        break;
+                    }
+                }
+                if (!isFound)
+                {
+                    trims[trim].Click();
+                    break;
+                }
+            }
         }
     }
 }

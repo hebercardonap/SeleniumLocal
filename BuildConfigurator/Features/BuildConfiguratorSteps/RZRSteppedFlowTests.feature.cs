@@ -17,55 +17,35 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [TechTalk.SpecRun.FeatureAttribute("RZRSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a particular brand", SourceFile="Features\\BuildConfiguratorSteps\\RZRSteppedFlowTests.feature", SourceLine=0)]
     public partial class RZRSteppedFlowTestsFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
-        
-        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
 #line 1 "RZRSteppedFlowTests.feature"
 #line hidden
         
-        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
+        [TechTalk.SpecRun.FeatureInitialize()]
+        public virtual void FeatureSetup()
         {
-            get
-            {
-                return this._testContext;
-            }
-            set
-            {
-                this._testContext = value;
-            }
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
-        {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RZRSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a particular brand", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [TechTalk.SpecRun.FeatureCleanup()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "RZRSteppedFlowTests")))
-            {
-                global::BuildConfigurator.Features.BuildConfiguratorSteps.RZRSteppedFlowTestsFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -74,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public virtual void ScenarioStart()
@@ -87,13 +66,11 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RZR build stepped process one seat")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Verify")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("build")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RZR build stepped process one seat", new string[] {
+                "Verify",
+                "build",
+                "stepped",
+                "process"}, SourceLine=5)]
         public virtual void VerifyRZRBuildSteppedProcessOneSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RZR build stepped process one seat", null, new string[] {
@@ -136,13 +113,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RZR build stepped process two seat")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Verify")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("build")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RZR build stepped process two seat", new string[] {
+                "Verify",
+                "build",
+                "stepped",
+                "process"}, SourceLine=22)]
         public virtual void VerifyRZRBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RZR build stepped process two seat", null, new string[] {
@@ -185,13 +160,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RZR build stepped process four seat")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Verify")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("build")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RZR build stepped process four seat", new string[] {
+                "Verify",
+                "build",
+                "stepped",
+                "process"}, SourceLine=39)]
         public virtual void VerifyRZRBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RZR build stepped process four seat", null, new string[] {
@@ -232,6 +205,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
