@@ -64,10 +64,11 @@ namespace BuildConfigurator.Steps
         {
             if (stringEqualsIgnoreCase(buttonName, "next"))
                 CurrentPage.As<BuildColorPage>().clickNextButton();
-            if (stringEqualsIgnoreCase(buttonName, "finished"))
+            else if (stringEqualsIgnoreCase(buttonName, "finished"))
                 CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
-            if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
+            else if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
                 CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
+            Assert.Fail("Button with name {0} is not present", buttonName);
         }
     }
 }
