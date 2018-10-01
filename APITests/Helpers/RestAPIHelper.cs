@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using APITests.Contracts;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,6 @@ namespace APITests.Helpers
     {
         public static RestClient client;
         public static RestRequest restRequest;
-        public static string baseUrl = "http://rzr-qa.polarisindcms.com/";
 
         public static RestClient SetUrl(string endpoint)
         {
@@ -31,5 +31,6 @@ namespace APITests.Helpers
         {
             return client.Execute(restRequest);
         }
+
     }
 }

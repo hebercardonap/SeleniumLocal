@@ -17,8 +17,7 @@ namespace APITests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DealerExperienceEndpointTest")]
+    [TechTalk.SpecRun.FeatureAttribute("DealerExperienceEndpointTest", Description="\tTo verify the new DEX endpoint implementation", SourceFile="Features\\DealerExperienceEndpointTest.feature", SourceLine=0)]
     public partial class DealerExperienceEndpointTestFeature
     {
         
@@ -27,7 +26,7 @@ namespace APITests.Features
 #line 1 "DealerExperienceEndpointTest.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace APITests.Features
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace APITests.Features
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,14 +66,13 @@ namespace APITests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Error 404 returned when 2021 is passed")]
-        [NUnit.Framework.CategoryAttribute("DEX")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Test")]
-        public virtual void Error404ReturnedWhen2021IsPassed()
+        [TechTalk.SpecRun.ScenarioAttribute("Error scenario invalid year", new string[] {
+                "DEX",
+                "API",
+                "Test"}, SourceLine=4)]
+        public virtual void ErrorScenarioInvalidYear()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error 404 returned when 2021 is passed", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error scenario invalid year", null, new string[] {
                         "DEX",
                         "API",
                         "Test"});
@@ -84,15 +80,113 @@ namespace APITests.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
- testRunner.Given("I have DEX endpoint with year 2019 and dealer 02040900", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have DEX RZR endpoint with year 2021 and dealer 02040900", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("I have base URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
  testRunner.When("I call GET method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("API response is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 8
+ testRunner.Then("API response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Error scenario invalid year format", new string[] {
+                "DEX",
+                "API",
+                "Test"}, SourceLine=10)]
+        public virtual void ErrorScenarioInvalidYearFormat()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error scenario invalid year format", null, new string[] {
+                        "DEX",
+                        "API",
+                        "Test"});
+#line 11
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+ testRunner.Given("I have DEX RZR endpoint with year 202 and dealer 02040900", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.When("I call GET method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("API response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Error scenario invalid dealer id", new string[] {
+                "DEX",
+                "API",
+                "Test"}, SourceLine=16)]
+        public virtual void ErrorScenarioInvalidDealerId()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error scenario invalid dealer id", null, new string[] {
+                        "DEX",
+                        "API",
+                        "Test"});
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 18
+ testRunner.Given("I have DEX RZR endpoint with year 2019 and dealer 12345689", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.When("I call GET method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then("API response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Success scenario valid year valid dealer id", new string[] {
+                "DEX",
+                "API",
+                "Test"}, SourceLine=22)]
+        public virtual void SuccessScenarioValidYearValidDealerId()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success scenario valid year valid dealer id", null, new string[] {
+                        "DEX",
+                        "API",
+                        "Test"});
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 24
+ testRunner.Given("I have DEX RZR endpoint with year 2019 and dealer 02040900", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+ testRunner.When("I call GET method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.Then("API response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Success scenario validate response properties", new string[] {
+                "DEX",
+                "API",
+                "Test"}, SourceLine=28)]
+        public virtual void SuccessScenarioValidateResponseProperties()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success scenario validate response properties", null, new string[] {
+                        "DEX",
+                        "API",
+                        "Test"});
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 30
+ testRunner.Given("I have DEX RZR endpoint with year 2019 and dealer 02040900", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 31
+ testRunner.When("I call GET method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.And("API response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.Then("Response property values are as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

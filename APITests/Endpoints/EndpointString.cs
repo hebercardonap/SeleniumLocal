@@ -8,6 +8,6 @@ namespace APITests.Endpoints
 {
     public class EndpointString
     {
-        public static string DEALER_EXPERIENCE_ENDPOINT = "http://rzr-qa.polarisindcms.com/en-us/api/dealer-configurator/getAllModels?year={0}&dealerid={1}";
+        public static string DEALER_EXPERIENCE_ENDPOINT = "/api/dealer-configurator/getAllModels?year={0}&dealerid={1}";
     }
 }
