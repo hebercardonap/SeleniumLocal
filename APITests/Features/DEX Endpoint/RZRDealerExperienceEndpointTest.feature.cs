@@ -10,42 +10,62 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace APITests.Features
+namespace APITests.Features.DEXEndpoint
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("DealerExperienceEndpointTest", Description="\tTo verify the new DEX endpoint implementation", SourceFile="Features\\DealerExperienceEndpointTest.feature", SourceLine=0)]
-    public partial class DealerExperienceEndpointTestFeature
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    public partial class RZRDealerExperienceEndpointTestFeature
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DealerExperienceEndpointTest.feature"
+        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
+        
+#line 1 "RZRDealerExperienceEndpointTest.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
-        public virtual void FeatureSetup()
+        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DealerExperienceEndpointTest", "\tTo verify the new DEX endpoint implementation", ProgrammingLanguage.CSharp, ((string[])(null)));
+            get
+            {
+                return this._testContext;
+            }
+            set
+            {
+                this._testContext = value;
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RZRDealerExperienceEndpointTest", "\tTo verify the new DEX endpoint implementation", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
-        public virtual void FeatureTearDown()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public virtual void TestInitialize()
         {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "RZRDealerExperienceEndpointTest")))
+            {
+                global::APITests.Features.DEXEndpoint.RZRDealerExperienceEndpointTestFeature.FeatureSetup(null);
+            }
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -54,6 +74,7 @@ namespace APITests.Features
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public virtual void ScenarioStart()
@@ -66,10 +87,12 @@ namespace APITests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Error scenario invalid year", new string[] {
-                "DEX",
-                "API",
-                "Test"}, SourceLine=4)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRDealerExperienceEndpointTest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
         public virtual void ErrorScenarioInvalidYear()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error scenario invalid year", null, new string[] {
@@ -89,10 +112,12 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Error scenario invalid year format", new string[] {
-                "DEX",
-                "API",
-                "Test"}, SourceLine=10)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year format")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRDealerExperienceEndpointTest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
         public virtual void ErrorScenarioInvalidYearFormat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error scenario invalid year format", null, new string[] {
@@ -112,10 +137,12 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Error scenario invalid dealer id", new string[] {
-                "DEX",
-                "API",
-                "Test"}, SourceLine=16)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid dealer id")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRDealerExperienceEndpointTest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
         public virtual void ErrorScenarioInvalidDealerId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error scenario invalid dealer id", null, new string[] {
@@ -135,10 +162,12 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Success scenario valid year valid dealer id", new string[] {
-                "DEX",
-                "API",
-                "Test"}, SourceLine=22)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario valid year valid dealer id")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRDealerExperienceEndpointTest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
         public virtual void SuccessScenarioValidYearValidDealerId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success scenario valid year valid dealer id", null, new string[] {
@@ -158,10 +187,12 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Success scenario validate response properties", new string[] {
-                "DEX",
-                "API",
-                "Test"}, SourceLine=28)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario validate response properties")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RZRDealerExperienceEndpointTest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
         public virtual void SuccessScenarioValidateResponseProperties()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success scenario validate response properties", null, new string[] {
@@ -178,15 +209,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 32
  testRunner.And("API response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.Then("Response property values are as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Response property values are as expected for RZR brand", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

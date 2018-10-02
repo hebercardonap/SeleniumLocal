@@ -29,15 +29,19 @@ namespace APITests.Steps
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
-                RestAPIHelper.SetUrl(Path.Combine(UrlBuilder.getRangerLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getRangerLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
-                RestAPIHelper.SetUrl(Path.Combine(UrlBuilder.getAceLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getAceLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
-                RestAPIHelper.SetUrl(Path.Combine(UrlBuilder.getGeneralLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getGeneralLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            {
+                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getSportsmanLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else
             {
@@ -56,28 +60,36 @@ namespace APITests.Steps
         [When(@"API response code is (.*)")]
         public void ThenAPIResponseIsAsExpected(int statusCode)
         {
-            Assert.AreEqual((int)RestAPIHelper.GetResponse().StatusCode, statusCode);
+            Assert.AreEqual(statusCode, (int)RestAPIHelper.GetResponse().StatusCode);
         }
 
-        [Then(@"Response property values are as expected")]
-        public void ThenResponsePropertyValuesAreAsExpected()
+        [Then(@"Response property values are as expected for (.*) brand")]
+        public void ThenResponsePropertyValuesAreAsExpected(string brandName)
         {
+            string url = string.Empty;
+            if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+                url = UrlBuilder.getRzrLandingPageURL();
+            else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+                url = UrlBuilder.getRangerLandingPageURL();
+            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+                url = UrlBuilder.getSportsmanLandingPageURL();
+            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+                url = UrlBuilder.getAceLandingPageURL();
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
+                url = UrlBuilder.getGeneralLandingPageURL();
+            else
+                Assert.Fail("Brand {0} not suported", brandName);
+
             var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
             for (int i = 0; i < deserialized.Count; i++)
             {
-                Assert.IsTrue(deserialized[i].OverviewPageURL.Contains(UrlBuilder.getRzrLandingPageURL()));
-                Assert.IsTrue(deserialized[i].WholegoodImageUrl.Contains(UrlBuilder.getRzrLandingPageURL()));
-                Assert.IsTrue(deserialized[i].ColorSwatchImageUrl.Contains(UrlBuilder.getRzrLandingPageURL()));
-                Assert.IsTrue(deserialized[i].ImagePath.Contains(UrlBuilder.getRzrLandingPageURL()));
-                Assert.IsTrue(deserialized[i].ColorThumbnailPath.Contains(UrlBuilder.getRzrLandingPageURL()));
-                Assert.IsTrue(deserialized[i].BuildURL.Contains(UrlBuilder.getRzrLandingPageURL()));
+                Assert.IsTrue(deserialized[i].OverviewPageURL.Contains(url));
+                Assert.IsTrue(deserialized[i].WholegoodImageUrl.Contains(url));
+                Assert.IsTrue(deserialized[i].ColorSwatchImageUrl.Contains(url));
+                Assert.IsTrue(deserialized[i].ImagePath.Contains(url));
+                Assert.IsTrue(deserialized[i].ColorThumbnailPath.Contains(url));
+                Assert.IsTrue(deserialized[i].BuildURL.Contains(url));
             }
-        }
-
-        private dynamic test(string jsonString)
-        {
-            var myObj = (dynamic)JsonConvert.DeserializeObject(jsonString);
-            return myObj;
         }
 
     }

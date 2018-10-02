@@ -1,4 +1,4 @@
-﻿Feature: DealerExperienceEndpointTest
+﻿Feature: RZRDealerExperienceEndpointTest
 	To verify the new DEX endpoint implementation
 
 @DEX API Test
@@ -30,5 +30,5 @@ Scenario: Success scenario validate response properties
 	Given I have DEX RZR endpoint with year 2019 and dealer 02040900
 	When I call GET method
 	And API response code is 200
-	Then Response property values are as expected
+	Then Response property values are as expected for RZR brand
 

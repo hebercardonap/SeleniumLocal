@@ -81,22 +81,30 @@
     <Compile Include="Contracts\PriceContainer.cs" />
     <Compile Include="Contracts\Variant.cs" />
     <Compile Include="Endpoints\EndpointString.cs" />
-    <Compile Include="Features\DealerExperienceEndpointTest.feature.cs">
+    <Compile Include="Features\DEX Endpoint\DealerExperienceEndpointTest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DealerExperienceEndpointTest.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\DEX Endpoint\RZRDealerExperienceEndpointTest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RZRDealerExperienceEndpointTest.feature</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\RestAPIHelper.cs" />
     <Compile Include="Steps\APIEndpointMethods.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Default.srprofile" />
-    <None Include="Features\DealerExperienceEndpointTest.feature">
+    <None Include="Features\DEX Endpoint\DealerExperienceEndpointTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DealerExperienceEndpointTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DEX Endpoint\RZRDealerExperienceEndpointTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RZRDealerExperienceEndpointTest.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
