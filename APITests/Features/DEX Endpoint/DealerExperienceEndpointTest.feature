@@ -28,7 +28,7 @@ Scenario Outline: Error scenario invalid year format
 	When I call GET method
 	Then API response code is <Response>
 	Examples:
-	| Brand | Year | Dealer   | Response |
+	| Brand | Year | Dealer  | Response |
 	| RZR   | 202 | 02040900 | 404      |
 	| RAN   | 202 | 02040900 | 404      |
 	| GEN   | 202 | 02040900 | 404      |
