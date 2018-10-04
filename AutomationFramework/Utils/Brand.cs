@@ -18,5 +18,6 @@ namespace AutomationFramework.Utils
         public static string ACE { get { return "ACE"; } }
         public static string RAN { get { return "RAN"; } }
         public static string GEN { get { return "GEN"; } }
+        public static string SNO { get { return "SNO"; } }
     }
 }

@@ -17,20 +17,20 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("RangerSteppedFlowProcess", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", SourceFile="Features\\BuildConfiguratorSteps\\RangerSteppedFlowProcess.feature", SourceLine=0)]
-    public partial class RangerSteppedFlowProcessFeature
+    [TechTalk.SpecRun.FeatureAttribute("RANSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", SourceFile="Features\\BuildConfiguratorSteps\\RANSteppedFlowTests.feature", SourceLine=0)]
+    public partial class RANSteppedFlowTestsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "RangerSteppedFlowProcess.feature"
+#line 1 "RANSteppedFlowTests.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RangerSteppedFlowProcess", "\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RANSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

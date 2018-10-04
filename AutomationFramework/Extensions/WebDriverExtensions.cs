@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Diagnostics;
+using System.Threading;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace AutomationFramework.Extensions
@@ -31,6 +32,12 @@ namespace AutomationFramework.Extensions
             wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
+        public static void waitforStalenessOfelement(By locator)
+        {
+            WebDriverWait wait = new WebDriverWait(DriverContext.Driver, TimeSpan.FromSeconds(40));
+            wait.Until(ExpectedConditions.StalenessOf(DriverContext.Driver.FindElement(locator)));
+        }
+
         public static void WaitForCondition<T>(this T obj, Func<T, bool> condition, int timeOut)
         {
             Func<T, bool> execute =
@@ -53,6 +60,19 @@ namespace AutomationFramework.Extensions
                 {
                     break;
                 }
+            }
+        }
+
+        public static void waitForAjaxRequestToComplete()
+        {
+            while (true)
+            {
+                var ajaxIsComplete = (bool)(DriverContext.Driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0");
+                if (ajaxIsComplete)
+                {
+                    break;
+                }
+                Thread.Sleep(100);
             }
         }
 

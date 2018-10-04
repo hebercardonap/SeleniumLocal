@@ -35,6 +35,11 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildTrimPage>().clickRangerModelWithColorOption();
         }
 
+        [When(@"I select trim old version")]
+        public void WhenISelectTrimOldVersion()
+        {
+            CurrentPage.As<BuildTrimPage>().clickRandomTrimOldVersion();
+        }
 
 
     }

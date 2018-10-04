@@ -13,6 +13,7 @@ namespace BuildConfigurator.Pages
     {
 
         private static By BY_TRIM_SECTION = By.XPath("//section[@class='trim-models']");
+        private static By BY_TRIM_SECTION_OLD = By.XPath("//div[@class='trim-container']");
         private static string A_TAG_NAME = "a";
         private static string LABEL_TAG_NAME = "label";
         private static string GENERAL_COLOR_OPTION = "Deluxe";
@@ -22,6 +23,13 @@ namespace BuildConfigurator.Pages
         public void clickRandomTrim()
         {
             List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            int trim = rnd.Next(0, trims.Count);
+            trims[trim].Click();
+        }
+
+        public void clickRandomTrimOldVersion()
+        {
+            List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION_OLD).FindElements(By.TagName(A_TAG_NAME)).ToList();
             int trim = rnd.Next(0, trims.Count);
             trims[trim].Click();
         }

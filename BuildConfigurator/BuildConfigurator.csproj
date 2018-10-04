@@ -118,23 +118,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GENSteppedFlowTest.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\RangerSteppedFlowProcess.feature.cs">
+    <Compile Include="Features\BuildConfiguratorSteps\INDSteppedFlowTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RangerSteppedFlowProcess.feature</DependentUpon>
+      <DependentUpon>INDSteppedFlowTests.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\BuildConfiguratorSteps\RANSteppedFlowTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RANSteppedFlowTests.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RZRSteppedFlowTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\BuildConfiguratorSteps\SLGSteppedFlowTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SLGSteppedFlowTests.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SNOSteppedFlowTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
+    <Compile Include="Pages\BuildCategoryPage.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
     <Compile Include="Pages\BuildConfigurePage.cs" />
     <Compile Include="Pages\BuildConfirmationPage.cs" />
     <Compile Include="Pages\BuildModelPage.cs" />
     <Compile Include="Pages\BuildQuotePage.cs" />
     <Compile Include="Pages\BuildTrimPage.cs" />
+    <Compile Include="Steps\BuildCategorySteps.cs" />
     <Compile Include="Steps\BuildColorSteps.cs" />
     <Compile Include="Steps\BuildConfigureSteps.cs" />
     <Compile Include="Steps\BuildConfirmationSteps.cs" />
@@ -154,13 +171,25 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GENSteppedFlowTest.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\BuildConfiguratorSteps\RangerSteppedFlowProcess.feature">
+    <None Include="Features\BuildConfiguratorSteps\INDSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RangerSteppedFlowProcess.feature.cs</LastGenOutput>
+      <LastGenOutput>INDSteppedFlowTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildConfiguratorSteps\RANSteppedFlowTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RANSteppedFlowTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RZRSteppedFlowTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildConfiguratorSteps\SLGSteppedFlowTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SLGSteppedFlowTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SNOSteppedFlowTests.feature.cs</LastGenOutput>
     </None>
     <None Include="license" />
     <None Include="packages.config">

@@ -11,6 +11,8 @@ namespace AutomationFramework.UrlBuilderSites
     public class UrlBuilder : ConfigReader
     {
         private static string BUILD_MODEL_URL_PART = "/build-model/";
+        private static string BUILD_CATEGORY_URL_PART = "/build-category/";
+        private static string NUMBER_SIGN = "#";
 
         public static string getRzrLandingPageURL()
         {
@@ -95,6 +97,21 @@ namespace AutomationFramework.UrlBuilderSites
         public static string getRangerBuildModelUrl()
         {
             return string.Concat(getBaseUrl(Brand.RAN), getBrowserLocale(), BUILD_MODEL_URL_PART);
+        }
+
+        public static string getSlingshotBuildModelUrl()
+        {
+            return string.Concat(getBaseUrl(Brand.SLG), getBrowserLocale(), BUILD_MODEL_URL_PART);
+        }
+
+        public static string getIndianBuildCategoryUrl()
+        {
+            return string.Concat(getBaseUrl(Brand.IND), getBrowserLocale(), BUILD_CATEGORY_URL_PART);
+        }
+
+        public static string getSnowBuildModelUrl()
+        {
+            return string.Concat(getBaseUrl(Brand.SNO), getBrowserLocale(), BUILD_MODEL_URL_PART);
         }
     }
 }

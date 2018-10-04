@@ -14,7 +14,8 @@ namespace BuildConfigurator.Pages
     {
         private static By BY_COLORS_SECTION = By.XPath("//ul[@class='wholegood-colors-items']");
         private static By BY_NEXT_BUTTON = By.XPath("//a[@class='btn-next']");
-        private static By BY_FULL_SCREEN_BUTTON = By.XPath("//button[@id='build-variant__fullscreen']");
+        //private static By BY_FULL_SCREEN_BUTTON = By.XPath("//button[@id='build-variant__fullscreen']");
+        private static By BY_FULL_SCREEN_BUTTON = By.Id("build-variant__fullscreen");
 
         private static string LI_TAG_NAME = "li";
         private static Random rnd = new Random();

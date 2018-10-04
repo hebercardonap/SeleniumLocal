@@ -30,8 +30,7 @@ namespace BuildConfigurator.Pages
 
         public int getAddedAccessoriesCount()
         {
-            List<IWebElement> addedAccessories = driver.FindElement(BY_ADDED_ACCESSORY_CONTAINER)
-                .FindElements(BY_ADDED_ACCESSORY).ToList();
+            List<IWebElement> addedAccessories = driver.FindElements(BY_ADDED_ACCESSORY).ToList();
             return addedAccessories.Count;
         }
 

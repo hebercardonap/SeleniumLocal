@@ -14,5 +14,10 @@ namespace AutomationFramework.Base
         {
             return string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
         }
+
+        public bool stringContainsIgnoreCase(string a, string b)
+        {
+            return a.IndexOf(b, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
     }
 }

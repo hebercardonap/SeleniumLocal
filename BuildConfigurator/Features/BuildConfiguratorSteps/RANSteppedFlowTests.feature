@@ -1,4 +1,4 @@
-﻿Feature: RangerSteppedFlowProcess
+﻿Feature: RANSteppedFlowTests
 	Verify that build configurator steps 
 	can be performed for a Ranger products
 

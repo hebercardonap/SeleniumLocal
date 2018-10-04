@@ -46,6 +46,23 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryAvoidPRP();
         }
 
+        [When(@"I click (.*) accessory category")]
+        public void WhenIClickAccessoryCategory(string accessoryCategory)
+        {
+            CurrentPage.As<BuildConfigurePage>().clickAccessoryCategory(accessoryCategory);
+        }
+
+        [When(@"I click (.*) accessory subcategory")]
+        public void WhenIClickAccessorySubcategory(string accessorySubcategory)
+        {
+            CurrentPage.As<BuildConfigurePage>().clickAccessorySubCategory(accessorySubcategory);
+        }
+
+        [When(@"I add random available accessory")]
+        public void WhenIAddRandomAvailableAccessory()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryCardAddButton();
+        }
 
 
 

@@ -1,4 +1,6 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Extensions;
+using AutomationFramework.UrlBuilderSites;
 using BuildConfigurator.Pages;
 using TechTalk.SpecFlow;
 
@@ -33,7 +35,29 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildModelPage>().clickRangerModelMultipleColorAvailable();
         }
 
+        [When(@"I select slingshot (.*)")]
+        public void WhenISelectSlingshot(string slgVersion)
+        {
+            CurrentPage.As<BuildModelPage>().clickSlingshotByVersion(slgVersion);
+        }
 
+        [When(@"I select random available version")]
+        public void WhenISelectRandomAvailableVersion()
+        {
+            CurrentPage.As<BuildModelPage>().clickRandomWholeGoodCard();
+        }
+
+        [When(@"I filter by (.*) family")]
+        public void WhenIFilterByFamily(string family)
+        {
+            CurrentPage.As<BuildModelPage>().clickFamilyCategorySlide(family);
+        }
+
+        [When(@"I select RMK (.*)")]
+        public void WhenISelectRMK(string version)
+        {
+            CurrentPage.As<BuildModelPage>().clickSnowByVersion(version);
+        }
 
     }
 }

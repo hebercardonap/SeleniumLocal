@@ -39,6 +39,23 @@ namespace BuildConfigurator.Steps
                 DriverContext.Browser.GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
                 CurrentPage = GetInstance<BuildModelPage>();
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.IND))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getIndianBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getSnowBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
+            else
+                Assert.Fail("Brand {0} not supported", brandName);
         }
 
         [When(@"I select (.*) seat option")]
@@ -68,7 +85,18 @@ namespace BuildConfigurator.Steps
                 CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
             else if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
                 CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
-            Assert.Fail("Button with name {0} is not present", buttonName);
+            else
+                Assert.Fail("Button with name {0} is not present", buttonName);
         }
+
+        [When(@"I click (.*) button old version")]
+        public void WhenIClickButtonOldVersion(string buttonName)
+        {
+            if (stringEqualsIgnoreCase(buttonName, "finished"))
+                CurrentPage.As<BuildConfigurePage>().clickIamFinishedButtonOld();
+            else
+                Assert.Fail("Button with name {0} is not present", buttonName);
+        }
+
     }
 }

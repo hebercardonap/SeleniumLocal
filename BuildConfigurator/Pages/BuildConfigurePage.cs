@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,15 @@ namespace BuildConfigurator.Pages
 
 
         private static By BY_FINISHED_BUTTON = By.XPath("//div[@class='summary-accessory-quote btn btn-color-primary btn-md btn-square']");
+        private static By BY_FINISHED_OLD_BUTTON = By.XPath("//button[@class='summary-accessory-quote btn btn-color-primary-light btn-md btn-square']");
         private static By BY_PRP_CONTAINER = By.XPath("//div[@class='part-require-part']");
         private static By BY_BUILD_SUBCATEGORIES = By.XPath("//div[@id='build-subCategory']//div[@class='flickity-slider']//button");
+        private static By BY_BUILD_SUBCATEGORY = By.XPath("//div[@id='build-subCategory']//div[@class='flickity-slider']");
         private static By By_REMOVE_LINK_PRP = By.CssSelector("div[class='summary-accessory-info-remove '][role='button']");
+        private static By By_REMOVE_LINK_OLD_PRP = By.XPath("//div[@class='part-require-part-primaryPart']//div[contains(@class,'summary-accessory-info-remove')][contains(text(),'Remove item')]");
+        private static By BY_SUMMARY_HEADER = By.XPath("//div[@class='summary__header']");
+        private static string BY_CATEGORY_TITLE_GENERIC = "//button[contains(@title, '{0}')]";
+        private static string BY_SUBCATEGORY_TITLE_GENERIC = ".//button[contains(@title, '{0}')]";
 
 
         private static Random rnd = new Random();
@@ -76,6 +83,11 @@ namespace BuildConfigurator.Pages
             WebElementExtensions.clickElement(BY_FINISHED_BUTTON);
         }
 
+        public void clickIamFinishedButtonOld()
+        {
+            WebElementExtensions.clickElement(BY_FINISHED_OLD_BUTTON);
+        }
+
         public void clickRangerTiresCategory()
         {
             WebElementExtensions.clickElement(BY_RAN_TIRES_CATEGORY);
@@ -103,13 +115,14 @@ namespace BuildConfigurator.Pages
             addRandomAccessory();
             while (true)
             {
-                
-                if (!WebElementExtensions.IsElementPresent(BY_PRP_CONTAINER))
+
+                if (WebElementExtensions.IsElementPresent(BY_PRP_CONTAINER))
                 {
-                    break;
+                    clickRemoveLinkPRP();
+                    addRandomAccessory();
                 }
-                clickRemoveLinkPRP();
-                addRandomAccessory();
+                else
+                 break;
             }
         }
 
@@ -122,7 +135,40 @@ namespace BuildConfigurator.Pages
 
         public void clickRemoveLinkPRP()
         {
-            WebElementExtensions.clickElement(By_REMOVE_LINK_PRP);
+            try
+            {
+                WebElementExtensions.clickElement(By_REMOVE_LINK_PRP);
+            }
+            catch (Exception)
+            {
+
+                WebElementExtensions.clickElement(By_REMOVE_LINK_OLD_PRP);
+            }
+            
+        }
+
+        public void clickAccessoryCategory(string accessoryCategory)
+        {
+            bool isFound = false;
+            List<IWebElement> categories = driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            foreach (var category in categories)
+            {
+                if (stringEqualsIgnoreCase(category.Text, accessoryCategory))
+                {
+                    WebElementExtensions.clickElement(category);
+                    isFound = true;
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Inconclusive("The category with name {0} is not present", accessoryCategory);
+        }
+
+        public void clickAccessorySubCategory(string accessoryCategory)
+        {
+            string xpathString = string.Format(BY_SUBCATEGORY_TITLE_GENERIC, accessoryCategory);
+            IWebElement subcategory = driver.FindElement(BY_BUILD_SUBCATEGORY).FindElement(By.XPath(xpathString));
+            WebElementExtensions.clickElement(subcategory);
         }
 
     }

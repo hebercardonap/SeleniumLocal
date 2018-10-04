@@ -66,11 +66,12 @@ namespace AutomationFramework.Extensions
         {
             try
             {
-                IWebElement element = DriverContext.Driver.FindElement(locator);
-                bool ele = element.Displayed;
+                //IWebElement element = DriverContext.Driver.FindElement(locator);
+                //bool ele = element.Displayed;
+                DriverContext.Driver.FindElement(locator);
                 return true;
             }
-            catch (Exception)
+            catch (NoSuchElementException)
             {
                 return false;
             }
