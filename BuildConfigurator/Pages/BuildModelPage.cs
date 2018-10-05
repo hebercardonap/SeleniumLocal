@@ -118,7 +118,7 @@ namespace BuildConfigurator.Pages
             }
         }
 
-        public void clickSnowByVersion(string snoVersion)
+        public void clickByFamilyVersion(string snoVersion)
         {
             List<IWebElement> versions = driver.FindElements(BY_SNO_VERSION).ToList();
             foreach (var version in versions)
@@ -143,8 +143,6 @@ namespace BuildConfigurator.Pages
 
         public void clickFamilyCategorySlide(string family)
         {
-            //string xpathString = string.Format(BY_FAMILY_SLIDE_CATEGORY, family);
-            //WebElementExtensions.clickElement(By.XPath(xpathString));
             List<IWebElement> familyCategories = driver.FindElements(BY_FAMILY_CATEGORIES).ToList();
             foreach (var fam in familyCategories)
             {

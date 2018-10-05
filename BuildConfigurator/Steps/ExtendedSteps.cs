@@ -59,6 +59,11 @@ namespace BuildConfigurator.Steps
                 DriverContext.Browser.GoToUrl(UrlBuilder.getGemBuildModelUrl());
                 CurrentPage = GetInstance<BuildModelPage>();
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }

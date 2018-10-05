@@ -173,7 +173,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 42
  testRunner.When(string.Format("I filter by {0} family", family), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
- testRunner.And(string.Format("I select RMK {0}", version), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select family {0}", version), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
  testRunner.And("I select trim old version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45

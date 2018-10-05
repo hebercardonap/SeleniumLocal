@@ -17,20 +17,20 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("GEMSteppedFLowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a GEM products", SourceFile="Features\\BuildConfiguratorSteps\\GEMSteppedFLowTests.feature", SourceLine=0)]
-    public partial class GEMSteppedFLowTestsFeature
+    [TechTalk.SpecRun.FeatureAttribute("ATVSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a ATV products", SourceFile="Features\\BuildConfiguratorSteps\\ATVSteppedFlowTests.feature", SourceLine=0)]
+    public partial class ATVSteppedFlowTestsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GEMSteppedFLowTests.feature"
+#line 1 "ATVSteppedFlowTests.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GEMSteppedFLowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a GEM products", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ATVSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a ATV products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -66,26 +66,26 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void VerifyGEMBuildSteppedProcess(string family, string category, string subcategory, string[] exampleTags)
+        public virtual void VerifyATVSteppedProcessNoTrim(string family, string version, string category, string subcategory, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "GEM",
+                    "ATV",
                     "stepped",
                     "process"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEM build stepped process", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify ATV stepped process no trim", null, @__tags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
- testRunner.Given("I have navigated to GEM build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have navigated to ATV build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.When(string.Format("I filter by {0} family", family), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("I select random available version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select family {0}", version), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
@@ -101,34 +101,54 @@ this.ScenarioInitialize(scenarioInfo);
 #line 16
  testRunner.And("I fill the form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And("I click on Personal use option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
  testRunner.And("I click getinternetprice button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
- testRunner.Then("GEM build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+ testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify GEM build stepped process, Passenger", new string[] {
-                "GEM",
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Recreation", new string[] {
+                "ATV",
                 "stepped",
-                "process"}, SourceLine=21)]
-        public virtual void VerifyGEMBuildSteppedProcess_Passenger()
+                "process"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Recreation()
         {
 #line 6
-this.VerifyGEMBuildSteppedProcess("Passenger", "Comfort", "Seats", ((string[])(null)));
+this.VerifyATVSteppedProcessNoTrim("Recreation", "Hunter", "Wheel", "Trail", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify GEM build stepped process, Utility", new string[] {
-                "GEM",
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Touring", new string[] {
+                "ATV",
                 "stepped",
-                "process"}, SourceLine=21)]
-        public virtual void VerifyGEMBuildSteppedProcess_Utility()
+                "process"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Touring()
         {
 #line 6
-this.VerifyGEMBuildSteppedProcess("Utility", "Power", "Battery", ((string[])(null)));
+this.VerifyATVSteppedProcessNoTrim("Touring", "XP", "Wheel", "Trail", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Sport", new string[] {
+                "ATV",
+                "stepped",
+                "process"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Sport()
+        {
+#line 6
+this.VerifyATVSteppedProcessNoTrim("Sport", "Scrambler", "Wheel", "Trail", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Special", new string[] {
+                "ATV",
+                "stepped",
+                "process"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Special()
+        {
+#line 6
+this.VerifyATVSteppedProcessNoTrim("Special", "570", "Wheel", "Trail", ((string[])(null)));
 #line hidden
         }
         

@@ -40,7 +40,7 @@ Scenario: Verify SNO TITAN build stepped process
 Scenario Outline: Verify SNO Families build stepped process
 	Given I have navigated to SNO build model page
 	When I filter by <Family> family
-	And I select RMK <Version>
+	And I select family <Version>
 	And I select trim old version
 	And I get to build page
 	And I click Windshields accessory category

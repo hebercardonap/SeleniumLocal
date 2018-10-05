@@ -53,10 +53,10 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildModelPage>().clickFamilyCategorySlide(family);
         }
 
-        [When(@"I select RMK (.*)")]
-        public void WhenISelectRMK(string version)
+        [When(@"I select family (.*)")]
+        public void WhenISelectVersion(string version)
         {
-            CurrentPage.As<BuildModelPage>().clickSnowByVersion(version);
+            CurrentPage.As<BuildModelPage>().clickByFamilyVersion(version);
         }
 
     }

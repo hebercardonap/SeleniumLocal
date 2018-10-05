@@ -113,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ACESteppedFlowTest.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\BuildConfiguratorSteps\ATVSteppedFlowTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ATVSteppedFlowTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\BuildConfiguratorSteps\GEMSteppedFLowTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,6 +177,10 @@
     <None Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ACESteppedFlowTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildConfiguratorSteps\ATVSteppedFlowTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ATVSteppedFlowTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\BuildConfiguratorSteps\GEMSteppedFLowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
