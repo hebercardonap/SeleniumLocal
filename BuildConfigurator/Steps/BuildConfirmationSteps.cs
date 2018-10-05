@@ -30,5 +30,14 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().getAddedAccessoriesCount() > 0);
         }
 
+        [Then(@"GEM build confirmation page is as expected")]
+        public void ThenGEMBuildConfirmationPageIsAsExpected()
+        {
+            //Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().isTotalPriceDisplayed());
+            CurrentPage.As<BuildConfirmationPage>().clickBuildSummaryToggleCaret();
+            Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().getGemAddedAccessoriesCount() > 0);
+        }
+
+
     }
 }

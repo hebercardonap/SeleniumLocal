@@ -5,7 +5,7 @@
 @Snow stepped process
 Scenario: Verify SNO RUSH build stepped process
 	Given I have navigated to SNO build model page
-	When I filter by RUSH family
+	When I filter by rush family
 	And I select random available version
 	And I select trim old version
 	And I get to build page

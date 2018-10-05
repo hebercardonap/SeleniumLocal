@@ -113,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ACESteppedFlowTest.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\BuildConfiguratorSteps\GEMSteppedFLowTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GEMSteppedFLowTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\BuildConfiguratorSteps\GENSteppedFlowTest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +156,7 @@
     <Compile Include="Pages\BuildModelPage.cs" />
     <Compile Include="Pages\BuildQuotePage.cs" />
     <Compile Include="Pages\BuildTrimPage.cs" />
+    <Compile Include="Pages\PageHelpers.cs" />
     <Compile Include="Steps\BuildCategorySteps.cs" />
     <Compile Include="Steps\BuildColorSteps.cs" />
     <Compile Include="Steps\BuildConfigureSteps.cs" />
@@ -166,6 +172,10 @@
     <None Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ACESteppedFlowTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildConfiguratorSteps\GEMSteppedFLowTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GEMSteppedFLowTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\BuildConfiguratorSteps\GENSteppedFlowTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

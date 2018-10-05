@@ -25,12 +25,14 @@ namespace BuildConfigurator.Pages
         private static By BY_WHOLEGOOD_CARD = By.XPath(".//div[@class='wholegood-card']//div//h4");
         private static By BY_FAMILY_SLIDE = By.XPath("//div[@class='family family--slide']");
         private static string BY_FAMILY_SLIDE_CATEGORY = "//section//span[contains(text(), '{0}')]";
+        private static By BY_FAMILY_CATEGORIES = By.XPath("//div[contains(@class, 'family')]//span");
 
 
 
         private static string A_TAG_NAME = "a";
         private static string LABEL_TAG_NAME = "label";
         private static string GENERAL_COLOR_OPTION = "Deluxe";
+        private static string TEXT_ATTRIBUTE = "Text";
 
         private static Random rnd = new Random();
 
@@ -141,8 +143,19 @@ namespace BuildConfigurator.Pages
 
         public void clickFamilyCategorySlide(string family)
         {
-            string xpathString = string.Format(BY_FAMILY_SLIDE_CATEGORY, family);
-            WebElementExtensions.clickElement(By.XPath(xpathString));
+            //string xpathString = string.Format(BY_FAMILY_SLIDE_CATEGORY, family);
+            //WebElementExtensions.clickElement(By.XPath(xpathString));
+            List<IWebElement> familyCategories = driver.FindElements(BY_FAMILY_CATEGORIES).ToList();
+            foreach (var fam in familyCategories)
+            {
+                string familyName = fam.Text;
+                if (stringEqualsIgnoreCase(family, familyName) || stringContainsIgnoreCase(familyName, family))
+                {
+                    WebElementExtensions.clickElement(fam);
+                    break;
+                }
+            }
+
         }
 
     }

@@ -20,6 +20,9 @@ namespace BuildConfigurator.Pages
         private static By BY_GET_INTERNET_PRICE_BUTTON = By.CssSelector("button[name='submit']");
         private static By BY_AGE_CHECKBOX = By.XPath("//div[contains(@class, 'ValidationRequired')]//input[@type='checkbox']");
         private static By BY_EMAIL_UPDATES_CHECKBOX = By.CssSelector("div[data-form-mapping='EmailUpdates'] input");
+        private static By BY_FORM_COMMERCIAL_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[@value='commercial']");
+        private static By BY_FORM_PERSONAL_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[@value='personal']");
+        private static By BY_FORM_GOVERNMENT_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[contains(@value, 'government')]");
 
 
         public void setFirstName()
@@ -67,6 +70,19 @@ namespace BuildConfigurator.Pages
             WebDriverExtensions.waitForElementToBeEnabled(BY_FIRST_NAME_FIELD);
         }
 
+        public void clickFormCommercialUseOption()
+        {
+            WebElementExtensions.clickElement(BY_FORM_COMMERCIAL_OPTION);
+        }
 
+        public void clickFormPersonalUseOption()
+        {
+            WebElementExtensions.clickElement(BY_FORM_PERSONAL_OPTION);
+        }
+
+        public void clickFormGovernmentUseOption()
+        {
+            WebElementExtensions.clickElement(BY_FORM_GOVERNMENT_OPTION);
+        }
     }
 }

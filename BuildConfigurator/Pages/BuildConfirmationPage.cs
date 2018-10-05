@@ -17,6 +17,8 @@ namespace BuildConfigurator.Pages
         private static By BY_ADDED_ACCESSORY = By.XPath("//div[contains(@class,'product border-bottom')]");
         private static By BY_ADDED_ACCESSORY_CONTAINER = By.CssSelector("div[class='added-products']");
         private static By BY_SHOPPING_TOOLS = By.XPath("//div[contains(@class,'layout__container')]//section[@id='shopping-tools']");
+        private static By BY_GEM_SUMMARY_ACCESORY = By.CssSelector("div[class='quote-confirmation--build__summary-accessory-container'] div[class='quote-confirmation--build__summary-accessory']");
+        private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//div[@class='quote-confirmation--build__summary-toggle-icon']");
 
         public void waitForBuildConfirmationPageToLoad()
         {
@@ -34,6 +36,15 @@ namespace BuildConfigurator.Pages
             return addedAccessories.Count;
         }
 
+        public int getGemAddedAccessoriesCount()
+        {
+            List<IWebElement> addedAccessories = driver.FindElements(BY_GEM_SUMMARY_ACCESORY).ToList();
+            return addedAccessories.Count;
+        }
 
+        public void clickBuildSummaryToggleCaret()
+        {
+            WebElementExtensions.clickElement(BY_BUILD_SUMMARY_TOGGLE);
+        }
     }
 }

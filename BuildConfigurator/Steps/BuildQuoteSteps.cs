@@ -31,8 +31,14 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildQuotePage>().setPhoneNumber();
             CurrentPage.As<BuildQuotePage>().setPostalCode();
             CurrentPage.As<BuildQuotePage>().clickAgeCheckBox();
-            //CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
         }
+
+        [When(@"I click on Personal use option")]
+        public void WhenIClickOnPersonalUseOption()
+        {
+            CurrentPage.As<BuildQuotePage>().clickFormPersonalUseOption();
+        }
+
 
     }
 }

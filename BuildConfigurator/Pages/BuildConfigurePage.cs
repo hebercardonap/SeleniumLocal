@@ -37,12 +37,14 @@ namespace BuildConfigurator.Pages
         private static By BY_SUMMARY_HEADER = By.XPath("//div[@class='summary__header']");
         private static string BY_CATEGORY_TITLE_GENERIC = "//button[contains(@title, '{0}')]";
         private static string BY_SUBCATEGORY_TITLE_GENERIC = ".//button[contains(@title, '{0}')]";
+        private static By BY_SUBCATEGORY_OPTIONS = By.XPath("//div[@id='build-subCategory']//div[@class='flickity-slider']//button");
 
 
         private static Random rnd = new Random();
         private static IWebElement SelectedAccessoryCard;
         private static string BUTTON_TAG = "button";
         private static string ADD_TEXT = "ADD";
+        private static string TITLE_ATTRIBUTE = "title";
 
         public void clickProtectionCategory()
         {
@@ -149,26 +151,14 @@ namespace BuildConfigurator.Pages
 
         public void clickAccessoryCategory(string accessoryCategory)
         {
-            bool isFound = false;
             List<IWebElement> categories = driver.FindElements(BY_BUILD_CATEGORIES).ToList();
-            foreach (var category in categories)
-            {
-                if (stringEqualsIgnoreCase(category.Text, accessoryCategory))
-                {
-                    WebElementExtensions.clickElement(category);
-                    isFound = true;
-                    break;
-                }
-            }
-            if (!isFound)
-                Assert.Inconclusive("The category with name {0} is not present", accessoryCategory);
+            PageHelpers.FindMatchElementAndClick(categories, accessoryCategory);
         }
 
         public void clickAccessorySubCategory(string accessoryCategory)
         {
-            string xpathString = string.Format(BY_SUBCATEGORY_TITLE_GENERIC, accessoryCategory);
-            IWebElement subcategory = driver.FindElement(BY_BUILD_SUBCATEGORY).FindElement(By.XPath(xpathString));
-            WebElementExtensions.clickElement(subcategory);
+            List<IWebElement> subCategoryButtons = driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
+            PageHelpers.FindMatchElementAndClick(subCategoryButtons, accessoryCategory);
         }
 
     }

@@ -54,6 +54,11 @@ namespace BuildConfigurator.Steps
                 DriverContext.Browser.GoToUrl(UrlBuilder.getSnowBuildModelUrl());
                 CurrentPage = GetInstance<BuildModelPage>();
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
+            {
+                DriverContext.Browser.GoToUrl(UrlBuilder.getGemBuildModelUrl());
+                CurrentPage = GetInstance<BuildModelPage>();
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }

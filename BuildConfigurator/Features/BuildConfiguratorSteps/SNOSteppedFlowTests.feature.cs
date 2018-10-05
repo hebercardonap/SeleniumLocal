@@ -82,7 +82,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I have navigated to SNO build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("I filter by RUSH family", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I filter by rush family", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
  testRunner.And("I select random available version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
