@@ -3,11 +3,6 @@ using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace BuildConfigurator.Steps
@@ -15,6 +10,11 @@ namespace BuildConfigurator.Steps
     [Binding]
     internal class ExtendedSteps : BasePage
     {
+        private static string ONE = "one";
+        private static string TWO = "two";
+        private static string THREE = "three";
+        private static string FOUR = "four";
+        private static string SIX = "six";
 
         [Given(@"I have navigated to (.*) build model page")]
         public void GivenIHaveNavigatedToBrandBuildModelPage(string brandName)
@@ -71,15 +71,15 @@ namespace BuildConfigurator.Steps
         [When(@"I select (.*) seat option")]
         public void WhenISelectSeatOption(string numberOfSeats)
         {
-            if (stringEqualsIgnoreCase(numberOfSeats, "one"))
+            if (stringEqualsIgnoreCase(numberOfSeats, ONE))
                 CurrentPage.As<BuildModelPage>().clickOneSeat();
-            else if (stringEqualsIgnoreCase(numberOfSeats, "two"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, TWO))
                 CurrentPage.As<BuildModelPage>().clickTwoSeat();
-            else if (stringEqualsIgnoreCase(numberOfSeats, "three"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, THREE))
                 CurrentPage.As<BuildModelPage>().clickThreeSeat();
-            else if (stringEqualsIgnoreCase(numberOfSeats, "four"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, FOUR))
                 CurrentPage.As<BuildModelPage>().clickFourSeat();
-            else if (stringEqualsIgnoreCase(numberOfSeats, "six"))
+            else if (stringEqualsIgnoreCase(numberOfSeats, SIX))
                 CurrentPage.As<BuildModelPage>().clickSixSeat();
             else
                 Assert.Fail("Seat option {0} is not available", numberOfSeats);

@@ -83,7 +83,7 @@ namespace APITests.Steps
             var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
             for (int i = 0; i < deserialized.Count; i++)
             {
-                Assert.IsTrue(deserialized[i].OverviewPageURL.Contains(url));
+                //Assert.IsTrue(deserialized[i].OverviewPageURL.Contains(url)); Removing this validation as Reflect is not using this for now
                 Assert.IsTrue(deserialized[i].WholegoodImageUrl.Contains(url));
                 Assert.IsTrue(deserialized[i].ColorSwatchImageUrl.Contains(url));
                 Assert.IsTrue(deserialized[i].ImagePath.Contains(url));
