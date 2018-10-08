@@ -90,18 +90,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I add random accessory avoid PRP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Engine accessory category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And("I click finished button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Intake accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("I get to build quote page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I add random available accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("I fill the form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click finished button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("I click getinternetprice button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I get to build quote page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And("I get to build confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I fill the form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+ testRunner.And("I click getinternetprice button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("I get to build confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -118,36 +122,40 @@ this.ScenarioInitialize(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify IND stepped process build category Scout", null, @__tags);
-#line 21
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 22
- testRunner.Given("I have navigated to IND build category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
- testRunner.When(string.Format("I select {0} category", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
- testRunner.And("Category models are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have navigated to IND build category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 25
- testRunner.And("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I select {0} category", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Category models are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("I click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And("I add random accessory avoid PRP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("I click finished button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And("I get to build quote page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Engine accessory category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And("I fill the form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Intake accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.And("I click getinternetprice button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I add random available accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And("I get to build confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click finished button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
+ testRunner.And("I get to build quote page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("I fill the form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("I click getinternetprice button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And("I get to build confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -156,10 +164,10 @@ this.ScenarioInitialize(scenarioInfo);
         [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, scout", new string[] {
                 "Indian",
                 "stepped",
-                "process"}, SourceLine=37)]
+                "process"}, SourceLine=41)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Scout()
         {
-#line 21
+#line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("scout", ((string[])(null)));
 #line hidden
         }
@@ -167,10 +175,10 @@ this.VerifyINDSteppedProcessBuildCategoryScout("scout", ((string[])(null)));
         [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, chief", new string[] {
                 "Indian",
                 "stepped",
-                "process"}, SourceLine=37)]
+                "process"}, SourceLine=41)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Chief()
         {
-#line 21
+#line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("chief", ((string[])(null)));
 #line hidden
         }
@@ -178,10 +186,10 @@ this.VerifyINDSteppedProcessBuildCategoryScout("chief", ((string[])(null)));
         [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, springfield", new string[] {
                 "Indian",
                 "stepped",
-                "process"}, SourceLine=37)]
+                "process"}, SourceLine=41)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Springfield()
         {
-#line 21
+#line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("springfield", ((string[])(null)));
 #line hidden
         }
@@ -189,10 +197,10 @@ this.VerifyINDSteppedProcessBuildCategoryScout("springfield", ((string[])(null))
         [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, chieftain", new string[] {
                 "Indian",
                 "stepped",
-                "process"}, SourceLine=37)]
+                "process"}, SourceLine=41)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Chieftain()
         {
-#line 21
+#line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("chieftain", ((string[])(null)));
 #line hidden
         }
@@ -200,10 +208,10 @@ this.VerifyINDSteppedProcessBuildCategoryScout("chieftain", ((string[])(null)));
         [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, roadmaster", new string[] {
                 "Indian",
                 "stepped",
-                "process"}, SourceLine=37)]
+                "process"}, SourceLine=41)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Roadmaster()
         {
-#line 21
+#line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("roadmaster", ((string[])(null)));
 #line hidden
         }
@@ -211,10 +219,10 @@ this.VerifyINDSteppedProcessBuildCategoryScout("roadmaster", ((string[])(null)))
         [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, dark horse", new string[] {
                 "Indian",
                 "stepped",
-                "process"}, SourceLine=37)]
+                "process"}, SourceLine=41)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_DarkHorse()
         {
-#line 21
+#line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("dark horse", ((string[])(null)));
 #line hidden
         }

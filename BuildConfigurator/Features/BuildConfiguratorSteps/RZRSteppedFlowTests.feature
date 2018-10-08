@@ -11,7 +11,9 @@ Scenario: Verify RZR build stepped process one seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory
+	And I click Protection accessory category
+	And I click Roofs accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form
@@ -28,7 +30,9 @@ Scenario: Verify RZR build stepped process two seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory
+	And I click Protection accessory category
+	And I click Windshields accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form

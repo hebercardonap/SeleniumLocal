@@ -9,7 +9,9 @@ Scenario: Verify IND build stepped process random model
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory avoid PRP
+	And I click Engine accessory category
+	And I click Intake accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form
@@ -26,7 +28,9 @@ Scenario Outline: Verify IND stepped process build category Scout
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory avoid PRP
+	And I click Engine accessory category
+	And I click Intake accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form

@@ -11,7 +11,9 @@ Scenario: Verify RAN build stepped process two seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random ranger tires accessory
+	And I click Wheel accessory category
+	And I click Trail accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form
@@ -28,7 +30,9 @@ Scenario: Verify RAN build stepped process three seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory avoid PRP
+	And I click Wheel accessory category
+	And I click Trail accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form
@@ -62,7 +66,9 @@ Scenario: Verify RAN build stepped process six seat
 	And I select random color
 	And I click next button
 	And I get to build page
-	And I add random accessory avoid PRP
+	And I click Utility accessory category
+	And I click Winches accessory subcategory
+	And I add random available accessory
 	And I click finished button
 	And I get to build quote page
 	And I fill the form
