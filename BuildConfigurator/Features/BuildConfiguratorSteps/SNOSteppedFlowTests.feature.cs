@@ -17,35 +17,55 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("SNOSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", SourceFile="Features\\BuildConfiguratorSteps\\SNOSteppedFlowTests.feature", SourceLine=0)]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     public partial class SNOSteppedFlowTestsFeature
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
 #line 1 "SNOSteppedFlowTests.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
-        public virtual void FeatureSetup()
+        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            get
+            {
+                return this._testContext;
+            }
+            set
+            {
+                this._testContext = value;
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SNOSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
-        public virtual void FeatureTearDown()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public virtual void TestInitialize()
         {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "SNOSteppedFlowTests")))
+            {
+                global::BuildConfigurator.Features.BuildConfiguratorSteps.SNOSteppedFlowTestsFeature.FeatureSetup(null);
+            }
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -54,6 +74,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public virtual void ScenarioStart()
@@ -66,10 +87,12 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO RUSH build stepped process", new string[] {
-                "Snow",
-                "stepped",
-                "process"}, SourceLine=5)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO RUSH build stepped process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySNORUSHBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO RUSH build stepped process", null, new string[] {
@@ -111,10 +134,12 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO TITAN build stepped process", new string[] {
-                "Snow",
-                "stepped",
-                "process"}, SourceLine=22)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO TITAN build stepped process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySNOTITANBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO TITAN build stepped process", null, new string[] {
@@ -200,10 +225,15 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, RMK", new string[] {
-                "Snow",
-                "stepped",
-                "process"}, SourceLine=56)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: RMK")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RMK")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "RMK")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "146")]
         public virtual void VerifySNOFamiliesBuildSteppedProcess_RMK()
         {
 #line 40
@@ -211,10 +241,15 @@ this.VerifySNOFamiliesBuildSteppedProcess("RMK", "146", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, Switchback", new string[] {
-                "Snow",
-                "stepped",
-                "process"}, SourceLine=56)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: Switchback")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Switchback")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Switchback")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "XCR")]
         public virtual void VerifySNOFamiliesBuildSteppedProcess_Switchback()
         {
 #line 40
@@ -222,10 +257,15 @@ this.VerifySNOFamiliesBuildSteppedProcess("Switchback", "XCR", ((string[])(null)
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, INDY", new string[] {
-                "Snow",
-                "stepped",
-                "process"}, SourceLine=56)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: INDY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "INDY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "INDY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "EVO")]
         public virtual void VerifySNOFamiliesBuildSteppedProcess_INDY()
         {
 #line 40
@@ -233,21 +273,20 @@ this.VerifySNOFamiliesBuildSteppedProcess("INDY", "EVO", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, Voyageur", new string[] {
-                "Snow",
-                "stepped",
-                "process"}, SourceLine=56)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: Voyageur")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Voyageur")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Voyageur")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "144")]
         public virtual void VerifySNOFamiliesBuildSteppedProcess_Voyageur()
         {
 #line 40
 this.VerifySNOFamiliesBuildSteppedProcess("Voyageur", "144", ((string[])(null)));
 #line hidden
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

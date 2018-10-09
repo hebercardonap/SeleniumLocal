@@ -17,35 +17,55 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("ATVSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a ATV products", SourceFile="Features\\BuildConfiguratorSteps\\ATVSteppedFlowTests.feature", SourceLine=0)]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     public partial class ATVSteppedFlowTestsFeature
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
 #line 1 "ATVSteppedFlowTests.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
-        public virtual void FeatureSetup()
+        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            get
+            {
+                return this._testContext;
+            }
+            set
+            {
+                this._testContext = value;
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ATVSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a ATV products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
-        public virtual void FeatureTearDown()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public virtual void TestInitialize()
         {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "ATVSteppedFlowTests")))
+            {
+                global::BuildConfigurator.Features.BuildConfiguratorSteps.ATVSteppedFlowTestsFeature.FeatureSetup(null);
+            }
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -54,6 +74,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public virtual void ScenarioStart()
@@ -108,10 +129,17 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Recreation", new string[] {
-                "ATV",
-                "stepped",
-                "process"}, SourceLine=20)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Recreation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Recreation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Recreation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "Hunter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "Wheel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Subcategory", "Trail")]
         public virtual void VerifyATVSteppedProcessNoTrim_Recreation()
         {
 #line 6
@@ -119,10 +147,17 @@ this.VerifyATVSteppedProcessNoTrim("Recreation", "Hunter", "Wheel", "Trail", ((s
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Touring", new string[] {
-                "ATV",
-                "stepped",
-                "process"}, SourceLine=20)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Touring")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Touring")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Touring")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "XP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "Wheel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Subcategory", "Trail")]
         public virtual void VerifyATVSteppedProcessNoTrim_Touring()
         {
 #line 6
@@ -130,10 +165,17 @@ this.VerifyATVSteppedProcessNoTrim("Touring", "XP", "Wheel", "Trail", ((string[]
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Sport", new string[] {
-                "ATV",
-                "stepped",
-                "process"}, SourceLine=20)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Sport")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Sport")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Sport")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "Scrambler")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "Wheel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Subcategory", "Trail")]
         public virtual void VerifyATVSteppedProcessNoTrim_Sport()
         {
 #line 6
@@ -141,21 +183,22 @@ this.VerifyATVSteppedProcessNoTrim("Sport", "Scrambler", "Wheel", "Trail", ((str
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Special", new string[] {
-                "ATV",
-                "stepped",
-                "process"}, SourceLine=20)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Special")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Special")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Special")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "570")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "Wheel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Subcategory", "Trail")]
         public virtual void VerifyATVSteppedProcessNoTrim_Special()
         {
 #line 6
 this.VerifyATVSteppedProcessNoTrim("Special", "570", "Wheel", "Trail", ((string[])(null)));
 #line hidden
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

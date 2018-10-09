@@ -17,35 +17,55 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("INDSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Indian products", SourceFile="Features\\BuildConfiguratorSteps\\INDSteppedFlowTests.feature", SourceLine=0)]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
     public partial class INDSteppedFlowTestsFeature
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
 #line 1 "INDSteppedFlowTests.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
-        public virtual void FeatureSetup()
+        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            get
+            {
+                return this._testContext;
+            }
+            set
+            {
+                this._testContext = value;
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "INDSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a Indian products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
-        public virtual void FeatureTearDown()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
         public virtual void TestInitialize()
         {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "INDSteppedFlowTests")))
+            {
+                global::BuildConfigurator.Features.BuildConfiguratorSteps.INDSteppedFlowTestsFeature.FeatureSetup(null);
+            }
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -54,6 +74,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
         public virtual void ScenarioStart()
@@ -66,10 +87,12 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND build stepped process random model", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=5)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND build stepped process random model")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifyINDBuildSteppedProcessRandomModel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify IND build stepped process random model", null, new string[] {
@@ -161,10 +184,14 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, scout", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=41)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND stepped process build category Scout: scout")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "scout")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "scout")]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Scout()
         {
 #line 23
@@ -172,10 +199,14 @@ this.VerifyINDSteppedProcessBuildCategoryScout("scout", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, chief", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=41)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND stepped process build category Scout: chief")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "chief")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "chief")]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Chief()
         {
 #line 23
@@ -183,10 +214,14 @@ this.VerifyINDSteppedProcessBuildCategoryScout("chief", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, springfield", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=41)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND stepped process build category Scout: springfield")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "springfield")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "springfield")]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Springfield()
         {
 #line 23
@@ -194,10 +229,14 @@ this.VerifyINDSteppedProcessBuildCategoryScout("springfield", ((string[])(null))
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, chieftain", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=41)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND stepped process build category Scout: chieftain")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "chieftain")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "chieftain")]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Chieftain()
         {
 #line 23
@@ -205,10 +244,14 @@ this.VerifyINDSteppedProcessBuildCategoryScout("chieftain", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, roadmaster", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=41)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND stepped process build category Scout: roadmaster")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "roadmaster")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "roadmaster")]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_Roadmaster()
         {
 #line 23
@@ -216,21 +259,19 @@ this.VerifyINDSteppedProcessBuildCategoryScout("roadmaster", ((string[])(null)))
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, dark horse", new string[] {
-                "Indian",
-                "stepped",
-                "process"}, SourceLine=41)]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify IND stepped process build category Scout: dark horse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "INDSteppedFlowTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Indian")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "dark horse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "dark horse")]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout_DarkHorse()
         {
 #line 23
 this.VerifyINDSteppedProcessBuildCategoryScout("dark horse", ((string[])(null)));
 #line hidden
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

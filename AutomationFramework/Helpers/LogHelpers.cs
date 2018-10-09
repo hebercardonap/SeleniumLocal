@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,11 +19,12 @@ namespace AutomationFramework.Helpers
         public static void CreateLogFile()
         {
             string dir = Settings.LogPath;
+            string project = Assembly.GetCallingAssembly().GetName().Name;
             if (Settings.FileCreated == false)
                 if (Directory.Exists(dir))
                 {
                     Settings.FileCreated = true;
-                    _streamw = File.AppendText(dir + _logFileName + ".log");
+                    _streamw = File.AppendText(dir +"\\" + project + "_" + _logFileName + ".log");
                 }
                 else
                 {

@@ -29,8 +29,8 @@ namespace AutomationFramework.Base
         {
             DriverContext.Driver.Manage().Window.Maximize();
             DriverContext.Driver.Manage().Cookies.DeleteAllCookies();
-            DriverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(25);
-            DriverContext.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(25);
+            DriverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            DriverContext.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(35);
         }
 
         private static void OpenBrowser(BrowserType browserType = BrowserType.Chrome)

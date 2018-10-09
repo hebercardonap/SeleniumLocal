@@ -16,7 +16,7 @@ namespace BuildConfigurator.Pages
         private static By BY_LAST_NAME_FIELD = By.CssSelector("div[data-form-mapping='LastName'] input");
         private static By BY_EMAIL_FIELD = By.CssSelector("div[data-form-mapping='Email'] input");
         private static By BY_PHONE_FIELD = By.CssSelector("div[data-form-mapping='Phone'] input");
-        private static By BY_POSTAL_CODE_FIELD = By.CssSelector("input[class*='postal-code-submit']");
+        private static By BY_POSTAL_CODE_FIELD = By.XPath("//input[contains(@class, 'FormTextbox__Input d')]");
         private static By BY_GET_INTERNET_PRICE_BUTTON = By.CssSelector("button[name='submit']");
         private static By BY_AGE_CHECKBOX = By.XPath("//div[contains(@class, 'ValidationRequired')]//input[@type='checkbox']");
         private static By BY_EMAIL_UPDATES_CHECKBOX = By.CssSelector("div[data-form-mapping='EmailUpdates'] input");
