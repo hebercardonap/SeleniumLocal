@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a ATV products
 
-@ATV stepped process
+@ATV
 Scenario Outline: Verify ATV stepped process no trim
 	Given I have navigated to ATV build model page
 	When I filter by <Family> family

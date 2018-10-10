@@ -90,15 +90,11 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify GEN build stepped process two seat")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GENSteppedFlowTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("General")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GEN")]
         public virtual void VerifyGENBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process two seat", null, new string[] {
-                        "General",
-                        "stepped",
-                        "process"});
+                        "GEN"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -133,15 +129,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify GEN build stepped process two seat color")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GENSteppedFlowTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("General")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GEN")]
         public virtual void VerifyGENBuildSteppedProcessTwoSeatColor()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process two seat color", null, new string[] {
-                        "General",
-                        "stepped",
-                        "process"});
+                        "GEN"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -180,15 +172,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify GEN build stepped process four seat")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GENSteppedFlowTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("General")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GEN")]
         public virtual void VerifyGENBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process four seat", null, new string[] {
-                        "General",
-                        "stepped",
-                        "process"});
+                        "GEN"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

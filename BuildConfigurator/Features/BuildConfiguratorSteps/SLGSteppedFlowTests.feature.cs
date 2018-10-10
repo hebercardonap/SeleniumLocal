@@ -91,14 +91,10 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SLG S stepped flow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SLGSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SLG")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySLGSSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG S stepped flow", null, new string[] {
-                        "SLG",
-                        "stepped",
-                        "process"});
+                        "SLG"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -134,14 +130,10 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SLG Grand Touring stepped flow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SLGSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SLG")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySLGGrandTouringSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG Grand Touring stepped flow", null, new string[] {
-                        "SLG",
-                        "stepped",
-                        "process"});
+                        "SLG"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -177,14 +169,10 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SLG SL stepped flow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SLGSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SLG")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySLGSLSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG SL stepped flow", null, new string[] {
-                        "SLG",
-                        "stepped",
-                        "process"});
+                        "SLG"});
 #line 36
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -222,14 +210,10 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SLG SLR stepped flow")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SLGSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SLG")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySLGSLRSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG SLR stepped flow", null, new string[] {
-                        "SLG",
-                        "stepped",
-                        "process"});
+                        "SLG"});
 #line 52
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

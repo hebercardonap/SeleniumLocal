@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a particular brand
 
-@Verify build stepped process
+@RZR
 Scenario: Verify RZR build stepped process one seat
 	Given I have navigated to RZR build model page
 	When I select one seat option
@@ -21,7 +21,7 @@ Scenario: Verify RZR build stepped process one seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@Verify build stepped process
+@RZR
 Scenario: Verify RZR build stepped process two seat
 	Given I have navigated to RZR build model page
 	When I select two seat option
@@ -40,7 +40,7 @@ Scenario: Verify RZR build stepped process two seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@Verify build stepped process
+@RZR
 Scenario: Verify RZR build stepped process four seat
 	Given I have navigated to RZR build model page
 	When I select four seat option

@@ -32,6 +32,8 @@ namespace AutomationFramework.Config
 
         public static string LogPath { get; set; }
 
+        public static string ReportPath { get; set; }
+
         private static bool _fileCreated = false;
         public static bool FileCreated
         {

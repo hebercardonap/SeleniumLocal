@@ -1,10 +1,12 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Config;
 using AutomationFramework.Utils;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace BuildConfigurator
         private static ExtentTest scenario;
         private static ExtentReports extent;
         private static KlovReporter klov;
+        private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
 
         [AfterStep]
         public void AfterEachStep()
@@ -58,23 +61,25 @@ namespace BuildConfigurator
         {
 
             //Initialize Extent report before test starts
-            var htmlReporter = new ExtentHtmlReporter(@"C:\Selenium\Polaris\Reports\ExtentReport.html");
+            //var htmlReporter = new ExtentHtmlReporter(@"C:\Selenium\Polaris\Reports\ExtentReport.html");
+            ExtentHtmlReporter htmlReporter;
+            //string dir = "../../Reports";
+            string dir = @"P:\IS\ALL_IS\App Groups\Web\QA\CPQ\Reports";
+            if (Directory.Exists(dir))
+            {
+                htmlReporter = new ExtentHtmlReporter(dir + "\\" + _reportName + "ExtentReport.html");
+            }
+            else
+            {
+                Directory.CreateDirectory(dir);
+                htmlReporter = new ExtentHtmlReporter(dir + "\\" + _reportName + "ExtentReport.html");
+            }
+
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
             //Attach report to reporter
             extent = new ExtentReports();
-            //klov = new KlovReporter();
-
-            //klov.InitMongoDbConnection("localhost", 27017);
-
-            //klov.ProjectName = "ExecuteAutomation Test";
-
-            // URL of the KLOV server
-            //klov.KlovUrl = "http://localhost:5689";
-
-            //klov.ReportName = "Karthik KK" + DateTime.Now.ToString();
             extent.AttachReporter(htmlReporter);
 
-            //extent.AttachReporter(htmlReporter, klov);
         }
 
         [BeforeScenario]

@@ -90,15 +90,11 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RAN build stepped process two seat")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RANSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Ranger")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RAN")]
         public virtual void VerifyRANBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process two seat", null, new string[] {
-                        "Ranger",
-                        "stepped",
-                        "process"});
+                        "RAN"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -141,15 +137,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RAN build stepped process three seat")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RANSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Ranger")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RAN")]
         public virtual void VerifyRANBuildSteppedProcessThreeSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process three seat", null, new string[] {
-                        "Ranger",
-                        "stepped",
-                        "process"});
+                        "RAN"});
 #line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -192,15 +184,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RAN build stepped process four seat")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RANSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Ranger")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RAN")]
         public virtual void VerifyRANBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process four seat", null, new string[] {
-                        "Ranger",
-                        "stepped",
-                        "process"});
+                        "RAN"});
 #line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -239,15 +227,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify RAN build stepped process six seat")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RANSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Ranger")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RAN")]
         public virtual void VerifyRANBuildSteppedProcessSixSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process six seat", null, new string[] {
-                        "Ranger",
-                        "stepped",
-                        "process"});
+                        "RAN"});
 #line 61
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a Ranger products
 
-@Snow stepped process
+@Snow
 Scenario: Verify SNO RUSH build stepped process
 	Given I have navigated to SNO build model page
 	When I filter by rush family
@@ -19,7 +19,7 @@ Scenario: Verify SNO RUSH build stepped process
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@Snow stepped process
+@Snow
 Scenario: Verify SNO TITAN build stepped process
 	Given I have navigated to SNO build model page
 	When I filter by TITAN family
@@ -36,7 +36,7 @@ Scenario: Verify SNO TITAN build stepped process
 	Then build confirmation page is as expected
 
 
-@Snow stepped process
+@Snow
 Scenario Outline: Verify SNO Families build stepped process
 	Given I have navigated to SNO build model page
 	When I filter by <Family> family

@@ -91,14 +91,10 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO RUSH build stepped process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySNORUSHBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO RUSH build stepped process", null, new string[] {
-                        "Snow",
-                        "stepped",
-                        "process"});
+                        "Snow"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -138,14 +134,10 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO TITAN build stepped process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         public virtual void VerifySNOTITANBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO TITAN build stepped process", null, new string[] {
-                        "Snow",
-                        "stepped",
-                        "process"});
+                        "Snow"});
 #line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -182,9 +174,7 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void VerifySNOFamiliesBuildSteppedProcess(string family, string version, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Snow",
-                    "stepped",
-                    "process"};
+                    "Snow"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -229,8 +219,6 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: RMK")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RMK")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "RMK")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "146")]
@@ -245,8 +233,6 @@ this.VerifySNOFamiliesBuildSteppedProcess("RMK", "146", ((string[])(null)));
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: Switchback")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Switchback")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Switchback")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "XCR")]
@@ -261,8 +247,6 @@ this.VerifySNOFamiliesBuildSteppedProcess("Switchback", "XCR", ((string[])(null)
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: INDY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "INDY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "INDY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "EVO")]
@@ -277,8 +261,6 @@ this.VerifySNOFamiliesBuildSteppedProcess("INDY", "EVO", ((string[])(null)));
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: Voyageur")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Snow")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Voyageur")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Voyageur")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "144")]

@@ -90,9 +90,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void VerifyATVSteppedProcessNoTrim(string family, string version, string category, string subcategory, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "ATV",
-                    "stepped",
-                    "process"};
+                    "ATV"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -133,8 +131,6 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Recreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Recreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Recreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "Hunter")]
@@ -151,8 +147,6 @@ this.VerifyATVSteppedProcessNoTrim("Recreation", "Hunter", "Wheel", "Trail", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Touring")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Touring")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Touring")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "XP")]
@@ -169,8 +163,6 @@ this.VerifyATVSteppedProcessNoTrim("Touring", "XP", "Wheel", "Trail", ((string[]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Sport")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Sport")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Sport")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "Scrambler")]
@@ -187,8 +179,6 @@ this.VerifyATVSteppedProcessNoTrim("Sport", "Scrambler", "Wheel", "Trail", ((str
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify ATV stepped process no trim: Special")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ATVSteppedFlowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ATV")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Special")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Special")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "570")]

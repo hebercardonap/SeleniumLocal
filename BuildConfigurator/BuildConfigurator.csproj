@@ -108,6 +108,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\AccessoryConflicts\AccessoryConflictTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessoryConflictTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,6 +179,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\AccessoryConflicts\AccessoryConflictTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccessoryConflictTests.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ACESteppedFlowTest.feature.cs</LastGenOutput>

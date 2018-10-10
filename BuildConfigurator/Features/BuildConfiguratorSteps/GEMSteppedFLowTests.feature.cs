@@ -90,9 +90,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void VerifyGEMBuildSteppedProcess(string family, string category, string subcategory, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "GEM",
-                    "stepped",
-                    "process"};
+                    "GEM"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -135,8 +133,6 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify GEM build stepped process: Passenger")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GEMSteppedFLowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GEM")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Passenger")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Passenger")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "Comfort")]
@@ -152,8 +148,6 @@ this.VerifyGEMBuildSteppedProcess("Passenger", "Comfort", "Seats", ((string[])(n
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify GEM build stepped process: Utility")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GEMSteppedFLowTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GEM")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("stepped")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("process")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Utility")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Utility")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category", "Power")]

@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for General products
 
-@General stepped process
+@GEN
 Scenario: Verify GEN build stepped process two seat
 	Given I have navigated to GEN build model page
 	When I select two seat option
@@ -17,7 +17,7 @@ Scenario: Verify GEN build stepped process two seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@General stepped process
+@GEN
 Scenario: Verify GEN build stepped process two seat color
 	Given I have navigated to GEN build model page
 	When I select two seat option
@@ -34,7 +34,7 @@ Scenario: Verify GEN build stepped process two seat color
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@General stepped process
+@GEN
 Scenario: Verify GEN build stepped process four seat
 	Given I have navigated to GEN build model page
 	When I select four seat option

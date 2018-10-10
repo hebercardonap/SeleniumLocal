@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for ACE products
 
-@ACE stepped process
+@ACE
 Scenario: Verify ACE build stepped process random model
 	Given I have navigated to ACE build model page
 	When I select random model
