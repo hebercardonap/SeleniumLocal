@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a Indian products
 
-@Smoke
+@IND
 Scenario: Verify IND build stepped process random model
 	Given I have navigated to IND build model page
 	When I select random model
@@ -19,7 +19,7 @@ Scenario: Verify IND build stepped process random model
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@Smoke
+@IND
 Scenario Outline: Verify IND stepped process build category Scout
 	Given I have navigated to IND build category page
 	When I select <Category> category

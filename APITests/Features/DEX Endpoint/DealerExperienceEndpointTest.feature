@@ -4,7 +4,7 @@
 
 
 
-@DEX API Test
+@DEX_API
 Scenario Outline: Error scenario invalid year
 	Given I have DEX <Brand> endpoint with year <Year> and dealer <Dealer>
 	When I call GET method
@@ -22,7 +22,7 @@ Scenario Outline: Error scenario invalid year
 	| ATV   | 2018 | 02040900 | 404      |
 	| ACE   | 2018 | 02040900 | 404      |
 	
-@DEX API Test
+@DEX_API
 Scenario Outline: Error scenario invalid year format
 	Given I have DEX <Brand> endpoint with year <Year> and dealer <Dealer>
 	When I call GET method
@@ -35,7 +35,7 @@ Scenario Outline: Error scenario invalid year format
 	| ATV   | 202 | 02040900 | 404      |
 	| ACE   | 202 | 02040900 | 404      |
 
-@DEX API Test
+@DEX_API
 Scenario Outline: Error scenario invalid dealer id
 	Given I have DEX <Brand> endpoint with year <Year> and dealer <Dealer>
 	When I call GET method
@@ -48,7 +48,7 @@ Scenario Outline: Error scenario invalid dealer id
 	| ATV   | 2019 | 123456 | 404      |
 	| ACE   | 2019 | 123456 | 404      |
 
-@DEX API Test
+@DEX_API
 Scenario Outline: Success scenario valid year valid dealer id
 	Given I have DEX <Brand> endpoint with year <Year> and dealer <Dealer>
 	When I call GET method
@@ -61,7 +61,7 @@ Scenario Outline: Success scenario valid year valid dealer id
 	| ATV   | 2019 | 02040900 | 200      |
 	| ACE   | 2019 | 02040900 | 200      |
 
-@DEX API Test
+@DEX_API
 Scenario Outline: Success scenario validate response properties
 	Given I have DEX <Brand> endpoint with year <Year> and dealer <Dealer>
 	When I call GET method

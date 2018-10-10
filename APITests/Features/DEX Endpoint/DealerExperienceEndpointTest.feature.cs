@@ -90,9 +90,7 @@ namespace APITests.Features.DEXEndpoint
         public virtual void ErrorScenarioInvalidYear(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "DEX",
-                    "API",
-                    "Test"};
+                    "DEX_API"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -114,9 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2021")]
@@ -132,9 +128,7 @@ this.ErrorScenarioInvalidYear("RZR", "2021", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2021")]
@@ -150,9 +144,7 @@ this.ErrorScenarioInvalidYear("RAN", "2021", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2021")]
@@ -168,9 +160,7 @@ this.ErrorScenarioInvalidYear("GEN", "2021", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2021")]
@@ -186,9 +176,7 @@ this.ErrorScenarioInvalidYear("ATV", "2021", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2021")]
@@ -204,9 +192,7 @@ this.ErrorScenarioInvalidYear("ACE", "2021", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2017")]
@@ -222,9 +208,7 @@ this.ErrorScenarioInvalidYear("RZR", "2017", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2018")]
@@ -240,9 +224,7 @@ this.ErrorScenarioInvalidYear("RAN", "2018", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 7")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 7")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2018")]
@@ -258,9 +240,7 @@ this.ErrorScenarioInvalidYear("GEN", "2018", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 8")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 8")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2018")]
@@ -276,9 +256,7 @@ this.ErrorScenarioInvalidYear("ATV", "2018", "02040900", "404", ((string[])(null
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year: Variant 9")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 9")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2018")]
@@ -294,9 +272,7 @@ this.ErrorScenarioInvalidYear("ACE", "2018", "02040900", "404", ((string[])(null
         public virtual void ErrorScenarioInvalidYearFormat(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "DEX",
-                    "API",
-                    "Test"};
+                    "DEX_API"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -318,9 +294,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year format: RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "202")]
@@ -336,9 +310,7 @@ this.ErrorScenarioInvalidYearFormat("RZR", "202", "02040900", "404", ((string[])
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year format: RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "202")]
@@ -354,9 +326,7 @@ this.ErrorScenarioInvalidYearFormat("RAN", "202", "02040900", "404", ((string[])
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year format: GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "202")]
@@ -372,9 +342,7 @@ this.ErrorScenarioInvalidYearFormat("GEN", "202", "02040900", "404", ((string[])
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year format: ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "202")]
@@ -390,9 +358,7 @@ this.ErrorScenarioInvalidYearFormat("ATV", "202", "02040900", "404", ((string[])
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid year format: ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "202")]
@@ -408,9 +374,7 @@ this.ErrorScenarioInvalidYearFormat("ACE", "202", "02040900", "404", ((string[])
         public virtual void ErrorScenarioInvalidDealerId(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "DEX",
-                    "API",
-                    "Test"};
+                    "DEX_API"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -432,9 +396,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid dealer id: RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -450,9 +412,7 @@ this.ErrorScenarioInvalidDealerId("RZR", "2019", "123456", "404", ((string[])(nu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid dealer id: RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -468,9 +428,7 @@ this.ErrorScenarioInvalidDealerId("RAN", "2019", "123456", "404", ((string[])(nu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid dealer id: GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -486,9 +444,7 @@ this.ErrorScenarioInvalidDealerId("GEN", "2019", "123456", "404", ((string[])(nu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid dealer id: ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -504,9 +460,7 @@ this.ErrorScenarioInvalidDealerId("ATV", "2019", "123456", "404", ((string[])(nu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Error scenario invalid dealer id: ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -522,9 +476,7 @@ this.ErrorScenarioInvalidDealerId("ACE", "2019", "123456", "404", ((string[])(nu
         public virtual void SuccessScenarioValidYearValidDealerId(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "DEX",
-                    "API",
-                    "Test"};
+                    "DEX_API"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -546,9 +498,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario valid year valid dealer id: RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -564,9 +514,7 @@ this.SuccessScenarioValidYearValidDealerId("RZR", "2019", "02040900", "200", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario valid year valid dealer id: RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -582,9 +530,7 @@ this.SuccessScenarioValidYearValidDealerId("RAN", "2019", "02040900", "200", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario valid year valid dealer id: GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -600,9 +546,7 @@ this.SuccessScenarioValidYearValidDealerId("GEN", "2019", "02040900", "200", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario valid year valid dealer id: ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -618,9 +562,7 @@ this.SuccessScenarioValidYearValidDealerId("ATV", "2019", "02040900", "200", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario valid year valid dealer id: ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -636,9 +578,7 @@ this.SuccessScenarioValidYearValidDealerId("ACE", "2019", "02040900", "200", ((s
         public virtual void SuccessScenarioValidateResponseProperties(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "DEX",
-                    "API",
-                    "Test"};
+                    "DEX_API"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -660,9 +600,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario validate response properties: RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RZR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -678,9 +616,7 @@ this.SuccessScenarioValidateResponseProperties("RZR", "2019", "02040900", "200",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario validate response properties: RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "RAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -696,9 +632,7 @@ this.SuccessScenarioValidateResponseProperties("RAN", "2019", "02040900", "200",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario validate response properties: GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "GEN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -714,9 +648,7 @@ this.SuccessScenarioValidateResponseProperties("GEN", "2019", "02040900", "200",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario validate response properties: ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ATV")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
@@ -732,9 +664,7 @@ this.SuccessScenarioValidateResponseProperties("ATV", "2019", "02040900", "200",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success scenario validate response properties: ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DealerExperienceEndpointTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("API")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DEX_API")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Brand", "ACE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2019")]
