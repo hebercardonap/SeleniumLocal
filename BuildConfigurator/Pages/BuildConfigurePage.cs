@@ -82,11 +82,13 @@ namespace BuildConfigurator.Pages
 
         public void clickIamFinishedButton()
         {
+            WebDriverExtensions.waitForElementToBeEnabled(BY_FINISHED_BUTTON);
             WebElementExtensions.clickElement(BY_FINISHED_BUTTON);
         }
 
         public void clickIamFinishedButtonOld()
         {
+            WebDriverExtensions.waitForElementToBeEnabled(BY_FINISHED_OLD_BUTTON);
             WebElementExtensions.clickElement(BY_FINISHED_OLD_BUTTON);
         }
 
