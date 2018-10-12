@@ -1,6 +1,5 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -38,6 +37,9 @@ namespace BuildConfigurator.Pages
         private static string BY_CATEGORY_TITLE_GENERIC = "//button[contains(@title, '{0}')]";
         private static string BY_SUBCATEGORY_TITLE_GENERIC = ".//button[contains(@title, '{0}')]";
         private static By BY_SUBCATEGORY_OPTIONS = By.XPath("//div[@id='build-subCategory']//div[@class='flickity-slider']//button");
+        private static By BY_CONFLICT_CONTAINER = By.XPath("//div[@class='conflict']");
+        private static By BY_ACCESORY_CARD_TITLE = By.XPath(".//label[contains(@class, 'card-title')]");
+        private static By BY_CONFLICT_HEADER = By.XPath("//div[contains(@class, 'conflict-header')]");
 
 
         private static Random rnd = new Random();
@@ -161,6 +163,37 @@ namespace BuildConfigurator.Pages
         {
             List<IWebElement> subCategoryButtons = driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
             PageHelpers.FindMatchElementAndClick(subCategoryButtons, accessoryCategory);
+        }
+
+        public void clickSpecificAccessoryCardAddButton(string accessoryTitle)
+        {
+            List<IWebElement> accessoryCards = driver.FindElements(BY_ACCESSORY_CARD).ToList();
+
+            foreach (var accessoryCard in accessoryCards)
+            {
+                string title = accessoryCard.FindElement(BY_ACCESORY_CARD_TITLE).Text;
+                
+                if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
+                {
+                    List<IWebElement> buttons = accessoryCard.FindElements(By.TagName(BUTTON_TAG)).ToList();
+                    foreach (var button in buttons.Where(button => string.Equals(button.Text, ADD_TEXT, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        WebElementExtensions.clickElement(button);
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        public bool isConflictContainerDisplayed()
+        {
+            return WebElementExtensions.IsElementPresent(BY_CONFLICT_CONTAINER);
+        }
+
+        public bool isConflictHeaderDisplayed()
+        {
+            return WebElementExtensions.IsElementPresent(BY_CONFLICT_HEADER);
         }
 
     }

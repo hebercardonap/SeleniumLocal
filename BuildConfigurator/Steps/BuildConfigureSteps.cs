@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +65,18 @@ namespace BuildConfigurator.Steps
             CurrentPage.As<BuildConfigurePage>().clickRandomAccessoryCardAddButton();
         }
 
+        [When(@"I add specific (.*) accessory")]
+        public void WhenIAddSpecificAccessory(string accesoryName)
+        {
+            CurrentPage.As<BuildConfigurePage>().clickSpecificAccessoryCardAddButton(accesoryName);
+        }
 
+        [Then(@"Conflict container is displayed")]
+        public void ThenConflictContainerIsDisplayed()
+        {
+            Assert.IsTrue(CurrentPage.As<BuildConfigurePage>().isConflictContainerDisplayed());
+            Assert.IsTrue(CurrentPage.As<BuildConfigurePage>().isConflictHeaderDisplayed());
+        }
 
     }
 }

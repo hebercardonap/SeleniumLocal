@@ -15,6 +15,8 @@ namespace BuildConfigurator.Steps
         private static string THREE = "three";
         private static string FOUR = "four";
         private static string SIX = "six";
+        private static string SLASH_CHARACTER = "/";
+        private static string BUILD_URL_PART = "/build";
 
         [Given(@"I have navigated to (.*) build model page")]
         public void GivenIHaveNavigatedToBrandBuildModelPage(string brandName)
@@ -67,6 +69,56 @@ namespace BuildConfigurator.Steps
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }
+
+        [Given(@"I have navigated to (.*) (.*) build page")]
+        public void GivenIHaveNavigatedToModelBuildPage(string brandName, string modelName)
+        {
+            if (stringEqualsIgnoreCase(brandName, Brand.IND))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getIndianLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getSlgLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getGeneralLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getAceLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getSnoLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else
+                Assert.Fail("Brand {0} not supported", brandName);
+        }
+
 
         [When(@"I select (.*) seat option")]
         public void WhenISelectSeatOption(string numberOfSeats)

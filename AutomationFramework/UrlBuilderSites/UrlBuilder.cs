@@ -19,6 +19,11 @@ namespace AutomationFramework.UrlBuilderSites
             return string.Concat(getBaseUrl(Brand.RZR), getBrowserLocale());
         }
 
+        public static string getSnoLandingPageURL()
+        {
+            return string.Concat(getBaseUrl(Brand.SNO), getBrowserLocale());
+        }
+
         public static string getIndianLandingPageURL()
         {
             return string.Concat(getBaseUrl(Brand.IND), getBrowserLocale());
