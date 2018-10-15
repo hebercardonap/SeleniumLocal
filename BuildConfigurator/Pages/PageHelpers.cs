@@ -1,6 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace BuildConfigurator.Pages
                 }
             }
             if (!isFound)
-                Assert.Inconclusive("The category with name {0} is not present", elementTitleText);
+                Assert.Fail("The category with name {0} is not present", elementTitleText);
         }
     }
 }

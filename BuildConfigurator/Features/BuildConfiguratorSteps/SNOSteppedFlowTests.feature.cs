@@ -17,55 +17,37 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("SNOSteppedFlowTests")]
     public partial class SNOSteppedFlowTestsFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
-        
-        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
 #line 1 "SNOSteppedFlowTests.feature"
 #line hidden
         
-        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
+        [NUnit.Framework.OneTimeSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
-            get
-            {
-                return this._testContext;
-            }
-            set
-            {
-                this._testContext = value;
-            }
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
-        {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SNOSteppedFlowTests", "\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.OneTimeTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "SNOSteppedFlowTests")))
-            {
-                global::BuildConfigurator.Features.BuildConfiguratorSteps.SNOSteppedFlowTestsFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -74,7 +56,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -87,10 +69,9 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO RUSH build stepped process")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SNO")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify SNO RUSH build stepped process")]
+        [NUnit.Framework.CategoryAttribute("SNO")]
         public virtual void VerifySNORUSHBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO RUSH build stepped process", null, new string[] {
@@ -130,10 +111,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO TITAN build stepped process")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SNO")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify SNO TITAN build stepped process")]
+        [NUnit.Framework.CategoryAttribute("SNO")]
         public virtual void VerifySNOTITANBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO TITAN build stepped process", null, new string[] {
@@ -171,6 +151,13 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify SNO Families build stepped process")]
+        [NUnit.Framework.CategoryAttribute("SNO")]
+        [NUnit.Framework.TestCaseAttribute("RMK", "146", null)]
+        [NUnit.Framework.TestCaseAttribute("Switchback", "XCR", null)]
+        [NUnit.Framework.TestCaseAttribute("INDY", "EVO", null)]
+        [NUnit.Framework.TestCaseAttribute("Voyageur", "144", null)]
         public virtual void VerifySNOFamiliesBuildSteppedProcess(string family, string version, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -213,62 +200,6 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: RMK")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SNO")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "RMK")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "RMK")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "146")]
-        public virtual void VerifySNOFamiliesBuildSteppedProcess_RMK()
-        {
-#line 40
-this.VerifySNOFamiliesBuildSteppedProcess("RMK", "146", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: Switchback")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SNO")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Switchback")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Switchback")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "XCR")]
-        public virtual void VerifySNOFamiliesBuildSteppedProcess_Switchback()
-        {
-#line 40
-this.VerifySNOFamiliesBuildSteppedProcess("Switchback", "XCR", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: INDY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SNO")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "INDY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "INDY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "EVO")]
-        public virtual void VerifySNOFamiliesBuildSteppedProcess_INDY()
-        {
-#line 40
-this.VerifySNOFamiliesBuildSteppedProcess("INDY", "EVO", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify SNO Families build stepped process: Voyageur")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SNOSteppedFlowTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("SNO")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Voyageur")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Family", "Voyageur")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Version", "144")]
-        public virtual void VerifySNOFamiliesBuildSteppedProcess_Voyageur()
-        {
-#line 40
-this.VerifySNOFamiliesBuildSteppedProcess("Voyageur", "144", ((string[])(null)));
-#line hidden
         }
     }
 }

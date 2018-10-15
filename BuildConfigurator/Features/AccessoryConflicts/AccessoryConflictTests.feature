@@ -48,14 +48,14 @@ Scenario: Verify conflict is triggered for GEN brand
 	And I add specific Front Hood Storage Rack accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@CPQ_Conflicts @Retry
 Scenario: Verify conflict is triggered for ACE brand
 	Given I have navigated to ACE ace-570-eps-ghost-gray build page
 	When I get to build page
 	And I click Utility accessory category
 	And I click Rack Extenders accessory subcategory
 	And I add specific Steel Bed Extender accessory
-	And I click Storage accessory subcategory
+	And I click StorageTest accessory subcategory
 	And I add specific Rear Cargo Box accessory
 	Then Conflict container is displayed
 

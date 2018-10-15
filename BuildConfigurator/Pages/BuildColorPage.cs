@@ -1,6 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;

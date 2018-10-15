@@ -2,7 +2,7 @@
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Pages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace BuildConfigurator.Steps

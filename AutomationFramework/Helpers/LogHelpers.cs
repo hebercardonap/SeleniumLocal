@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutomationFramework.Helpers
 {
@@ -18,8 +19,9 @@ namespace AutomationFramework.Helpers
         //Create a file which can store the log information
         public static void CreateLogFile()
         {
-            string dir = Settings.LogPath;
+            string path = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
             string project = Assembly.GetCallingAssembly().GetName().Name;
+            string dir = Path.GetFullPath(Path.Combine(path, Settings.LogPath));
             if (Settings.FileCreated == false)
                 if (Directory.Exists(dir))
                 {
