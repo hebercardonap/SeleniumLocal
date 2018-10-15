@@ -3,6 +3,8 @@ using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
 namespace BuildConfigurator.Steps
@@ -159,6 +161,8 @@ namespace BuildConfigurator.Steps
                 CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
             else if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
                 CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
+            else if (stringEqualsIgnoreCase(buttonName, "buildsummarybutton"))
+                CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
         }
@@ -172,5 +176,18 @@ namespace BuildConfigurator.Steps
                 Assert.Fail("Button with name {0} is not present", buttonName);
         }
 
+        [When(@"I click finished button from next steps container")]
+        public void WhenIClickFinishedButtonFromNextStepsContainer()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickIamFiniShedButtonNextSteps();
+        }
+
+        [StepArgumentTransformation]
+        public string[] TransformToArrayOfStrings(string commaSeparatedStepArgumentValues)
+        {
+            string sourceString = commaSeparatedStepArgumentValues;
+            string[] stringSeparators = new string[] { "," };
+            return sourceString.Split(stringSeparators, StringSplitOptions.None);
+        }
     }
 }

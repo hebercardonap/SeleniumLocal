@@ -78,5 +78,29 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(CurrentPage.As<BuildConfigurePage>().isConflictHeaderDisplayed());
         }
 
+        [When(@"I select random secondary accessory")]
+        public void WhenISelectRandomSecondaryAccessory()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickRandomSecondaryAccessory();
+        }
+
+        [When(@"PRP container is displayed")]
+        public void WhenPRPContainerIsDisplayed()
+        {
+            Assert.IsTrue(CurrentPage.As<BuildConfigurePage>().isPRPHeaderDisplayed());
+        }
+
+        [Then(@"Accessories '(.*)' are displayed in build summary")]
+        public void ThenAccessoriesAreDisplayedInBuildSummary(string[] values)
+        {
+            CurrentPage.As<BuildConfigurePage>().verifyAccesoriesOnBuildSummary(values);
+        }
+
+        [When(@"I select accessory by product ID (.*)")]
+        public void WhenISelectAccessoryByProductID(string id)
+        {
+            CurrentPage.As<BuildConfigurePage>().clickSecondaryAccessoryByProductId(id);
+        }
+
     }
 }
