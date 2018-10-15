@@ -115,6 +115,18 @@ namespace BuildConfigurator.Steps
                 DriverContext.Browser.GoToUrl(buildUrl);
                 CurrentPage = GetInstance<BuildConfigurePage>();
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getGemLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }

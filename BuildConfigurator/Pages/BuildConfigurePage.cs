@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -167,6 +168,7 @@ namespace BuildConfigurator.Pages
 
         public void clickSpecificAccessoryCardAddButton(string accessoryTitle)
         {
+            bool isFound = false;
             List<IWebElement> accessoryCards = driver.FindElements(BY_ACCESSORY_CARD).ToList();
 
             foreach (var accessoryCard in accessoryCards)
@@ -175,6 +177,7 @@ namespace BuildConfigurator.Pages
                 
                 if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
                 {
+                    isFound = true;
                     List<IWebElement> buttons = accessoryCard.FindElements(By.TagName(BUTTON_TAG)).ToList();
                     foreach (var button in buttons.Where(button => string.Equals(button.Text, ADD_TEXT, StringComparison.OrdinalIgnoreCase)))
                     {
@@ -183,6 +186,8 @@ namespace BuildConfigurator.Pages
                     }
                 }
             }
+            if (!isFound)
+                Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
 
         }
 
