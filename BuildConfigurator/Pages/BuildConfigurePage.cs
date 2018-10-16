@@ -53,6 +53,10 @@ namespace BuildConfigurator.Pages
         private static By BY_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@role='button']");
         private static By BY_SUMMARY_ACCESSORY_INFO = By.XPath("//div[@class='part-require-part-secondaryParts']//div[@class='summary-accessory-info']");
         private static By BY_SUMMARY_CHILD_PRODUCT_ID = By.XPath(".//div[contains(@class,'product-id')]");
+        private static By BY_OLD_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@ng-if='showCtaLink']");
+        private static By BY_BUILD_SUMMARY_REMOVE_LINK = By.XPath(".//div[@ng-if='showCtaLink']");
+        private static By BY_BUILD_SUMMARY_ACC_CONTAINER = By.XPath("//div[@class='summary-scroll']//div[@class='summary-accessory']");
+
 
 
         private static Random rnd = new Random();
@@ -186,6 +190,7 @@ namespace BuildConfigurator.Pages
 
         public void clickSpecificAccessoryCardAddButton(string accessoryTitle)
         {
+
             bool isFound = false;
             List<IWebElement> accessoryCards = driver.FindElements(BY_ACCESSORY_CARD).ToList();
 
@@ -202,6 +207,7 @@ namespace BuildConfigurator.Pages
                         WebElementExtensions.clickElement(button);
                         break;
                     }
+                    break;
                 }
             }
             if (!isFound)
@@ -242,6 +248,48 @@ namespace BuildConfigurator.Pages
                 {
                     isFound = true;
                     WebElementExtensions.clickElement(productId.FindElement(BY_SECONDARY_ACC_CHILD_SELECT_BUTTON));
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Product id {0} not available for this model", id);
+            }
+        }
+
+        public void clickOldSecondaryAccessoryByProductId(string id)
+        {
+            bool isFound = false;
+            List<IWebElement> productIds = driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
+
+            foreach (var productId in productIds)
+            {
+                string currentId = productId.FindElement(BY_SUMMARY_CHILD_PRODUCT_ID).Text;
+                if (currentId.Equals(id))
+                {
+                    isFound = true;
+                    WebElementExtensions.clickElement(productId.FindElement(BY_OLD_SECONDARY_ACC_CHILD_SELECT_BUTTON));
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Product id {0} not available for this model", id);
+            }
+        }
+
+        public void clickRemoveLinkByProductId(string id)
+        {
+            bool isFound = false;
+            List<IWebElement> productIds = driver.FindElements(BY_BUILD_SUMMARY_ACC_CONTAINER).ToList();
+
+            foreach (var productId in productIds)
+            {
+                string currentId = productId.FindElement(BY_SUMMARY_CHILD_PRODUCT_ID).Text;
+                if (currentId.Equals(id))
+                {
+                    isFound = true;
+                    WebElementExtensions.clickElement(productId.FindElement(BY_BUILD_SUMMARY_REMOVE_LINK));
                     break;
                 }
             }

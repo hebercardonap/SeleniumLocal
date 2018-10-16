@@ -85,6 +85,7 @@ namespace BuildConfigurator.Steps
         }
 
         [When(@"PRP container is displayed")]
+        [Then(@"PRP container is displayed")]
         public void WhenPRPContainerIsDisplayed()
         {
             Assert.IsTrue(CurrentPage.As<BuildConfigurePage>().isPRPHeaderDisplayed());
@@ -100,6 +101,18 @@ namespace BuildConfigurator.Steps
         public void WhenISelectAccessoryByProductID(string id)
         {
             CurrentPage.As<BuildConfigurePage>().clickSecondaryAccessoryByProductId(id);
+        }
+
+        [When(@"I select accessory old version by product ID (.*)")]
+        public void WhenISelectAccessoryOldVersionByProductID(string id)
+        {
+            CurrentPage.As<BuildConfigurePage>().clickOldSecondaryAccessoryByProductId(id);
+        }
+
+        [When(@"I remove product id (.*) from build summary")]
+        public void WhenIRemoveProductIdFromBuildSummary(string id)
+        {
+            CurrentPage.As<BuildConfigurePage>().clickRemoveLinkByProductId(id);
         }
 
     }
