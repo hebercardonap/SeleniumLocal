@@ -22,7 +22,6 @@ namespace BuildConfigurator.Steps
         public void GivenIHaveNavigatedToINDBuildCategoryPage()
         {
                 DriverContext.Browser.GoToUrl(UrlBuilder.getIndianBuildCategoryUrl());
-                //CurrentPage = GetInstance<BuildCategoryPage>();
         }
 
         [When(@"I select (.*) category")]
