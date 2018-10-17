@@ -94,8 +94,8 @@ namespace BuildConfigurator
         public void TestCleanUp()
         {
             logFailureAndTakeScreenshot();
-            DriverContext.Driver.Quit();
             DriverContext.Driver.Close();
+            DriverContext.Driver.Quit();
             extent.Flush();
         }
 
