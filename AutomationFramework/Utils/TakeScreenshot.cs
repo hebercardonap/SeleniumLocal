@@ -17,14 +17,15 @@ namespace AutomationFramework.Utils
             ITakesScreenshot ts = (ITakesScreenshot)DriverContext.Driver;
             Screenshot screenshot = ts.GetScreenshot();
             string runName = screenshotName + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
-            string drive = Path.GetPathRoot("X:\\screenshots\\");
+            string drive = "C:\\Selenium\\Polaris\\Screenshots\\";
             if (!Directory.Exists(drive))
             {
-                screenshot.SaveAsFile("C:\\Selenium\\Polaris\\Screenshots\\" + runName + ".jpg", ScreenshotImageFormat.Png);
+                Directory.CreateDirectory(drive);
+                screenshot.SaveAsFile(drive + runName + ".jpg", ScreenshotImageFormat.Png);
             }
             else
             {
-                string screenshotFileName = "X:\\screenshots\\" + runName + ".png";
+                string screenshotFileName = drive + runName + ".png";
                 string urlfile = "http://storage/screenshots/" + runName + ".png";
                 Console.WriteLine("" + urlfile);
             }
