@@ -111,3 +111,16 @@ Scenario: Verify PRP is displayed when secondary accessory is removed
 	And I remove product id 2882240 from build summary
 	Then PRP container is displayed
 
+@PRP
+Scenario: Verify primary accessory is not removed when removing secondary acceossory
+	Given I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build page
+	When I get to build page
+	And I click Audio & Lighting accessory category
+	And I click Lighting accessory subcategory
+	And I add specific LED Spot Light accessory
+	And PRP container is displayed
+	And I select accessory by product ID 2884019-293
+	And I click buildsummarybutton button
+	And I remove product id 2882076 from build summary
+	Then Accessories '2884019-293' are displayed in build summary
+
