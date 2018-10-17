@@ -63,9 +63,7 @@ namespace BuildConfigurator
         {
 
             //Initialize Extent report before test starts
-            //var htmlReporter = new ExtentHtmlReporter(@"C:\Selenium\Polaris\Reports\ExtentReport.html");
             ExtentHtmlReporter htmlReporter;
-            //string dir = "../../Reports";
             string dir = @"P:\IS\ALL_IS\App Groups\Web\QA\CPQ\Reports";
             if (Directory.Exists(dir))
             {
