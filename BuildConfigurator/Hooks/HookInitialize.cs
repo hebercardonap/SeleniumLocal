@@ -105,7 +105,6 @@ namespace BuildConfigurator
         {
             //Create dynamic feature name
             featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
-            extent.GetType();
         }
 
         private void logFailureAndTakeScreenshot()
