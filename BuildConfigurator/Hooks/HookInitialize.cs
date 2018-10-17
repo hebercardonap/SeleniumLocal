@@ -95,6 +95,7 @@ namespace BuildConfigurator
         {
             logFailureAndTakeScreenshot();
             DriverContext.Driver.Quit();
+            DriverContext.Driver.Close();
             extent.Flush();
         }
 
