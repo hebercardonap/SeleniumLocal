@@ -45,14 +45,16 @@ namespace BuildConfigurator
             }
             else if (ScenarioContext.Current.TestError != null)
             {
+
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
                 else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
                 else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
                 else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
+                    
             }
         }
 
@@ -93,7 +95,6 @@ namespace BuildConfigurator
         [AfterScenario]
         public void TestCleanUp()
         {
-            logFailureAndTakeScreenshot();
             DriverContext.Driver.Close();
             DriverContext.Driver.Quit();
             extent.Flush();
@@ -104,6 +105,7 @@ namespace BuildConfigurator
         {
             //Create dynamic feature name
             featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            extent.GetType();
         }
 
         private void logFailureAndTakeScreenshot()
