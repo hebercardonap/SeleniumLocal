@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,22 @@ namespace BuildConfigurator.Pages
         private static By BY_CONFLICT_CONTAINER = By.XPath("//div[@class='conflict']");
         private static By BY_ACCESORY_CARD_TITLE = By.XPath(".//label[contains(@class, 'card-title')]");
         private static By BY_CONFLICT_HEADER = By.XPath("//div[contains(@class, 'conflict-header')]");
+        private static By BY_PART_REQUIRE_PART_CONTAINER = By.XPath("//div[@class='part-require-part']");
+        private static By BY_PART_REQUIRE_PART_HEADER = By.XPath("//div[contains(@class, 'part-require-part-heading')]");
+        private static By BY_SECONDARY_ACCESSORY_SELECT_BTN = By.XPath("//div[@class='part-require-part-secondaryParts']//div[@role='button']");
+        private static By BY_NEXT_STEPS_CONTAINER = By.XPath("//div[@class='build-next-steps build-header__choice pull-right']");
+        private static By BY_BUILD_SUMMARY_CONTAINER = By.XPath("//div[@class='summary']");
+        private static By BY_NEXT_STEPS_FINISHED_BUTTON = By.XPath("//div[contains(@class, 'build-next-steps')]//button[contains(@class, 'btn-primary')]");
+        private static By BY_BUILD_SUMMARY_BUTTON = By.XPath("//button[@class='btn-next']");
+        private static By BY_PRODUCT_ID_BUILD_SUMMARY = By.XPath("//div[@class='summary-scroll']//div[contains(@class, 'product-id')]");
+        private static By BY_ACC_REQUIRED_PRODUCT_ID = By.XPath("//div[@class='part-require-part-secondaryParts']//div[contains(@class,'product-id')]");
+        private static By BY_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@role='button']");
+        private static By BY_SUMMARY_ACCESSORY_INFO = By.XPath("//div[@class='part-require-part-secondaryParts']//div[@class='summary-accessory-info']");
+        private static By BY_SUMMARY_CHILD_PRODUCT_ID = By.XPath(".//div[contains(@class,'product-id')]");
+        private static By BY_OLD_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@ng-if='showCtaLink']");
+        private static By BY_BUILD_SUMMARY_REMOVE_LINK = By.XPath(".//div[@ng-if='showCtaLink']");
+        private static By BY_BUILD_SUMMARY_ACC_CONTAINER = By.XPath("//div[@class='summary-scroll']//div[@class='summary-accessory']");
+
 
 
         private static Random rnd = new Random();
@@ -86,6 +103,12 @@ namespace BuildConfigurator.Pages
         {
             WebDriverExtensions.waitForElementToBeEnabled(BY_FINISHED_BUTTON);
             WebElementExtensions.clickElement(BY_FINISHED_BUTTON);
+        }
+
+        public void clickIamFiniShedButtonNextSteps()
+        {
+            WebDriverExtensions.waitForElementToBeEnabled(BY_NEXT_STEPS_FINISHED_BUTTON);
+            WebElementExtensions.clickElement(BY_NEXT_STEPS_FINISHED_BUTTON);
         }
 
         public void clickIamFinishedButtonOld()
@@ -167,6 +190,8 @@ namespace BuildConfigurator.Pages
 
         public void clickSpecificAccessoryCardAddButton(string accessoryTitle)
         {
+
+            bool isFound = false;
             List<IWebElement> accessoryCards = driver.FindElements(BY_ACCESSORY_CARD).ToList();
 
             foreach (var accessoryCard in accessoryCards)
@@ -175,14 +200,18 @@ namespace BuildConfigurator.Pages
                 
                 if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
                 {
+                    isFound = true;
                     List<IWebElement> buttons = accessoryCard.FindElements(By.TagName(BUTTON_TAG)).ToList();
                     foreach (var button in buttons.Where(button => string.Equals(button.Text, ADD_TEXT, StringComparison.OrdinalIgnoreCase)))
                     {
                         WebElementExtensions.clickElement(button);
                         break;
                     }
+                    break;
                 }
             }
+            if (!isFound)
+                Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
 
         }
 
@@ -196,5 +225,107 @@ namespace BuildConfigurator.Pages
             return WebElementExtensions.IsElementPresent(BY_CONFLICT_HEADER);
         }
 
+        public bool isPRPHeaderDisplayed()
+        {
+            return WebElementExtensions.IsElementPresent(BY_PART_REQUIRE_PART_HEADER);
+        }
+
+        public void clickRandomSecondaryAccessory()
+        {
+            List<IWebElement> accessories = driver.FindElements(BY_SECONDARY_ACCESSORY_SELECT_BTN).ToList();
+            WebElementExtensions.clickElement(accessories[rnd.Next(0, accessories.Count)]);
+        }
+
+        public void clickSecondaryAccessoryByProductId(string id)
+        {
+            bool isFound = false;
+            List<IWebElement> productIds = driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
+
+            foreach (var productId in productIds)
+            {
+                string currentId = productId.FindElement(BY_SUMMARY_CHILD_PRODUCT_ID).Text;
+                if (currentId.Equals(id))
+                {
+                    isFound = true;
+                    WebElementExtensions.clickElement(productId.FindElement(BY_SECONDARY_ACC_CHILD_SELECT_BUTTON));
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Product id {0} not available for this model", id);
+            }
+        }
+
+        public void clickOldSecondaryAccessoryByProductId(string id)
+        {
+            bool isFound = false;
+            List<IWebElement> productIds = driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
+
+            foreach (var productId in productIds)
+            {
+                string currentId = productId.FindElement(BY_SUMMARY_CHILD_PRODUCT_ID).Text;
+                if (currentId.Equals(id))
+                {
+                    isFound = true;
+                    WebElementExtensions.clickElement(productId.FindElement(BY_OLD_SECONDARY_ACC_CHILD_SELECT_BUTTON));
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Product id {0} not available for this model", id);
+            }
+        }
+
+        public void clickRemoveLinkByProductId(string id)
+        {
+            bool isFound = false;
+            List<IWebElement> productIds = driver.FindElements(BY_BUILD_SUMMARY_ACC_CONTAINER).ToList();
+
+            foreach (var productId in productIds)
+            {
+                string currentId = productId.FindElement(BY_SUMMARY_CHILD_PRODUCT_ID).Text;
+                if (currentId.Equals(id))
+                {
+                    isFound = true;
+                    WebElementExtensions.clickElement(productId.FindElement(BY_BUILD_SUMMARY_REMOVE_LINK));
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Product id {0} not available for this model", id);
+            }
+        }
+
+        public void clickBuildSummaryButton()
+        {
+            WebDriverExtensions.waitForElementToBeEnabled(BY_BUILD_SUMMARY_BUTTON);
+            WebElementExtensions.clickElement(BY_BUILD_SUMMARY_BUTTON);
+        }
+
+        public void verifyAccesoriesOnBuildSummary(string[] values)
+        {
+            
+            List<IWebElement> ids = driver.FindElements(BY_PRODUCT_ID_BUILD_SUMMARY).ToList();
+
+            foreach (var value in values)
+            {
+                bool isFound = false;
+
+                foreach (var id in ids)
+                {
+                    if (value.Trim().Equals(id.Text))
+                    {
+                        isFound = true;
+                    }
+                }
+                if (!isFound)
+                {
+                    Assert.Fail("Product ID: {0} not present in build summary", value);
+                }
+            }
+        }
     }
 }

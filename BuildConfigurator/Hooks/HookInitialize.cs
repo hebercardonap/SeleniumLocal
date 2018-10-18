@@ -22,6 +22,7 @@ namespace BuildConfigurator
         private static ExtentReports extent;
         private static KlovReporter klov;
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+        private static Dictionary<string, ExtentTest> featureList = new Dictionary<string, ExtentTest>();
 
         [AfterStep]
         public void AfterEachStep()
@@ -45,14 +46,16 @@ namespace BuildConfigurator
             }
             else if (ScenarioContext.Current.TestError != null)
             {
+
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
                 else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
                 else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
                 else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
+                    
             }
         }
 
@@ -61,9 +64,7 @@ namespace BuildConfigurator
         {
 
             //Initialize Extent report before test starts
-            //var htmlReporter = new ExtentHtmlReporter(@"C:\Selenium\Polaris\Reports\ExtentReport.html");
             ExtentHtmlReporter htmlReporter;
-            //string dir = "../../Reports";
             string dir = @"P:\IS\ALL_IS\App Groups\Web\QA\CPQ\Reports";
             if (Directory.Exists(dir))
             {
@@ -93,7 +94,7 @@ namespace BuildConfigurator
         [AfterScenario]
         public void TestCleanUp()
         {
-            logFailureAndTakeScreenshot();
+            DriverContext.Driver.Close();
             DriverContext.Driver.Quit();
             extent.Flush();
         }
@@ -102,7 +103,17 @@ namespace BuildConfigurator
         public static void BeforeFeature()
         {
             //Create dynamic feature name
-            featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            string currentFeature = FeatureContext.Current.FeatureInfo.Title;
+            
+            if (!featureList.ContainsKey(currentFeature))
+            {
+                featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+                featureList.Add(currentFeature, featureName);
+            }
+            else
+            {
+                featureName = featureList[currentFeature];
+            }
         }
 
         private void logFailureAndTakeScreenshot()

@@ -12,22 +12,24 @@ namespace AutomationFramework.Utils
 {
     public class TakeScreenshot
     {
-        public static void Capture(string screenshotName)
+        public static string Capture(string screenshotName)
         {
             ITakesScreenshot ts = (ITakesScreenshot)DriverContext.Driver;
             Screenshot screenshot = ts.GetScreenshot();
             string runName = screenshotName + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
-            string drive = Path.GetPathRoot("X:\\screenshots\\");
+            string drive = "P:\\IS\\ALL_IS\\App Groups\\Web\\QA\\CPQ\\Screenshots\\";
+            string imageName = drive + runName + ".jpg";
+
             if (!Directory.Exists(drive))
             {
-                screenshot.SaveAsFile("C:\\Selenium\\Polaris\\Screenshots\\" + runName + ".jpg", ScreenshotImageFormat.Png);
+                Directory.CreateDirectory(drive);
+                screenshot.SaveAsFile(imageName, ScreenshotImageFormat.Png);
             }
             else
             {
-                string screenshotFileName = "X:\\screenshots\\" + runName + ".png";
-                string urlfile = "http://storage/screenshots/" + runName + ".png";
-                Console.WriteLine("" + urlfile);
+                screenshot.SaveAsFile(imageName, ScreenshotImageFormat.Png);
             }
+            return imageName;
         }
     }
 }

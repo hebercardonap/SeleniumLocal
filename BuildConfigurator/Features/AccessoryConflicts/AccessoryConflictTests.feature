@@ -81,3 +81,26 @@ Scenario: Verify conflict is triggered for SNO brand
 	And I click Cargo Rack Bags accessory subcategory
 	And I add specific Rear Sport Rack Bag accessory
 	Then Conflict container is displayed
+
+@CPQ_Conflicts
+Scenario: Verify conflict is triggered for RAN brand
+	Given I have navigated to RAN ranger-crew-xp-900-sage-green build page
+	When I get to build page
+	And I click Utility accessory category
+	And I click Cargo & Bed Storage accessory subcategory
+	And I add specific Front Hood Storage Rack accessory
+	And I click Cab Components accessory category
+	And I click Windshields accessory subcategory
+	And I add specific Flip-Down Full Windshield accessory
+	Then Conflict container is displayed
+
+@CPQ_Conflicts
+Scenario: Verify conflict is triggered for GEM brand
+	Given I have navigated to GEM el-xd build page
+	When I get to build page
+	And I click Power accessory category
+	And I click Battery accessory subcategory
+	And I add specific Distance AGM accessory
+	And I click Charging accessory subcategory
+	And I add specific Level 2 Charger accessory
+	Then Conflict container is displayed

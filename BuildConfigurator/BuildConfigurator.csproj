@@ -159,6 +159,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SNOSteppedFlowTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\PartRequiresPart\PRPTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRPTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Pages\BuildCategoryPage.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
@@ -221,6 +226,10 @@
     <None Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SNOSteppedFlowTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\PartRequiresPart\PRPTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PRPTests.feature.cs</LastGenOutput>
     </None>
     <None Include="license" />
     <None Include="packages.config">

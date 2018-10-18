@@ -115,6 +115,18 @@ namespace BuildConfigurator.Steps
                 DriverContext.Browser.GoToUrl(buildUrl);
                 CurrentPage = GetInstance<BuildConfigurePage>();
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getGemLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
+                DriverContext.Browser.GoToUrl(buildUrl);
+                CurrentPage = GetInstance<BuildConfigurePage>();
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }
@@ -147,6 +159,8 @@ namespace BuildConfigurator.Steps
                 CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
             else if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
                 CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
+            else if (stringEqualsIgnoreCase(buttonName, "buildsummarybutton"))
+                CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
         }
@@ -160,5 +174,18 @@ namespace BuildConfigurator.Steps
                 Assert.Fail("Button with name {0} is not present", buttonName);
         }
 
+        [When(@"I click finished button from next steps container")]
+        public void WhenIClickFinishedButtonFromNextStepsContainer()
+        {
+            CurrentPage.As<BuildConfigurePage>().clickIamFiniShedButtonNextSteps();
+        }
+
+        [StepArgumentTransformation]
+        public string[] TransformToArrayOfStrings(string commaSeparatedStepArgumentValues)
+        {
+            string sourceString = commaSeparatedStepArgumentValues;
+            string[] stringSeparators = new string[] { "," };
+            return sourceString.Split(stringSeparators, StringSplitOptions.None);
+        }
     }
 }
