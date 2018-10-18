@@ -22,6 +22,7 @@ namespace BuildConfigurator
         private static ExtentReports extent;
         private static KlovReporter klov;
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+        private static Dictionary<string, ExtentTest> featureList = new Dictionary<string, ExtentTest>();
 
         [AfterStep]
         public void AfterEachStep()
@@ -102,7 +103,17 @@ namespace BuildConfigurator
         public static void BeforeFeature()
         {
             //Create dynamic feature name
-            featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            string currentFeature = FeatureContext.Current.FeatureInfo.Title;
+            
+            if (!featureList.ContainsKey(currentFeature))
+            {
+                featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+                featureList.Add(currentFeature, featureName);
+            }
+            else
+            {
+                featureName = featureList[currentFeature];
+            }
         }
 
         private void logFailureAndTakeScreenshot()
