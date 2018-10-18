@@ -288,10 +288,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify conflict is triggered for RAN brand")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccessoryConflictTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CPQ_Conflicts")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for RAN brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForRANBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for RAN brand", null, new string[] {
@@ -321,10 +320,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify conflict is triggered for GEM brand")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccessoryConflictTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CPQ_Conflicts")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for GEM brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForGEMBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for GEM brand", null, new string[] {
