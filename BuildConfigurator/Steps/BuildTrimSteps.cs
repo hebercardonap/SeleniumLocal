@@ -12,33 +12,33 @@ namespace BuildConfigurator.Steps
     [Binding]
     class BuildTrimSteps : BasePage
     {
-        public BuildTrimSteps()
+        public BuildTrimSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
-            CurrentPage = GetInstance<BuildTrimPage>();
+            _parallelConfig.CurrentPage = new BuildTrimPage(_parallelConfig);
         }
 
         [When(@"I select trim")]
         public void GivenISelectTrim()
         {
-            CurrentPage.As<BuildTrimPage>().clickRandomTrim();
+            _parallelConfig.CurrentPage.As<BuildTrimPage>().clickRandomTrim();
         }
 
         [When(@"I select ranger non package trim")]
         public void WhenISelectRangerNonPackageTrim()
         {
-            CurrentPage.As<BuildTrimPage>().clickRangerNonPackageTrim();
+            _parallelConfig.CurrentPage.As<BuildTrimPage>().clickRangerNonPackageTrim();
         }
 
         [When(@"I select General trim color pick")]
         public void WhenISelectGeneralTrimColorPick()
         {
-            CurrentPage.As<BuildTrimPage>().clickRangerModelWithColorOption();
+            _parallelConfig.CurrentPage.As<BuildTrimPage>().clickRangerModelWithColorOption();
         }
 
         [When(@"I select trim old version")]
         public void WhenISelectTrimOldVersion()
         {
-            CurrentPage.As<BuildTrimPage>().clickRandomTrimOldVersion();
+            _parallelConfig.CurrentPage.As<BuildTrimPage>().clickRandomTrimOldVersion();
         }
 
 

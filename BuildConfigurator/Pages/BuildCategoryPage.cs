@@ -16,6 +16,10 @@ namespace BuildConfigurator.Pages
         private static string A_TAG_NAME = "a";
         private static string LABEL_TAG_NAME = "label";
 
+        public BuildCategoryPage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
+
         public void ClickOnIndianCategory(string category)
         {
             List<IWebElement> categories = driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
@@ -33,7 +37,7 @@ namespace BuildConfigurator.Pages
 
         public void waitForModelsDisplayed()
         {
-            WebDriverExtensions.waitforStalenessOfelement(BY_MODEL);
+            DriverActions.waitforStalenessOfelement(BY_MODEL);
         }
     }
 }

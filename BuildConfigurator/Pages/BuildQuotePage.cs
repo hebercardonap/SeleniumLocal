@@ -24,6 +24,9 @@ namespace BuildConfigurator.Pages
         private static By BY_FORM_PERSONAL_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[@value='personal']");
         private static By BY_FORM_GOVERNMENT_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[contains(@value, 'government')]");
 
+        public BuildQuotePage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
 
         public void setFirstName()
         {
@@ -52,37 +55,37 @@ namespace BuildConfigurator.Pages
 
         public void clickGetInternetPriceButton()
         {
-            WebElementExtensions.clickElement(BY_GET_INTERNET_PRICE_BUTTON);
+            DriverActions.clickElement(BY_GET_INTERNET_PRICE_BUTTON);
         }
 
         public void clickAgeCheckBox()
         {
-            WebElementExtensions.clickElement(BY_AGE_CHECKBOX);
+            DriverActions.clickElement(BY_AGE_CHECKBOX);
         }
 
         public void clickEmailUpdatesCheckBox()
         {
-            WebElementExtensions.clickElement(BY_EMAIL_UPDATES_CHECKBOX);
+            DriverActions.clickElement(BY_EMAIL_UPDATES_CHECKBOX);
         }
 
         public void waitForBuildQuotePgeToLoad()
         {
-            WebDriverExtensions.waitForElementToBeEnabled(BY_FIRST_NAME_FIELD);
+            DriverActions.waitForElementToBeEnabled(BY_FIRST_NAME_FIELD);
         }
 
         public void clickFormCommercialUseOption()
         {
-            WebElementExtensions.clickElement(BY_FORM_COMMERCIAL_OPTION);
+            DriverActions.clickElement(BY_FORM_COMMERCIAL_OPTION);
         }
 
         public void clickFormPersonalUseOption()
         {
-            WebElementExtensions.clickElement(BY_FORM_PERSONAL_OPTION);
+            DriverActions.clickElement(BY_FORM_PERSONAL_OPTION);
         }
 
         public void clickFormGovernmentUseOption()
         {
-            WebElementExtensions.clickElement(BY_FORM_GOVERNMENT_OPTION);
+            DriverActions.clickElement(BY_FORM_GOVERNMENT_OPTION);
         }
     }
 }

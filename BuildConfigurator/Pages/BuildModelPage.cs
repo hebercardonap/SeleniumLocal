@@ -36,6 +36,10 @@ namespace BuildConfigurator.Pages
 
         private static Random rnd = new Random();
 
+        public BuildModelPage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
+
         public void clickOneSeat()
         {
             driver.FindElement(BY_ONE_SEAT).Click();

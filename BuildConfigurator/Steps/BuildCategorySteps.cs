@@ -13,27 +13,27 @@ namespace BuildConfigurator.Steps
     [Binding]
     class BuildCategorySteps : BasePage
     {
-        BuildCategorySteps()
+        public BuildCategorySteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
-            CurrentPage = GetInstance<BuildCategoryPage>();
+            _parallelConfig.CurrentPage = new BuildCategoryPage(_parallelConfig);
         }
 
         [Given(@"I have navigated to IND build category page")]
         public void GivenIHaveNavigatedToINDBuildCategoryPage()
         {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getIndianBuildCategoryUrl());
+            _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getIndianBuildCategoryUrl());
         }
 
         [When(@"I select (.*) category")]
         public void WhenISelectIndianCategory(string category)
         {
-            CurrentPage.As<BuildCategoryPage>().ClickOnIndianCategory(category);
+            _parallelConfig.CurrentPage.As<BuildCategoryPage>().ClickOnIndianCategory(category);
         }
 
         [When(@"Category models are displayed")]
         public void WhenCategoryModelsAreDisplayed()
         {
-            CurrentPage.As<BuildCategoryPage>().waitForModelsDisplayed();
+            _parallelConfig.CurrentPage.As<BuildCategoryPage>().waitForModelsDisplayed();
         }
 
 

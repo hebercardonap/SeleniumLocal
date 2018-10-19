@@ -17,6 +17,18 @@ namespace BuildConfigurator
     [Binding]
     public class HookInitialize : TestInitializeHook
     {
+        private readonly ParallelConfig _parallelConfig;
+        private readonly FeatureContext _featureContext;
+        private readonly ScenarioContext _scenarioContext;
+        private readonly TakeScreenshot _takeScreenshot;
+
+        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) : base(parallelConfig)
+        {
+            _parallelConfig = parallelConfig;
+            _featureContext = featureContext;
+            _scenarioContext = scenarioContext;
+        }
+
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static ExtentReports extent;
@@ -27,34 +39,34 @@ namespace BuildConfigurator
         [AfterStep]
         public void AfterEachStep()
         {
-            var stepName = ScenarioContext.Current.StepContext.StepInfo.Text;
-            var featureName = FeatureContext.Current.FeatureInfo.Title;
-            var scenarioName = ScenarioContext.Current.ScenarioInfo.Title;
+            var stepName = _scenarioContext.StepContext.StepInfo.Text;
+            var featureName = _featureContext.FeatureInfo.Title;
+            var scenarioName = _scenarioContext.ScenarioInfo.Title;
 
-            var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
+            var stepType = _scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
 
-            if (ScenarioContext.Current.TestError == null)
+            if (_scenarioContext.TestError == null)
             {
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text);
                 else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text);
                 else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text);
                 else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text);
             }
-            else if (ScenarioContext.Current.TestError != null)
+            else if (_scenarioContext.TestError != null)
             {
 
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
+                    scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
                 else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
+                    scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
                 else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
+                    scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
                 else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message).AddScreenCaptureFromPath(TakeScreenshot.Capture(ScenarioContext.Current.ScenarioInfo.Title));
+                    scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
                     
             }
         }
@@ -87,15 +99,28 @@ namespace BuildConfigurator
         public void Initialize()
         {
             InitializeSettings();
+
+            string currentFeature = _featureContext.FeatureInfo.Title;
+
+            if (!featureList.ContainsKey(currentFeature))
+            {
+                featureName = extent.CreateTest<Feature>(_featureContext.FeatureInfo.Title);
+                featureList.Add(currentFeature, featureName);
+            }
+            else
+            {
+                featureName = featureList[currentFeature];
+            }
+
             //Create dynamic scenario name
-            scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+            scenario = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
         }
 
         [AfterScenario]
         public void TestCleanUp()
         {
-            DriverContext.Driver.Close();
-            DriverContext.Driver.Quit();
+            _parallelConfig.Driver.Close();
+            _parallelConfig.Driver.Quit();
             extent.Flush();
         }
 
@@ -103,26 +128,26 @@ namespace BuildConfigurator
         public static void BeforeFeature()
         {
             //Create dynamic feature name
-            string currentFeature = FeatureContext.Current.FeatureInfo.Title;
+            //string currentFeature = FeatureContext.Current.FeatureInfo.Title;
             
-            if (!featureList.ContainsKey(currentFeature))
-            {
-                featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
-                featureList.Add(currentFeature, featureName);
-            }
-            else
-            {
-                featureName = featureList[currentFeature];
-            }
+            //if (!featureList.ContainsKey(currentFeature))
+            //{
+            //    featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            //    featureList.Add(currentFeature, featureName);
+            //}
+            //else
+            //{
+            //    featureName = featureList[currentFeature];
+            //}
         }
 
         private void logFailureAndTakeScreenshot()
         {
 
-            if (ScenarioContext.Current.TestError != null)
+            if (_scenarioContext.TestError != null)
             {
-                string screenShotName = ScenarioContext.Current.ScenarioInfo.Title;
-                TakeScreenshot.Capture(screenShotName);
+                string screenShotName = _scenarioContext.ScenarioInfo.Title;
+                _takeScreenshot.Capture(screenShotName);
             }
         }
 

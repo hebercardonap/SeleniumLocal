@@ -19,6 +19,11 @@ namespace BuildConfigurator.Pages
 
         private static string LI_TAG_NAME = "li";
         private static Random rnd = new Random();
+
+        public BuildColorPage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
+
         public void clickColor()
         {
             List<IWebElement> colors = driver.FindElement(BY_COLORS_SECTION).FindElements(By.TagName(LI_TAG_NAME)).ToList();
@@ -34,7 +39,7 @@ namespace BuildConfigurator.Pages
 
         public void getToBuildPage()
         {
-            WebDriverExtensions.waitForElementToBeEnabled(BY_FULL_SCREEN_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_FULL_SCREEN_BUTTON);
             Assert.IsTrue((driver.Url).Contains("build"));
         }
     }

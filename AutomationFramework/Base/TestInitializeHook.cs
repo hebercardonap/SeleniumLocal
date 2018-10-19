@@ -3,6 +3,7 @@ using AutomationFramework.Helpers;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,16 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Base
 {
-    public abstract class TestInitializeHook : Base
+    public class TestInitializeHook
     {
-        public readonly BrowserType Browser;
+        public readonly ParallelConfig _parallelConfig;
 
-        public static void InitializeSettings()
+        public TestInitializeHook(ParallelConfig parallelConfig)
+        {
+            _parallelConfig = parallelConfig;
+        }
+
+        public void InitializeSettings()
         {
             ConfigReader.setFrameworkSettings();
             LogHelpers.CreateLogFile();
@@ -25,32 +31,35 @@ namespace AutomationFramework.Base
             LogHelpers.Write("Initialized Framework");
         }
 
-        public static void TurnOnWait()
+        public void TurnOnWait()
         {
-            DriverContext.Driver.Manage().Window.Maximize();
-            DriverContext.Driver.Manage().Cookies.DeleteAllCookies();
-            DriverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            DriverContext.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(35);
+            _parallelConfig.Driver.Manage().Window.Maximize();
+            _parallelConfig.Driver.Manage().Cookies.DeleteAllCookies();
+            _parallelConfig.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            _parallelConfig.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(35);
         }
 
-        private static void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
+        private void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
         {
             switch (browserType)
             {
                 case BrowserType.InternetExplorer:
-                    DriverContext.Driver = new InternetExplorerDriver();
+                    _parallelConfig.Driver = new InternetExplorerDriver();
                     TurnOnWait();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
+                    //DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
                 case BrowserType.FireFox:
-                    DriverContext.Driver = new FirefoxDriver();
+                    _parallelConfig.Driver = new FirefoxDriver();
                     TurnOnWait();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
+                    //DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
                 case BrowserType.Chrome:
-                    DriverContext.Driver = new ChromeDriver();
+                    //ChromeOptions options = new ChromeOptions();
+                    //options.AddAdditionalCapability(CapabilityType.BrowserName, "chrome");
+                    //_parallelConfig.Driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
+                    _parallelConfig.Driver = new ChromeDriver();
                     TurnOnWait();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
+                    //DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
             }
         }

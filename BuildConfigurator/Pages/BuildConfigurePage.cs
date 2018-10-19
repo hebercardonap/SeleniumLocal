@@ -65,19 +65,26 @@ namespace BuildConfigurator.Pages
         private static string ADD_TEXT = "ADD";
         private static string TITLE_ATTRIBUTE = "title";
 
+        PageHelpers _pageHelpers;
+
+        public BuildConfigurePage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+            _pageHelpers = new PageHelpers(parallelConfig);
+        }
+
         public void clickProtectionCategory()
         {
-            WebElementExtensions.clickElement(BY_PROTECTION_CATEGORY);
+            DriverActions.clickElement(BY_PROTECTION_CATEGORY);
         }
 
         public void clickRoofSubcategory()
         {
-            WebElementExtensions.clickElement(BY_ROOFS_SUBCATEGORY);
+            DriverActions.clickElement(BY_ROOFS_SUBCATEGORY);
         }
 
         public void clickWindShieldsSubcategory()
         {
-            WebElementExtensions.clickElement(BY_WINDSHIELDS_SUBCATEGORY);
+            DriverActions.clickElement(BY_WINDSHIELDS_SUBCATEGORY);
         }
 
         private void getRandomAccessoryCard()
@@ -101,30 +108,30 @@ namespace BuildConfigurator.Pages
 
         public void clickIamFinishedButton()
         {
-            WebDriverExtensions.waitForElementToBeEnabled(BY_FINISHED_BUTTON);
-            WebElementExtensions.clickElement(BY_FINISHED_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_FINISHED_BUTTON);
+            DriverActions.clickElement(BY_FINISHED_BUTTON);
         }
 
         public void clickIamFiniShedButtonNextSteps()
         {
-            WebDriverExtensions.waitForElementToBeEnabled(BY_NEXT_STEPS_FINISHED_BUTTON);
-            WebElementExtensions.clickElement(BY_NEXT_STEPS_FINISHED_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_NEXT_STEPS_FINISHED_BUTTON);
+            DriverActions.clickElement(BY_NEXT_STEPS_FINISHED_BUTTON);
         }
 
         public void clickIamFinishedButtonOld()
         {
-            WebDriverExtensions.waitForElementToBeEnabled(BY_FINISHED_OLD_BUTTON);
-            WebElementExtensions.clickElement(BY_FINISHED_OLD_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_FINISHED_OLD_BUTTON);
+            DriverActions.clickElement(BY_FINISHED_OLD_BUTTON);
         }
 
         public void clickRangerTiresCategory()
         {
-            WebElementExtensions.clickElement(BY_RAN_TIRES_CATEGORY);
+            DriverActions.clickElement(BY_RAN_TIRES_CATEGORY);
         }
 
         public void clickRangerTrailSubcategory()
         {
-            WebElementExtensions.clickElement(BY_RAN_TRAIL_SUBCATEGORY);
+            DriverActions.clickElement(BY_RAN_TRAIL_SUBCATEGORY);
         }
 
         public void clickRandomAccessoryCategory()
@@ -145,7 +152,7 @@ namespace BuildConfigurator.Pages
             while (true)
             {
 
-                if (WebElementExtensions.IsElementPresent(BY_PRP_CONTAINER))
+                if (DriverActions.IsElementPresent(BY_PRP_CONTAINER))
                 {
                     clickRemoveLinkPRP();
                     addRandomAccessory();
@@ -166,12 +173,12 @@ namespace BuildConfigurator.Pages
         {
             try
             {
-                WebElementExtensions.clickElement(By_REMOVE_LINK_PRP);
+                DriverActions.clickElement(By_REMOVE_LINK_PRP);
             }
             catch (Exception)
             {
 
-                WebElementExtensions.clickElement(By_REMOVE_LINK_OLD_PRP);
+                DriverActions.clickElement(By_REMOVE_LINK_OLD_PRP);
             }
             
         }
@@ -179,13 +186,13 @@ namespace BuildConfigurator.Pages
         public void clickAccessoryCategory(string accessoryCategory)
         {
             List<IWebElement> categories = driver.FindElements(BY_BUILD_CATEGORIES).ToList();
-            PageHelpers.FindMatchElementAndClick(categories, accessoryCategory);
+            _pageHelpers.FindMatchElementAndClick(categories, accessoryCategory);
         }
 
         public void clickAccessorySubCategory(string accessoryCategory)
         {
             List<IWebElement> subCategoryButtons = driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
-            PageHelpers.FindMatchElementAndClick(subCategoryButtons, accessoryCategory);
+            _pageHelpers.FindMatchElementAndClick(subCategoryButtons, accessoryCategory);
         }
 
         public void clickSpecificAccessoryCardAddButton(string accessoryTitle)
@@ -217,17 +224,17 @@ namespace BuildConfigurator.Pages
 
         public bool isConflictContainerDisplayed()
         {
-            return WebElementExtensions.IsElementPresent(BY_CONFLICT_CONTAINER);
+            return DriverActions.IsElementPresent(BY_CONFLICT_CONTAINER);
         }
 
         public bool isConflictHeaderDisplayed()
         {
-            return WebElementExtensions.IsElementPresent(BY_CONFLICT_HEADER);
+            return DriverActions.IsElementPresent(BY_CONFLICT_HEADER);
         }
 
         public bool isPRPHeaderDisplayed()
         {
-            return WebElementExtensions.IsElementPresent(BY_PART_REQUIRE_PART_HEADER);
+            return DriverActions.IsElementPresent(BY_PART_REQUIRE_PART_HEADER);
         }
 
         public void clickRandomSecondaryAccessory()
@@ -301,8 +308,8 @@ namespace BuildConfigurator.Pages
 
         public void clickBuildSummaryButton()
         {
-            WebDriverExtensions.waitForElementToBeEnabled(BY_BUILD_SUMMARY_BUTTON);
-            WebElementExtensions.clickElement(BY_BUILD_SUMMARY_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_BUILD_SUMMARY_BUTTON);
+            DriverActions.clickElement(BY_BUILD_SUMMARY_BUTTON);
         }
 
         public void verifyAccesoriesOnBuildSummary(string[] values)

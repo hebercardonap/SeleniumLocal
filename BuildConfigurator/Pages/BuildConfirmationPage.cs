@@ -20,14 +20,18 @@ namespace BuildConfigurator.Pages
         private static By BY_GEM_SUMMARY_ACCESORY = By.CssSelector("div[class='quote-confirmation--build__summary-accessory-container'] div[class='quote-confirmation--build__summary-accessory']");
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//div[@class='quote-confirmation--build__summary-toggle-icon']");
 
+        public BuildConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
+
         public void waitForBuildConfirmationPageToLoad()
         {
-            WebDriverExtensions.waitForElementPresent(BY_THANK_YOU_MESSAGE);
+            DriverActions.waitForElementPresent(BY_THANK_YOU_MESSAGE);
         }
 
         public bool isTotalPriceDisplayed()
         {
-            return WebElementExtensions.IsElementPresent(BY_TOTAL_PRICE);
+            return DriverActions.IsElementPresent(BY_TOTAL_PRICE);
         }
 
         public int getAddedAccessoriesCount()
@@ -44,7 +48,7 @@ namespace BuildConfigurator.Pages
 
         public void clickBuildSummaryToggleCaret()
         {
-            WebElementExtensions.clickElement(BY_BUILD_SUMMARY_TOGGLE);
+            DriverActions.clickElement(BY_BUILD_SUMMARY_TOGGLE);
         }
     }
 }

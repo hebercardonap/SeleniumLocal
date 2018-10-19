@@ -19,53 +19,58 @@ namespace BuildConfigurator.Steps
         private static string SLASH_CHARACTER = "/";
         private static string BUILD_URL_PART = "/build";
 
+        public ExtendedSteps(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+            
+        }
+
         [Given(@"I have navigated to (.*) build model page")]
         public void GivenIHaveNavigatedToBrandBuildModelPage(string brandName)
         {
             if (stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getRzrBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getRzrBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getRangerBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getRangerBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getAceBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getAceBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.IND))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getIndianBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getIndianBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getSnowBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getSnowBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getGemBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getGemBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
-                DriverContext.Browser.GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
-                CurrentPage = GetInstance<BuildModelPage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
@@ -77,56 +82,56 @@ namespace BuildConfigurator.Steps
             if (stringEqualsIgnoreCase(brandName, Brand.IND))
             {
                 string buildUrl = string.Concat(UrlBuilder.getIndianLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSlgLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
                 string buildUrl = string.Concat(UrlBuilder.getGeneralLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
                 string buildUrl = string.Concat(UrlBuilder.getAceLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
                 string buildUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSnoLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 string buildUrl = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
             {
                 string buildUrl = string.Concat(UrlBuilder.getGemLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                DriverContext.Browser.GoToUrl(buildUrl);
-                CurrentPage = GetInstance<BuildConfigurePage>();
+                _parallelConfig.Driver.Navigate().GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
@@ -137,15 +142,15 @@ namespace BuildConfigurator.Steps
         public void WhenISelectSeatOption(string numberOfSeats)
         {
             if (stringEqualsIgnoreCase(numberOfSeats, ONE))
-                CurrentPage.As<BuildModelPage>().clickOneSeat();
+                _parallelConfig.CurrentPage.As<BuildModelPage>().clickOneSeat();
             else if (stringEqualsIgnoreCase(numberOfSeats, TWO))
-                CurrentPage.As<BuildModelPage>().clickTwoSeat();
+                _parallelConfig.CurrentPage.As<BuildModelPage>().clickTwoSeat();
             else if (stringEqualsIgnoreCase(numberOfSeats, THREE))
-                CurrentPage.As<BuildModelPage>().clickThreeSeat();
+                _parallelConfig.CurrentPage.As<BuildModelPage>().clickThreeSeat();
             else if (stringEqualsIgnoreCase(numberOfSeats, FOUR))
-                CurrentPage.As<BuildModelPage>().clickFourSeat();
+                _parallelConfig.CurrentPage.As<BuildModelPage>().clickFourSeat();
             else if (stringEqualsIgnoreCase(numberOfSeats, SIX))
-                CurrentPage.As<BuildModelPage>().clickSixSeat();
+                _parallelConfig.CurrentPage.As<BuildModelPage>().clickSixSeat();
             else
                 Assert.Fail("Seat option {0} is not available", numberOfSeats);
         }
@@ -155,13 +160,13 @@ namespace BuildConfigurator.Steps
         public void WhenIClickButton(string buttonName)
         {
             if (stringEqualsIgnoreCase(buttonName, "next"))
-                CurrentPage.As<BuildColorPage>().clickNextButton();
+                _parallelConfig.CurrentPage.As<BuildColorPage>().clickNextButton();
             else if (stringEqualsIgnoreCase(buttonName, "finished"))
-                CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
             else if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
-                CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
+                _parallelConfig.CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
             else if (stringEqualsIgnoreCase(buttonName, "buildsummarybutton"))
-                CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
         }
@@ -170,7 +175,7 @@ namespace BuildConfigurator.Steps
         public void WhenIClickButtonOldVersion(string buttonName)
         {
             if (stringEqualsIgnoreCase(buttonName, "finished"))
-                CurrentPage.As<BuildConfigurePage>().clickIamFinishedButtonOld();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFinishedButtonOld();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
         }
@@ -178,7 +183,7 @@ namespace BuildConfigurator.Steps
         [When(@"I click finished button from next steps container")]
         public void WhenIClickFinishedButtonFromNextStepsContainer()
         {
-            CurrentPage.As<BuildConfigurePage>().clickIamFiniShedButtonNextSteps();
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFiniShedButtonNextSteps();
         }
 
         [StepArgumentTransformation]

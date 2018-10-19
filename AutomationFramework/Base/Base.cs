@@ -11,19 +11,27 @@ namespace AutomationFramework.Base
     public class Base
     {
 
-        public BasePage CurrentPage
+        public readonly ParallelConfig _parallelConfig;
+
+        public Base(ParallelConfig parallelConfig)
         {
-            get => (BasePage)ScenarioContext.Current["currentPage"];
-            set => ScenarioContext.Current["currentPage"] = value;
+            _parallelConfig = parallelConfig;
         }
 
-        protected IWebDriver driver { get; set; }
+        protected IWebDriver driver
+        {
+            get
+            {
+                return _parallelConfig.Driver;
+            }
+            set { }
+        }
 
         protected TPage GetInstance<TPage>() where TPage : BasePage, new()
         {
             TPage pageInstance = new TPage()
             {
-                driver = DriverContext.Driver
+                driver = _parallelConfig.Driver
             };
 
             return pageInstance;

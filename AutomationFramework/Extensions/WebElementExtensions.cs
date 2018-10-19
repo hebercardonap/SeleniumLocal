@@ -35,14 +35,6 @@ namespace AutomationFramework.Extensions
             ddl.SelectByText(value);
         }
 
-
-        public static void Hover(this IWebElement element)
-        {
-            Actions actions = new Actions(DriverContext.Driver);
-            actions.MoveToElement(element).Perform();
-        }
-
-
         public static void AssertElementPresent(this IWebElement element)
         {
             if (!IsElementPresent(element))
@@ -60,28 +52,6 @@ namespace AutomationFramework.Extensions
             {
                 return false;
             }
-        }
-
-        public static bool IsElementPresent(By locator)
-        {
-            try
-            {
-                //IWebElement element = DriverContext.Driver.FindElement(locator);
-                //bool ele = element.Displayed;
-                DriverContext.Driver.FindElement(locator);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        public static void clickElement(By locator)
-        {
-            IWebElement element = DriverContext.Driver.FindElement(locator);
-            if (IsElementPresent(element))
-                element.Click();
         }
 
         public static void clickElement(this IWebElement element)

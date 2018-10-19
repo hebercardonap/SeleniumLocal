@@ -10,15 +10,20 @@ using System.Threading.Tasks;
 
 namespace BuildConfigurator.Pages
 {
-    class PageHelpers : BasePage
+    public class PageHelpers : BasePage
     {
         private static string TITLE_ATTRIBUTE = "title";
+
+        public PageHelpers(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
+
         /// <summary>
         /// Method to find webelement based on webelement title attribute text
         /// </summary>
         /// <param name="elements">List<IWebElements></param>
         /// <param name="elementText">string to be found</param>
-        public static void FindMatchElementAndClick(List<IWebElement> elements, string elementTitleText)
+        public void FindMatchElementAndClick(List<IWebElement> elements, string elementTitleText)
         {
             bool isFound = false;
 

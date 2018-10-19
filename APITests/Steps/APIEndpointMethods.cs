@@ -18,28 +18,30 @@ using TechTalk.SpecFlow;
 namespace APITests.Steps
 {
     [Binding]
-    public class APIEndpointMethods : BasePage
+    public class APIEndpointMethods
     {
+        private readonly BasePage basePage;
+
         [Given(@"I have DEX (.*) endpoint with year (.*) and dealer (.*)")]
         public void GivenIHaveEndpoint(string brandName, string year, string dealerid)
         {
-            if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            if (basePage.stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
                 RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getRzrLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
-            else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getRangerLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
-            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
                 RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getAceLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
-            else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
                 RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getGeneralLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
-            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
                 RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getSportsmanLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
@@ -67,15 +69,15 @@ namespace APITests.Steps
         public void ThenResponsePropertyValuesAreAsExpected(string brandName)
         {
             string url = string.Empty;
-            if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            if (basePage.stringEqualsIgnoreCase(brandName, Brand.RZR))
                 url = UrlBuilder.getRzrLandingPageURL();
-            else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.RAN))
                 url = UrlBuilder.getRangerLandingPageURL();
-            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.ATV))
                 url = UrlBuilder.getSportsmanLandingPageURL();
-            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.ACE))
                 url = UrlBuilder.getAceLandingPageURL();
-            else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
+            else if (basePage.stringEqualsIgnoreCase(brandName, Brand.GEN))
                 url = UrlBuilder.getGeneralLandingPageURL();
             else
                 Assert.Fail("Brand {0} not suported", brandName);

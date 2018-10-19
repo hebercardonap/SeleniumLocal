@@ -20,6 +20,10 @@ namespace BuildConfigurator.Pages
         private static Random rnd = new Random();
         private static string[] RANGER_PACKAGE_TRIM = new[] { "1000 EPS Premium", "1000 EPS NorthStar Edition" };
 
+        public BuildTrimPage(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
+
         public void clickRandomTrim()
         {
             List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();

@@ -96,6 +96,7 @@
     <Compile Include="Base\BaseStep.cs" />
     <Compile Include="Base\Browser.cs" />
     <Compile Include="Base\DriverContext.cs" />
+    <Compile Include="Base\ParallelConfig.cs" />
     <Compile Include="Base\TestInitializeHook.cs" />
     <Compile Include="Config\ConfigReader.cs" />
     <Compile Include="Config\Settings.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UrlBuilderSites\UrlBuilder.cs" />
     <Compile Include="Utils\Brand.cs" />
+    <Compile Include="Utils\DriverActions.cs" />
     <Compile Include="Utils\TakeScreenshot.cs" />
   </ItemGroup>
   <ItemGroup>

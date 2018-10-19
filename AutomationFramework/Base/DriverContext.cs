@@ -7,23 +7,19 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Base
 {
-    public static class DriverContext
+    public class DriverContext
     {
-        private static IWebDriver _driver;
+        public readonly ParallelConfig _parallelConfig;
 
-        public static IWebDriver Driver
+        public DriverContext(ParallelConfig parallelConfig)
         {
-            get
-            {
-                return _driver;
-            }
-            set
-            {
-                _driver = value;
-            }
+            _parallelConfig = parallelConfig;
         }
-
-
         public static Browser Browser { get; set; }
+
+        public void GoToUrl(string url)
+        {
+            _parallelConfig.Driver.Url = url;
+        }
     }
 }
