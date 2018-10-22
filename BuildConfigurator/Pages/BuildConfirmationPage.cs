@@ -36,13 +36,13 @@ namespace BuildConfigurator.Pages
 
         public int getAddedAccessoriesCount()
         {
-            List<IWebElement> addedAccessories = driver.FindElements(BY_ADDED_ACCESSORY).ToList();
+            List<IWebElement> addedAccessories = Driver.FindElements(BY_ADDED_ACCESSORY).ToList();
             return addedAccessories.Count;
         }
 
         public int getGemAddedAccessoriesCount()
         {
-            List<IWebElement> addedAccessories = driver.FindElements(BY_GEM_SUMMARY_ACCESORY).ToList();
+            List<IWebElement> addedAccessories = Driver.FindElements(BY_GEM_SUMMARY_ACCESORY).ToList();
             return addedAccessories.Count;
         }
 

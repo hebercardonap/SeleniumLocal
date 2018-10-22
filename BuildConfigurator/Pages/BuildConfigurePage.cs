@@ -90,7 +90,7 @@ namespace BuildConfigurator.Pages
         private void getRandomAccessoryCard()
         {
             List<IWebElement> accessoryCards;
-            accessoryCards = driver.FindElements(BY_ACCESSORY_CARD).ToList();
+            accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
             SelectedAccessoryCard = accessoryCards[rnd.Next(0, accessoryCards.Count)];
         }
 
@@ -136,13 +136,13 @@ namespace BuildConfigurator.Pages
 
         public void clickRandomAccessoryCategory()
         {
-            List<IWebElement> categories = driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            List<IWebElement> categories = Driver.FindElements(BY_BUILD_CATEGORIES).ToList();
             WebElementExtensions.clickElement(categories[rnd.Next(0, categories.Count)]);
         }
 
         public void clickRandomAccessorySubcategory()
         {
-            List<IWebElement> subcategories = driver.FindElements(BY_BUILD_SUBCATEGORIES).ToList();
+            List<IWebElement> subcategories = Driver.FindElements(BY_BUILD_SUBCATEGORIES).ToList();
             WebElementExtensions.clickElement(subcategories[rnd.Next(0, subcategories.Count)]);
         }
 
@@ -185,13 +185,13 @@ namespace BuildConfigurator.Pages
 
         public void clickAccessoryCategory(string accessoryCategory)
         {
-            List<IWebElement> categories = driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            List<IWebElement> categories = Driver.FindElements(BY_BUILD_CATEGORIES).ToList();
             _pageHelpers.FindMatchElementAndClick(categories, accessoryCategory);
         }
 
         public void clickAccessorySubCategory(string accessoryCategory)
         {
-            List<IWebElement> subCategoryButtons = driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
+            List<IWebElement> subCategoryButtons = Driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
             _pageHelpers.FindMatchElementAndClick(subCategoryButtons, accessoryCategory);
         }
 
@@ -199,7 +199,7 @@ namespace BuildConfigurator.Pages
         {
 
             bool isFound = false;
-            List<IWebElement> accessoryCards = driver.FindElements(BY_ACCESSORY_CARD).ToList();
+            List<IWebElement> accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
 
             foreach (var accessoryCard in accessoryCards)
             {
@@ -239,14 +239,14 @@ namespace BuildConfigurator.Pages
 
         public void clickRandomSecondaryAccessory()
         {
-            List<IWebElement> accessories = driver.FindElements(BY_SECONDARY_ACCESSORY_SELECT_BTN).ToList();
+            List<IWebElement> accessories = Driver.FindElements(BY_SECONDARY_ACCESSORY_SELECT_BTN).ToList();
             WebElementExtensions.clickElement(accessories[rnd.Next(0, accessories.Count)]);
         }
 
         public void clickSecondaryAccessoryByProductId(string id)
         {
             bool isFound = false;
-            List<IWebElement> productIds = driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
+            List<IWebElement> productIds = Driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
 
             foreach (var productId in productIds)
             {
@@ -267,7 +267,7 @@ namespace BuildConfigurator.Pages
         public void clickOldSecondaryAccessoryByProductId(string id)
         {
             bool isFound = false;
-            List<IWebElement> productIds = driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
+            List<IWebElement> productIds = Driver.FindElements(BY_SUMMARY_ACCESSORY_INFO).ToList();
 
             foreach (var productId in productIds)
             {
@@ -288,7 +288,7 @@ namespace BuildConfigurator.Pages
         public void clickRemoveLinkByProductId(string id)
         {
             bool isFound = false;
-            List<IWebElement> productIds = driver.FindElements(BY_BUILD_SUMMARY_ACC_CONTAINER).ToList();
+            List<IWebElement> productIds = Driver.FindElements(BY_BUILD_SUMMARY_ACC_CONTAINER).ToList();
 
             foreach (var productId in productIds)
             {
@@ -315,7 +315,7 @@ namespace BuildConfigurator.Pages
         public void verifyAccesoriesOnBuildSummary(string[] values)
         {
             
-            List<IWebElement> ids = driver.FindElements(BY_PRODUCT_ID_BUILD_SUMMARY).ToList();
+            List<IWebElement> ids = Driver.FindElements(BY_PRODUCT_ID_BUILD_SUMMARY).ToList();
 
             foreach (var value in values)
             {

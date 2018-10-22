@@ -42,32 +42,32 @@ namespace BuildConfigurator.Pages
 
         public void clickOneSeat()
         {
-            driver.FindElement(BY_ONE_SEAT).Click();
+            Driver.FindElement(BY_ONE_SEAT).Click();
         }
 
         public void clickTwoSeat()
         {
-            driver.FindElement(BY_TWO_SEAT).Click();
+            Driver.FindElement(BY_TWO_SEAT).Click();
         }
 
         public void clickThreeSeat()
         {
-            driver.FindElement(BY_THREE_SEAT).Click();
+            Driver.FindElement(BY_THREE_SEAT).Click();
         }
 
         public void clickFourSeat()
         {
-            driver.FindElement(BY_FOUR_SEAT).Click();
+            Driver.FindElement(BY_FOUR_SEAT).Click();
         }
 
         public void clickSixSeat()
         {
-            driver.FindElement(BY_SIX_SEAT).Click();
+            Driver.FindElement(BY_SIX_SEAT).Click();
         }
 
         public void clickRandomModel()
         {
-            List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION)
+            List<IWebElement> models = Driver.FindElement(BY_MODELS_SECTION)
                 .FindElements(By.TagName(A_TAG_NAME)).ToList();
             int model = rnd.Next(0, models.Count);
             models[model].Click();
@@ -75,7 +75,7 @@ namespace BuildConfigurator.Pages
 
         public void clickUniqueColorGeneralModel()
         {
-            List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION)
+            List<IWebElement> models = Driver.FindElement(BY_MODELS_SECTION)
                 .FindElements(By.TagName(A_TAG_NAME)).ToList();
 
             while (true)
@@ -93,7 +93,7 @@ namespace BuildConfigurator.Pages
 
         public void clickRangerModelMultipleColorAvailable()
         {
-            List<IWebElement> models = driver.FindElement(BY_MODELS_SECTION)
+            List<IWebElement> models = Driver.FindElement(BY_MODELS_SECTION)
                 .FindElements(By.TagName(A_TAG_NAME)).ToList();
 
             while (true)
@@ -111,7 +111,7 @@ namespace BuildConfigurator.Pages
 
         public void clickSlingshotByVersion(string slgVersion)
         {
-            List<IWebElement> versions = driver.FindElements(BY_SLG_VERSION).ToList();
+            List<IWebElement> versions = Driver.FindElements(BY_SLG_VERSION).ToList();
             foreach (var version in versions)
             {
                 if (stringEqualsIgnoreCase(slgVersion.Replace(" ", string.Empty), version.Text.Split(' ').Last()))
@@ -124,7 +124,7 @@ namespace BuildConfigurator.Pages
 
         public void clickByFamilyVersion(string snoVersion)
         {
-            List<IWebElement> versions = driver.FindElements(BY_SNO_VERSION).ToList();
+            List<IWebElement> versions = Driver.FindElements(BY_SNO_VERSION).ToList();
             foreach (var version in versions)
             {
                 if (stringContainsIgnoreCase(version.Text, snoVersion))
@@ -137,7 +137,7 @@ namespace BuildConfigurator.Pages
 
         public void clickRandomWholeGoodCard()
         {
-            List<IWebElement> cards = driver.FindElement(BY_WHOLEGOOD_CONTAINER)
+            List<IWebElement> cards = Driver.FindElement(BY_WHOLEGOOD_CONTAINER)
                 .FindElements(BY_WHOLEGOOD_CARD).ToList();
 
             int card = rnd.Next(0, cards.Count);
@@ -147,7 +147,7 @@ namespace BuildConfigurator.Pages
 
         public void clickFamilyCategorySlide(string family)
         {
-            List<IWebElement> familyCategories = driver.FindElements(BY_FAMILY_CATEGORIES).ToList();
+            List<IWebElement> familyCategories = Driver.FindElements(BY_FAMILY_CATEGORIES).ToList();
             foreach (var fam in familyCategories)
             {
                 string familyName = fam.Text;

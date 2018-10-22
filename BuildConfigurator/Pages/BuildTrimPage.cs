@@ -26,21 +26,21 @@ namespace BuildConfigurator.Pages
 
         public void clickRandomTrim()
         {
-            List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            List<IWebElement> trims = Driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
             int trim = rnd.Next(0, trims.Count);
             trims[trim].Click();
         }
 
         public void clickRandomTrimOldVersion()
         {
-            List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION_OLD).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            List<IWebElement> trims = Driver.FindElement(BY_TRIM_SECTION_OLD).FindElements(By.TagName(A_TAG_NAME)).ToList();
             int trim = rnd.Next(0, trims.Count);
             trims[trim].Click();
         }
 
         public void clickRangerNonPackageTrim()
         {
-            List<IWebElement> trims = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            List<IWebElement> trims = Driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
             while (true)
             {
                 bool isFound = false;
@@ -64,7 +64,7 @@ namespace BuildConfigurator.Pages
 
         public void clickRangerModelWithColorOption()
         {
-            List<IWebElement> models = driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            List<IWebElement> models = Driver.FindElement(BY_TRIM_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
 
             while (true)
             {

@@ -20,27 +20,27 @@ namespace AutomationFramework.Utils
 
         public void waitForElementToBeEnabled(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(50));
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(50));
             wait.Until(ExpectedConditions.ElementToBeClickable(locator));
         }
 
         public void waitForElementPresent(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(40));
             wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
         public void waitforStalenessOfelement(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
-            wait.Until(ExpectedConditions.StalenessOf(driver.FindElement(locator)));
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(40));
+            wait.Until(ExpectedConditions.StalenessOf(Driver.FindElement(locator)));
         }
 
         public void waitForAjaxRequestToComplete()
         {
             while (true)
             {
-                var ajaxIsComplete = (bool)(driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0");
+                var ajaxIsComplete = (bool)(Driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0");
                 if (ajaxIsComplete)
                 {
                     break;
@@ -51,7 +51,7 @@ namespace AutomationFramework.Utils
 
         public void Hover(IWebElement element)
         {
-            Actions actions = new Actions(driver);
+            Actions actions = new Actions(Driver);
             actions.MoveToElement(element).Perform();
         }
 
@@ -59,7 +59,7 @@ namespace AutomationFramework.Utils
         {
             try
             {
-                driver.FindElement(locator);
+                Driver.FindElement(locator);
                 return true;
             }
             catch (NoSuchElementException)
@@ -71,7 +71,7 @@ namespace AutomationFramework.Utils
         public void clickElement(By locator)
         {
             if (IsElementPresent(locator))
-                driver.FindElement(locator).Click();
+                Driver.FindElement(locator).Click();
         }
 
 

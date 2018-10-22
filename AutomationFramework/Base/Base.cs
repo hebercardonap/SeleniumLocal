@@ -18,24 +18,15 @@ namespace AutomationFramework.Base
             _parallelConfig = parallelConfig;
         }
 
-        protected IWebDriver driver
+        protected IWebDriver Driver
         {
             get
             {
                 return _parallelConfig.Driver;
             }
-            set { }
         }
 
-        protected TPage GetInstance<TPage>() where TPage : BasePage, new()
-        {
-            TPage pageInstance = new TPage()
-            {
-                driver = _parallelConfig.Driver
-            };
-
-            return pageInstance;
-        }
+        public BasePage CurrentPage { get; set; }
 
         public TPage As<TPage>() where TPage : BasePage
         {

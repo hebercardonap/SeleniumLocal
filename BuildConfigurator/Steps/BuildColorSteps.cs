@@ -14,20 +14,20 @@ namespace BuildConfigurator.Steps
     {
         public BuildColorSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
-            _parallelConfig.CurrentPage = new BuildColorPage(_parallelConfig);
+            CurrentPage = new BuildColorPage(_parallelConfig);
         }
 
         [When(@"I select random color")]
         public void GivenISelectRandomColor()
         {
-            _parallelConfig.CurrentPage.As<BuildColorPage>().clickColor();
+            CurrentPage.As<BuildColorPage>().clickColor();
         }
 
 
         [When(@"I get to build page")]
         public void ThenIGetToBuildPage()
         {
-            _parallelConfig.CurrentPage.As<BuildColorPage>().getToBuildPage();
+            CurrentPage.As<BuildColorPage>().getToBuildPage();
         }
 
 

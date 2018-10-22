@@ -15,27 +15,27 @@ namespace BuildConfigurator.Steps
     {
         public BuildConfirmationSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
-            _parallelConfig.CurrentPage = new BuildConfirmationPage(_parallelConfig);
+            CurrentPage = new BuildConfirmationPage(_parallelConfig);
         }
         [When(@"I get to build confirmation page")]
         public void ThenIGetToBuildConfirmationPage()
         {
-            _parallelConfig.CurrentPage.As<BuildConfirmationPage>().waitForBuildConfirmationPageToLoad();
+            CurrentPage.As<BuildConfirmationPage>().waitForBuildConfirmationPageToLoad();
         }
 
         [Then(@"build confirmation page is as expected")]
         public void ThenBuildConfirmationPageIsAsExpected()
         {
-            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfirmationPage>().isTotalPriceDisplayed());
-            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfirmationPage>().getAddedAccessoriesCount() > 0);
+            Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().isTotalPriceDisplayed());
+            Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().getAddedAccessoriesCount() > 0);
         }
 
         [Then(@"GEM build confirmation page is as expected")]
         public void ThenGEMBuildConfirmationPageIsAsExpected()
         {
             //Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().isTotalPriceDisplayed());
-            _parallelConfig.CurrentPage.As<BuildConfirmationPage>().clickBuildSummaryToggleCaret();
-            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfirmationPage>().getGemAddedAccessoriesCount() > 0);
+            CurrentPage.As<BuildConfirmationPage>().clickBuildSummaryToggleCaret();
+            Assert.IsTrue(CurrentPage.As<BuildConfirmationPage>().getGemAddedAccessoriesCount() > 0);
         }
 
 

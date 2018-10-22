@@ -26,21 +26,21 @@ namespace BuildConfigurator.Pages
 
         public void clickColor()
         {
-            List<IWebElement> colors = driver.FindElement(BY_COLORS_SECTION).FindElements(By.TagName(LI_TAG_NAME)).ToList();
+            List<IWebElement> colors = Driver.FindElement(BY_COLORS_SECTION).FindElements(By.TagName(LI_TAG_NAME)).ToList();
             int color = rnd.Next(0, colors.Count);
             colors[color].Click();
-            WebDriverExtensions.WaitForPageLoaded(driver);
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         public void clickNextButton()
         {
-            driver.FindElement(BY_NEXT_BUTTON).Click();
+            Driver.FindElement(BY_NEXT_BUTTON).Click();
         }
 
         public void getToBuildPage()
         {
             DriverActions.waitForElementToBeEnabled(BY_FULL_SCREEN_BUTTON);
-            Assert.IsTrue((driver.Url).Contains("build"));
+            Assert.IsTrue((Driver.Url).Contains("build"));
         }
     }
 }

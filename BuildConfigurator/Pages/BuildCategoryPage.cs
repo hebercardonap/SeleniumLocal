@@ -22,7 +22,7 @@ namespace BuildConfigurator.Pages
 
         public void ClickOnIndianCategory(string category)
         {
-            List<IWebElement> categories = driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
+            List<IWebElement> categories = Driver.FindElement(BY_MODELS_SECTION).FindElements(By.TagName(A_TAG_NAME)).ToList();
             foreach (var c in categories)
             {
                 string currentCateogry = c.FindElement(By.TagName(LABEL_TAG_NAME)).Text;
