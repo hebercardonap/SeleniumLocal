@@ -1,5 +1,4 @@
 ﻿using AutomationFramework.Base;
-using AutomationFramework.Config;
 using AutomationFramework.Utils;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
@@ -7,9 +6,6 @@ using AventStack.ExtentReports.Reporter;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace BuildConfigurator

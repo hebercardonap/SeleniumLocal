@@ -3,11 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace AutomationFramework.Utils
