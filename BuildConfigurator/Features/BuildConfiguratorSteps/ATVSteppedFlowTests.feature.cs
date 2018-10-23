@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ATVSteppedFlowTests")]
+    [TechTalk.SpecRun.FeatureAttribute("ATVSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a ATV products", SourceFile="Features\\BuildConfiguratorSteps\\ATVSteppedFlowTests.feature", SourceLine=0)]
     public partial class ATVSteppedFlowTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "ATVSteppedFlowTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,13 +66,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify ATV stepped process no trim")]
-        [NUnit.Framework.CategoryAttribute("ATV")]
-        [NUnit.Framework.TestCaseAttribute("Recreation", "Hunter", "Wheel", "Trail", null)]
-        [NUnit.Framework.TestCaseAttribute("Touring", "XP", "Wheel", "Trail", null)]
-        [NUnit.Framework.TestCaseAttribute("Sport", "Scrambler", "Wheel", "Trail", null)]
-        [NUnit.Framework.TestCaseAttribute("Special", "570", "Wheel", "Trail", null)]
         public virtual void VerifyATVSteppedProcessNoTrim(string family, string version, string category, string subcategory, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -114,6 +104,48 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Recreation", new string[] {
+                "ATV"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Recreation()
+        {
+#line 6
+this.VerifyATVSteppedProcessNoTrim("Recreation", "Hunter", "Wheel", "Trail", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Touring", new string[] {
+                "ATV"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Touring()
+        {
+#line 6
+this.VerifyATVSteppedProcessNoTrim("Touring", "XP", "Wheel", "Trail", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Sport", new string[] {
+                "ATV"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Sport()
+        {
+#line 6
+this.VerifyATVSteppedProcessNoTrim("Sport", "Scrambler", "Wheel", "Trail", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify ATV stepped process no trim, Special", new string[] {
+                "ATV"}, SourceLine=20)]
+        public virtual void VerifyATVSteppedProcessNoTrim_Special()
+        {
+#line 6
+this.VerifyATVSteppedProcessNoTrim("Special", "570", "Wheel", "Trail", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

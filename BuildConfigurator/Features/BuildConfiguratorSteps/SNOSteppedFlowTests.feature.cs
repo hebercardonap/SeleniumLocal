@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SNOSteppedFlowTests")]
+    [TechTalk.SpecRun.FeatureAttribute("SNOSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", SourceFile="Features\\BuildConfiguratorSteps\\SNOSteppedFlowTests.feature", SourceLine=0)]
     public partial class SNOSteppedFlowTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "SNOSteppedFlowTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,9 +66,8 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SNO RUSH build stepped process")]
-        [NUnit.Framework.CategoryAttribute("SNO")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO RUSH build stepped process", new string[] {
+                "SNO"}, SourceLine=5)]
         public virtual void VerifySNORUSHBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO RUSH build stepped process", null, new string[] {
@@ -111,9 +107,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SNO TITAN build stepped process")]
-        [NUnit.Framework.CategoryAttribute("SNO")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO TITAN build stepped process", new string[] {
+                "SNO"}, SourceLine=22)]
         public virtual void VerifySNOTITANBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO TITAN build stepped process", null, new string[] {
@@ -151,13 +146,6 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SNO Families build stepped process")]
-        [NUnit.Framework.CategoryAttribute("SNO")]
-        [NUnit.Framework.TestCaseAttribute("RMK", "146", null)]
-        [NUnit.Framework.TestCaseAttribute("Switchback", "XCR", null)]
-        [NUnit.Framework.TestCaseAttribute("INDY", "EVO", null)]
-        [NUnit.Framework.TestCaseAttribute("Voyageur", "144", null)]
         public virtual void VerifySNOFamiliesBuildSteppedProcess(string family, string version, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -200,6 +188,48 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, RMK", new string[] {
+                "SNO"}, SourceLine=56)]
+        public virtual void VerifySNOFamiliesBuildSteppedProcess_RMK()
+        {
+#line 40
+this.VerifySNOFamiliesBuildSteppedProcess("RMK", "146", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, Switchback", new string[] {
+                "SNO"}, SourceLine=56)]
+        public virtual void VerifySNOFamiliesBuildSteppedProcess_Switchback()
+        {
+#line 40
+this.VerifySNOFamiliesBuildSteppedProcess("Switchback", "XCR", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, INDY", new string[] {
+                "SNO"}, SourceLine=56)]
+        public virtual void VerifySNOFamiliesBuildSteppedProcess_INDY()
+        {
+#line 40
+this.VerifySNOFamiliesBuildSteppedProcess("INDY", "EVO", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SNO Families build stepped process, Voyageur", new string[] {
+                "SNO"}, SourceLine=56)]
+        public virtual void VerifySNOFamiliesBuildSteppedProcess_Voyageur()
+        {
+#line 40
+this.VerifySNOFamiliesBuildSteppedProcess("Voyageur", "144", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

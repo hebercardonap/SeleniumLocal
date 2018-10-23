@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.PartRequiresPart
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PRPTests")]
+    [TechTalk.SpecRun.FeatureAttribute("PRPTests", Description="\tVerify PRP rule is triggered\r\n\twhen applicable for a particular brand", SourceFile="Features\\PartRequiresPart\\PRPTests.feature", SourceLine=0)]
     public partial class PRPTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.PartRequiresPart
 #line 1 "PRPTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.PartRequiresPart
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.PartRequiresPart
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,9 +66,8 @@ namespace BuildConfigurator.Features.PartRequiresPart
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for RZR brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for RZR brand", new string[] {
+                "PRP"}, SourceLine=5)]
         public virtual void VerifyPRPIsTriggeredForRZRBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for RZR brand", null, new string[] {
@@ -102,9 +98,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for RAN brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for RAN brand", new string[] {
+                "PRP"}, SourceLine=17)]
         public virtual void VerifyPRPIsTriggeredForRANBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for RAN brand", null, new string[] {
@@ -134,9 +129,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for GEN brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for GEN brand", new string[] {
+                "PRP"}, SourceLine=29)]
         public virtual void VerifyPRPIsTriggeredForGENBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for GEN brand", null, new string[] {
@@ -166,9 +160,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for ACE brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for ACE brand", new string[] {
+                "PRP"}, SourceLine=41)]
         public virtual void VerifyPRPIsTriggeredForACEBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for ACE brand", null, new string[] {
@@ -198,9 +191,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for ATV brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for ATV brand", new string[] {
+                "PRP"}, SourceLine=53)]
         public virtual void VerifyPRPIsTriggeredForATVBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for ATV brand", null, new string[] {
@@ -224,9 +216,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for SLG brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for SLG brand", new string[] {
+                "PRP"}, SourceLine=62)]
         public virtual void VerifyPRPIsTriggeredForSLGBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for SLG brand", null, new string[] {
@@ -250,9 +241,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for IND brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for IND brand", new string[] {
+                "PRP"}, SourceLine=71)]
         public virtual void VerifyPRPIsTriggeredForINDBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for IND brand", null, new string[] {
@@ -282,9 +272,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for SNO brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for SNO brand", new string[] {
+                "PRP"}, SourceLine=83)]
         public virtual void VerifyPRPIsTriggeredForSNOBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for SNO brand", null, new string[] {
@@ -308,9 +297,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for GEM brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is triggered for GEM brand", new string[] {
+                "PRP"}, SourceLine=92)]
         public virtual void VerifyPRPIsTriggeredForGEMBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for GEM brand", null, new string[] {
@@ -334,9 +322,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is displayed when secondary accessory is removed")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify PRP is displayed when secondary accessory is removed", new string[] {
+                "PRP"}, SourceLine=101)]
         public virtual void VerifyPRPIsDisplayedWhenSecondaryAccessoryIsRemoved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is displayed when secondary accessory is removed", null, new string[] {
@@ -369,9 +356,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify primary accessory is not removed when removing secondary acceossory")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify primary accessory is not removed when removing secondary acceossory", new string[] {
+                "PRP"}, SourceLine=114)]
         public virtual void VerifyPrimaryAccessoryIsNotRemovedWhenRemovingSecondaryAcceossory()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify primary accessory is not removed when removing secondary acceossory", null, new string[] {
@@ -402,6 +388,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("Accessories \'2884019-293\' are displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

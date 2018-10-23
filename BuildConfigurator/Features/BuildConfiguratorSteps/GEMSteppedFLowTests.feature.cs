@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("GEMSteppedFLowTests")]
+    [TechTalk.SpecRun.FeatureAttribute("GEMSteppedFLowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a GEM products", SourceFile="Features\\BuildConfiguratorSteps\\GEMSteppedFLowTests.feature", SourceLine=0)]
     public partial class GEMSteppedFLowTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "GEMSteppedFLowTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,11 +66,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify GEM build stepped process")]
-        [NUnit.Framework.CategoryAttribute("GEM")]
-        [NUnit.Framework.TestCaseAttribute("Passenger", "Comfort", "Seats", null)]
-        [NUnit.Framework.TestCaseAttribute("Utility", "Power", "Battery", null)]
         public virtual void VerifyGEMBuildSteppedProcess(string family, string category, string subcategory, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -114,6 +106,30 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("GEM build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify GEM build stepped process, Passenger", new string[] {
+                "GEM"}, SourceLine=21)]
+        public virtual void VerifyGEMBuildSteppedProcess_Passenger()
+        {
+#line 6
+this.VerifyGEMBuildSteppedProcess("Passenger", "Comfort", "Seats", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify GEM build stepped process, Utility", new string[] {
+                "GEM"}, SourceLine=21)]
+        public virtual void VerifyGEMBuildSteppedProcess_Utility()
+        {
+#line 6
+this.VerifyGEMBuildSteppedProcess("Utility", "Power", "Battery", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

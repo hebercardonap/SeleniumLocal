@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("INDSteppedFlowTests")]
+    [TechTalk.SpecRun.FeatureAttribute("INDSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Indian products", SourceFile="Features\\BuildConfiguratorSteps\\INDSteppedFlowTests.feature", SourceLine=0)]
     public partial class INDSteppedFlowTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "INDSteppedFlowTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,9 +66,8 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify IND build stepped process random model")]
-        [NUnit.Framework.CategoryAttribute("IND")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND build stepped process random model", new string[] {
+                "IND"}, SourceLine=5)]
         public virtual void VerifyINDBuildSteppedProcessRandomModel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify IND build stepped process random model", null, new string[] {
@@ -111,15 +107,6 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify IND stepped process build category Scout")]
-        [NUnit.Framework.CategoryAttribute("IND")]
-        [NUnit.Framework.TestCaseAttribute("scout", null)]
-        [NUnit.Framework.TestCaseAttribute("chief", null)]
-        [NUnit.Framework.TestCaseAttribute("springfield", null)]
-        [NUnit.Framework.TestCaseAttribute("chieftain", null)]
-        [NUnit.Framework.TestCaseAttribute("roadmaster", null)]
-        [NUnit.Framework.TestCaseAttribute("dark horse", null)]
         public virtual void VerifyINDSteppedProcessBuildCategoryScout(string category, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -166,6 +153,66 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, scout", new string[] {
+                "IND"}, SourceLine=41)]
+        public virtual void VerifyINDSteppedProcessBuildCategoryScout_Scout()
+        {
+#line 23
+this.VerifyINDSteppedProcessBuildCategoryScout("scout", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, chief", new string[] {
+                "IND"}, SourceLine=41)]
+        public virtual void VerifyINDSteppedProcessBuildCategoryScout_Chief()
+        {
+#line 23
+this.VerifyINDSteppedProcessBuildCategoryScout("chief", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, springfield", new string[] {
+                "IND"}, SourceLine=41)]
+        public virtual void VerifyINDSteppedProcessBuildCategoryScout_Springfield()
+        {
+#line 23
+this.VerifyINDSteppedProcessBuildCategoryScout("springfield", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, chieftain", new string[] {
+                "IND"}, SourceLine=41)]
+        public virtual void VerifyINDSteppedProcessBuildCategoryScout_Chieftain()
+        {
+#line 23
+this.VerifyINDSteppedProcessBuildCategoryScout("chieftain", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, roadmaster", new string[] {
+                "IND"}, SourceLine=41)]
+        public virtual void VerifyINDSteppedProcessBuildCategoryScout_Roadmaster()
+        {
+#line 23
+this.VerifyINDSteppedProcessBuildCategoryScout("roadmaster", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verify IND stepped process build category Scout, dark horse", new string[] {
+                "IND"}, SourceLine=41)]
+        public virtual void VerifyINDSteppedProcessBuildCategoryScout_DarkHorse()
+        {
+#line 23
+this.VerifyINDSteppedProcessBuildCategoryScout("dark horse", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

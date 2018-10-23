@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("RANSteppedFlowTests")]
+    [TechTalk.SpecRun.FeatureAttribute("RANSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Ranger products", SourceFile="Features\\BuildConfiguratorSteps\\RANSteppedFlowTests.feature", SourceLine=0)]
     public partial class RANSteppedFlowTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "RANSteppedFlowTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,9 +66,8 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process two seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RAN build stepped process two seat", new string[] {
+                "RAN"}, SourceLine=5)]
         public virtual void VerifyRANBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process two seat", null, new string[] {
@@ -115,9 +111,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process three seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RAN build stepped process three seat", new string[] {
+                "RAN"}, SourceLine=24)]
         public virtual void VerifyRANBuildSteppedProcessThreeSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process three seat", null, new string[] {
@@ -161,9 +156,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process four seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RAN build stepped process four seat", new string[] {
+                "RAN"}, SourceLine=43)]
         public virtual void VerifyRANBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process four seat", null, new string[] {
@@ -203,9 +197,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process six seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify RAN build stepped process six seat", new string[] {
+                "RAN"}, SourceLine=60)]
         public virtual void VerifyRANBuildSteppedProcessSixSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process six seat", null, new string[] {
@@ -247,6 +240,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -17,8 +17,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SLGSteppedFlowTests")]
+    [TechTalk.SpecRun.FeatureAttribute("SLGSteppedFlowTests", Description="\tVerify that build configurator steps \r\n\tcan be performed for a Indian products", SourceFile="Features\\BuildConfiguratorSteps\\SLGSteppedFlowTests.feature", SourceLine=0)]
     public partial class SLGSteppedFlowTestsFeature
     {
         
@@ -27,7 +26,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "SLGSteppedFlowTests.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,9 +66,8 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SLG S stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SLG S stepped flow", new string[] {
+                "SLG"}, SourceLine=5)]
         public virtual void VerifySLGSSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG S stepped flow", null, new string[] {
@@ -107,9 +103,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SLG Grand Touring stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SLG Grand Touring stepped flow", new string[] {
+                "SLG"}, SourceLine=20)]
         public virtual void VerifySLGGrandTouringSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG Grand Touring stepped flow", null, new string[] {
@@ -145,9 +140,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SLG SL stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SLG SL stepped flow", new string[] {
+                "SLG"}, SourceLine=35)]
         public virtual void VerifySLGSLSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG SL stepped flow", null, new string[] {
@@ -185,9 +179,8 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify SLG SLR stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [TechTalk.SpecRun.ScenarioAttribute("Verify SLG SLR stepped flow", new string[] {
+                "SLG"}, SourceLine=51)]
         public virtual void VerifySLGSLRSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG SLR stepped flow", null, new string[] {
@@ -223,6 +216,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
