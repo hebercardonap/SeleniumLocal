@@ -216,7 +216,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 57
  testRunner.And("I add specific Steel Bed Extender accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.And("I click StorageTest accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Storage accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
  testRunner.And("I add specific Rear Cargo Box accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60

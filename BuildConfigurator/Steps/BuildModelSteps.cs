@@ -14,49 +14,49 @@ namespace BuildConfigurator.Steps
 
         public BuildModelSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
-            CurrentPage = new BuildModelPage(_parallelConfig);
+            _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
         }
 
         [When(@"I select random model")]
         public void GivenISelectRandomModel()
         {
-            CurrentPage.As<BuildModelPage>().clickRandomModel();
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickRandomModel();
         }
 
         [When(@"I select unique color General model")]
         public void WhenISelectUniqueColorGeneralModel()
         {
-            CurrentPage.As<BuildModelPage>().clickUniqueColorGeneralModel();
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickUniqueColorGeneralModel();
         }
 
         [When(@"I select General model color pick")]
         public void WhenISelectGeneralModelColorPick()
         {
-            CurrentPage.As<BuildModelPage>().clickRangerModelMultipleColorAvailable();
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickRangerModelMultipleColorAvailable();
         }
 
         [When(@"I select slingshot (.*)")]
         public void WhenISelectSlingshot(string slgVersion)
         {
-            CurrentPage.As<BuildModelPage>().clickSlingshotByVersion(slgVersion);
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickSlingshotByVersion(slgVersion);
         }
 
         [When(@"I select random available version")]
         public void WhenISelectRandomAvailableVersion()
         {
-            CurrentPage.As<BuildModelPage>().clickRandomWholeGoodCard();
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickRandomWholeGoodCard();
         }
 
         [When(@"I filter by (.*) family")]
         public void WhenIFilterByFamily(string family)
         {
-            CurrentPage.As<BuildModelPage>().clickFamilyCategorySlide(family);
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickFamilyCategorySlide(family);
         }
 
         [When(@"I select family (.*)")]
         public void WhenISelectVersion(string version)
         {
-            CurrentPage.As<BuildModelPage>().clickByFamilyVersion(version);
+            _parallelConfig.CurrentPage.As<BuildModelPage>().clickByFamilyVersion(version);
         }
 
     }

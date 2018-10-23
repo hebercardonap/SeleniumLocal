@@ -18,17 +18,17 @@ namespace BuildConfigurator
         private readonly ScenarioContext _scenarioContext;
         private readonly TakeScreenshot _takeScreenshot;
 
-        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) : base(parallelConfig)
+        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext, TakeScreenshot takeScreenshot) : base(parallelConfig)
         {
             _parallelConfig = parallelConfig;
             _featureContext = featureContext;
             _scenarioContext = scenarioContext;
+            _takeScreenshot = takeScreenshot;
         }
 
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static ExtentReports extent;
-        private static KlovReporter klov;
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
         private static Dictionary<string, ExtentTest> featureList = new Dictionary<string, ExtentTest>();
 

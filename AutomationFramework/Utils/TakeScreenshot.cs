@@ -10,14 +10,15 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Utils
 {
-    public class TakeScreenshot
+    public class TakeScreenshot : BasePage
     {
-
-        public readonly BasePage baseDriver;
+        public TakeScreenshot(ParallelConfig parallelConfig) : base(parallelConfig)
+        {
+        }
 
         public string Capture(string screenshotName)
         {
-            ITakesScreenshot ts = (ITakesScreenshot)baseDriver._parallelConfig.Driver;
+            ITakesScreenshot ts = (ITakesScreenshot)_parallelConfig.Driver;
             Screenshot screenshot = ts.GetScreenshot();
             string runName = screenshotName + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
             string drive = "P:\\IS\\ALL_IS\\App Groups\\Web\\QA\\CPQ\\Screenshots\\";

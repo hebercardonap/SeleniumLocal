@@ -55,7 +55,7 @@ Scenario: Verify conflict is triggered for ACE brand
 	And I click Utility accessory category
 	And I click Rack Extenders accessory subcategory
 	And I add specific Steel Bed Extender accessory
-	And I click StorageTest accessory subcategory
+	And I click Storage accessory subcategory
 	And I add specific Rear Cargo Box accessory
 	Then Conflict container is displayed
 
