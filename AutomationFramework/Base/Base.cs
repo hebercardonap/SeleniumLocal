@@ -26,7 +26,17 @@ namespace AutomationFramework.Base
             }
         }
 
-        public BasePage CurrentPage { get; set; }
+        public BasePage CurrentPage
+        {
+            get
+            {
+                return _parallelConfig.CurrentPage;
+            }
+            set
+            {
+                _parallelConfig.CurrentPage = value;
+            }
+        }
 
         public TPage As<TPage>() where TPage : BasePage
         {

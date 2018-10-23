@@ -24,11 +24,11 @@ namespace AutomationFramework.Base
         public void InitializeSettings()
         {
             ConfigReader.setFrameworkSettings();
-            LogHelpers.CreateLogFile();
+            //LogHelpers.CreateLogFile();
 
             OpenBrowser(Settings.BrowserType);
 
-            LogHelpers.Write("Initialized Framework");
+            //LogHelpers.Write("Initialized Framework");
         }
 
         public void TurnOnWait()
