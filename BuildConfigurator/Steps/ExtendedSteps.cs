@@ -165,7 +165,7 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFinishedButton();
             else if (stringEqualsIgnoreCase(buttonName, "getinternetprice"))
                 _parallelConfig.CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
-            else if (stringEqualsIgnoreCase(buttonName, "buildsummarybutton"))
+            else if (stringEqualsIgnoreCase(buttonName, "buildsummary"))
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);

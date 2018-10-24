@@ -47,7 +47,7 @@ Scenario: Verify PRP is triggered for ACE brand
 	And I add specific Dual Row LED Light Bar accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2881147
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	Then Accessories '2883107,2881147' are displayed in build summary
 
 @PRP
