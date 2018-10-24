@@ -17,7 +17,8 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("GENSteppedFlowTest", Description="\tVerify that build configurator steps \r\n\tcan be performed for General products", SourceFile="Features\\BuildConfiguratorSteps\\GENSteppedFlowTest.feature", SourceLine=0)]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("GENSteppedFlowTest")]
     public partial class GENSteppedFlowTestFeature
     {
         
@@ -26,7 +27,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
 #line 1 "GENSteppedFlowTest.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
+        [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -34,18 +35,19 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
+        [NUnit.Framework.OneTimeTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -54,6 +56,7 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -66,8 +69,9 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify GEN build stepped process two seat", new string[] {
-                "GEN"}, SourceLine=5)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify GEN build stepped process two seat")]
+        [NUnit.Framework.CategoryAttribute("GEN")]
         public virtual void VerifyGENBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process two seat", null, new string[] {
@@ -103,8 +107,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify GEN build stepped process two seat color", new string[] {
-                "GEN"}, SourceLine=20)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify GEN build stepped process two seat color")]
+        [NUnit.Framework.CategoryAttribute("GEN")]
         public virtual void VerifyGENBuildSteppedProcessTwoSeatColor()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process two seat color", null, new string[] {
@@ -144,8 +149,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify GEN build stepped process four seat", new string[] {
-                "GEN"}, SourceLine=37)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify GEN build stepped process four seat")]
+        [NUnit.Framework.CategoryAttribute("GEN")]
         public virtual void VerifyGENBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process four seat", null, new string[] {
@@ -179,12 +185,6 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("build confirmation page is as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

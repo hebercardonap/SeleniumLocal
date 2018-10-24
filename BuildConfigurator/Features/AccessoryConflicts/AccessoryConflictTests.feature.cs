@@ -17,7 +17,8 @@ namespace BuildConfigurator.Features.AccessoryConflicts
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("AccessoryConflictTests", Description="\tVerify conflict rule is triggered\r\n\twhen applicable for a particular brand", SourceFile="Features\\AccessoryConflicts\\AccessoryConflictTests.feature", SourceLine=0)]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("AccessoryConflictTests")]
     public partial class AccessoryConflictTestsFeature
     {
         
@@ -26,7 +27,7 @@ namespace BuildConfigurator.Features.AccessoryConflicts
 #line 1 "AccessoryConflictTests.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
+        [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -34,18 +35,19 @@ namespace BuildConfigurator.Features.AccessoryConflicts
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
+        [NUnit.Framework.OneTimeTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -54,6 +56,7 @@ namespace BuildConfigurator.Features.AccessoryConflicts
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -66,8 +69,9 @@ namespace BuildConfigurator.Features.AccessoryConflicts
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for IND brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=5)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for IND brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForINDBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for IND brand", null, new string[] {
@@ -97,8 +101,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for ATV brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=17)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for ATV brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForATVBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for ATV brand", null, new string[] {
@@ -126,8 +131,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for SLG brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=28)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for SLG brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForSLGBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for SLG brand", null, new string[] {
@@ -157,8 +163,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for GEN brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=40)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for GEN brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForGENBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for GEN brand", null, new string[] {
@@ -186,9 +193,10 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for ACE brand", new string[] {
-                "CPQ_Conflicts",
-                "Retry"}, SourceLine=51)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for ACE brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
+        [NUnit.Framework.CategoryAttribute("Retry")]
         public virtual void VerifyConflictIsTriggeredForACEBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for ACE brand", null, new string[] {
@@ -217,8 +225,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for RZR brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=62)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for RZR brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForRZRBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for RZR brand", null, new string[] {
@@ -249,8 +258,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for SNO brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=74)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for SNO brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForSNOBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for SNO brand", null, new string[] {
@@ -278,8 +288,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for RAN brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=85)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for RAN brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForRANBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for RAN brand", null, new string[] {
@@ -309,8 +320,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verify conflict is triggered for GEM brand", new string[] {
-                "CPQ_Conflicts"}, SourceLine=97)]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify conflict is triggered for GEM brand")]
+        [NUnit.Framework.CategoryAttribute("CPQ_Conflicts")]
         public virtual void VerifyConflictIsTriggeredForGEMBrand()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify conflict is triggered for GEM brand", null, new string[] {
@@ -336,12 +348,6 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("Conflict container is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
