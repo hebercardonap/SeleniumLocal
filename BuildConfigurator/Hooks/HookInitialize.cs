@@ -3,7 +3,6 @@ using AutomationFramework.Utils;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
-using BuildConfigurator.ExtentReport;
 using System;
 using System.Collections.Generic;
 using System.IO;
