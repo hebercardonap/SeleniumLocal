@@ -43,5 +43,10 @@ namespace AutomationFramework.Base
             return (TPage)this;
         }
 
+        public void GoToUrl(string url)
+        {
+            Driver.Url = url;
+        }
+
     }
 }

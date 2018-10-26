@@ -51,12 +51,14 @@ namespace BuildConfigurator.Steps
         public void WhenIClickAccessoryCategory(string accessoryCategory)
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickAccessoryCategory(accessoryCategory);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         [When(@"I click (.*) accessory subcategory")]
         public void WhenIClickAccessorySubcategory(string accessorySubcategory)
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickAccessorySubCategory(accessorySubcategory);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         [When(@"I add random available accessory")]
@@ -69,6 +71,7 @@ namespace BuildConfigurator.Steps
         public void WhenIAddSpecificAccessory(string accesoryName)
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickSpecificAccessoryCardAddButton(accesoryName);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         [Then(@"Conflict container is displayed")]

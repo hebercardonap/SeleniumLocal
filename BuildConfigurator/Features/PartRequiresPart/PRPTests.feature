@@ -11,7 +11,7 @@ Scenario: Verify PRP is triggered for RZR brand
 	And I add specific Winch Cover Kit accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2882240
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	Then Accessories '2884118,2882240' are displayed in build summary
 
 @PRP
@@ -23,7 +23,7 @@ Scenario: Verify PRP is triggered for RAN brand
 	And I add specific XL Transport accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2884106
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	Then Accessories '2882430,2884106' are displayed in build summary
 
 @PRP
@@ -35,7 +35,7 @@ Scenario: Verify PRP is triggered for GEN brand
 	And I add specific Windshield Wiper Kit accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2881108
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	Then Accessories '2881090,2881108' are displayed in build summary
 
 @PRP
@@ -77,7 +77,7 @@ Scenario: Verify PRP is triggered for IND brand
 	And I add specific Pinnacle Conchos accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2879667-05
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	Then Accessories '2879674-266,2879667-05' are displayed in build summary
 
 @PRP
@@ -107,7 +107,7 @@ Scenario: Verify PRP is displayed when secondary accessory is removed
 	And I add specific Winch Cover Kit accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2882240
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	And I remove product id 2882240 from build summary
 	Then PRP container is displayed
 
@@ -120,7 +120,7 @@ Scenario: Verify primary accessory is not removed when removing secondary acceos
 	And I add specific LED Spot Light accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2884019-293
-	And I click buildsummarybutton button
+	And I click buildsummary button
 	And I remove product id 2882076 from build summary
 	Then Accessories '2884019-293' are displayed in build summary
 

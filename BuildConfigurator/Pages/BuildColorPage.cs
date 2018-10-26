@@ -16,6 +16,7 @@ namespace BuildConfigurator.Pages
         private static By BY_NEXT_BUTTON = By.XPath("//a[@class='btn-next']");
         //private static By BY_FULL_SCREEN_BUTTON = By.XPath("//button[@id='build-variant__fullscreen']");
         private static By BY_FULL_SCREEN_BUTTON = By.Id("build-variant__fullscreen");
+        private static By BY_FLICKITY_SLIDER_BUTTON = By.CssSelector("div[class='flickity-slider']>button");
 
         private static string LI_TAG_NAME = "li";
         private static Random rnd = new Random();
@@ -40,6 +41,9 @@ namespace BuildConfigurator.Pages
         public void getToBuildPage()
         {
             DriverActions.waitForElementToBeEnabled(BY_FULL_SCREEN_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_FLICKITY_SLIDER_BUTTON);
+            DriverActions.waitForAjaxRequestToComplete();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
             Assert.IsTrue((Driver.Url).Contains("build"));
         }
     }

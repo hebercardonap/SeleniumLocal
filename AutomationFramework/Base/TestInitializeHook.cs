@@ -31,12 +31,13 @@ namespace AutomationFramework.Base
             //LogHelpers.Write("Initialized Framework");
         }
 
-        public void TurnOnWait()
+        private void TurnOnWait()
         {
-            _parallelConfig.Driver.Manage().Window.Maximize();
+            _parallelConfig.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+            _parallelConfig.Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(60);
             _parallelConfig.Driver.Manage().Cookies.DeleteAllCookies();
             _parallelConfig.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            _parallelConfig.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(35);
+            _parallelConfig.Driver.Manage().Window.Maximize();
         }
 
         private void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
@@ -46,20 +47,16 @@ namespace AutomationFramework.Base
                 case BrowserType.InternetExplorer:
                     _parallelConfig.Driver = new InternetExplorerDriver();
                     TurnOnWait();
-                    //DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
                 case BrowserType.FireFox:
                     _parallelConfig.Driver = new FirefoxDriver();
                     TurnOnWait();
-                    //DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
                 case BrowserType.Chrome:
-                    //ChromeOptions options = new ChromeOptions();
-                    //options.AddAdditionalCapability(CapabilityType.BrowserName, "chrome");
-                    //_parallelConfig.Driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options);
-                    _parallelConfig.Driver = new ChromeDriver();
+                    ChromeOptions chromeoptions = new ChromeOptions();
+                    chromeoptions.AddArgument("no-sandbox");
+                    _parallelConfig.Driver = new ChromeDriver(chromeoptions);
                     TurnOnWait();
-                    //DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
             }
         }

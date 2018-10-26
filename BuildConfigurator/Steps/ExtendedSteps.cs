@@ -82,55 +82,55 @@ namespace BuildConfigurator.Steps
             if (stringEqualsIgnoreCase(brandName, Brand.IND))
             {
                 string buildUrl = string.Concat(UrlBuilder.getIndianLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSlgLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
                 string buildUrl = string.Concat(UrlBuilder.getGeneralLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
                 string buildUrl = string.Concat(UrlBuilder.getAceLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
                 string buildUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSnoLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 string buildUrl = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
             {
                 string buildUrl = string.Concat(UrlBuilder.getGemLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART);
-                Driver.Navigate().GoToUrl(buildUrl);
+                GoToUrl(buildUrl);
                 _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
             }
             else
@@ -169,6 +169,8 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
+
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         [When(@"I click (.*) button old version")]
@@ -178,12 +180,15 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFinishedButtonOld();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
+
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         [When(@"I click finished button from next steps container")]
         public void WhenIClickFinishedButtonFromNextStepsContainer()
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFiniShedButtonNextSteps();
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         [StepArgumentTransformation]

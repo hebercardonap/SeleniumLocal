@@ -95,7 +95,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.And("I select accessory by product ID 2882240", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("I click buildsummarybutton button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
  testRunner.Then("Accessories \'2884118,2882240\' are displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.And("I select accessory by product ID 2884106", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I click buildsummarybutton button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
  testRunner.Then("Accessories \'2882430,2884106\' are displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -159,7 +159,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 37
  testRunner.And("I select accessory by product ID 2881108", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("I click buildsummarybutton button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
  testRunner.Then("Accessories \'2881090,2881108\' are displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -275,7 +275,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 79
  testRunner.And("I select accessory by product ID 2879667-05", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
- testRunner.And("I click buildsummarybutton button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
  testRunner.Then("Accessories \'2879674-266,2879667-05\' are displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -360,7 +360,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 109
  testRunner.And("I select accessory by product ID 2882240", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
- testRunner.And("I click buildsummarybutton button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
  testRunner.And("I remove product id 2882240 from build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
@@ -395,7 +395,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 122
  testRunner.And("I select accessory by product ID 2884019-293", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
- testRunner.And("I click buildsummarybutton button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 124
  testRunner.And("I remove product id 2882076 from build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 125

@@ -187,12 +187,14 @@ namespace BuildConfigurator.Pages
         {
             List<IWebElement> categories = Driver.FindElements(BY_BUILD_CATEGORIES).ToList();
             _pageHelpers.FindMatchElementAndClick(categories, accessoryCategory);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         public void clickAccessorySubCategory(string accessoryCategory)
         {
             List<IWebElement> subCategoryButtons = Driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
             _pageHelpers.FindMatchElementAndClick(subCategoryButtons, accessoryCategory);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         public void clickSpecificAccessoryCardAddButton(string accessoryTitle)
