@@ -118,5 +118,19 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickRemoveLinkByProductId(id);
         }
 
+        [Then(@"After adding (.*) remove button is displayed")]
+        public void ThenAfterAddingWinchCoverKitRemoveButtonIsDisplayed(string accessoryAdded)
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsRemoveButtonDisplayedForAccessoryDesc(accessoryAdded));
+        }
+
+        [When(@"I click info button for (.*) accessory")]
+        public void WhenIClickInfoButtonForAccesAccessory(string accessoryDescription)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickSpecificAccessoryCardInfoButton(accessoryDescription);
+
+        }
+
+
     }
 }

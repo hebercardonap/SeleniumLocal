@@ -16,7 +16,7 @@ Scenario: Verify PRP is triggered for RZR brand
 
 @PRP
 Scenario: Verify PRP is triggered for RAN brand
-	Given I have navigated to RAN ranger-crew-570-4-sage-green build page
+	Given I have navigated to RAN ranger-500 build page
 	When I get to build page
 	And I click Utility accessory category
 	And I click Cargo & Bed Storage accessory subcategory

@@ -56,6 +56,9 @@ namespace BuildConfigurator.Pages
         private static By BY_OLD_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@ng-if='showCtaLink']");
         private static By BY_BUILD_SUMMARY_REMOVE_LINK = By.XPath(".//div[@ng-if='showCtaLink']");
         private static By BY_BUILD_SUMMARY_ACC_CONTAINER = By.XPath("//div[@class='summary-scroll']//div[@class='summary-accessory']");
+        private static By BY_ADD_BUTTON = By.CssSelector("button:nth-child(2)");
+        private static By BY_INFO_BUTTON = By.CssSelector("button:nth-child(1)");
+        private static By BY_REMOVE_BUTTON = By.CssSelector("button:nth-child(3)");
 
 
 
@@ -97,13 +100,8 @@ namespace BuildConfigurator.Pages
         public void clickRandomAccessoryCardAddButton()
         {
             getRandomAccessoryCard();
-            List<IWebElement> buttons = SelectedAccessoryCard.FindElements(By.TagName(BUTTON_TAG)).ToList();
-            foreach (var button in buttons.Where(button => string.Equals(button.Text, ADD_TEXT, StringComparison.OrdinalIgnoreCase)))
-            {
-                button.Click();
-                break;
-            }
-
+            IWebElement addButton = SelectedAccessoryCard.FindElement(BY_ADD_BUTTON);
+            WebElementExtensions.clickElement(addButton);
         }
 
         public void clickIamFinishedButton()
@@ -210,12 +208,8 @@ namespace BuildConfigurator.Pages
                 if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
                 {
                     isFound = true;
-                    List<IWebElement> buttons = accessoryCard.FindElements(By.TagName(BUTTON_TAG)).ToList();
-                    foreach (var button in buttons.Where(button => string.Equals(button.Text, ADD_TEXT, StringComparison.OrdinalIgnoreCase)))
-                    {
-                        WebElementExtensions.clickElement(button);
-                        break;
-                    }
+                    IWebElement button = accessoryCard.FindElement(BY_ADD_BUTTON);
+                    WebElementExtensions.clickElement(button);
                     break;
                 }
             }
@@ -336,5 +330,63 @@ namespace BuildConfigurator.Pages
                 }
             }
         }
+
+        private IWebElement clickAddAccessoryByDesc(string accessoryTitle)
+        {
+
+            bool isFound = false;
+            IWebElement element = null;
+            List<IWebElement> accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
+
+            foreach (var accessoryCard in accessoryCards)
+            {
+                string title = accessoryCard.FindElement(BY_ACCESORY_CARD_TITLE).Text;
+
+                if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
+                {
+                    isFound = true;
+                    element = accessoryCard;
+                    IWebElement button = accessoryCard.FindElement(BY_ADD_BUTTON);
+                    WebElementExtensions.clickElement(button);
+                    DriverActions.waitForAjaxRequestToComplete();
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
+
+            return element;
+
+        }
+
+        public bool IsRemoveButtonDisplayedForAccessoryDesc(string accessoryDescription)
+        {
+            IWebElement element = clickAddAccessoryByDesc(accessoryDescription);
+            return DriverActions.IsElementPresent(element.FindElement(BY_REMOVE_BUTTON));
+        }
+
+        public void clickSpecificAccessoryCardInfoButton(string accessoryTitle)
+        {
+
+            bool isFound = false;
+            List<IWebElement> accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
+
+            foreach (var accessoryCard in accessoryCards)
+            {
+                string title = accessoryCard.FindElement(BY_ACCESORY_CARD_TITLE).Text;
+
+                if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
+                {
+                    isFound = true;
+                    IWebElement button = accessoryCard.FindElement(BY_INFO_BUTTON);
+                    WebElementExtensions.clickElement(button);
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
+
+        }
+
     }
 }

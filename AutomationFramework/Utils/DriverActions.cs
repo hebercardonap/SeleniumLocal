@@ -64,6 +64,21 @@ namespace AutomationFramework.Utils
             }
         }
 
+        public bool IsElementPresent(IWebElement element)
+        {
+            bool isDisplayed = false;
+            try
+            {
+                if (element.Displayed && element.Enabled)
+                    isDisplayed = true;
+            }
+            catch (NoSuchElementException)
+            {
+                isDisplayed = false;
+            }
+            return isDisplayed;
+        }
+
         public void clickElement(By locator)
         {
             if (IsElementPresent(locator))
