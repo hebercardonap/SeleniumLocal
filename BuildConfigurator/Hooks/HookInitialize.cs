@@ -3,9 +3,12 @@ using AutomationFramework.Utils;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace BuildConfigurator
@@ -178,6 +181,53 @@ namespace BuildConfigurator
                 string screenShotName = _scenarioContext.ScenarioInfo.Title;
                 _takeScreenshot.Capture(screenShotName);
             }
+        }
+
+        private void GetTestNames()
+        {
+            // Load the assembly containing your fixtures
+            Assembly a = Assembly.LoadFrom(@"C: \Users\hcardo\Selenium\CPQ\SeleniumFramework\BuildConfigurator\bin\Debug\BuildConfigurator.dll");
+            var testNames = string.Empty;
+            // Foreach public class that is a TestFixture and not Ignored
+            foreach (var c in a.GetTypes()
+                               .Where(x => x.IsPublic
+                               && (x.GetCustomAttributes(typeof(NUnit.Framework.TestFixtureAttribute)).Count() > 0)
+                               && (x.GetCustomAttributes(typeof(NUnit.Framework.IgnoreAttribute)).Count() == 0)))
+            {
+                
+                    // For each public method that is a Test and not Ignored
+                    foreach (var m in c.GetMethods()
+                                   .Where(x => x.IsPublic
+                                   && (x.GetCustomAttributes(typeof(NUnit.Framework.TestAttribute)).Count() > 0)
+                                   && (x.GetCustomAttributes(typeof(NUnit.Framework.IgnoreAttribute)).Count() == 0)
+                                   || (x.GetCustomAttributes(typeof(TestCaseAttribute)).Count() > 0)
+                                   || (x.GetCustomAttributes(typeof(TestCaseSourceAttribute)).Count() > 0)))
+                    {
+                    var testAttributes = m.GetCustomAttributes(typeof(TestAttribute)) as IEnumerable<TestAttribute>;
+                    var caseAttributes = m.GetCustomAttributes(typeof(TestCaseAttribute)) as IEnumerable<TestCaseAttribute>;
+                    var caseSourceAttributes = m.GetCustomAttributes(typeof(TestCaseSourceAttribute)) as IEnumerable<TestCaseSourceAttribute>;
+
+                    if (caseAttributes.Count() > 0)
+                    {
+                        foreach (var testCase in caseAttributes)
+                        {
+                            if (!string.IsNullOrEmpty(testCase.TestName))
+                            {
+                                testNames += string.Format("{0}, {1}\n", c.ToString(), testCase.TestName);
+                            }
+                            else
+                            {
+                                testNames += string.Format("{0}, {1}\n", c.ToString(), m.Name);
+                            }
+                        }
+                    }
+                    // Print out the test name
+                    testNames += string.Format("{0}, {1}\n", c.ToString(), m.Name);
+                    }
+            }
+                    
+            
+            var testList = testNames;
         }
 
     }

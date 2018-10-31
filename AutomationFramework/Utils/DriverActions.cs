@@ -78,10 +78,15 @@ namespace AutomationFramework.Utils
 
         public bool IsElementPresent(By locator)
         {
+            bool isFOund = false;
             try
             {
-                Driver.FindElement(locator);
-                return true;
+                IWebElement element = Driver.FindElement(locator);
+                if (element.Displayed && element.Enabled)
+                {
+                    isFOund = true;
+                }
+                return isFOund;
             }
             catch (NoSuchElementException)
             {

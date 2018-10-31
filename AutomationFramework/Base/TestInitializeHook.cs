@@ -36,7 +36,7 @@ namespace AutomationFramework.Base
             _parallelConfig.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
             _parallelConfig.Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(60);
             _parallelConfig.Driver.Manage().Cookies.DeleteAllCookies();
-            _parallelConfig.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            _parallelConfig.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _parallelConfig.Driver.Manage().Window.Maximize();
         }
 

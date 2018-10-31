@@ -185,5 +185,20 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().GetToBuildPage();
         }
 
+        [When(@"DEX build page specific elements are hidden")]
+        public void ThenDEXBuildPageSpecificElementsAreHidden()
+        {
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsNavigationBarDisplayed());
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsIconContainerDisplayed());
+        }
+
+        [Then(@"summary accessory social icons are not displayed")]
+        public void ThenSummaryAccessorySocialIconsAreNotDisplayed()
+        {
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsSummaryAccessorySocialDisplayed());
+        }
+
+
+
     }
 }

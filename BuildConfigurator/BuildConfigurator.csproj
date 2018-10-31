@@ -154,6 +154,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BuildPageFeatures.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\DEX\DealerExperienceBuildTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DealerExperienceBuildTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\PartRequiresPart\PRPTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,6 +238,10 @@
     <None Include="Features\BuildPageFeatures\BuildPageFeatures.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BuildPageFeatures.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DEX\DealerExperienceBuildTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DealerExperienceBuildTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\PartRequiresPart\PRPTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

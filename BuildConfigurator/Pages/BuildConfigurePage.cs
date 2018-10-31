@@ -73,6 +73,9 @@ namespace BuildConfigurator.Pages
         private static By BY_DELETE_SAVED_BUTTON = By.XPath("//button[contains(@class,'saved-vehicle__delete')]");
         private static By BY_FULL_SCREEN_BUTTON = By.Id("build-variant__fullscreen");
         private static By BY_FLICKITY_SLIDER_BUTTON = By.CssSelector("div[class='flickity-slider']>button");
+        private static By BY_NAVIGATION_BAR = By.XPath("//section[contains(@class,'navigation')]");
+        private static By BY_SOCIAL_MEDIA_ICON_CONTAINER = By.XPath("//div[@class='build-header__icon-container']");
+        private static By BY_SUMMARY_ACCESSORY_SOCIAL = By.XPath("//div[@class='summary-accessory-social']");
 
 
 
@@ -517,6 +520,21 @@ namespace BuildConfigurator.Pages
             DriverActions.waitForElementVisibleAndEnabled(BY_FULL_SCREEN_BUTTON);
             DriverActions.waitForElementVisibleAndEnabled(BY_FLICKITY_SLIDER_BUTTON);
             Assert.IsTrue((Driver.Url).Contains("build"));
+        }
+
+        public bool IsNavigationBarDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_NAVIGATION_BAR);
+        }
+
+        public bool IsIconContainerDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SOCIAL_MEDIA_ICON_CONTAINER);
+        }
+
+        public bool IsSummaryAccessorySocialDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SUMMARY_ACCESSORY_SOCIAL);
         }
 
     }

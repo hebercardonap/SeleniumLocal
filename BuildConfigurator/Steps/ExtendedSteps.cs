@@ -18,6 +18,7 @@ namespace BuildConfigurator.Steps
         private static string SIX = "six";
         private static string SLASH_CHARACTER = "/";
         private static string BUILD_URL_PART = "/build";
+        private static string DEALER_PART_ID = "?dealerid=02040900";
 
         public ExtendedSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -200,6 +201,20 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickIamFiniShedButtonNextSteps();
             DriverActions.waitForAjaxRequestToComplete();
         }
+
+        [Given(@"I have navigated to (.*) (.*) build DEX page")]
+        public void GivenIHaveNavigatedToRZRRzr_Xp_Eps_Ride_Command_Edition_Black_PearlBuildDEXPage(string brandName, string modelName)
+        {
+            if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            {
+                string buildUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), SLASH_CHARACTER, modelName, BUILD_URL_PART, DEALER_PART_ID);
+                GoToUrl(buildUrl);
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
+            }
+            else
+                Assert.Fail("Brand {0} not supported", brandName);
+        }
+
 
         [StepArgumentTransformation]
         public string[] TransformToArrayOfStrings(string commaSeparatedStepArgumentValues)
