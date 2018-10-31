@@ -167,6 +167,16 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildQuotePage>().clickGetInternetPriceButton();
             else if (stringEqualsIgnoreCase(buttonName, "buildsummary"))
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickBuildSummaryButton();
+            else if (stringEqualsIgnoreCase(buttonName, "confirmation continue"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickConfirmationContinueButton();
+            else if (stringEqualsIgnoreCase(buttonName, "build restart"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickBuildRestartButton();
+            else if (stringEqualsIgnoreCase(buttonName, "continue"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickConfirmationContinueButton();
+            else if (stringEqualsIgnoreCase(buttonName, "Load Saved Build"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickLoadSavedBuildButton();
+            else if (stringEqualsIgnoreCase(buttonName, "save"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveLink();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
 

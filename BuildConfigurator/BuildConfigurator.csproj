@@ -149,6 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SNOSteppedFlowTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\BuildPageFeatures\BuildPageFeatures.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuildPageFeatures.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\PartRequiresPart\PRPTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +165,7 @@
     <Compile Include="Pages\BuildConfigurePage.cs" />
     <Compile Include="Pages\BuildConfirmationPage.cs" />
     <Compile Include="Pages\BuildInfoModalPage.cs" />
+    <Compile Include="Pages\BuildLoginPage.cs" />
     <Compile Include="Pages\BuildModelPage.cs" />
     <Compile Include="Pages\BuildQuotePage.cs" />
     <Compile Include="Pages\BuildTrimPage.cs" />
@@ -169,6 +175,7 @@
     <Compile Include="Steps\BuildConfigureSteps.cs" />
     <Compile Include="Steps\BuildConfirmationSteps.cs" />
     <Compile Include="Steps\BuildInfoModalSteps.cs" />
+    <Compile Include="Steps\BuildLoginSteps.cs" />
     <Compile Include="Steps\BuildQuoteSteps.cs" />
     <Compile Include="Steps\BuildTrimSteps.cs" />
     <Compile Include="Steps\BuildModelSteps.cs" />
@@ -222,6 +229,10 @@
     <None Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SNOSteppedFlowTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildPageFeatures\BuildPageFeatures.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BuildPageFeatures.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\PartRequiresPart\PRPTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

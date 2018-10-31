@@ -94,11 +94,21 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().isPRPHeaderDisplayed());
         }
 
+        [When(@"Accessories '(.*)' are displayed in build summary")]
         [Then(@"Accessories '(.*)' are displayed in build summary")]
         public void ThenAccessoriesAreDisplayedInBuildSummary(string[] values)
         {
-            _parallelConfig.CurrentPage.As<BuildConfigurePage>().verifyAccesoriesOnBuildSummary(values);
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().verifyAccesoriesOnBuildSummary(values),
+                "ID passed is not present on the build summary container");
         }
+
+        [Then(@"Accessories '(.*)' is not displayed in build summary")]
+        public void ThenAccessoriesIsNotDisplayedInBuildSummary(string[] values)
+        {
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().verifyAccesoriesOnBuildSummary(values),
+                "Product ID is still present on the build summary container");
+        }
+
 
         [When(@"I select accessory by product ID (.*)")]
         public void WhenISelectAccessoryByProductID(string id)
@@ -121,8 +131,15 @@ namespace BuildConfigurator.Steps
         [Then(@"After adding (.*) remove button is displayed")]
         public void ThenAfterAddingWinchCoverKitRemoveButtonIsDisplayed(string accessoryAdded)
         {
-            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsRemoveButtonDisplayedForAccessoryDesc(accessoryAdded));
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().AddAccessoryAndVerifyRemoveButtonDisplayed(accessoryAdded));
         }
+
+        [Then(@"After removing (.*) remove button is hidden")]
+        public void ThenAfterRemovingSportRoofRemoveButtonIsDisplayed(string accessoryRemoved)
+        {
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsRemoveButtonDisplayedForAccessoryDesc(accessoryRemoved));
+        }
+
 
         [When(@"I click info button for (.*) accessory")]
         public void WhenIClickInfoButtonForAccesAccessory(string accessoryDescription)
@@ -131,6 +148,42 @@ namespace BuildConfigurator.Steps
 
         }
 
+        [When(@"I click image with description (.*)")]
+        public void WhenIClickImageWithDescription(string accessoryDescription)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickSpecificAccessoryCardImage(accessoryDescription);
+        }
+
+        [Then(@"Accessory (.*) overview opens up")]
+        public void ThenAccessoryOverviewOpensUp(string accessoryDescription)
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsAccessoryOverViewDisplayed(accessoryDescription));
+        }
+
+        [When(@"I click Save icon")]
+        public void WhenIClickSaveIcon()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveIcon();
+        }
+
+        [When(@"I enter build name")]
+        public void WhenIEnterBuildName()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().EnterBuildName();
+        }
+
+        [Then(@"Newly saved build is loaded")]
+        public void ThenNewlySavedBuildIsLoaded()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().VerifySavedBuildIsPresent());
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().DeleteSavedVehicle();
+        }
+
+        [When(@"I get to build page")]
+        public void ThenIGetToBuildPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().GetToBuildPage();
+        }
 
     }
 }

@@ -152,6 +152,66 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify add accessory remove info modal")]
+        [NUnit.Framework.CategoryAttribute("Add")]
+        public virtual void VerifyAddAccessoryRemoveInfoModal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify add accessory remove info modal", null, new string[] {
+                        "Add"});
+#line 35
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 36
+ testRunner.Given("I have navigated to IND scout-bobber-thunder-black build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
+ testRunner.When("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.And("I click Engine Performance accessory category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("I click Stage 1 Air Intake accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I add specific Air Intake accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I click info button for Air Intake accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I click remove button from info modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I click close button from info modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.Then("Accessories \'2882519\' is not displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify remove option hidden when accessory removed build summary")]
+        [NUnit.Framework.CategoryAttribute("Add")]
+        public virtual void VerifyRemoveOptionHiddenWhenAccessoryRemovedBuildSummary()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify remove option hidden when accessory removed build summary", null, new string[] {
+                        "Add"});
+#line 47
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 48
+ testRunner.Given("I have navigated to RZR rzr-xp-turbo-s-indy-red build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 49
+ testRunner.When("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.And("I click Protection accessory category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I click Windshields accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I add specific Half Windshield accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I remove product id 2883135 from build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.Then("After removing Half Windshield remove button is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

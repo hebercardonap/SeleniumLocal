@@ -26,7 +26,10 @@ namespace BuildConfigurator.Steps
             else if (stringContainsIgnoreCase(buttonName, "remove"))
                 _parallelConfig.CurrentPage.As<BuildInfoModalPage>().ClickInfoModalRemoveAccessoryButton();
             else if (stringContainsIgnoreCase(buttonName, "close"))
+            {
                 _parallelConfig.CurrentPage.As<BuildInfoModalPage>().ClickInfoModalCloseButton();
+                _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
+            }
             else
                 Assert.Fail("Button {0} not present in UI", buttonName);
         }

@@ -41,7 +41,32 @@ namespace AutomationFramework.Utils
                 {
                     break;
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
+            }
+        }
+
+        public void waitForElementVisibleAndEnabled(By locator)
+        {
+            int counter = 10;
+            IWebElement element;
+            while (counter > 0)
+            {
+                try
+                {
+                    element = Driver.FindElement(locator);
+                    if (element.Displayed && element.Enabled)
+                    {
+                        Thread.Sleep(3000);
+                        break;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                Thread.Sleep(3000);
+                counter--;
             }
         }
 

@@ -59,6 +59,20 @@ namespace BuildConfigurator.Pages
         private static By BY_ADD_BUTTON = By.CssSelector("button:nth-child(2)");
         private static By BY_INFO_BUTTON = By.CssSelector("button:nth-child(1)");
         private static By BY_REMOVE_BUTTON = By.CssSelector("button:nth-child(3)");
+        private static By BY_ACCESSORY_IMAGE = By.XPath(".//img");
+        private static By BY_ACCESSORY_OVERVIEW_HEADER = By.XPath("//div[@class='modal__content']//div[@class='title2']");
+        private static By BY_RESTART_BUILD_BUTTON = By.XPath("//div[@title='Restart Build']");
+        private static By BY_CONF_CONTINUE_BUTTON = By.XPath("//button[contains(@class,'confirmation-build-continue')]");
+        private static By BY_CONF_SAVE_BUTTON = By.XPath("//button[contains(@class,'confirmation-build-save')]");
+        private static By BY_CONF_CANCEL_BUTTON = By.CssSelector("div[class*='confirmation-build-cancel'][data-dismiss='modal']");
+        private static By BY_SAVE_ICON = By.XPath("//div[@class='summary-accessory-social']//button[contains(@class,'icon--save')]");
+        private static By BY_BUILD_SAVE_NAME_TXT = By.Id("build-model-save-vehicle-name");
+        private static By BY_BUILD_SAVE_LINK = By.CssSelector("div[class='save-actions'] div[class='save']");
+        private static By BY_LOAD_SAVED_BUTTON = By.XPath("//div[contains(@class,'build-variant')]//button[contains(@class,'savedBuild')]");
+        private static By BY_SAVED_VEHICLE_TITLE = By.XPath("//div[@class='saved-vehicles']//div[contains(@class,'saved-vehicle__title')]");
+        private static By BY_DELETE_SAVED_BUTTON = By.XPath("//button[contains(@class,'saved-vehicle__delete')]");
+        private static By BY_FULL_SCREEN_BUTTON = By.Id("build-variant__fullscreen");
+        private static By BY_FLICKITY_SLIDER_BUTTON = By.CssSelector("div[class='flickity-slider']>button");
 
 
 
@@ -67,6 +81,8 @@ namespace BuildConfigurator.Pages
         private static string BUTTON_TAG = "button";
         private static string ADD_TEXT = "ADD";
         private static string TITLE_ATTRIBUTE = "title";
+        private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+        private static string BUILD_NAME = "TEST BUILD " + DATE_VALUE;
 
         PageHelpers _pageHelpers;
 
@@ -308,27 +324,29 @@ namespace BuildConfigurator.Pages
             DriverActions.clickElement(BY_BUILD_SUMMARY_BUTTON);
         }
 
-        public void verifyAccesoriesOnBuildSummary(string[] values)
+        public bool verifyAccesoriesOnBuildSummary(string[] values)
         {
-            
+            bool isFound = false;
+
             List<IWebElement> ids = Driver.FindElements(BY_PRODUCT_ID_BUILD_SUMMARY).ToList();
 
             foreach (var value in values)
             {
-                bool isFound = false;
 
                 foreach (var id in ids)
                 {
                     if (value.Trim().Equals(id.Text))
                     {
                         isFound = true;
+                        break;
+                    }
+                    else
+                    {
+                        isFound = false;
                     }
                 }
-                if (!isFound)
-                {
-                    Assert.Fail("Product ID: {0} not present in build summary", value);
-                }
             }
+            return isFound;
         }
 
         private IWebElement clickAddAccessoryByDesc(string accessoryTitle)
@@ -359,9 +377,33 @@ namespace BuildConfigurator.Pages
 
         }
 
-        public bool IsRemoveButtonDisplayedForAccessoryDesc(string accessoryDescription)
+        public bool AddAccessoryAndVerifyRemoveButtonDisplayed(string accessoryDescription)
         {
             IWebElement element = clickAddAccessoryByDesc(accessoryDescription);
+            return DriverActions.IsElementPresent(element.FindElement(BY_REMOVE_BUTTON));
+        }
+
+        public bool IsRemoveButtonDisplayedForAccessoryDesc(string accessoryDescription)
+        {
+            bool isFound = false;
+            IWebElement element = null;
+            List<IWebElement> accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
+
+            foreach (var accessoryCard in accessoryCards)
+            {
+                string title = accessoryCard.FindElement(BY_ACCESORY_CARD_TITLE).Text;
+
+                if (stringContainsIgnoreCase(title, accessoryDescription) || stringEqualsIgnoreCase(title, accessoryDescription))
+                {
+                    isFound = true;
+                    element = accessoryCard;
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Accesory with description: {0} is not present");
+            }
             return DriverActions.IsElementPresent(element.FindElement(BY_REMOVE_BUTTON));
         }
 
@@ -386,6 +428,96 @@ namespace BuildConfigurator.Pages
             if (!isFound)
                 Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
 
+        }
+
+        public void clickSpecificAccessoryCardImage(string accessoryTitle)
+        {
+
+            bool isFound = false;
+            List<IWebElement> accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
+
+            foreach (var accessoryCard in accessoryCards)
+            {
+                string title = accessoryCard.FindElement(BY_ACCESORY_CARD_TITLE).Text;
+
+                if (stringContainsIgnoreCase(title, accessoryTitle) || stringEqualsIgnoreCase(title, accessoryTitle))
+                {
+                    isFound = true;
+                    IWebElement button = accessoryCard.FindElement(BY_ACCESSORY_IMAGE);
+                    WebElementExtensions.clickElement(button);
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
+
+        }
+
+        public bool IsAccessoryOverViewDisplayed(string accessoryDescription)
+        {
+            string header = string.Empty;
+            if (DriverActions.IsElementPresent(BY_ACCESSORY_OVERVIEW_HEADER))
+            {
+                header = Driver.FindElement(BY_ACCESSORY_OVERVIEW_HEADER).Text;
+            }
+
+            return stringContainsIgnoreCase(header, accessoryDescription);
+        }
+
+        public void ClickBuildRestartButton()
+        {
+            DriverActions.clickElement(BY_RESTART_BUILD_BUTTON);
+            DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public void ClickConfirmationContinueButton()
+        {
+            DriverActions.clickElement(BY_CONF_CONTINUE_BUTTON);
+            DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public void ClickSaveIcon()
+        {
+            DriverActions.clickElement(BY_SAVE_ICON);
+            DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public void EnterBuildName()
+        {
+            Driver.FindElement(BY_BUILD_SAVE_NAME_TXT).SendKeys(BUILD_NAME);
+        }
+
+        public void ClickLoadSavedBuildButton()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_LOAD_SAVED_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_LOAD_SAVED_BUTTON);
+            DriverActions.clickElement(BY_LOAD_SAVED_BUTTON);
+        }
+
+        public bool VerifySavedBuildIsPresent()
+        {
+            List<IWebElement> builds = Driver.FindElements(BY_SAVED_VEHICLE_TITLE).ToList();
+            bool isFound = builds.Any(x => x.Text.Equals(BUILD_NAME));
+            return isFound;
+        }
+
+        public void DeleteSavedVehicle()
+        {
+            DriverActions.clickElement(BY_DELETE_SAVED_BUTTON);
+        }
+
+        public void ClickSaveLink()
+        {
+            DriverActions.clickElement(BY_BUILD_SAVE_LINK);
+        }
+
+        public void GetToBuildPage()
+        {
+            DriverActions.waitForElementToBeEnabled(BY_FULL_SCREEN_BUTTON);
+            DriverActions.waitForElementToBeEnabled(BY_FLICKITY_SLIDER_BUTTON);
+            DriverActions.waitForAjaxRequestToComplete();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
+            Assert.IsTrue((Driver.Url).Contains("build"));
         }
 
     }

@@ -18,13 +18,5 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildColorPage>().clickColor();
         }
 
-
-        [When(@"I get to build page")]
-        public void ThenIGetToBuildPage()
-        {
-            _parallelConfig.CurrentPage.As<BuildColorPage>().getToBuildPage();
-        }
-
-
     }
 }

@@ -30,3 +30,25 @@ Scenario: Verify add accessory from info modal
 	And I click add button from info modal
 	And I click close button from info modal
 	Then Accessories '2882390' are displayed in build summary
+
+@Add
+Scenario: Verify add accessory remove info modal
+	Given I have navigated to IND scout-bobber-thunder-black build page
+	When I get to build page
+	And I click Engine Performance accessory category
+	And I click Stage 1 Air Intake accessory subcategory
+	And I add specific Air Intake accessory
+	And I click info button for Air Intake accessory
+	And I click remove button from info modal
+	And I click close button from info modal
+	Then Accessories '2882519' is not displayed in build summary
+
+@Add
+Scenario: Verify remove option hidden when accessory removed build summary
+	Given I have navigated to RZR rzr-xp-turbo-s-indy-red build page
+	When I get to build page
+	And I click Protection accessory category
+	And I click Windshields accessory subcategory
+	And I add specific Half Windshield accessory
+	And I remove product id 2883135 from build summary
+	Then After removing Half Windshield remove button is hidden

@@ -3,7 +3,7 @@ using System;
 
 namespace AutomationFramework.DataProvider
 {
-    class UserAccountData
+    public class UserAccountData
     {
         public static readonly UserAccountData NON_EMPLOYEE_1 = new UserAccountData(QaUserAccounts.NON_EMPLOYEE_1, ProdUserAccounts.NON_EMPLOYEE_1);
         public static readonly UserAccountData NON_EMPLOYEE_2 = new UserAccountData(QaUserAccounts.NON_EMPLOYEE_2, ProdUserAccounts.NON_EMPLOYEE_2);
