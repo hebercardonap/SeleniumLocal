@@ -123,6 +123,7 @@ namespace BuildConfigurator
         [BeforeScenario]
         public void Initialize()
         {
+            GetTestNames();
             InitializeSettings();
 
             string currentFeature = _featureContext.FeatureInfo.Title;
@@ -186,7 +187,7 @@ namespace BuildConfigurator
         private void GetTestNames()
         {
             // Load the assembly containing your fixtures
-            Assembly a = Assembly.LoadFrom(@"C: \Users\hcardo\Selenium\CPQ\SeleniumFramework\BuildConfigurator\bin\Debug\BuildConfigurator.dll");
+            Assembly a = Assembly.LoadFrom(@"C: \Users\hcardo\Selenium\CPQ\SeleniumFramework\APITests\bin\Debug\APITests.dll");
             var testNames = string.Empty;
             // Foreach public class that is a TestFixture and not Ignored
             foreach (var c in a.GetTypes()

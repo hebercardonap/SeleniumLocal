@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\ApiBasePage.cs" />
     <Compile Include="Base\Base.cs" />
     <Compile Include="Base\BasePage.cs" />
     <Compile Include="Base\BaseStep.cs" />
