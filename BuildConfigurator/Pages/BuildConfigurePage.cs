@@ -474,6 +474,7 @@ namespace BuildConfigurator.Pages
         {
             DriverActions.clickElement(BY_CONF_CONTINUE_BUTTON);
             DriverActions.waitForAjaxRequestToComplete();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         public void ClickSaveIcon()
@@ -513,10 +514,8 @@ namespace BuildConfigurator.Pages
 
         public void GetToBuildPage()
         {
-            DriverActions.waitForElementToBeEnabled(BY_FULL_SCREEN_BUTTON);
-            DriverActions.waitForElementToBeEnabled(BY_FLICKITY_SLIDER_BUTTON);
-            DriverActions.waitForAjaxRequestToComplete();
-            WebDriverExtensions.WaitForPageLoaded(Driver);
+            DriverActions.waitForElementVisibleAndEnabled(BY_FULL_SCREEN_BUTTON);
+            DriverActions.waitForElementVisibleAndEnabled(BY_FLICKITY_SLIDER_BUTTON);
             Assert.IsTrue((Driver.Url).Contains("build"));
         }
 
