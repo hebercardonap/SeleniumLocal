@@ -70,11 +70,11 @@ namespace BuildConfigurator.Features.DEX
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is displayed when secondary accessory is removed")]
+        [NUnit.Framework.DescriptionAttribute("Verify items hidden for dealer experience")]
         [NUnit.Framework.CategoryAttribute("PRP")]
-        public virtual void VerifyPRPIsDisplayedWhenSecondaryAccessoryIsRemoved()
+        public virtual void VerifyItemsHiddenForDealerExperience()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is displayed when secondary accessory is removed", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify items hidden for dealer experience", null, new string[] {
                         "PRP"});
 #line 5
 this.ScenarioInitialize(scenarioInfo);
@@ -90,6 +90,31 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.Then("summary accessory social icons are not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify virtual keyboard is displayed on build page")]
+        [NUnit.Framework.CategoryAttribute("PRP")]
+        public virtual void VerifyVirtualKeyboardIsDisplayedOnBuildPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify virtual keyboard is displayed on build page", null, new string[] {
+                        "PRP"});
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 14
+ testRunner.Given("I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build DE" +
+                    "X page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.When("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.And("I click calculator icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("I click msrp form field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then("Virtual keyboard is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -198,6 +198,11 @@ namespace BuildConfigurator.Steps
             Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsSummaryAccessorySocialDisplayed());
         }
 
+        [Then(@"Virtual keyboard is displayed")]
+        public void ThenVirtualKeyboardIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsVirtualKeyboardDisplayed());
+        }
 
 
     }

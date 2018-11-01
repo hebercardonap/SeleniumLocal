@@ -76,6 +76,10 @@ namespace BuildConfigurator.Pages
         private static By BY_NAVIGATION_BAR = By.XPath("//section[contains(@class,'navigation')]");
         private static By BY_SOCIAL_MEDIA_ICON_CONTAINER = By.XPath("//div[@class='build-header__icon-container']");
         private static By BY_SUMMARY_ACCESSORY_SOCIAL = By.XPath("//div[@class='summary-accessory-social']");
+        private static By BY_CALCULATOR_ICON = By.XPath("//i[@class='icon icon__calculator']");
+        private static By BY_MSRP_FIELD = By.XPath("//input[@id='txtMsrp']");
+        private static By BY_VIRTUAL_KYB = By.XPath("//div[contains(@class,'ui-keyboard')]//button[@data-value='7']");
+        private static By BY_PYMNT_CALC_HEADER = By.XPath("//div[contains(@class,'payment-calculator')]//h2");
 
 
 
@@ -537,5 +541,27 @@ namespace BuildConfigurator.Pages
             return DriverActions.IsElementPresent(BY_SUMMARY_ACCESSORY_SOCIAL);
         }
 
+        public void ClickCalculatorIcon()
+        {
+            DriverActions.clickElement(BY_CALCULATOR_ICON);
+            DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public void ClickMsrpField()
+        {
+            ClickPaymentCalculatorHeader();
+            DriverActions.clickElement(BY_MSRP_FIELD);
+            DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public bool IsVirtualKeyboardDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_VIRTUAL_KYB);
+        }
+
+        public void ClickPaymentCalculatorHeader()
+        {
+            DriverActions.clickElement(BY_PYMNT_CALC_HEADER);
+        }
     }
 }

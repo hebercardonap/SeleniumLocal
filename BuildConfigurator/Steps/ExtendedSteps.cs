@@ -215,6 +215,24 @@ namespace BuildConfigurator.Steps
                 Assert.Fail("Brand {0} not supported", brandName);
         }
 
+        [When(@"I click (.*) icon")]
+        public void WhenIClickIcon(string iconName)
+        {
+            if (stringEqualsIgnoreCase(iconName, "calculator"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickCalculatorIcon();
+            else
+                Assert.Fail("Icon {0} is not present", iconName);
+        }
+
+        [When(@"I click (.*) form field")]
+        public void WhenIClickFormField(string formField)
+        {
+            if (stringEqualsIgnoreCase(formField, "msrp"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickMsrpField();
+            else
+                Assert.Fail("Form field {0} is not present", formField);
+        }
+
 
         [StepArgumentTransformation]
         public string[] TransformToArrayOfStrings(string commaSeparatedStepArgumentValues)
