@@ -26,6 +26,7 @@ namespace BuildConfigurator.Pages
         private static By BY_FAMILY_SLIDE = By.XPath("//div[@class='family family--slide']");
         private static string BY_FAMILY_SLIDE_CATEGORY = "//section//span[contains(text(), '{0}')]";
         private static By BY_FAMILY_CATEGORIES = By.XPath("//div[contains(@class, 'family')]//span");
+        private static By BY_BUILD_MODEL_HEADER = By.XPath("//div[@class='title']");
 
 
 
@@ -158,6 +159,11 @@ namespace BuildConfigurator.Pages
                 }
             }
 
+        }
+
+        public bool IsBuildModelHeaderDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_MODEL_HEADER);
         }
 
     }

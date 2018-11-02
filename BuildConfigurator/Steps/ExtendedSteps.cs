@@ -220,6 +220,8 @@ namespace BuildConfigurator.Steps
         {
             if (stringEqualsIgnoreCase(iconName, "calculator"))
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickCalculatorIcon();
+            else if (stringEqualsIgnoreCase(iconName, "save"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveIcon();
             else
                 Assert.Fail("Icon {0} is not present", iconName);
         }

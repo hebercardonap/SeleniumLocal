@@ -2,6 +2,7 @@
 using AutomationFramework.Extensions;
 using AutomationFramework.UrlBuilderSites;
 using BuildConfigurator.Pages;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace BuildConfigurator.Steps
@@ -58,6 +59,13 @@ namespace BuildConfigurator.Steps
         {
             _parallelConfig.CurrentPage.As<BuildModelPage>().clickByFamilyVersion(version);
         }
+
+        [Then(@"Choose model header is displayed")]
+        public void ThenChooseModelHeaderIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().IsBuildModelHeaderDisplayed());
+        }
+
 
     }
 }

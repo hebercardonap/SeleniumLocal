@@ -30,10 +30,28 @@ Scenario: Verify save build functionality
 	And I click Protection accessory category
 	And I click Mirrors accessory subcategory
 	And I add specific Folding Side Mirrors accessory
-	And I click Save icon
+	And I click save icon
 	And I enter build name
 	And I click save button
 	And I login
 	And I get to build page
 	And I click Load Saved Build button
 	Then Newly saved build is loaded
+
+@features
+Scenario: Verify navigation bar and social icons are present
+	Given I have navigated to RZR rzr-xp-4-turbo-s-indy-red build page
+	When I get to build page
+	And Navigation bar and icon container is displayed
+	And I click buildsummary button
+	Then summary accessory social icons are displayed
+
+@features
+Scenario: Verify navigation back from build to models
+	Given I have navigated to RZR rzr-xp-4-turbo-s-indy-red build page
+	When I get to build page
+	And Navigation bar and icon container is displayed
+	And I navigate back to color
+	And I navigate back to trim
+	And I navigate back to models
+	Then Choose model header is displayed

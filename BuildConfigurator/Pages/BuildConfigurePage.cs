@@ -80,6 +80,9 @@ namespace BuildConfigurator.Pages
         private static By BY_MSRP_FIELD = By.XPath("//input[@id='txtMsrp']");
         private static By BY_VIRTUAL_KYB = By.XPath("//div[contains(@class,'ui-keyboard')]//button[@data-value='7']");
         private static By BY_PYMNT_CALC_HEADER = By.XPath("//div[contains(@class,'payment-calculator')]//h2");
+        private static By BY_NAVIGATION_COLOR = By.XPath("//a[contains(@title,'Color')]");
+        private static By BY_NAVIGATION_TRIM = By.XPath("//a[contains(@title,'Trim')]");
+        private static By BY_NAVIGATION_MODELS = By.XPath("//a[contains(@title,'Models')]");
 
 
 
@@ -562,6 +565,24 @@ namespace BuildConfigurator.Pages
         public void ClickPaymentCalculatorHeader()
         {
             DriverActions.clickElement(BY_PYMNT_CALC_HEADER);
+        }
+
+        public void ClickColorFromNavigationBar()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_NAVIGATION_COLOR);
+            DriverActions.clickElement(BY_NAVIGATION_COLOR);
+        }
+
+        public void ClickTrimFromNavigationBar()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_NAVIGATION_TRIM);
+            DriverActions.clickElement(BY_NAVIGATION_TRIM);
+        }
+
+        public void ClickModelsFromNavigationBar()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_NAVIGATION_MODELS);
+            DriverActions.clickElement(BY_NAVIGATION_MODELS);
         }
     }
 }

@@ -13,6 +13,10 @@ namespace BuildConfigurator.Steps
     [Binding]
     class BuildConfigureSteps : BasePage
     {
+        private static string BUILD_COLOR_PART_URL = "/build-color";
+        private static string BUILD_TRIM_PART_URL = "/build-trim";
+        private static string BUILD_MODEL_PART_URL = "/build-model";
+
         public BuildConfigureSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
            _parallelConfig.CurrentPage = new BuildConfigurePage(_parallelConfig);
@@ -192,10 +196,24 @@ namespace BuildConfigurator.Steps
             Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsIconContainerDisplayed());
         }
 
+        [When(@"Navigation bar and icon container is displayed")]
+        public void ThenNavigationBarAndIconContainerIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsNavigationBarDisplayed());
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsIconContainerDisplayed());
+        }
+
+
         [Then(@"summary accessory social icons are not displayed")]
         public void ThenSummaryAccessorySocialIconsAreNotDisplayed()
         {
             Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsSummaryAccessorySocialDisplayed());
+        }
+
+        [Then(@"summary accessory social icons are displayed")]
+        public void ThenSummaryAccessorySocialIconsAreDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsSummaryAccessorySocialDisplayed());
         }
 
         [Then(@"Virtual keyboard is displayed")]
@@ -204,6 +222,27 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsVirtualKeyboardDisplayed());
         }
 
+        [When(@"I navigate back to (.*)")]
+        public void WhenINavigateBackTo(string menuNav)
+        {
+            if (stringEqualsIgnoreCase(menuNav, "color"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickColorFromNavigationBar();
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, BUILD_COLOR_PART_URL));
+            }
+            else if (stringEqualsIgnoreCase(menuNav, "trim"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickTrimFromNavigationBar();
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, BUILD_TRIM_PART_URL));
+            }
+            else if (stringEqualsIgnoreCase(menuNav, "models"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickModelsFromNavigationBar();
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, BUILD_MODEL_PART_URL));
+                _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
+            }
+
+        }
 
     }
 }
