@@ -23,7 +23,8 @@ namespace BuildConfigurator.Pages
         private static By BY_RAN_TRAIL_SUBCATEGORY = By.XPath("//button[@title='View Trail']");
 
         // Accessory Cards selectors
-        private static By BY_ACCESSORY_CARD = By.CssSelector("div[class='flickity-slider'] div[ng-repeat^='product']");
+        //private static By BY_ACCESSORY_CARD = By.CssSelector("div[class='flickity-slider'] div[ng-repeat^='product']");
+        private static By BY_ACCESSORY_CARD = By.CssSelector("div[id = 'accessory'] div[class='flickity-slider'] div[class*='build-accessory-card'][style]");
         private static By BY_BUILD_CATEGORIES = By.XPath("//div[@id='build-category']//div[@class='flickity-slider']//button");
 
 
