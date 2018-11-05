@@ -23,6 +23,11 @@ namespace BuildConfigurator.Pages
         private static By BY_FORM_COMMERCIAL_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[@value='commercial']");
         private static By BY_FORM_PERSONAL_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[@value='personal']");
         private static By BY_FORM_GOVERNMENT_OPTION = By.XPath("//div[contains(@class, 'Form__Element  ')]//input[contains(@value, 'government')]");
+        private static By BY_LAST_NAME_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='LastName']//span[contains(@class,'Error')]");
+        private static By BY_FIRST_NAME_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='FirstName']//span[contains(@class,'Error')]");
+        private static By BY_EMAIL_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='Email']//span[contains(@class,'Error')]");
+        private static By BY_POSTAL_CODE_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='DealerLocator']//span[contains(@class,'Error')]");
+        private static By BY_AGE_CHECKBOX_VALIDATION_ERROR = By.XPath("//div[@data-f-type='choice']//span[@class='Form__Element__ValidationError']");
 
         public BuildQuotePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -33,9 +38,19 @@ namespace BuildConfigurator.Pages
             Driver.FindElement(BY_FIRST_NAME_FIELD).SendKeys(AccountDetails.TEST_USER_1.FirstName);
         }
 
+        public void setFirstName(string firstName)
+        {
+            Driver.FindElement(BY_FIRST_NAME_FIELD).SendKeys(firstName);
+        }
+
         public void setLastName()
         {
             Driver.FindElement(BY_LAST_NAME_FIELD).SendKeys(AccountDetails.TEST_USER_1.LastName);
+        }
+
+        public void setLastName(string lastName)
+        {
+            Driver.FindElement(BY_LAST_NAME_FIELD).SendKeys(lastName);
         }
 
         public void setEmail()
@@ -43,14 +58,29 @@ namespace BuildConfigurator.Pages
             Driver.FindElement(BY_EMAIL_FIELD).SendKeys(AccountDetails.TEST_USER_1.Email);
         }
 
+        public void setEmail(string email)
+        {
+            Driver.FindElement(BY_EMAIL_FIELD).SendKeys(email);
+        }
+
         public void setPhoneNumber()
         {
             Driver.FindElement(BY_PHONE_FIELD).SendKeys(AccountDetails.TEST_USER_1.PhoneNumber);
         }
 
+        public void setPhoneNumber(string phoneNumber)
+        {
+            Driver.FindElement(BY_PHONE_FIELD).SendKeys(phoneNumber);
+        }
+
         public void setPostalCode()
         {
             Driver.FindElement(BY_POSTAL_CODE_FIELD).SendKeys(AccountDetails.TEST_USER_1.ZipCode);
+        }
+
+        public void setPostalCode(string postalCode)
+        {
+            Driver.FindElement(BY_POSTAL_CODE_FIELD).SendKeys(postalCode);
         }
 
         public void clickGetInternetPriceButton()
@@ -86,6 +116,31 @@ namespace BuildConfigurator.Pages
         public void clickFormGovernmentUseOption()
         {
             DriverActions.clickElement(BY_FORM_GOVERNMENT_OPTION);
+        }
+
+        public bool IsFirstNameValidationErrorDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_FIRST_NAME_VALIDATION_ERROR);
+        }
+
+        public bool IsLastNameValidationErrorDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_LAST_NAME_VALIDATION_ERROR);
+        }
+
+        public bool IsEmailValidationErrorDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_EMAIL_VALIDATION_ERROR);
+        }
+
+        public bool IsPostalCodeValidationErrorDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_POSTAL_CODE_VALIDATION_ERROR);
+        }
+
+        public bool IsAgeCheckboxValidationErrorDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_AGE_CHECKBOX_VALIDATION_ERROR);
         }
     }
 }

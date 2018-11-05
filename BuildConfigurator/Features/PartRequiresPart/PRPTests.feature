@@ -124,3 +124,19 @@ Scenario: Verify primary accessory is not removed when removing secondary acceos
 	And I remove product id 2882076 from build summary
 	Then Accessories '2884019-293' are displayed in build summary
 
+@PRP
+Scenario: Verify PRP persists after conflict is displayed
+	Given I have navigated to GEM el-xd build page
+	When I get to build page
+	And I click Power accessory category
+	And I click Battery accessory subcategory
+	And I add specific Distance AGM accessory
+	And I click Charging accessory subcategory
+	And I add specific 6 kW Level 2 accessory
+	And Conflict container is displayed
+	And I remove product id 0752232 from conflict container
+	And I click Convenience accessory category
+	And I click Floor Mats accessory subcategory
+	And I add specific Rubber Floor Mat accessory
+	Then PRP container is displayed
+

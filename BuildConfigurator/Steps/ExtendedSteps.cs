@@ -19,6 +19,7 @@ namespace BuildConfigurator.Steps
         private static string SLASH_CHARACTER = "/";
         private static string BUILD_URL_PART = "/build";
         private static string DEALER_PART_ID = "?dealerid=02040900";
+        private static string BUILD_QUOTE_URL_PART = "/rzr-s-900-white/build-quote/";
 
         public ExtendedSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -233,6 +234,14 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickMsrpField();
             else
                 Assert.Fail("Form field {0} is not present", formField);
+        }
+
+        [Given(@"I have navigated to build quote page")]
+        public void GivenIHaveNavigatedToBuildQuote()
+        {
+            string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_URL_PART);
+            GoToUrl(buildQuoteUrl);
+            _parallelConfig.CurrentPage = new BuildQuotePage(_parallelConfig);
         }
 
 

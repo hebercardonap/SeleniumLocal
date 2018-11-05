@@ -51,11 +51,11 @@ namespace BuildConfigurator.Pages
         private static By BY_BUILD_SUMMARY_BUTTON = By.XPath("//button[@class='btn-next']");
         private static By BY_PRODUCT_ID_BUILD_SUMMARY = By.XPath("//div[@class='summary-scroll']//div[contains(@class, 'product-id')]");
         private static By BY_ACC_REQUIRED_PRODUCT_ID = By.XPath("//div[@class='part-require-part-secondaryParts']//div[contains(@class,'product-id')]");
-        private static By BY_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@role='button']");
+        private static By BY_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[contains(@class,'btn-primary')]");
         private static By BY_SUMMARY_ACCESSORY_INFO = By.XPath("//div[@class='part-require-part-secondaryParts']//div[@class='summary-accessory-info']");
         private static By BY_SUMMARY_CHILD_PRODUCT_ID = By.XPath(".//div[contains(@class,'product-id')]");
         private static By BY_OLD_SECONDARY_ACC_CHILD_SELECT_BUTTON = By.XPath(".//div[@ng-if='showCtaLink']");
-        private static By BY_BUILD_SUMMARY_REMOVE_LINK = By.XPath(".//div[@ng-if='showCtaLink']");
+        private static By BY_BUILD_SUMMARY_REMOVE_LINK = By.XPath(".//div[contains(@class,'info-remove')]");
         private static By BY_BUILD_SUMMARY_ACC_CONTAINER = By.XPath("//div[@class='summary-scroll']//div[@class='summary-accessory']");
         private static By BY_ADD_BUTTON = By.CssSelector("button:nth-child(2)");
         private static By BY_INFO_BUTTON = By.CssSelector("button:nth-child(1)");
@@ -84,6 +84,8 @@ namespace BuildConfigurator.Pages
         private static By BY_NAVIGATION_COLOR = By.XPath("//a[contains(@title,'Color')]");
         private static By BY_NAVIGATION_TRIM = By.XPath("//a[contains(@title,'Trim')]");
         private static By BY_NAVIGATION_MODELS = By.XPath("//a[contains(@title,'Models')]");
+        private static By BY_CONFLICT_CONTAINER_ITEMS = By.XPath("//div[@class='conflict']//div[@class='summary-accessory']");
+        private static By BY_CONFLICT_REMOVE_CTA = By.XPath(".//div[@class='summary-accessory-info-remove ']");
 
 
 
@@ -320,6 +322,27 @@ namespace BuildConfigurator.Pages
                 {
                     isFound = true;
                     WebElementExtensions.clickElement(productId.FindElement(BY_BUILD_SUMMARY_REMOVE_LINK));
+                    break;
+                }
+            }
+            if (!isFound)
+            {
+                Assert.Fail("Product id {0} not available for this model", id);
+            }
+        }
+
+        public void clickRemoveLinkByProductIdConflictContainer(string id)
+        {
+            bool isFound = false;
+            List<IWebElement> productIds = Driver.FindElements(BY_CONFLICT_CONTAINER_ITEMS).ToList();
+
+            foreach (var productId in productIds)
+            {
+                string currentId = productId.FindElement(BY_SUMMARY_CHILD_PRODUCT_ID).Text;
+                if (currentId.Equals(id))
+                {
+                    isFound = true;
+                    WebElementExtensions.clickElement(productId.FindElement(BY_CONFLICT_REMOVE_CTA));
                     break;
                 }
             }

@@ -79,6 +79,7 @@ namespace BuildConfigurator.Steps
         }
 
         [Then(@"Conflict container is displayed")]
+        [When(@"Conflict container is displayed")]
         public void ThenConflictContainerIsDisplayed()
         {
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().isConflictContainerDisplayed());
@@ -131,6 +132,13 @@ namespace BuildConfigurator.Steps
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickRemoveLinkByProductId(id);
         }
+
+        [When(@"I remove product id (.*) from conflict container")]
+        public void WhenIRemoveProductIdFromConflictContainer(string accessoryId)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().clickRemoveLinkByProductIdConflictContainer(accessoryId);
+        }
+
 
         [Then(@"After adding (.*) remove button is displayed")]
         public void ThenAfterAddingWinchCoverKitRemoveButtonIsDisplayed(string accessoryAdded)

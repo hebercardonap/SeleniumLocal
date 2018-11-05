@@ -149,6 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SNOSteppedFlowTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\BuildForms\BuildQuoteFormTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuildQuoteFormTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\BuildPageFeatures\BuildPageFeatures.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +239,10 @@
     <None Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SNOSteppedFlowTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BuildForms\BuildQuoteFormTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BuildQuoteFormTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\BuildPageFeatures\BuildPageFeatures.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

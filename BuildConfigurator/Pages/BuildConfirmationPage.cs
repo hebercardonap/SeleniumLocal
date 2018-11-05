@@ -13,7 +13,7 @@ namespace BuildConfigurator.Pages
     {
         private static By BY_THANK_YOU_MESSAGE = By.CssSelector("div[class*='form-confirmation'] span");
         private static By BY_PRINT_LINK = By.XPath("//button[@title='Print Detailed Summary']");
-        private static By BY_TOTAL_PRICE = By.CssSelector("div.total-price");
+        private static By BY_TOTAL_PRICE = By.XPath("//div[contains(@class,'total-price')]");
         private static By BY_ADDED_ACCESSORY = By.XPath("//div[contains(@class,'product border-bottom')]");
         private static By BY_ADDED_ACCESSORY_CONTAINER = By.CssSelector("div[class='added-products']");
         private static By BY_SHOPPING_TOOLS = By.XPath("//div[contains(@class,'layout__container')]//section[@id='shopping-tools']");
