@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a Indian products
 
-@SLG
+@steppedProcess @slg
 Scenario: Verify SLG S stepped flow
 	Given I have navigated to SLG build model page
 	When I select slingshot S
@@ -17,7 +17,7 @@ Scenario: Verify SLG S stepped flow
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@SLG
+@steppedProcess @slg
 Scenario: Verify SLG Grand Touring stepped flow
 	Given I have navigated to SLG build model page
 	When I select slingshot touring
@@ -32,7 +32,7 @@ Scenario: Verify SLG Grand Touring stepped flow
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@SLG
+@steppedProcess @slg
 Scenario: Verify SLG SL stepped flow
 	Given I have navigated to SLG build model page
 	When I select slingshot SL
@@ -48,7 +48,7 @@ Scenario: Verify SLG SL stepped flow
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@SLG
+@steppedProcess @slg
 Scenario: Verify SLG SLR stepped flow
 	Given I have navigated to SLG build model page
 	When I select slingshot SLR

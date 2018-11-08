@@ -2,7 +2,7 @@
 	Verify PRP rule is triggered
 	when applicable for a particular brand
 
-@PRP
+@PRP @rzr
 Scenario: Verify PRP is triggered for RZR brand
 	Given I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build page
 	When I get to build page
@@ -14,9 +14,9 @@ Scenario: Verify PRP is triggered for RZR brand
 	And I click buildsummary button
 	Then Accessories '2884118,2882240' are displayed in build summary
 
-@PRP
+@PRP @ran
 Scenario: Verify PRP is triggered for RAN brand
-	Given I have navigated to RAN ranger-500 build page
+	Given I have navigated to RAN ranger-500-sage-green build page
 	When I get to build page
 	And I click Utility accessory category
 	And I click Cargo & Bed Storage accessory subcategory
@@ -26,7 +26,7 @@ Scenario: Verify PRP is triggered for RAN brand
 	And I click buildsummary button
 	Then Accessories '2882430,2884106' are displayed in build summary
 
-@PRP
+@PRP @gen
 Scenario: Verify PRP is triggered for GEN brand
 	Given I have navigated to GEN general-1000-eps-deluxe-orange-rust build page
 	When I get to build page
@@ -38,7 +38,7 @@ Scenario: Verify PRP is triggered for GEN brand
 	And I click buildsummary button
 	Then Accessories '2881090,2881108' are displayed in build summary
 
-@PRP
+@PRP @ace
 Scenario: Verify PRP is triggered for ACE brand
 	Given I have navigated to ACE ace-570-eps-ghost-gray build page
 	When I get to build page
@@ -50,7 +50,7 @@ Scenario: Verify PRP is triggered for ACE brand
 	And I click buildsummary button
 	Then Accessories '2883107,2881147' are displayed in build summary
 
-@PRP
+@PRP @atv
 Scenario: Verify PRP is triggered for ATV brand
 	Given I have navigated to ATV sportsman-450-ho-utility-edition-ghost-gray build page
 	When I get to build page
@@ -59,7 +59,7 @@ Scenario: Verify PRP is triggered for ATV brand
 	And I add specific Gun Boot accessory
 	Then PRP container is displayed
 
-@PRP
+@PRP @slg
 Scenario: Verify PRP is triggered for SLG brand
 	Given I have navigated to SLG slingshot-s-white-lightning build page
 	When I get to build page
@@ -68,7 +68,7 @@ Scenario: Verify PRP is triggered for SLG brand
 	And I add specific Ghost Gray accessory
 	Then PRP container is displayed
 
-@PRP
+@PRP @ind
 Scenario: Verify PRP is triggered for IND brand
 	Given I have navigated to IND springfield-thunder-black build page
 	When I get to build page
@@ -80,7 +80,7 @@ Scenario: Verify PRP is triggered for IND brand
 	And I click buildsummary button
 	Then Accessories '2879674-266,2879667-05' are displayed in build summary
 
-@PRP
+@PRP @sno
 Scenario: Verify PRP is triggered for SNO brand
 	Given I have navigated to SNO switchback/600-switchback-sp-144-es build page
 	When I get to build page
@@ -89,7 +89,7 @@ Scenario: Verify PRP is triggered for SNO brand
 	And I add specific Under Rack Bag accessory
 	Then PRP container is displayed
 
-@PRP
+@PRP @gem
 Scenario: Verify PRP is triggered for GEM brand
 	Given I have navigated to GEM el-xd build page
 	When I get to build page
@@ -98,7 +98,7 @@ Scenario: Verify PRP is triggered for GEM brand
 	And I add specific Solar Panel accessory
 	Then PRP container is displayed
 
-@PRP
+@PRP @rzr
 Scenario: Verify PRP is displayed when secondary accessory is removed
 	Given I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build page
 	When I get to build page
@@ -111,7 +111,7 @@ Scenario: Verify PRP is displayed when secondary accessory is removed
 	And I remove product id 2882240 from build summary
 	Then PRP container is displayed
 
-@PRP
+@PRP @rzr
 Scenario: Verify primary accessory is not removed when removing secondary acceossory
 	Given I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build page
 	When I get to build page
@@ -124,7 +124,7 @@ Scenario: Verify primary accessory is not removed when removing secondary acceos
 	And I remove product id 2882076 from build summary
 	Then Accessories '2884019-293' are displayed in build summary
 
-@PRP
+@PRP @gem
 Scenario: Verify PRP persists after conflict is displayed
 	Given I have navigated to GEM el-xd build page
 	When I get to build page

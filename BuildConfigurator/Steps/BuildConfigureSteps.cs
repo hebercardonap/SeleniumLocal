@@ -252,5 +252,14 @@ namespace BuildConfigurator.Steps
 
         }
 
+        [Then(@"Data is present for category subcategory and accessory cards")]
+        public void ThenDataIsPresentForCategoryAubcategoryAndAccessoryCards()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().VerifyDataPresentForCategories(), "No categories are present");
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().VerifyDataPresentForSubCategories(), "No subcategories are present");
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().VerifyDataPresentForAccessoryCards(), "No accessory cards are present");
+        }
+
+
     }
 }

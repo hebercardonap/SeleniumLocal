@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify GEN build stepped process two seat")]
-        [NUnit.Framework.CategoryAttribute("GEN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("gen")]
         public virtual void VerifyGENBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process two seat", null, new string[] {
-                        "GEN"});
+                        "steppedProcess",
+                        "gen"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -109,11 +111,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify GEN build stepped process two seat color")]
-        [NUnit.Framework.CategoryAttribute("GEN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("gen")]
         public virtual void VerifyGENBuildSteppedProcessTwoSeatColor()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process two seat color", null, new string[] {
-                        "GEN"});
+                        "steppedProcess",
+                        "gen"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -151,11 +155,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify GEN build stepped process four seat")]
-        [NUnit.Framework.CategoryAttribute("GEN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("gen")]
         public virtual void VerifyGENBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify GEN build stepped process four seat", null, new string[] {
-                        "GEN"});
+                        "steppedProcess",
+                        "gen"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

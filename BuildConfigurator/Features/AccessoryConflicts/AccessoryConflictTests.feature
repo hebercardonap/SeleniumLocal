@@ -2,7 +2,7 @@
 	Verify conflict rule is triggered
 	when applicable for a particular brand
 
-@CPQ_Conflicts
+@conflicts @ind
 Scenario: Verify conflict is triggered for IND brand
 	Given I have navigated to IND chieftain-steel-gray build page
 	When I get to build page
@@ -14,7 +14,7 @@ Scenario: Verify conflict is triggered for IND brand
 	And I add random available accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @atv
 Scenario: Verify conflict is triggered for ATV brand
 	Given I have navigated to ATV sportsman-450-ho-indy-red build page
 	When I get to build page
@@ -25,7 +25,7 @@ Scenario: Verify conflict is triggered for ATV brand
 	And I add random available accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @slg
 Scenario: Verify conflict is triggered for SLG brand
 	Given I have navigated to SLG slingshot-s-white-lightning build page
 	When I get to build page
@@ -37,7 +37,7 @@ Scenario: Verify conflict is triggered for SLG brand
 	And I add random available accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @gen
 Scenario: Verify conflict is triggered for GEN brand
 	Given I have navigated to GEN general-4-1000-eps-matte-white-metallic build page
 	When I get to build page
@@ -48,7 +48,7 @@ Scenario: Verify conflict is triggered for GEN brand
 	And I add specific Front Hood Storage Rack accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts @Retry
+@conflicts @gen
 Scenario: Verify conflict is triggered for ACE brand
 	Given I have navigated to ACE ace-570-eps-ghost-gray build page
 	When I get to build page
@@ -59,7 +59,7 @@ Scenario: Verify conflict is triggered for ACE brand
 	And I add specific Rear Cargo Box accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @rzr
 Scenario: Verify conflict is triggered for RZR brand
 	Given I have navigated to RZR rzr-xp-1000-eps-trails-rocks-edition-cruiser-black build page
 	When I get to build page
@@ -71,7 +71,7 @@ Scenario: Verify conflict is triggered for RZR brand
 	And I add specific Cage system - Black accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @sno
 Scenario: Verify conflict is triggered for SNO brand
 	Given I have navigated to SNO switchback/600-switchback-xcr build page
 	When I get to build page
@@ -82,7 +82,7 @@ Scenario: Verify conflict is triggered for SNO brand
 	And I add specific Rear Sport Rack Bag accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @ran
 Scenario: Verify conflict is triggered for RAN brand
 	Given I have navigated to RAN ranger-crew-xp-900-sage-green build page
 	When I get to build page
@@ -94,7 +94,7 @@ Scenario: Verify conflict is triggered for RAN brand
 	And I add specific Flip-Down Full Windshield accessory
 	Then Conflict container is displayed
 
-@CPQ_Conflicts
+@conflicts @gem
 Scenario: Verify conflict is triggered for GEM brand
 	Given I have navigated to GEM el-xd build page
 	When I get to build page

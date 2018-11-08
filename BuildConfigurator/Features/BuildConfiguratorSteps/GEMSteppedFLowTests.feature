@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a GEM products
 
-@GEM
+@steppedProcess @gem
 Scenario Outline: Verify GEM build stepped process
 	Given I have navigated to GEM build model page
 	When I filter by <Family> family

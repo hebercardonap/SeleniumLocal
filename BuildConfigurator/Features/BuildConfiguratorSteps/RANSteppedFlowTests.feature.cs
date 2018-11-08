@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process two seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ran")]
         public virtual void VerifyRANBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process two seat", null, new string[] {
-                        "RAN"});
+                        "steppedProcess",
+                        "ran"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -117,11 +119,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process three seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ran")]
         public virtual void VerifyRANBuildSteppedProcessThreeSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process three seat", null, new string[] {
-                        "RAN"});
+                        "steppedProcess",
+                        "ran"});
 #line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -163,11 +167,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process four seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ran")]
         public virtual void VerifyRANBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process four seat", null, new string[] {
-                        "RAN"});
+                        "steppedProcess",
+                        "ran"});
 #line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -205,11 +211,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RAN build stepped process six seat")]
-        [NUnit.Framework.CategoryAttribute("RAN")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ran")]
         public virtual void VerifyRANBuildSteppedProcessSixSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RAN build stepped process six seat", null, new string[] {
-                        "RAN"});
+                        "steppedProcess",
+                        "ran"});
 #line 61
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

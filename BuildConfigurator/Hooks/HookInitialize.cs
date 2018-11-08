@@ -69,31 +69,6 @@ namespace BuildConfigurator
                     testList[scenarioName].CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
 
             }
-
-            //if (_scenarioContext.TestError == null)
-            //{
-            //    if (stepType == "Given")
-            //        scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text);
-            //    else if (stepType == "When")
-            //        scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text);
-            //    else if (stepType == "Then")
-            //        scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text);
-            //    else if (stepType == "And")
-            //        scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text);
-            //}
-            //else if (_scenarioContext.TestError != null)
-            //{
-
-            //    if (stepType == "Given")
-            //        scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
-            //    else if (stepType == "When")
-            //        scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
-            //    else if (stepType == "And")
-            //        scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
-            //    else if (stepType == "Then")
-            //        scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message).AddScreenCaptureFromPath(_takeScreenshot.Capture(_scenarioContext.ScenarioInfo.Title));
-
-            //}
         }
 
         [BeforeTestRun]
@@ -192,15 +167,15 @@ namespace BuildConfigurator
             // Foreach public class that is a TestFixture and not Ignored
             foreach (var c in a.GetTypes()
                                .Where(x => x.IsPublic
-                               && (x.GetCustomAttributes(typeof(NUnit.Framework.TestFixtureAttribute)).Count() > 0)
-                               && (x.GetCustomAttributes(typeof(NUnit.Framework.IgnoreAttribute)).Count() == 0)))
+                               && (x.GetCustomAttributes(typeof(TestFixtureAttribute)).Count() > 0)
+                               && (x.GetCustomAttributes(typeof(IgnoreAttribute)).Count() == 0)))
             {
                 
                     // For each public method that is a Test and not Ignored
                     foreach (var m in c.GetMethods()
                                    .Where(x => x.IsPublic
-                                   && (x.GetCustomAttributes(typeof(NUnit.Framework.TestAttribute)).Count() > 0)
-                                   && (x.GetCustomAttributes(typeof(NUnit.Framework.IgnoreAttribute)).Count() == 0)
+                                   && (x.GetCustomAttributes(typeof(TestAttribute)).Count() > 0)
+                                   && (x.GetCustomAttributes(typeof(IgnoreAttribute)).Count() == 0)
                                    || (x.GetCustomAttributes(typeof(TestCaseAttribute)).Count() > 0)
                                    || (x.GetCustomAttributes(typeof(TestCaseSourceAttribute)).Count() > 0)))
                     {

@@ -2,7 +2,7 @@
 	To verify that accessory add
 	functionality is as expected
 
-@Add
+@accessoryAdd @rzr
 Scenario: Verify button label changes to Remove
 	Given I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build page
 	When I get to build page
@@ -10,7 +10,7 @@ Scenario: Verify button label changes to Remove
 	And I click Roofs accessory subcategory
 	Then After adding Sport Roof remove button is displayed
 
-@Change
+@accessoryChange @rzr
 Scenario: Verify change accessory functionality
 	Given I have navigated to RZR rzr-xp-1000-eps-ride-command-edition-black-pearl build page
 	When I get to build page
@@ -20,7 +20,7 @@ Scenario: Verify change accessory functionality
 	And I add specific S4 Audio Roof accessory
 	Then Accessories '2882064' are displayed in build summary
 
-@Add
+@accessoryAdd @ran
 Scenario: Verify add accessory from info modal
 	Given I have navigated to RAN ranger-crew-570-4-sage-green build page
 	When I get to build page
@@ -31,7 +31,7 @@ Scenario: Verify add accessory from info modal
 	And I click close button from info modal
 	Then Accessories '2882390' are displayed in build summary
 
-@Add
+@accessoryAdd @ind
 Scenario: Verify add accessory remove info modal
 	Given I have navigated to IND scout-bobber-thunder-black build page
 	When I get to build page
@@ -43,7 +43,7 @@ Scenario: Verify add accessory remove info modal
 	And I click close button from info modal
 	Then Accessories '2882519' is not displayed in build summary
 
-@Add
+@accessoryAdd @rzr
 Scenario: Verify remove option hidden when accessory removed build summary
 	Given I have navigated to RZR rzr-xp-turbo-s-indy-red build page
 	When I get to build page

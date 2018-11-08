@@ -109,13 +109,18 @@ namespace AutomationFramework.Utils
             return isDisplayed;
         }
 
+
         public void clickElement(By locator)
         {
             if (IsElementPresent(locator))
                 Driver.FindElement(locator).Click();
         }
 
-
+        public void clickElement(IWebElement element)
+        {
+            if (IsElementPresent(element))
+                element.Click();
+        }
 
     }
 }

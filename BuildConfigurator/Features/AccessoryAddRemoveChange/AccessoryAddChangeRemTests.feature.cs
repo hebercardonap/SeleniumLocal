@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.AccessoryAddRemoveChange
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify button label changes to Remove")]
-        [NUnit.Framework.CategoryAttribute("Add")]
+        [NUnit.Framework.CategoryAttribute("accessoryAdd")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyButtonLabelChangesToRemove()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify button label changes to Remove", null, new string[] {
-                        "Add"});
+                        "accessoryAdd",
+                        "rzr"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -96,11 +98,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify change accessory functionality")]
-        [NUnit.Framework.CategoryAttribute("Change")]
+        [NUnit.Framework.CategoryAttribute("accessoryChange")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyChangeAccessoryFunctionality()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify change accessory functionality", null, new string[] {
-                        "Change"});
+                        "accessoryChange",
+                        "rzr"});
 #line 14
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -125,11 +129,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify add accessory from info modal")]
-        [NUnit.Framework.CategoryAttribute("Add")]
+        [NUnit.Framework.CategoryAttribute("accessoryAdd")]
+        [NUnit.Framework.CategoryAttribute("ran")]
         public virtual void VerifyAddAccessoryFromInfoModal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify add accessory from info modal", null, new string[] {
-                        "Add"});
+                        "accessoryAdd",
+                        "ran"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -155,11 +161,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify add accessory remove info modal")]
-        [NUnit.Framework.CategoryAttribute("Add")]
+        [NUnit.Framework.CategoryAttribute("accessoryAdd")]
+        [NUnit.Framework.CategoryAttribute("ind")]
         public virtual void VerifyAddAccessoryRemoveInfoModal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify add accessory remove info modal", null, new string[] {
-                        "Add"});
+                        "accessoryAdd",
+                        "ind"});
 #line 35
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -187,11 +195,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify remove option hidden when accessory removed build summary")]
-        [NUnit.Framework.CategoryAttribute("Add")]
+        [NUnit.Framework.CategoryAttribute("accessoryAdd")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyRemoveOptionHiddenWhenAccessoryRemovedBuildSummary()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify remove option hidden when accessory removed build summary", null, new string[] {
-                        "Add"});
+                        "accessoryAdd",
+                        "rzr"});
 #line 47
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

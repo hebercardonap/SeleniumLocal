@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a ATV products
 
-@ATV
+@steppedProcess @atv
 Scenario: Verify ATV stepped process one seat
 	Given I have navigated to ATV build model page
 	When I select one seat option
@@ -21,7 +21,7 @@ Scenario: Verify ATV stepped process one seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@ATV
+@steppedProcess @atv
 Scenario: Verify ATV stepped process two seat
 	Given I have navigated to ATV build model page
 	When I select two seat option

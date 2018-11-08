@@ -71,11 +71,11 @@ namespace BuildConfigurator.Features.DEX
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify items hidden for dealer experience")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [NUnit.Framework.CategoryAttribute("dealerExperience")]
         public virtual void VerifyItemsHiddenForDealerExperience()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify items hidden for dealer experience", null, new string[] {
-                        "PRP"});
+                        "dealerExperience"});
 #line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -96,11 +96,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify virtual keyboard is displayed on build page")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
+        [NUnit.Framework.CategoryAttribute("dealerExperience")]
         public virtual void VerifyVirtualKeyboardIsDisplayedOnBuildPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify virtual keyboard is displayed on build page", null, new string[] {
-                        "PRP"});
+                        "dealerExperience"});
 #line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

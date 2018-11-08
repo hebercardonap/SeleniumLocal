@@ -71,13 +71,15 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify GEM build stepped process")]
-        [NUnit.Framework.CategoryAttribute("GEM")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("gem")]
         [NUnit.Framework.TestCaseAttribute("Passenger", "Comfort", "Seats", null)]
         [NUnit.Framework.TestCaseAttribute("Utility", "Power", "Battery", null)]
         public virtual void VerifyGEMBuildSteppedProcess(string family, string category, string subcategory, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "GEM"};
+                    "steppedProcess",
+                    "gem"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

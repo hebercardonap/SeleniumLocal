@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SNO RUSH build stepped process")]
-        [NUnit.Framework.CategoryAttribute("SNO")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("snow")]
         public virtual void VerifySNORUSHBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO RUSH build stepped process", null, new string[] {
-                        "SNO"});
+                        "steppedProcess",
+                        "snow"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -113,11 +115,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SNO TITAN build stepped process")]
-        [NUnit.Framework.CategoryAttribute("SNO")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("snow")]
         public virtual void VerifySNOTITANBuildSteppedProcess()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SNO TITAN build stepped process", null, new string[] {
-                        "SNO"});
+                        "steppedProcess",
+                        "snow"});
 #line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -153,7 +157,8 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SNO Families build stepped process")]
-        [NUnit.Framework.CategoryAttribute("SNO")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("snow")]
         [NUnit.Framework.TestCaseAttribute("RMK", "146", null)]
         [NUnit.Framework.TestCaseAttribute("Switchback", "XCR", null)]
         [NUnit.Framework.TestCaseAttribute("INDY", "EVO", null)]
@@ -161,7 +166,8 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void VerifySNOFamiliesBuildSteppedProcess(string family, string version, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "SNO"};
+                    "steppedProcess",
+                    "snow"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

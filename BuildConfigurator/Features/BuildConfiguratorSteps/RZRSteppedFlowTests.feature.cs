@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RZR build stepped process one seat")]
-        [NUnit.Framework.CategoryAttribute("RZR")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyRZRBuildSteppedProcessOneSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RZR build stepped process one seat", null, new string[] {
-                        "RZR"});
+                        "steppedProcess",
+                        "rzr"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -117,11 +119,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RZR build stepped process two seat")]
-        [NUnit.Framework.CategoryAttribute("RZR")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyRZRBuildSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RZR build stepped process two seat", null, new string[] {
-                        "RZR"});
+                        "steppedProcess",
+                        "rzr"});
 #line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -163,11 +167,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify RZR build stepped process four seat")]
-        [NUnit.Framework.CategoryAttribute("RZR")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyRZRBuildSteppedProcessFourSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify RZR build stepped process four seat", null, new string[] {
-                        "RZR"});
+                        "steppedProcess",
+                        "rzr"});
 #line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

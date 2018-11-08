@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify ACE build stepped process random model")]
-        [NUnit.Framework.CategoryAttribute("ACE")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ace")]
         public virtual void VerifyACEBuildSteppedProcessRandomModel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify ACE build stepped process random model", null, new string[] {
-                        "ACE"});
+                        "steppedProcess",
+                        "ace"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

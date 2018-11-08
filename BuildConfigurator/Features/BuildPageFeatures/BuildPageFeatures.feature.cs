@@ -72,10 +72,12 @@ namespace BuildConfigurator.Features.BuildPageFeatures
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify clicking on accessory image opens overview")]
         [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyClickingOnAccessoryImageOpensOverview()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify clicking on accessory image opens overview", null, new string[] {
-                        "features"});
+                        "features",
+                        "rzr"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -98,10 +100,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify restart button restarts the build")]
         [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyRestartButtonRestartsTheBuild()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify restart button restarts the build", null, new string[] {
-                        "features"});
+                        "features",
+                        "rzr"});
 #line 15
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -130,10 +134,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify save build functionality")]
         [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifySaveBuildFunctionality()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify save build functionality", null, new string[] {
-                        "features"});
+                        "features",
+                        "rzr"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -168,10 +174,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify navigation bar and social icons are present")]
         [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyNavigationBarAndSocialIconsArePresent()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify navigation bar and social icons are present", null, new string[] {
-                        "features"});
+                        "features",
+                        "rzr"});
 #line 42
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -192,10 +200,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify navigation back from build to models")]
         [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
         public virtual void VerifyNavigationBackFromBuildToModels()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify navigation back from build to models", null, new string[] {
-                        "features"});
+                        "features",
+                        "rzr"});
 #line 50
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -213,6 +223,264 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I navigate back to models", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
  testRunner.Then("Choose model header is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for RZR")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
+        public virtual void VerifyAccessoryCardsDataPresentForRZR()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for RZR", null, new string[] {
+                        "features",
+                        "rzr"});
+#line 60
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 61
+ testRunner.Given("I have navigated to RZR build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 62
+ testRunner.When("I select four seat option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
+ testRunner.And("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("I select trim", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("I click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for RAN")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("ran")]
+        public virtual void VerifyAccessoryCardsDataPresentForRAN()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for RAN", null, new string[] {
+                        "features",
+                        "ran"});
+#line 71
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 72
+ testRunner.Given("I have navigated to RAN build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 73
+ testRunner.When("I select two seat option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.And("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("I select trim", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("I click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for ATV")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("atv")]
+        public virtual void VerifyAccessoryCardsDataPresentForATV()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for ATV", null, new string[] {
+                        "features",
+                        "atv"});
+#line 82
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 83
+ testRunner.Given("I have navigated to ATV build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 84
+ testRunner.When("I select two seat option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.And("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And("I select trim", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("I click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for ACE")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("ace")]
+        public virtual void VerifyAccessoryCardsDataPresentForACE()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for ACE", null, new string[] {
+                        "features",
+                        "ace"});
+#line 93
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 94
+ testRunner.Given("I have navigated to ACE build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 95
+ testRunner.When("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 96
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for GEN")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("gen")]
+        public virtual void VerifyAccessoryCardsDataPresentForGEN()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for GEN", null, new string[] {
+                        "features",
+                        "gen"});
+#line 100
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 101
+ testRunner.Given("I have navigated to GEN build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 102
+ testRunner.When("I select four seat option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
+ testRunner.And("I select unique color General model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("I select trim", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for GEM")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("gem")]
+        public virtual void VerifyAccessoryCardsDataPresentForGEM()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for GEM", null, new string[] {
+                        "features",
+                        "gem"});
+#line 109
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 110
+ testRunner.Given("I have navigated to GEM build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 111
+ testRunner.When("I filter by Passenger family", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 112
+ testRunner.And("I select random available version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for IND")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("ind")]
+        public virtual void VerifyAccessoryCardsDataPresentForIND()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for IND", null, new string[] {
+                        "features",
+                        "ind"});
+#line 117
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 118
+ testRunner.Given("I have navigated to IND build category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 119
+ testRunner.When("I select springfield category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 120
+ testRunner.And("Category models are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("I select random model", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.And("I click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for SLG")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("slg")]
+        public virtual void VerifyAccessoryCardsDataPresentForSLG()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for SLG", null, new string[] {
+                        "features",
+                        "slg"});
+#line 128
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 129
+ testRunner.Given("I have navigated to SLG build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 130
+ testRunner.When("I select slingshot touring", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 131
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify accessory cards data present for SNO")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("sno")]
+        public virtual void VerifyAccessoryCardsDataPresentForSNO()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify accessory cards data present for SNO", null, new string[] {
+                        "features",
+                        "sno"});
+#line 135
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 136
+ testRunner.Given("I have navigated to SNO build model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 137
+ testRunner.When("I filter by rush family", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 138
+ testRunner.And("I select random available version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("I select trim old version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.Then("Data is present for category subcategory and accessory cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

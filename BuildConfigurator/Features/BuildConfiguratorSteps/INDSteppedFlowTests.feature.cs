@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify IND build stepped process random model")]
-        [NUnit.Framework.CategoryAttribute("IND")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ind")]
         public virtual void VerifyINDBuildSteppedProcessRandomModel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify IND build stepped process random model", null, new string[] {
-                        "IND"});
+                        "steppedProcess",
+                        "ind"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -113,7 +115,8 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify IND stepped process build category Scout")]
-        [NUnit.Framework.CategoryAttribute("IND")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("ind")]
         [NUnit.Framework.TestCaseAttribute("scout", null)]
         [NUnit.Framework.TestCaseAttribute("chief", null)]
         [NUnit.Framework.TestCaseAttribute("springfield", null)]
@@ -123,7 +126,8 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void VerifyINDSteppedProcessBuildCategoryScout(string category, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "IND"};
+                    "steppedProcess",
+                    "ind"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

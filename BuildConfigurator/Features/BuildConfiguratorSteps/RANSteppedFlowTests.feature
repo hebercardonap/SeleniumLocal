@@ -2,7 +2,7 @@
 	Verify that build configurator steps 
 	can be performed for a Ranger products
 
-@RAN
+@steppedProcess @ran
 Scenario: Verify RAN build stepped process two seat
 	Given I have navigated to RAN build model page
 	When I select two seat option
@@ -21,7 +21,7 @@ Scenario: Verify RAN build stepped process two seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@RAN
+@steppedProcess @ran
 Scenario: Verify RAN build stepped process three seat
 	Given I have navigated to RAN build model page
 	When I select three seat option
@@ -40,7 +40,7 @@ Scenario: Verify RAN build stepped process three seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@RAN
+@steppedProcess @ran
 Scenario: Verify RAN build stepped process four seat
 	Given I have navigated to RAN build model page
 	When I select four seat option
@@ -57,7 +57,7 @@ Scenario: Verify RAN build stepped process four seat
 	And I get to build confirmation page
 	Then build confirmation page is as expected
 
-@RAN
+@steppedProcess @ran
 Scenario: Verify RAN build stepped process six seat
 	Given I have navigated to RAN build model page
 	When I select six seat option

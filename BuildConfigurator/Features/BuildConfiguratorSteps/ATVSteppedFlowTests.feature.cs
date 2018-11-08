@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify ATV stepped process one seat")]
-        [NUnit.Framework.CategoryAttribute("ATV")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("atv")]
         public virtual void VerifyATVSteppedProcessOneSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify ATV stepped process one seat", null, new string[] {
-                        "ATV"});
+                        "steppedProcess",
+                        "atv"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -117,11 +119,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify ATV stepped process two seat")]
-        [NUnit.Framework.CategoryAttribute("ATV")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("atv")]
         public virtual void VerifyATVSteppedProcessTwoSeat()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify ATV stepped process two seat", null, new string[] {
-                        "ATV"});
+                        "steppedProcess",
+                        "atv"});
 #line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

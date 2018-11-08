@@ -71,11 +71,13 @@ namespace BuildConfigurator.Features.BuildConfiguratorSteps
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SLG S stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("slg")]
         public virtual void VerifySLGSSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG S stepped flow", null, new string[] {
-                        "SLG"});
+                        "steppedProcess",
+                        "slg"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -109,11 +111,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SLG Grand Touring stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("slg")]
         public virtual void VerifySLGGrandTouringSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG Grand Touring stepped flow", null, new string[] {
-                        "SLG"});
+                        "steppedProcess",
+                        "slg"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -147,11 +151,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SLG SL stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("slg")]
         public virtual void VerifySLGSLSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG SL stepped flow", null, new string[] {
-                        "SLG"});
+                        "steppedProcess",
+                        "slg"});
 #line 36
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -187,11 +193,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify SLG SLR stepped flow")]
-        [NUnit.Framework.CategoryAttribute("SLG")]
+        [NUnit.Framework.CategoryAttribute("steppedProcess")]
+        [NUnit.Framework.CategoryAttribute("slg")]
         public virtual void VerifySLGSLRSteppedFlow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify SLG SLR stepped flow", null, new string[] {
-                        "SLG"});
+                        "steppedProcess",
+                        "slg"});
 #line 52
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

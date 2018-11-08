@@ -608,5 +608,44 @@ namespace BuildConfigurator.Pages
             DriverActions.waitForElementVisibleAndEnabled(BY_NAVIGATION_MODELS);
             DriverActions.clickElement(BY_NAVIGATION_MODELS);
         }
+
+        public bool VerifyDataPresentForCategories()
+        {
+            List<IWebElement> categories = Driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            return categories.Count > 0;
+        }
+
+        public bool VerifyDataPresentForSubCategories()
+        {
+            bool isDataPresent = false;
+            List<IWebElement> categories = Driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            foreach (var category in categories)
+            {
+                isDataPresent = false;
+                DriverActions.clickElement(category);
+                List<IWebElement> subCategories = Driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
+                isDataPresent = subCategories.Count > 0 ? true : false;
+            }
+            return isDataPresent;
+        }
+
+        public bool VerifyDataPresentForAccessoryCards()
+        {
+            bool isDataPresent = false;
+            List<IWebElement> categories = Driver.FindElements(BY_BUILD_CATEGORIES).ToList();
+            foreach (var category in categories)
+            {
+                DriverActions.clickElement(category);
+                List<IWebElement> subCategories = Driver.FindElements(BY_SUBCATEGORY_OPTIONS).ToList();
+                foreach (var subCategory in subCategories)
+                {
+                    isDataPresent = false;
+                    DriverActions.clickElement(subCategory);
+                    List<IWebElement> accessoryCards = Driver.FindElements(BY_ACCESSORY_CARD).ToList();
+                    isDataPresent = subCategories.Count > 0 ? true : false;
+                }
+            }
+            return isDataPresent;
+        }
     }
 }
