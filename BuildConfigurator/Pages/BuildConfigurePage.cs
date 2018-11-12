@@ -69,6 +69,7 @@ namespace BuildConfigurator.Pages
         private static By BY_SAVE_ICON = By.XPath("//div[@class='summary-accessory-social']//button[contains(@class,'icon--save')]");
         private static By BY_BUILD_SAVE_NAME_TXT = By.Id("build-model-save-vehicle-name");
         private static By BY_BUILD_SAVE_LINK = By.CssSelector("div[class='save-actions'] div[class='save']");
+        private static By BY_BUILD_CANCEL_LINK = By.CssSelector("div[class='save-actions'] div[class='cancel']");
         private static By BY_LOAD_SAVED_BUTTON = By.XPath("//div[contains(@class,'build-variant')]//button[contains(@class,'savedBuild')]");
         private static By BY_SAVED_VEHICLE_TITLE = By.XPath("//div[@class='saved-vehicles']//div[contains(@class,'saved-vehicle__title')]");
         private static By BY_DELETE_SAVED_BUTTON = By.XPath("//button[contains(@class,'saved-vehicle__delete')]");
@@ -86,6 +87,7 @@ namespace BuildConfigurator.Pages
         private static By BY_NAVIGATION_MODELS = By.XPath("//a[contains(@title,'Models')]");
         private static By BY_CONFLICT_CONTAINER_ITEMS = By.XPath("//div[@class='conflict']//div[@class='summary-accessory']");
         private static By BY_CONFLICT_REMOVE_CTA = By.XPath(".//div[@class='summary-accessory-info-remove ']");
+        private static By BY_SAVE_BUILD_MODAL_TITLE = By.XPath("//div[@class='save-title']");
 
 
 
@@ -98,6 +100,7 @@ namespace BuildConfigurator.Pages
         private static string BUILD_NAME = "TEST BUILD " + DATE_VALUE;
 
         PageHelpers _pageHelpers;
+        public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
 
         public BuildConfigurePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -541,9 +544,14 @@ namespace BuildConfigurator.Pages
             DriverActions.clickElement(BY_DELETE_SAVED_BUTTON);
         }
 
-        public void ClickSaveLink()
+        public void ClickSaveBuildModalSave()
         {
             DriverActions.clickElement(BY_BUILD_SAVE_LINK);
+        }
+
+        public void ClickSaveBuildModalCancel()
+        {
+            DriverActions.clickElement(BY_BUILD_CANCEL_LINK);
         }
 
         public void GetToBuildPage()
@@ -646,6 +654,11 @@ namespace BuildConfigurator.Pages
                 }
             }
             return isDataPresent;
+        }
+
+        public bool IsSaveBuildModalTitlePresent()
+        {
+            return DriverActions.IsElementPresent(BY_SAVE_BUILD_MODAL_TITLE);
         }
     }
 }

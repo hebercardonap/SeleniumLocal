@@ -169,6 +169,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PRPTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\v2\BuildPagesHeader\BuildPagesHeaderTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuildPagesHeaderTests.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\v2\SignInModule\SignInModuleTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignInModuleTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Pages\BuildCategoryPage.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
@@ -177,8 +187,10 @@
     <Compile Include="Pages\BuildInfoModalPage.cs" />
     <Compile Include="Pages\BuildLoginPage.cs" />
     <Compile Include="Pages\BuildModelPage.cs" />
+    <Compile Include="Pages\BuildPackagePage.cs" />
     <Compile Include="Pages\BuildQuotePage.cs" />
     <Compile Include="Pages\BuildTrimPage.cs" />
+    <Compile Include="Modules\HeaderModule.cs" />
     <Compile Include="Pages\PageHelpers.cs" />
     <Compile Include="Steps\BuildCategorySteps.cs" />
     <Compile Include="Steps\BuildColorSteps.cs" />
@@ -186,6 +198,7 @@
     <Compile Include="Steps\BuildConfirmationSteps.cs" />
     <Compile Include="Steps\BuildInfoModalSteps.cs" />
     <Compile Include="Steps\BuildLoginSteps.cs" />
+    <Compile Include="Steps\BuildPackageSteps.cs" />
     <Compile Include="Steps\BuildQuoteSteps.cs" />
     <Compile Include="Steps\BuildTrimSteps.cs" />
     <Compile Include="Steps\BuildModelSteps.cs" />
@@ -255,6 +268,14 @@
     <None Include="Features\PartRequiresPart\PRPTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PRPTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\v2\BuildPagesHeader\BuildPagesHeaderTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BuildPagesHeaderTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\v2\SignInModule\SignInModuleTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SignInModuleTests.feature.cs</LastGenOutput>
     </None>
     <None Include="license" />
     <None Include="packages.config">

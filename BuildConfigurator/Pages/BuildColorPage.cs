@@ -21,6 +21,7 @@ namespace BuildConfigurator.Pages
         private static string LI_TAG_NAME = "li";
         private static Random rnd = new Random();
 
+        public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
         public BuildColorPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }

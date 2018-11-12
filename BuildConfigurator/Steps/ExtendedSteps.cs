@@ -20,6 +20,9 @@ namespace BuildConfigurator.Steps
         private static string BUILD_URL_PART = "/build";
         private static string DEALER_PART_ID = "?dealerid=02040900";
         private static string BUILD_QUOTE_URL_PART = "/rzr-s-900-white/build-quote/";
+        private static string BUILD_TRIM_URL_PART = "/build-trim/";
+        private static string BUILD_COLOR_URL_PART = "/build-color/";
+        private static string BUILD_PACKAGE_PAGE = "/build-package/";
 
         public ExtendedSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -178,7 +181,9 @@ namespace BuildConfigurator.Steps
             else if (stringEqualsIgnoreCase(buttonName, "Load Saved Build"))
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickLoadSavedBuildButton();
             else if (stringEqualsIgnoreCase(buttonName, "save"))
-                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveLink();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveBuildModalSave();
+            else if (stringEqualsIgnoreCase(buttonName, "cancel"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveBuildModalCancel();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
 
@@ -223,6 +228,8 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickCalculatorIcon();
             else if (stringEqualsIgnoreCase(iconName, "save"))
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveIcon();
+            else if (stringEqualsIgnoreCase(iconName, "close"))
+                _parallelConfig.CurrentPage.As<BuildModelPage>().HeaderModule.ClickHeaderCloseIcon();
             else
                 Assert.Fail("Icon {0} is not present", iconName);
         }
@@ -243,6 +250,55 @@ namespace BuildConfigurator.Steps
             GoToUrl(buildQuoteUrl);
             _parallelConfig.CurrentPage = new BuildQuotePage(_parallelConfig);
         }
+
+        [Then(@"(.*) brand home page is displayed")]
+        public void ThenRZRBrandHomePageIsDisplayed(string brand)
+        {
+            if (stringEqualsIgnoreCase(Brand.RAN, brand))
+                Assert.AreEqual(Driver.Url, UrlBuilder.GetRangerBrandHomePage());
+            else
+                Assert.Fail("Band {0} is not supported", brand);
+        }
+
+        [Given(@"I have navigated to (.*) (.*) build trim page")]
+        public void GivenIHaveNavigatedToBuildTrimPage(string brand, string model)
+        {
+            if (stringEqualsIgnoreCase(Brand.RAN, brand))
+            {
+                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, model, BUILD_TRIM_URL_PART);
+                GoToUrl(url);
+                _parallelConfig.CurrentPage = new BuildTrimPage(_parallelConfig); 
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+        }
+
+        [Given(@"I have navigated to (.*) (.*) build color page")]
+        public void GivenIHaveNavigatedToBuildColorPage(string brand, string model)
+        {
+            if (stringEqualsIgnoreCase(Brand.RAN, brand))
+            {
+                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, model, BUILD_COLOR_URL_PART);
+                GoToUrl(url);
+                _parallelConfig.CurrentPage = new BuildColorPage(_parallelConfig);
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+        }
+
+        [Given(@"I have navigated to (.*) (.*) build package page")]
+        public void GivenIHaveNavigatedToBuildPackagePage(string brand, string model)
+        {
+            if (stringEqualsIgnoreCase(Brand.RAN, brand))
+            {
+                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), SLASH_CHARACTER, model, BUILD_PACKAGE_PAGE);
+                GoToUrl(url);
+                _parallelConfig.CurrentPage = new BuildPackagePage(_parallelConfig);
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+        }
+
 
 
         [StepArgumentTransformation]

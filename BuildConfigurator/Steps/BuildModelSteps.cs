@@ -66,6 +66,20 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().IsBuildModelHeaderDisplayed());
         }
 
+        [When(@"I get to build model page")]
+        public void GivenIGetToBuildModelPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildModelPage>().WaitForBuildModelPageToLoad();
+        }
+
+        [When(@"(.*) brand name is displayed build model header")]
+        public void GivenRangerBrandNameIsDisplayed(string brand)
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().HeaderModule.IsNavigationBarBrandNameDisplayed());
+            Assert.IsTrue(stringContainsIgnoreCase(_parallelConfig.CurrentPage.As<BuildModelPage>().HeaderModule.GetHeaderBrandName(), 
+                brand));
+        }
+
 
     }
 }

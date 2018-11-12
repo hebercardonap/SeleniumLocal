@@ -37,6 +37,8 @@ namespace BuildConfigurator.Pages
 
         private static Random rnd = new Random();
 
+        public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
+
         public BuildModelPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -164,6 +166,11 @@ namespace BuildConfigurator.Pages
         public bool IsBuildModelHeaderDisplayed()
         {
             return DriverActions.IsElementPresent(BY_BUILD_MODEL_HEADER);
+        }
+
+        public void WaitForBuildModelPageToLoad()
+        {
+            DriverActions.waitForElementPresent(BY_BUILD_MODEL_HEADER);
         }
 
     }

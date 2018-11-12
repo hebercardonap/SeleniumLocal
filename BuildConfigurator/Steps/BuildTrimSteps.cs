@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.Pages;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,25 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildTrimPage>().clickRandomTrimOldVersion();
         }
 
+        [Given(@"I get to build trim page")]
+        public void GivenIGetToBuildTrimPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildTrimPage>().HeaderModule.WaitForHeaderToBeDisplayed();
+        }
+
+        [When(@"I click close icon from build trim header")]
+        public void WhenIClickCloseIconFromNavigationBar()
+        {
+            _parallelConfig.CurrentPage.As<BuildTrimPage>().HeaderModule.ClickHeaderCloseIcon();
+        }
+
+        [Given(@"Model (.*) is displayed build trim header")]
+        public void GivenModelIsDisplayedBuildTrimHeader(string model)
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildTrimPage>().HeaderModule.IsNavigationBarBrandNameDisplayed());
+            Assert.IsTrue(stringContainsIgnoreCase(_parallelConfig.CurrentPage.As<BuildTrimPage>().HeaderModule.GetHeaderBrandName(),
+                model));
+        }
 
     }
 }

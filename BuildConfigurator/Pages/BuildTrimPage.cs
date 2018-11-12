@@ -20,6 +20,14 @@ namespace BuildConfigurator.Pages
         private static Random rnd = new Random();
         private static string[] RANGER_PACKAGE_TRIM = new[] { "1000 EPS Premium", "1000 EPS NorthStar Edition" };
 
+        public HeaderModule HeaderModule
+        {
+            get
+            {
+                return new HeaderModule(_parallelConfig);
+            }
+        }
+
         public BuildTrimPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }

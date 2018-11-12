@@ -118,5 +118,10 @@ namespace AutomationFramework.UrlBuilderSites
         {
             return string.Concat(getBaseUrl(Brand.SNO), getBrowserLocale(), BUILD_MODEL_URL_PART);
         }
+
+        public static string GetRangerBrandHomePage()
+        {
+            return string.Concat(getBaseUrl(Brand.RAN), getBrowserLocale(), "/");
+        }
     }
 }

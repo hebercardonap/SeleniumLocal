@@ -16,6 +16,7 @@ namespace BuildConfigurator.Steps
         private static string BUILD_COLOR_PART_URL = "/build-color";
         private static string BUILD_TRIM_PART_URL = "/build-trim";
         private static string BUILD_MODEL_PART_URL = "/build-model";
+        private static string ICON_NOT_FOUND_ERROR = "Icon {0} is not displayed on the header";
 
         public BuildConfigureSteps(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -259,6 +260,51 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().VerifyDataPresentForSubCategories(), "No subcategories are present");
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().VerifyDataPresentForAccessoryCards(), "No accessory cards are present");
         }
+
+        [When(@"Model (.*) is displayed build header")]
+        public void WhenModelIsDisplayedBuildHeader(string model)
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.IsNavigationBarBrandNameDisplayed());
+            Assert.IsTrue(stringContainsIgnoreCase(_parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.GetHeaderBrandName(),
+                model));
+        }
+
+        [When(@"I click close icon from build header")]
+        public void WhenIClickCloseIconFromBuildHeader()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickHeaderCloseIcon();
+        }
+
+        [When(@"(.*) icon is displayed on build header")]
+        public void WhenSaveIconIsDisplayedOnBuildHeader(string value)
+        {
+            if (stringEqualsIgnoreCase(value, "save"))
+                Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.IsSaveHeaderIconDisplayed(),
+                    ICON_NOT_FOUND_ERROR, value);
+            else if (stringEqualsIgnoreCase(value, "email"))
+                Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.IsEmailHeaderIconDisplayed(),
+                    ICON_NOT_FOUND_ERROR, value);
+            else
+                Assert.Fail("Icon {0} option was not found", value);
+        }
+
+        [When(@"I click on (.*) from build header")]
+        public void WhenIClickOnSaveFromBuildHeader(string value)
+        {
+            if (stringEqualsIgnoreCase(value, "save"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickSaveHeaderIcon();
+            else if (stringEqualsIgnoreCase(value, "email"))
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickEmailHeaderIcon();
+            else
+                Assert.Fail("Icon {0} option was not found", value);
+        }
+
+        [When(@"Save build modal is displayed")]
+        public void WhenSaveBuildModalIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsSaveBuildModalTitlePresent());
+        }
+
 
 
     }
