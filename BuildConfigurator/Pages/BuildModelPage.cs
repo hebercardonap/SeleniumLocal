@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
+using BuildConfigurator.Modules;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,10 @@ namespace BuildConfigurator.Pages
         private static Random rnd = new Random();
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
+
+        public CalculatorModule CalculatorModule { get { return new CalculatorModule(_parallelConfig); } }
+
+        public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
 
         public BuildModelPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {

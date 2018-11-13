@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using BuildConfigurator.Modules;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace BuildConfigurator.Pages
         private static By BY_FULL_SCREEN_BUTTON = By.Id("build-variant__fullscreen");
         private static By BY_FLICKITY_SLIDER_BUTTON = By.CssSelector("div[class='flickity-slider']>button");
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
+
+        public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
 
         public BuildPackagePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {

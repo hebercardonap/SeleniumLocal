@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
+using BuildConfigurator.Modules;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -101,6 +102,10 @@ namespace BuildConfigurator.Pages
 
         PageHelpers _pageHelpers;
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
+
+        public CalculatorModule CalculatorModule { get { return new CalculatorModule(_parallelConfig); } }
+
+        public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
 
         public BuildConfigurePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -659,6 +664,11 @@ namespace BuildConfigurator.Pages
         public bool IsSaveBuildModalTitlePresent()
         {
             return DriverActions.IsElementPresent(BY_SAVE_BUILD_MODAL_TITLE);
+        }
+
+        public bool IsBuildSummaryContainerDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_CONTAINER);
         }
     }
 }

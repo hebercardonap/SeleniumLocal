@@ -34,5 +34,17 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildPackagePage>().HeaderModule.ClickHeaderCloseIcon();
         }
 
+        [When(@"Next button is displayed on build package footer")]
+        public void WhenNextButtonIsDisplayedOnBuildPackageFooter()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildPackagePage>().FooterModule.IsNextButtonDisplayed());
+        }
+
+        [When(@"I click next button build package footer")]
+        public void WhenIClickNextButtonBuildPackageFooter()
+        {
+            _parallelConfig.CurrentPage.As<BuildPackagePage>().FooterModule.ClickFooterNextButton();
+        }
+
     }
 }

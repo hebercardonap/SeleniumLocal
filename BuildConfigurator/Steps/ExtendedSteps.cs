@@ -34,47 +34,47 @@ namespace BuildConfigurator.Steps
         {
             if (stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getRzrBuildModelUrl());
+                GoToUrl(UrlBuilder.getRzrBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getRangerBuildModelUrl());
+                GoToUrl(UrlBuilder.getRangerBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getAceBuildModelUrl());
+                GoToUrl(UrlBuilder.getAceBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
+                GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.IND))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getIndianBuildModelUrl());
+                GoToUrl(UrlBuilder.getIndianBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
+                GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getSnowBuildModelUrl());
+                GoToUrl(UrlBuilder.getSnowBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getGemBuildModelUrl());
+                GoToUrl(UrlBuilder.getGemBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
-                Driver.Navigate().GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
+                GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
                 _parallelConfig.CurrentPage = new BuildModelPage(_parallelConfig);
             }
             else
@@ -184,6 +184,8 @@ namespace BuildConfigurator.Steps
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveBuildModalSave();
             else if (stringEqualsIgnoreCase(buttonName, "cancel"))
                 _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSaveBuildModalCancel();
+            else if (stringEqualsIgnoreCase(buttonName, "footer next"))
+                _parallelConfig.CurrentPage.As<BuildColorPage>().FooterModule.ClickFooterNextButton();
             else
                 Assert.Fail("Button with name {0} is not present", buttonName);
 
@@ -238,7 +240,7 @@ namespace BuildConfigurator.Steps
         public void WhenIClickFormField(string formField)
         {
             if (stringEqualsIgnoreCase(formField, "msrp"))
-                _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickMsrpField();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().CalculatorModule.ClickMsrpField();
             else
                 Assert.Fail("Form field {0} is not present", formField);
         }

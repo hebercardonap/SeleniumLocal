@@ -193,6 +193,7 @@ namespace BuildConfigurator.Steps
         }
 
         [When(@"I get to build page")]
+        [Then(@"I get to build page")]
         public void ThenIGetToBuildPage()
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().GetToBuildPage();
@@ -305,6 +306,23 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsSaveBuildModalTitlePresent());
         }
 
+        [When(@"Build summary toggle is displayed on build footer")]
+        public void WhenBuildSummaryToggleIsDisplayedOnBuildFooter()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().FooterModule.IsBuildSummaryToggleDisplayed());
+        }
+
+        [When(@"I click build summary toggle on build footer")]
+        public void WhenIClickBuildSummaryToggleOnBuildFooter()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().FooterModule.ClickFooterBuildSummaryToggle();
+        }
+
+        [Then(@"Build summary is displayed")]
+        public void ThenBuildSummaryIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsBuildSummaryContainerDisplayed());
+        }
 
 
     }

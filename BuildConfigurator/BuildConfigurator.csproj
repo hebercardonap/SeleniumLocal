@@ -169,6 +169,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PRPTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\v2\BuildPagesFooter\BuildPagesFooterTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuildPagesFooterTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\v2\BuildPagesHeader\BuildPagesHeaderTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +185,8 @@
       <DependentUpon>SignInModuleTests.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
+    <Compile Include="Modules\CalculatorModule.cs" />
+    <Compile Include="Modules\FooterModule.cs" />
     <Compile Include="Pages\BuildCategoryPage.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
     <Compile Include="Pages\BuildConfigurePage.cs" />
@@ -268,6 +275,10 @@
     <None Include="Features\PartRequiresPart\PRPTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PRPTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\v2\BuildPagesFooter\BuildPagesFooterTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BuildPagesFooterTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\v2\BuildPagesHeader\BuildPagesHeaderTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

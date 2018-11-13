@@ -80,6 +80,35 @@ namespace BuildConfigurator.Steps
                 brand));
         }
 
+        [When(@"Starting price is displayed on build model footer")]
+        public void WhenStartingPriceIsDisplayedOnBuildModelFooter()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().FooterModule.IsStartingPriceDisplayed());
+        }
+
+        [When(@"Payment calculator is displayed on build model footer")]
+        public void WhenPaymentCalculatorIsDisplayedOnBuildModelFooter()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().FooterModule.IsPaymentCalculatorDisplayed());
+        }
+
+        [When(@"Next button is not displayed on build model footer")]
+        public void WhenNextButtonIsNotDisplayedOnBuildModelFooter()
+        {
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildModelPage>().FooterModule.IsNextButtonDisplayed());
+        }
+
+        [When(@"Build summary toggle is not displayed on build model footer")]
+        public void WhenBuildSummaryToggleIsNotDisplayedOnBuildModelFooter()
+        {
+            Assert.IsFalse(_parallelConfig.CurrentPage.As<BuildModelPage>().FooterModule.IsBuildSummaryToggleDisplayed());
+        }
+
+        [Then(@"Calculator modal is displayed")]
+        public void ThenCalculatorModalIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().CalculatorModule.IsPaymentCalculatorDisplayed());
+        }
 
     }
 }

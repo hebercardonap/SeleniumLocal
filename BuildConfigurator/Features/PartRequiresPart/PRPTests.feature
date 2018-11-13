@@ -43,7 +43,7 @@ Scenario: Verify PRP is triggered for ACE brand
 	Given I have navigated to ACE ace-570-eps-ghost-gray build page
 	When I get to build page
 	And I click Utility accessory category
-	And I click Ligthing accessory subcategory
+	And I click Lighting accessory subcategory
 	And I add specific Dual Row LED Light Bar accessory
 	And PRP container is displayed
 	And I select accessory by product ID 2881147

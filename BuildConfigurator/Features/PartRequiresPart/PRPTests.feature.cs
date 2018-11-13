@@ -191,7 +191,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 45
  testRunner.And("I click Utility accessory category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("I click Ligthing accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Lighting accessory subcategory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
  testRunner.And("I add specific Dual Row LED Light Bar accessory", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48

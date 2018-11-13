@@ -41,6 +41,18 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildColorPage>().HeaderModule.WaitForCloseIconToBeEnabled();
         }
 
+        [When(@"Next button is displayed on build model footer")]
+        public void WhenNextButtonIsDisplayedOnBuildModelFooter()
+        {
+            _parallelConfig.CurrentPage.As<BuildColorPage>().FooterModule.IsNextButtonDisplayed();
+        }
+
+        [When(@"I click next button build color footer")]
+        public void WhenIClickNextButtonBuildColorFooter()
+        {
+            _parallelConfig.CurrentPage.As<BuildColorPage>().FooterModule.ClickFooterNextButton();
+        }
+
 
     }
 }

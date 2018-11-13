@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Pages
+namespace BuildConfigurator.Modules
 {
     public class HeaderModule : BasePage
     {
