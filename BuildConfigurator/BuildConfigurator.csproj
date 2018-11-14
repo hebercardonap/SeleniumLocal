@@ -187,6 +187,7 @@
     <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Modules\CalculatorModule.cs" />
     <Compile Include="Modules\FooterModule.cs" />
+    <Compile Include="Modules\SignInModule.cs" />
     <Compile Include="Pages\BuildCategoryPage.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
     <Compile Include="Pages\BuildConfigurePage.cs" />

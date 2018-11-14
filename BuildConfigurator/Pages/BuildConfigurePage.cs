@@ -107,6 +107,8 @@ namespace BuildConfigurator.Pages
 
         public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
 
+        public SignInModule SignInModule { get { return new SignInModule(_parallelConfig); } }
+
         public BuildConfigurePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
             _pageHelpers = new PageHelpers(parallelConfig);

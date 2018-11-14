@@ -33,7 +33,7 @@ Scenario: Verify save build functionality
 	And I click save icon
 	And I enter build name
 	And I click save button
-	And I login
+	And I login from build page
 	And I get to build page
 	And I click Load Saved Build button
 	Then Newly saved build is loaded

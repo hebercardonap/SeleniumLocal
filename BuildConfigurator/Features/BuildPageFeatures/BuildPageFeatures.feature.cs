@@ -160,7 +160,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 35
  testRunner.And("I click save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I login from build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
  testRunner.And("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38

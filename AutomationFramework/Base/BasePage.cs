@@ -34,5 +34,10 @@ namespace AutomationFramework.Base
             }
         }
 
+        public void SetExtraSmallViewport()
+        {
+            Driver.Manage().Window.Size = new System.Drawing.Size(360, 740);
+        }
+
     }
 }

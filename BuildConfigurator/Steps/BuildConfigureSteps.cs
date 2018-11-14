@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.DataProvider;
 using BuildConfigurator.Pages;
 using NUnit.Framework;
 using System;
@@ -324,6 +325,12 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsBuildSummaryContainerDisplayed());
         }
 
+        [When(@"I login from build page")]
+        public void WhenILoginFromBuildPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().SignInModule.EnterEmailAndPasswordValue(UserAccountData.NON_EMPLOYEE_1);
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().SignInModule.ClickLoginCTA();
+        }
 
     }
 }

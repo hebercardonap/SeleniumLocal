@@ -21,6 +21,8 @@ namespace BuildConfigurator.Modules
         private static By BY_SAVE_HEADER_ICON = By.XPath("");
         //TODO: Update with email icon selector
         private static By BY_EMAIL_HEADER_ICON = By.XPath("");
+        //TODO: Update with sing in icon selector
+        private static By BY_SIGN_IN_HEADER_ICON = By.XPath("");
 
 
         public void ClickHeaderCloseIcon()
@@ -66,6 +68,16 @@ namespace BuildConfigurator.Modules
         public void ClickEmailHeaderIcon()
         {
             DriverActions.clickElement(BY_EMAIL_HEADER_ICON);
+        }
+
+        public bool IsHeaderSignInIconDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SIGN_IN_HEADER_ICON);
+        }
+
+        public void ClickSignInHeaderIcon()
+        {
+            DriverActions.clickElement(BY_SIGN_IN_HEADER_ICON);
         }
     }
 }
