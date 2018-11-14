@@ -10,10 +10,10 @@ namespace BuildConfigurator.Modules
 {
     public class FooterModule : BasePage
     {
-        private static By BY_FOOTER_STARTING_PRICE = By.XPath("");
-        private static By BY_FOOTER_PAYMENT_CALC = By.XPath("");
-        private static By BY_FOOTER_NEXT_BUTTON = By.XPath("");
-        private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("");
+        private static By BY_FOOTER_STARTING_PRICE = By.XPath("//div[@class='cpq-footer__pricing-price']");
+        private static By BY_FOOTER_PAYMENT_CALC = By.XPath("//button[@class='cpq-footer__finance']");
+        private static By BY_FOOTER_NEXT_BUTTON = By.XPath("//a[@class='btn-next cpq-footer__cta-button']");
+        private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//button[@class='btn-next cpq-footer__cta-button']");
 
 
         public FooterModule(ParallelConfig parallelConfig) : base(parallelConfig)

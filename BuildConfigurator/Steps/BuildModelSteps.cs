@@ -110,5 +110,12 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildModelPage>().CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
+        [When(@"I click calculator icon build model footer")]
+        public void WhenIClickCalculatorIconBuildModelFooter()
+        {
+            _parallelConfig.CurrentPage.As<BuildModelPage>().FooterModule.ClickFooterPaymentCalculator();
+        }
+
+
     }
 }

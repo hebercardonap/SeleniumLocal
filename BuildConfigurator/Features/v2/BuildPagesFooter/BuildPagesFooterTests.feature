@@ -9,7 +9,7 @@ Scenario: Verifiy footer elements build model page
 	And Payment calculator is displayed on build model footer
 	And Next button is not displayed on build model footer
 	And Build summary toggle is not displayed on build model footer
-	And I click footer calculator icon
+	And I click calculator icon build model footer 
 	Then Calculator modal is displayed
 
 @footer @ran
@@ -17,7 +17,7 @@ Scenario: Verify footer next button build color page
 	Given I have navigated to RAN ranger-500 build color page
 	When I get to build color page
 	And I select random color
-	And Next button is displayed on build model footer
+	And Next button is displayed on build color footer
 	And I click next button build color footer
 	Then I get to build page
 

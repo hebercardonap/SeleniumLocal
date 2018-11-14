@@ -94,7 +94,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("Build summary toggle is not displayed on build model footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I click footer calculator icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click calculator icon build model footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.Then("Calculator modal is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -120,7 +120,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 19
  testRunner.And("I select random color", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("Next button is displayed on build model footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Next button is displayed on build color footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.And("I click next button build color footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22

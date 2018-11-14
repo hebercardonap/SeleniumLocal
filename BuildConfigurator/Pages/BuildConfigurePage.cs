@@ -564,7 +564,7 @@ namespace BuildConfigurator.Pages
         public void GetToBuildPage()
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_FULL_SCREEN_BUTTON);
-            DriverActions.waitForElementVisibleAndEnabled(BY_FLICKITY_SLIDER_BUTTON);
+            //DriverActions.waitForElementVisibleAndEnabled(BY_FLICKITY_SLIDER_BUTTON);
             Assert.IsTrue((Driver.Url).Contains("build"));
         }
 
