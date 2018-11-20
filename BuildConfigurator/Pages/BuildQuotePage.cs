@@ -28,6 +28,7 @@ namespace BuildConfigurator.Pages
         private static By BY_EMAIL_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='Email']//span[contains(@class,'Error')]");
         private static By BY_POSTAL_CODE_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='DealerLocator']//span[contains(@class,'Error')]");
         private static By BY_AGE_CHECKBOX_VALIDATION_ERROR = By.XPath("//div[@data-f-type='choice']//span[@class='Form__Element__ValidationError']");
+        private static By BY_SELECTED_DEALER_NAME = By.XPath("//div[contains(@class,'dlecb__dealer-name')]");
 
         public BuildQuotePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -141,6 +142,11 @@ namespace BuildConfigurator.Pages
         public bool IsAgeCheckboxValidationErrorDisplayed()
         {
             return DriverActions.IsElementPresent(BY_AGE_CHECKBOX_VALIDATION_ERROR);
+        }
+
+        public void WaitForDealerNameToBeDisplayed()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_SELECTED_DEALER_NAME);
         }
     }
 }

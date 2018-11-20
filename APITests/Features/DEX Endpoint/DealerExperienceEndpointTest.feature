@@ -11,16 +11,16 @@ Scenario Outline: Error scenario invalid year
 	Then API response code is <Response>
     Examples:
 	| Brand | Year | Dealer   | Response |
-	| RZR   | 2021 | 02040900 | 404      |
-	| RAN   | 2021 | 02040900 | 404      |
-	| GEN   | 2021 | 02040900 | 404      |
-	| ATV   | 2021 | 02040900 | 404      |
-	| ACE   | 2021 | 02040900 | 404      |
-	| RZR   | 2017 | 02040900 | 404      |
-	| RAN   | 2018 | 02040900 | 404      |
-	| GEN   | 2018 | 02040900 | 404      |
-	| ATV   | 2018 | 02040900 | 404      |
-	| ACE   | 2018 | 02040900 | 404      |
+	| RZR   | 2021 | 02040900 | 204      |
+	| RAN   | 2021 | 02040900 | 204      |
+	| GEN   | 2021 | 02040900 | 204      |
+	| ATV   | 2021 | 02040900 | 204      |
+	| ACE   | 2021 | 02040900 | 204      |
+	| RZR   | 2017 | 02040900 | 204      |
+	| RAN   | 2018 | 02040900 | 204      |
+	| GEN   | 2018 | 02040900 | 204      |
+	| ATV   | 2018 | 02040900 | 204      |
+	| ACE   | 2018 | 02040900 | 204      |
 	
 @DEX_API
 Scenario Outline: Error scenario invalid year format
@@ -29,11 +29,11 @@ Scenario Outline: Error scenario invalid year format
 	Then API response code is <Response>
 	Examples:
 	| Brand | Year | Dealer  | Response |
-	| RZR   | 202 | 02040900 | 404      |
-	| RAN   | 202 | 02040900 | 404      |
-	| GEN   | 202 | 02040900 | 404      |
-	| ATV   | 202 | 02040900 | 404      |
-	| ACE   | 202 | 02040900 | 404      |
+	| RZR   | 202 | 02040900 | 204      |
+	| RAN   | 202 | 02040900 | 204      |
+	| GEN   | 202 | 02040900 | 204      |
+	| ATV   | 202 | 02040900 | 204      |
+	| ACE   | 202 | 02040900 | 204      |
 
 @DEX_API
 Scenario Outline: Error scenario invalid dealer id
@@ -42,11 +42,11 @@ Scenario Outline: Error scenario invalid dealer id
 	Then API response code is <Response>
 	Examples:
 	| Brand | Year | Dealer | Response |
-	| RZR   | 2019 | 123456 | 404      |
-	| RAN   | 2019 | 123456 | 404      |
-	| GEN   | 2019 | 123456 | 404      |
-	| ATV   | 2019 | 123456 | 404      |
-	| ACE   | 2019 | 123456 | 404      |
+	| RZR   | 2019 | 123456 | 204      |
+	| RAN   | 2019 | 123456 | 204      |
+	| GEN   | 2019 | 123456 | 204      |
+	| ATV   | 2019 | 123456 | 204      |
+	| ACE   | 2019 | 123456 | 204      |
 
 @DEX_API
 Scenario Outline: Success scenario valid year valid dealer id

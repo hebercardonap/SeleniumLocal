@@ -17,6 +17,8 @@ namespace BuildConfigurator.Modules
         //TODO: Update selectors
         private static By BY_SIGN_IN_MODAL = By.XPath("");
         private static By BY_SIGN_IN_CANCEL_BUTTON = By.XPath("");
+        private static By BY_MY_ACCOUNT_ICON = By.XPath("");
+
 
 
         public SignInModule(ParallelConfig parallelConfig) : base(parallelConfig)
@@ -33,5 +35,12 @@ namespace BuildConfigurator.Modules
         {
             DriverActions.clickElement(BY_LOG_IN_BUTTON);
         }
+
+        public void ClickMyAccountIcon()
+        {
+            DriverActions.clickElement(BY_MY_ACCOUNT_ICON);
+        }
+
+
     }
 }

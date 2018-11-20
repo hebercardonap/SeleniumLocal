@@ -169,6 +169,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PRPTests.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\v2\BuildPageCarousel\BuildPageCarouselTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuildPageCarouselTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\v2\BuildPagesFooter\BuildPagesFooterTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,6 +281,10 @@
     <None Include="Features\PartRequiresPart\PRPTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PRPTests.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\v2\BuildPageCarousel\BuildPageCarouselTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BuildPageCarouselTests.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\v2\BuildPagesFooter\BuildPagesFooterTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

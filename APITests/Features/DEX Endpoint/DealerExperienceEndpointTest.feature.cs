@@ -72,16 +72,16 @@ namespace APITests.Features.DEXEndpoint
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error scenario invalid year")]
         [NUnit.Framework.CategoryAttribute("DEX_API")]
-        [NUnit.Framework.TestCaseAttribute("RZR", "2021", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("RAN", "2021", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("GEN", "2021", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ATV", "2021", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ACE", "2021", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("RZR", "2017", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("RAN", "2018", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("GEN", "2018", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ATV", "2018", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ACE", "2018", "02040900", "404", null)]
+        [NUnit.Framework.TestCaseAttribute("RZR", "2021", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("RAN", "2021", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("GEN", "2021", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ATV", "2021", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ACE", "2021", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("RZR", "2017", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("RAN", "2018", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("GEN", "2018", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ATV", "2018", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ACE", "2018", "02040900", "204", null)]
         public virtual void ErrorScenarioInvalidYear(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -107,11 +107,11 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error scenario invalid year format")]
         [NUnit.Framework.CategoryAttribute("DEX_API")]
-        [NUnit.Framework.TestCaseAttribute("RZR", "202", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("RAN", "202", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("GEN", "202", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ATV", "202", "02040900", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ACE", "202", "02040900", "404", null)]
+        [NUnit.Framework.TestCaseAttribute("RZR", "202", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("RAN", "202", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("GEN", "202", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ATV", "202", "02040900", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ACE", "202", "02040900", "204", null)]
         public virtual void ErrorScenarioInvalidYearFormat(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -137,11 +137,11 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error scenario invalid dealer id")]
         [NUnit.Framework.CategoryAttribute("DEX_API")]
-        [NUnit.Framework.TestCaseAttribute("RZR", "2019", "123456", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("RAN", "2019", "123456", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("GEN", "2019", "123456", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ATV", "2019", "123456", "404", null)]
-        [NUnit.Framework.TestCaseAttribute("ACE", "2019", "123456", "404", null)]
+        [NUnit.Framework.TestCaseAttribute("RZR", "2019", "123456", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("RAN", "2019", "123456", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("GEN", "2019", "123456", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ATV", "2019", "123456", "204", null)]
+        [NUnit.Framework.TestCaseAttribute("ACE", "2019", "123456", "204", null)]
         public virtual void ErrorScenarioInvalidDealerId(string brand, string year, string dealer, string response, string[] exampleTags)
         {
             string[] @__tags = new string[] {

@@ -90,6 +90,13 @@ namespace BuildConfigurator.Pages
         private static By BY_CONFLICT_REMOVE_CTA = By.XPath(".//div[@class='summary-accessory-info-remove ']");
         private static By BY_SAVE_BUILD_MODAL_TITLE = By.XPath("//div[@class='save-title']");
 
+        // Accessories carousel v2
+        private static By BY_ACCESORIES_HEADER = By.XPath("//div[@class='build-accessories-header']");
+        private static By BY_BUILD_ACCESSORIES_CATEGORIES = By.XPath("//div[@class='build-accessories-category-header']");
+        private static By BY_BUILD_ACCESSORIES_SUBCATEGORIES = By.XPath("//div[@class='build-accessories-subcategory-header']");
+        private static By BY_BUILD_ACCESORIES_PRODUCTS = By.XPath("//div[@class='build-accessories-product']");
+        private static By BY_BUILD_PRODUCT_LABEL = By.XPath(".//div[@class='build-accessories-product-title']//label");
+
 
 
         private static Random rnd = new Random();
@@ -99,6 +106,9 @@ namespace BuildConfigurator.Pages
         private static string TITLE_ATTRIBUTE = "title";
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
         private static string BUILD_NAME = "TEST BUILD " + DATE_VALUE;
+        private static By BY_A_TAG_NAME = By.TagName("a");
+        private static By BY_LABEL_TAG_NAME = By.TagName("label");
+        private static By BY_BUTTON_TAG_NAME = By.TagName("button");
 
         PageHelpers _pageHelpers;
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
@@ -671,6 +681,63 @@ namespace BuildConfigurator.Pages
         public bool IsBuildSummaryContainerDisplayed()
         {
             return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_CONTAINER);
+        }
+
+
+        // These methods are for the new carousel design on the build page
+        public void ClickCategoryByName(string categoryName)
+        {
+            bool isFound = false;
+            List<IWebElement> categories = Driver.FindElements(BY_BUILD_ACCESSORIES_CATEGORIES).ToList();
+            foreach (var category in categories)
+            {
+                if (stringEqualsIgnoreCase(categoryName, category.FindElement(BY_A_TAG_NAME).Text)
+                    || stringContainsIgnoreCase(categoryName, category.FindElement(BY_A_TAG_NAME).Text))
+                {
+                    DriverActions.clickElement(category);
+                    isFound = true;
+                }
+                break;
+            }
+            if(!isFound)
+                Assert.Fail("The category with name {0} is not present", categoryName);
+        }
+
+        public void ClickSubcategoryByName(string subCategoryName)
+        {
+            bool isFound = false;
+            List<IWebElement> subCategories = Driver.FindElements(BY_BUILD_ACCESSORIES_SUBCATEGORIES).ToList();
+            foreach (var subCategory in subCategories)
+            {
+                if (stringEqualsIgnoreCase(subCategoryName, subCategory.FindElement(BY_A_TAG_NAME).Text)
+                    || stringContainsIgnoreCase(subCategoryName, subCategory.FindElement(BY_A_TAG_NAME).Text))
+                {
+                    DriverActions.clickElement(subCategory);
+                    isFound = true;
+                }
+                break;
+            }
+            if (!isFound)
+                Assert.Fail("The sub category with name {0} is not present", subCategoryName);
+        }
+
+        public void ClickAccessoryAddByProductName(string productName)
+        {
+            bool isFound = false;
+            List<IWebElement> products = Driver.FindElements(BY_BUILD_ACCESORIES_PRODUCTS).ToList();
+            foreach (var product in products)
+            {
+                string productLabel = product.FindElement(BY_BUILD_PRODUCT_LABEL).Text;
+                if (stringEqualsIgnoreCase(productLabel, productName)
+                    || stringContainsIgnoreCase(productLabel, productName))
+                {
+                    isFound = true;
+                    IWebElement button = product.FindElement(BY_BUTTON_TAG_NAME);
+                    DriverActions.clickElement(button);
+                }
+            }
+            if (!isFound)
+                Assert.Fail("The product with name {0} is not present", productName);
         }
     }
 }

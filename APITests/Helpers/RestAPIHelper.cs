@@ -24,6 +24,7 @@ namespace APITests.Helpers
             restRequest = new RestRequest(Method.GET);
             restRequest.AddHeader("Postman-Token", "e2dfeeaa-51a3-45e0-ab5c-69c4199a503e");
             restRequest.AddHeader("Cache-Control", "no-cache");
+            restRequest.AddHeader("Referer", "http://polaris-cpq-test.com/");
             return restRequest;
         }
 

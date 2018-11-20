@@ -34,6 +34,7 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildQuotePage>().setEmail();
             _parallelConfig.CurrentPage.As<BuildQuotePage>().setPhoneNumber();
             _parallelConfig.CurrentPage.As<BuildQuotePage>().setPostalCode();
+            _parallelConfig.CurrentPage.As<BuildQuotePage>().WaitForDealerNameToBeDisplayed();
             _parallelConfig.CurrentPage.As<BuildQuotePage>().clickAgeCheckBox();
         }
 

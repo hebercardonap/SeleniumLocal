@@ -18,9 +18,9 @@ namespace BuildConfigurator.Modules
         private static By BY_HEADER_TITLE = By.XPath("//div[contains(@class,'title')]");
         private static By BY_NAVIGATION_BAR_CPQ_HEADER = By.XPath("//div[@id='cpq-header']");
         //TODO: Update with save icon selector
-        private static By BY_SAVE_HEADER_ICON = By.XPath("");
+        private static By BY_SAVE_HEADER_ICON = By.XPath("//i[@class='icon icon__save']");
         //TODO: Update with email icon selector
-        private static By BY_EMAIL_HEADER_ICON = By.XPath("");
+        private static By BY_EMAIL_HEADER_ICON = By.XPath("//i[@class='icon icon__email']");
         //TODO: Update with sing in icon selector
         private static By BY_SIGN_IN_HEADER_ICON = By.XPath("");
 

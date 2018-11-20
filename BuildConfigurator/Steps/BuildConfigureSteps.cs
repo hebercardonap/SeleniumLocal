@@ -214,6 +214,12 @@ namespace BuildConfigurator.Steps
             Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsIconContainerDisplayed());
         }
 
+        [When(@"Navigation bar is displayed")]
+        public void ThenNavigationBarIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsNavigationBarDisplayed());
+        }
+
 
         [Then(@"summary accessory social icons are not displayed")]
         public void ThenSummaryAccessorySocialIconsAreNotDisplayed()

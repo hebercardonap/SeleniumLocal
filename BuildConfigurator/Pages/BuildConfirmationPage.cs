@@ -11,7 +11,7 @@ namespace BuildConfigurator.Pages
 {
     class BuildConfirmationPage : BasePage
     {
-        private static By BY_THANK_YOU_MESSAGE = By.CssSelector("div[class*='form-confirmation'] span");
+        private static By BY_THANK_YOU_MESSAGE = By.XPath("//div[contains(@class,'form-confirmation')]//p//span");
         private static By BY_PRINT_LINK = By.XPath("//button[@title='Print Detailed Summary']");
         private static By BY_TOTAL_PRICE = By.XPath("//div[contains(@class,'total-price')]");
         private static By BY_ADDED_ACCESSORY = By.XPath("//div[contains(@class,'product border-bottom')]");
