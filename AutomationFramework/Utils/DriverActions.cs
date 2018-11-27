@@ -122,5 +122,20 @@ namespace AutomationFramework.Utils
                 element.Click();
         }
 
+        public void ScrollToElement(IWebElement element)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            js.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'})", element);
+            Thread.Sleep(500);
+        }
+
+        public void ScrollToElement(By locator)
+        {
+            IWebElement element = Driver.FindElement(locator);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            js.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'})", element);
+            Thread.Sleep(500);
+        }
+
     }
 }

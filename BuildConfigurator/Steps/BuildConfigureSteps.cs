@@ -338,5 +338,47 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().SignInModule.ClickLoginCTA();
         }
 
+        [When(@"I select (.*) from category carousel")]
+        public void WhenISelectProtectionFromCategoryCarousel(string category)
+        {
+             _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickCategoryByName(category);
+        }
+
+        [When(@"I select (.*) from subcategory carousel")]
+        public void WhenISelectRoofsFromSubcategoryCarousel(string subcategory)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSubcategoryByName(subcategory);
+        }
+
+        [When(@"I Add (.*) from products")]
+        public void WhenIAddAluminumRoof_BlackFromProducts(string product)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickAccessoryAddByProductName(product);
+        }
+
+        [When(@"I click see details link from (.*) description")]
+        public void WhenIClickSeeDetailsLinkFromAccessoryDescription(string description)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSeeDetailsLinkByProductName(description);
+        }
+
+        [Then(@"Product Info is displayed")]
+        public void ThenProductInfoIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().IsBuildAccessoriesProductInfoDisplayed());
+        }
+
+        [When(@"I collapse (.*) category carousel")]
+        public void WhenICollapseAccessoryCategoryCarousel(string category)
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().CollapseCategoryByName(category);
+        }
+
+        [When(@"I close build summary from build page")]
+        public void WhenICloseBuildSummaryFromBuildPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().FooterModule.ClickFooterBuildSummaryToggle();
+        }
+
     }
 }
