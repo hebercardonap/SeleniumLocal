@@ -98,6 +98,7 @@ namespace BuildConfigurator.Pages
         private static By BY_BUILD_PRODUCT_LABEL = By.XPath("//div[@class='build-accessories-product-title']//label");
         private static By BY_BUILD_ACCEOSSORIES_PRODUCT_DETAILS = By.XPath(".//div[contains(@class,'build-accessories-product-details')]");
         private static By BY_BUILD_ACCESSORIES_PRODUCT_INFO = By.XPath("//div[@class='build-accessories-product-info']");
+        private static By BY_BUILD_CAROUSEL_FIRST_ITEM = By.XPath("//div[@class='build-accessories-categories']//a[@class='build-accessories-category-title']");
 
 
 
@@ -121,6 +122,8 @@ namespace BuildConfigurator.Pages
         public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
 
         public SignInModule SignInModule { get { return new SignInModule(_parallelConfig); } }
+
+        public AccountModule AccountModule { get { return new AccountModule(_parallelConfig); } }
 
         public BuildConfigurePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -549,6 +552,7 @@ namespace BuildConfigurator.Pages
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_LOAD_SAVED_BUTTON);
             DriverActions.waitForElementToBeEnabled(BY_LOAD_SAVED_BUTTON);
+            DriverActions.WaitForCanvassToComplete();
             DriverActions.clickElement(BY_LOAD_SAVED_BUTTON);
         }
 
@@ -790,5 +794,12 @@ namespace BuildConfigurator.Pages
             if (!isFound)
                 Assert.Fail("The category with name {0} is not present", categoryName);
         }
+
+        public void WaitforCarouselItemstoLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_BUILD_CAROUSEL_FIRST_ITEM);
+        }
+
+
     }
 }

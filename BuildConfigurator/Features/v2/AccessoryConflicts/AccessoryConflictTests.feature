@@ -15,3 +15,15 @@ Scenario: Verify conflict is triggered for RAN brand
 	And I select Windshields from subcategory carousel
 	And I Add Flip-Down Full Windshield from products
 	Then Conflict container is displayed
+
+@conflicts @rzr
+Scenario: Verify conflict is triggered for RZR brand
+	Given I have navigated to RZR rzr-xp-1000-eps-trails-rocks-edition-cruiser-black build page
+	When I get to build page
+	And I select Utility from category carousel
+	And I select Storage & Bed Accessories from subcategory carousel
+	And I Add Spare Tire Carrier from products
+	And I select Protection from category carousel
+	And I select Custom Cage systems from subcategory carousel
+	And I Add Cage system - Black from products
+	Then Conflict container is displayed

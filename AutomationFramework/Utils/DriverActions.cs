@@ -137,5 +137,10 @@ namespace AutomationFramework.Utils
             Thread.Sleep(500);
         }
 
+        public void WaitForCanvassToComplete()
+        {
+            Thread.Sleep(5000);   
+        }
+
     }
 }

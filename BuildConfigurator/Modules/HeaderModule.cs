@@ -14,15 +14,13 @@ namespace BuildConfigurator.Modules
         {
         }
 
-        private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[contains(@class,'cpq-header__select-close')]");
+        private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[@class='cpq-header__icon-close']//i[@class='icon icon__close-circle']");
         private static By BY_HEADER_TITLE = By.XPath("//div[contains(@class,'title')]");
         private static By BY_NAVIGATION_BAR_CPQ_HEADER = By.XPath("//div[@id='cpq-header']");
-        //TODO: Update with save icon selector
         private static By BY_SAVE_HEADER_ICON = By.XPath("//i[@class='icon icon__save']");
-        //TODO: Update with email icon selector
         private static By BY_EMAIL_HEADER_ICON = By.XPath("//i[@class='icon icon__email']");
-        //TODO: Update with sing in icon selector
-        private static By BY_SIGN_IN_HEADER_ICON = By.XPath("");
+        private static By BY_SIGN_IN_HEADER_ICON = By.XPath("//a[@class='cpq-header__identity-signin']");
+        private static By BY_ACCOUNT_ICON = By.XPath("//i[@class='icon icon__account']");
 
 
         public void ClickHeaderCloseIcon()
@@ -78,6 +76,16 @@ namespace BuildConfigurator.Modules
         public void ClickSignInHeaderIcon()
         {
             DriverActions.clickElement(BY_SIGN_IN_HEADER_ICON);
+        }
+
+        public void ClickAccountHeaderIcon()
+        {
+            DriverActions.clickElement(BY_ACCOUNT_ICON);
+        }
+
+        public bool IsAccountHeaderIconDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_ACCOUNT_ICON);
         }
     }
 }

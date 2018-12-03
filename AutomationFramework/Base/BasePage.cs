@@ -39,5 +39,10 @@ namespace AutomationFramework.Base
             Driver.Manage().Window.Size = new System.Drawing.Size(360, 740);
         }
 
+        public void GoToPreviousPage()
+        {
+            Driver.Navigate().Back();
+        }
+
     }
 }

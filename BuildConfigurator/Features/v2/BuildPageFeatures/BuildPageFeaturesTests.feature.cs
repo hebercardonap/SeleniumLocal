@@ -70,12 +70,12 @@ namespace BuildConfigurator.Features.V2.BuildPageFeatures
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify clicking on accessory image opens overview")]
+        [NUnit.Framework.DescriptionAttribute("Verify clicking see details link opens product info")]
         [NUnit.Framework.CategoryAttribute("mytag@features")]
         [NUnit.Framework.CategoryAttribute("rzr")]
-        public virtual void VerifyClickingOnAccessoryImageOpensOverview()
+        public virtual void VerifyClickingSeeDetailsLinkOpensProductInfo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify clicking on accessory image opens overview", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify clicking see details link opens product info", null, new string[] {
                         "mytag@features",
                         "rzr"});
 #line 6
@@ -93,6 +93,46 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click see details link from Convex Rear View Mirror description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.Then("Product Info is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify save build functionality")]
+        [NUnit.Framework.CategoryAttribute("features")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
+        public virtual void VerifySaveBuildFunctionality()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify save build functionality", null, new string[] {
+                        "features",
+                        "rzr"});
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 16
+ testRunner.Given("I have navigated to RZR rzr-xp-4-turbo-s-indy-red build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
+ testRunner.When("Build page loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.And("I select Protection from category carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("I select Mirrors from subcategory carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("I Add Folding Side Mirrors from products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("I click header save icon from build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("I enter build name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("I click save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("I login from build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("Build page loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("I click Load Saved Build button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.Then("Newly saved build is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -17,6 +17,10 @@ namespace BuildConfigurator.Steps
         private static string BUILD_COLOR_PART_URL = "/build-color";
         private static string BUILD_TRIM_PART_URL = "/build-trim";
         private static string BUILD_MODEL_PART_URL = "/build-model";
+        private static string ORDERS_URL_PART = "/account/orderhistory";
+        private static string SAVED_VEHICLES_URL_PART = "/account/savedvehicles";
+        private static string ADDRESSES_URL_PART = "/account/manageaddresses";
+        private static string ACCOUNT_INFO_URL_PART = "/account";
         private static string ICON_NOT_FOUND_ERROR = "Icon {0} is not displayed on the header";
 
         public BuildConfigureSteps(ParallelConfig parallelConfig) : base(parallelConfig)
@@ -379,6 +383,112 @@ namespace BuildConfigurator.Steps
         {
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().FooterModule.ClickFooterBuildSummaryToggle();
         }
+
+        [When(@"I click header save icon from build page")]
+        public void WhenIClickHeaderSaveIconFromBuildPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickSaveHeaderIcon();
+        }
+
+        [When(@"Build page loads")]
+        public void WhenBuildPageLoads()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().WaitforCarouselItemstoLoad();
+            DriverActions.WaitForCanvassToComplete();
+        }
+
+        [When(@"I click sing in from build page header")]
+        public void WhenIClickSingInFromBuildPageHeader()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickSignInHeaderIcon();
+        }
+
+        [When(@"Account Icon is displayed on build page")]
+        public void WhenAccountIconIsDisplayedOnBuildPage()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.IsAccountHeaderIconDisplayed());
+        }
+
+        [When(@"I click Account icon from build page")]
+        public void WhenIClickAccountIconFromBuildPage()
+        {
+            _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickAccountHeaderIcon();
+        }
+
+        [Then(@"Account modal is displayed")]
+        public void ThenAccountModalIsDisplayed()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.IsAccountModalDisplayed());
+        }
+
+        [When(@"I click (.*) from account modal on build page")]
+        [Then(@"I click (.*) from account modal on build page")]
+        public void WhenIClickMenuFromAccountModalOnBuildPage(string menu)
+        {
+            if (stringEqualsIgnoreCase(menu, "orders"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickAccountHeaderIcon();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.ClickAcctModalOrders();
+            }
+
+            else if (stringEqualsIgnoreCase(menu, "saved vehicles"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickAccountHeaderIcon();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.ClickAcctModalSavedVehicles();
+            }
+
+            else if (stringEqualsIgnoreCase(menu, "addresses"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickAccountHeaderIcon();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.ClickAcctModalAddresses();
+            }
+
+            else if (stringEqualsIgnoreCase(menu, "account information"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickAccountHeaderIcon();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.ClickAcctModalAcctInfo();
+            }
+
+            else if (stringEqualsIgnoreCase(menu, "logout"))
+            {
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().HeaderModule.ClickAccountHeaderIcon();
+                _parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.ClickAcctModalLogOut();
+            }
+                
+            else
+                Assert.Fail("Menu {0} is not present on account modal", menu);
+
+        }
+
+        [Then(@"(.*) page is displayed")]
+        public void ThenExpectedPageIsDisplayed(string page)
+        {
+            if (stringEqualsIgnoreCase(page, "orders"))
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, ORDERS_URL_PART));
+            else if (stringEqualsIgnoreCase(page, "saved vehicles"))
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, SAVED_VEHICLES_URL_PART));
+            else if (stringEqualsIgnoreCase(page, "addresses"))
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, ADDRESSES_URL_PART));
+            else if (stringEqualsIgnoreCase(page, "account information"))
+                Assert.IsTrue(stringContainsIgnoreCase(Driver.Url, ACCOUNT_INFO_URL_PART));
+            else if (stringEqualsIgnoreCase(page, "logout"))
+                Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.IsUserLoggedOut());
+            else
+                Assert.Fail("Page {0} is not supported on account modal", page);
+        }
+
+        [Then(@"User is successfully logged out")]
+        public void ThenUserIsSuccessfullyLoggedOut()
+        {
+            Assert.IsTrue(_parallelConfig.CurrentPage.As<BuildConfigurePage>().AccountModule.IsUserLoggedOut());
+        }
+
+        [Then(@"I navigate back")]
+        public void ThenINavigateBack()
+        {
+            DriverActions.GoToPreviousPage();
+        }
+
 
     }
 }
