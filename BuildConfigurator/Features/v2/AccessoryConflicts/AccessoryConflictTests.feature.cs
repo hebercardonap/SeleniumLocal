@@ -84,7 +84,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I have navigated to RAN ranger-crew-xp-900-sage-green build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Build page loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
  testRunner.And("I select Utility from category carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I have navigated to RZR rzr-xp-1000-eps-trails-rocks-edition-cruiser-black build " +
                     "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
- testRunner.When("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Build page loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
  testRunner.And("I select Utility from category carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24

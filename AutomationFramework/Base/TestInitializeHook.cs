@@ -45,7 +45,9 @@ namespace AutomationFramework.Base
             switch (browserType)
             {
                 case BrowserType.InternetExplorer:
-                    _parallelConfig.Driver = new InternetExplorerDriver();
+                    var options = new InternetExplorerOptions();
+                    options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                    _parallelConfig.Driver = new InternetExplorerDriver(options);
                     TurnOnWait();
                     break;
                 case BrowserType.FireFox:
