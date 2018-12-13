@@ -14,7 +14,8 @@ namespace BuildConfigurator.Modules
         {
         }
 
-        private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[@class='cpq-header__icon-close']//i[@class='icon icon__close-circle']");
+        //private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[@class='cpq-header__icon-close']//i[@class='icon icon__close-circle']");
+        private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[@class='cpq-header__icon-close']");
         private static By BY_HEADER_TITLE = By.XPath("//div[contains(@class,'title')]");
         private static By BY_NAVIGATION_BAR_CPQ_HEADER = By.XPath("//div[@id='cpq-header']");
         private static By BY_SAVE_HEADER_ICON = By.XPath("//i[@class='icon icon__save']");

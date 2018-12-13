@@ -116,6 +116,7 @@
     <Compile Include="UrlBuilderSites\UrlBuilder.cs" />
     <Compile Include="Utils\Brand.cs" />
     <Compile Include="Utils\DriverActions.cs" />
+    <Compile Include="Utils\PolarisSeleniumAttribute.cs" />
     <Compile Include="Utils\TakeScreenshot.cs" />
   </ItemGroup>
   <ItemGroup>
