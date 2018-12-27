@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BuildConfigurator.Features.V2.SignInModule
+namespace BuildConfigurator.Features.V3.SignInModule
 {
     using TechTalk.SpecFlow;
     

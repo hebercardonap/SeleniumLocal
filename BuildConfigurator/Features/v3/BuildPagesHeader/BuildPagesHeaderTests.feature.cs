@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BuildConfigurator.Features.V2.BuildPagesHeader
+namespace BuildConfigurator.Features.V3.BuildPagesHeader
 {
     using TechTalk.SpecFlow;
     

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BuildConfigurator.Features.V2.PartRequiresPart
+namespace BuildConfigurator.Features.V3.BuildPageCarousel
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace BuildConfigurator.Features.V2.PartRequiresPart
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PartRequiresPartTests")]
-    public partial class PartRequiresPartTestsFeature
+    [NUnit.Framework.DescriptionAttribute("BuildPageCarouselTests")]
+    public partial class BuildPageCarouselTestsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "PartRequiresPartTests.feature"
+#line 1 "BuildPageCarouselTests.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PartRequiresPartTests", "\tVerify PRP rule is triggered\r\n\twhen applicable for a particular brand", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BuildPageCarouselTests", "\tTo validate carousel new UI version functionality", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,35 +70,27 @@ namespace BuildConfigurator.Features.V2.PartRequiresPart
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify PRP is triggered for RAN brand")]
-        [NUnit.Framework.CategoryAttribute("PRP")]
-        [NUnit.Framework.CategoryAttribute("ran")]
-        public virtual void VerifyPRPIsTriggeredForRANBrand()
+        [NUnit.Framework.DescriptionAttribute("Verify new carousel items")]
+        [NUnit.Framework.CategoryAttribute("header")]
+        [NUnit.Framework.CategoryAttribute("rzr")]
+        public virtual void VerifyNewCarouselItems()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify PRP is triggered for RAN brand", null, new string[] {
-                        "PRP",
-                        "ran"});
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify new carousel items", null, new string[] {
+                        "header",
+                        "rzr"});
+#line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 6
+ testRunner.Given("I have navigated to RZR rzr-xp-4-turbo-s-indy-red build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.Given("I have navigated to RAN ranger-500-sage-green build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
  testRunner.When("I get to build page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
+ testRunner.And("I select Audio & Lighting from category carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I select Utility from category carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select Audio & Tech from subcategory carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("I select Cargo & Bed Storage from subcategory carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.And("I Add XL Transport from products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.And("PRP container is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("I select accessory by product ID 2884106", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.And("I click buildsummary button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.Then("Accessories \'2882430,2884106\' are displayed in build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I Add Rear Audio Harness from products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

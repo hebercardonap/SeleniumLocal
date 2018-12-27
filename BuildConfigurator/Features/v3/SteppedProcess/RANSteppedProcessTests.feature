@@ -5,16 +5,20 @@
 @steppedProcess @ran
 Scenario: Verify RAN build stepped process two seat
 	Given I have navigated to RAN build model page
-	When I select two seat option
-	And I select random model
-	And I select trim
-	And I select random color
-	And I click next button
-	And I get to build page
+	When I select two seat model new version
+	And I select random model new version
+	And I wait until trims page loads
+	And I select random trim new version
+	And I wait until colors page loads
+	And I select random color new version
+	And I click next button from color page
+	And I wait until accessories page loads
 	And I select Wheel from category carousel
 	And I select Trail from subcategory carousel
 	And I Add Wheel & Tire Set from products
-	And I click finished button
+	And I click next button from accessories page
+	And I wait until build summary is displayed
+	And I click finished button from build summary
 	And I get to build quote page
 	And I fill the form
 	And I click getinternetprice button
@@ -23,8 +27,8 @@ Scenario: Verify RAN build stepped process two seat
 
 @steppedProcess @ran
 Scenario: Verify RAN build stepped process three seat
-	Given I have navigated to RAN build model page
-	When I select three seat option
+	Given I have navigated to RAN models page
+	When I select three seat models
 	And I select random model
 	And I select ranger non package trim
 	And I select random color

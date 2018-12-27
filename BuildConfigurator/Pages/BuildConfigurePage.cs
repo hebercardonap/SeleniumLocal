@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.Extensions;
+using AutomationFramework.Utils;
 using BuildConfigurator.Modules;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -27,7 +28,6 @@ namespace BuildConfigurator.Pages
         //private static By BY_ACCESSORY_CARD = By.CssSelector("div[class='flickity-slider'] div[ng-repeat^='product']");
         private static By BY_ACCESSORY_CARD = By.CssSelector("div[id = 'accessory'] div[class='flickity-slider'] div[class*='build-accessory-card'][style]");
         private static By BY_BUILD_CATEGORIES = By.XPath("//div[@id='build-category']//div[@class='flickity-slider']//button");
-
 
         private static By BY_FINISHED_BUTTON = By.XPath("//div[@class='summary-accessory-quote btn btn-color-primary btn-md btn-square']");
         private static By BY_FINISHED_OLD_BUTTON = By.XPath("//button[@class='summary-accessory-quote btn btn-color-primary-light btn-md btn-square']");
@@ -99,7 +99,6 @@ namespace BuildConfigurator.Pages
         private static By BY_BUILD_ACCEOSSORIES_PRODUCT_DETAILS = By.XPath(".//div[contains(@class,'build-accessories-product-details')]");
         private static By BY_BUILD_ACCESSORIES_PRODUCT_INFO = By.XPath("//div[@class='build-accessories-product-info']");
         private static By BY_BUILD_CAROUSEL_FIRST_ITEM = By.XPath("//div[@class='build-accessories-categories']//a[@class='build-accessories-category-title']");
-
 
 
         private static Random rnd = new Random();

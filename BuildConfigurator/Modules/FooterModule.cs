@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace BuildConfigurator.Modules
     {
         private static By BY_FOOTER_STARTING_PRICE = By.XPath("//div[@class='cpq-footer__pricing-price']");
         private static By BY_FOOTER_PAYMENT_CALC = By.XPath("//button[@class='cpq-footer__finance']");
-        private static By BY_FOOTER_NEXT_BUTTON = By.XPath("//a[@class='btn-next cpq-footer__cta-button']");
+        private static By BY_FOOTER_NEXT_BUTTON = PolarisSeleniumAttribute.PolarisSeleniumSelector("footerNextBtn");
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//button[@class='btn-next cpq-footer__cta-button']");
 
 

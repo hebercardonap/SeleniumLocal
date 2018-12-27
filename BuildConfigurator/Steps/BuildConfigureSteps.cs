@@ -342,24 +342,6 @@ namespace BuildConfigurator.Steps
             _parallelConfig.CurrentPage.As<BuildConfigurePage>().SignInModule.ClickLoginCTA();
         }
 
-        [When(@"I select (.*) from category carousel")]
-        public void WhenISelectProtectionFromCategoryCarousel(string category)
-        {
-             _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickCategoryByName(category);
-        }
-
-        [When(@"I select (.*) from subcategory carousel")]
-        public void WhenISelectRoofsFromSubcategoryCarousel(string subcategory)
-        {
-            _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickSubcategoryByName(subcategory);
-        }
-
-        [When(@"I Add (.*) from products")]
-        public void WhenIAddAluminumRoof_BlackFromProducts(string product)
-        {
-            _parallelConfig.CurrentPage.As<BuildConfigurePage>().ClickAccessoryAddByProductName(product);
-        }
-
         [When(@"I click see details link from (.*) description")]
         public void WhenIClickSeeDetailsLinkFromAccessoryDescription(string description)
         {
