@@ -4,7 +4,7 @@
 
 @steppedProcess @ran
 Scenario: Verify RAN build stepped process two seat
-	Given I have navigated to RAN build model page
+	Given I have navigated to RAN models page
 	When I select two seat model new version
 	And I select random model new version
 	And I wait until trims page loads
@@ -22,8 +22,8 @@ Scenario: Verify RAN build stepped process two seat
 	And I get to build quote page
 	And I fill the form
 	And I click getinternetprice button
-	And I get to build confirmation page
-	Then build confirmation page is as expected
+	And I wait until confirmation page loads
+	Then Confirmation page is as expected
 
 @steppedProcess @ran
 Scenario: Verify RAN build stepped process three seat
