@@ -21,7 +21,7 @@ namespace BuildConfigurator
         private readonly ScenarioContext _scenarioContext;
         private readonly TakeScreenshot _takeScreenshot;
 
-        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext, TakeScreenshot takeScreenshot) : base(parallelConfig)
+        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext, TakeScreenshot takeScreenshot)
         {
             _parallelConfig = parallelConfig;
             _featureContext = featureContext;

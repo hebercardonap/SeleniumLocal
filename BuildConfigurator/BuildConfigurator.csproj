@@ -225,6 +225,7 @@
       <DependentUpon>RANSteppedProcessTests.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
+    <Compile Include="Hooks\NUnitInitialize.cs" />
     <Compile Include="Modules\AccountModule.cs" />
     <Compile Include="Modules\CalculatorModule.cs" />
     <Compile Include="Modules\FooterModule.cs" />
@@ -264,6 +265,15 @@
     <Compile Include="Steps\v3\ExtendedConfiguratorSteps.cs" />
     <Compile Include="Steps\v3\ModelsPageSteps.cs" />
     <Compile Include="Steps\v3\TrimsPageSteps.cs" />
+    <Compile Include="TestBases\AccessoriesTestBase.cs" />
+    <Compile Include="TestBases\ColorsTestBase.cs" />
+    <Compile Include="TestBases\ConfirmationTestBase.cs" />
+    <Compile Include="TestBases\CpqUrlTestBase.cs" />
+    <Compile Include="TestBases\ModelsTestBase.cs" />
+    <Compile Include="TestBases\TestBase.cs" />
+    <Compile Include="TestBases\TrimsTestBase.cs" />
+    <Compile Include="Tests\ParallelSteppedProcessTests.cs" />
+    <Compile Include="Tests\SteppedProcessTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

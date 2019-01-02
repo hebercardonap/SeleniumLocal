@@ -14,18 +14,12 @@ namespace AutomationFramework.Base
 {
     public class TestInitializeHook
     {
-        public readonly ParallelConfig _parallelConfig;
-
-        public TestInitializeHook(ParallelConfig parallelConfig)
-        {
-            _parallelConfig = parallelConfig;
-        }
-
+        protected ParallelConfig _parallelConfig = new ParallelConfig();
+        
         public void InitializeSettings()
         {
             ConfigReader.setFrameworkSettings();
             //LogHelpers.CreateLogFile();
-
             OpenBrowser(Settings.BrowserType);
 
             //LogHelpers.Write("Initialized Framework");
