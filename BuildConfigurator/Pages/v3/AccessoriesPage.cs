@@ -21,7 +21,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_ACCESORIES_PRODUCT = PolarisSeleniumAttribute.PolarisSeleniumSelector("buildAccessoryProduct");
         private static By BY_PRODUCT_TITLE_LABEL = PolarisSeleniumAttribute.PolarisSeleniumSelector("productTitleLabel");
         private static By BY_CHILD_PRODUCT_TITLE_LABEL = By.XPath(".//div[data-slnm-attr='productTitleLabel']");
-        private static By BY_BUILD_SUMMARY_DIALOG = By.XPath("//div[id='build-summary-dialog']");
+        private static By BY_BUILD_SUMMARY_DIALOG = By.XPath("//div[@id='build-summary-dialog']");
         private static By BY_IAM_FINISHED_BUTTON = By.CssSelector("div[class~='summary-accessory-quote']");
         private static By BY_ACCESSORY_PRODUCT_CTA = By.XPath(".//button[@data-slnm-attr='productCTA']");
 

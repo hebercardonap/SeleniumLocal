@@ -60,6 +60,11 @@ namespace BuildConfigurator.Steps.v3
             _parallelConfig.CurrentPage.As<AccessoriesPage>().ClikIamFinishedButton();
         }
 
+        [When(@"I click Next to open build summary")]
+        public void WhenIClickNextToOpenBuildSummary()
+        {
+            _parallelConfig.CurrentPage.As<AccessoriesPage>().FooterModule.OpenBuildSummary();
+        }
 
     }
 }

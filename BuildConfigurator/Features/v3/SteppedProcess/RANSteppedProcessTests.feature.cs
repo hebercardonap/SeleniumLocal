@@ -104,9 +104,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 17
  testRunner.And("I select Trail from subcategory carousel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("I Add Wheel & Tire Set from products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Add Buckle- Accent from products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("I click next button from accessories page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click Next to open build summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
  testRunner.And("I wait until build summary is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21

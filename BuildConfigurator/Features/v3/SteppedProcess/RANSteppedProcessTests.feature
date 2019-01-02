@@ -15,8 +15,8 @@ Scenario: Verify RAN build stepped process two seat
 	And I wait until accessories page loads
 	And I select Wheel from category carousel
 	And I select Trail from subcategory carousel
-	And I Add Wheel & Tire Set from products
-	And I click next button from accessories page
+	And I Add Buckle- Accent from products
+	And I click Next to open build summary
 	And I wait until build summary is displayed
 	And I click finished button from build summary
 	And I get to build quote page
