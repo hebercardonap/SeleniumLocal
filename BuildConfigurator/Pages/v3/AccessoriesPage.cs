@@ -36,7 +36,7 @@ namespace BuildConfigurator.Pages.v3
         {
         }
 
-        public void WaitForColorsPageToLoad()
+        public void WaitForAccessoriesPageToLoad()
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
             DriverActions.waitForElementVisibleAndEnabled(BY_ACCESSORIES_CATEGORIES);

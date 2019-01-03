@@ -13,15 +13,32 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests
 {
     [TestFixture]
-    public class SteppedProcessTests : NUnitInitialize
+    public class SteppedProcessTests : TestBase
     {
 
         [Test]
-        public void SampleNUnitTest()
+        public void RangerSteppedProcess()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
-            Models.ClickTwoSeatModel();
-            Thread.Sleep(5000);
+            Models.SelectModelBySeatNumber("two");
+            Models.SelectRandomModelVersion();
+            Trims.WaitForTrimsPageToLoad();
+            Trims.ClickRandomTrim();
+            Colors.WaitForColorsPageToLoad();
+            Colors.ClickRandomWholegoodColor();
+            Colors.FooterModule.ClickFooterNextButton();
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.ClickCategoryByName("Wheel");
+            Accessories.ClickSubcategoryByName("Trail");
+            Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.WaitUntilBuildSummaryIsDisplayed();
+            Accessories.ClikIamFinishedButton();
+            Quote.WaitForBuildQuotePageToLoad();
+            Quote.FillQuoteFormDefaultData();
+            Quote.ClickGetInternetPriceButton();
+            Confirmation.WaitUntilConfirmationPageLoads();
+            Confirmation.ConfirmationPageElementsAreAsExpected();
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BuildConfigurator.Hooks
 {
-    public class NUnitInitialize : TestInitializeHook
+    public class TestBase : TestInitializeHook
     {
 
         [SetUp]
@@ -33,6 +33,31 @@ namespace BuildConfigurator.Hooks
         public ModelsTestBase Models
         {
             get { return new ModelsTestBase(_parallelConfig); }
+        }
+
+        public TrimsTestBase Trims
+        {
+            get { return new TrimsTestBase(_parallelConfig); }
+        }
+
+        public ColorsTestBase Colors
+        {
+            get { return new ColorsTestBase(_parallelConfig); }
+        }
+
+        public AccessoriesTestBase Accessories
+        {
+            get { return new AccessoriesTestBase(_parallelConfig); }
+        }
+
+        public QuoteTestBase Quote
+        {
+            get { return new QuoteTestBase(_parallelConfig); }
+        }
+
+        public ConfirmationTestBase Confirmation
+        {
+            get { return new ConfirmationTestBase(_parallelConfig); }
         }
 
     }

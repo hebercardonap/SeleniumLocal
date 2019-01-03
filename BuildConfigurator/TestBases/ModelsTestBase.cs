@@ -24,22 +24,22 @@ namespace BuildConfigurator.TestBases
         public void SelectModelBySeatNumber(string numberOfSeats)
         {
             if (stringEqualsIgnoreCase(numberOfSeats, ONE))
-                _parallelConfig.CurrentPage.As<ModelsPage>().ClickOneSeatModel();
+                ClickOneSeatModel();
             else if (stringEqualsIgnoreCase(numberOfSeats, TWO))
-                _parallelConfig.CurrentPage.As<ModelsPage>().ClickTwoSeatModel();
+                ClickTwoSeatModel();
             else if (stringEqualsIgnoreCase(numberOfSeats, THREE))
-                _parallelConfig.CurrentPage.As<ModelsPage>().ClickThreeSeatModel();
+                ClickThreeSeatModel();
             else if (stringEqualsIgnoreCase(numberOfSeats, FOUR))
-                _parallelConfig.CurrentPage.As<ModelsPage>().ClickFourSeatModel();
+                ClickFourSeatModel();
             else if (stringEqualsIgnoreCase(numberOfSeats, SIX))
-                _parallelConfig.CurrentPage.As<ModelsPage>().ClickSixSeatModel();
+                ClickSixSeatModel();
             else
                 Assert.Fail("Seat option {0} is not available", numberOfSeats);
         }
 
         public void SelectRandomModelVersion()
         {
-            _parallelConfig.CurrentPage.As<ModelsPage>().ClickRandomModelVersion();
+            ClickRandomModelVersion();
         }
     }
 }

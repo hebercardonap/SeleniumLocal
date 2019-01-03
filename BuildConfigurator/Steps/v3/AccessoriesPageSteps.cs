@@ -20,7 +20,7 @@ namespace BuildConfigurator.Steps.v3
         [When(@"I wait until accessories page loads")]
         public void WhenIWaitUntilAccessoriesPageLoads()
         {
-            _parallelConfig.CurrentPage.As<AccessoriesPage>().WaitForColorsPageToLoad();
+            _parallelConfig.CurrentPage.As<AccessoriesPage>().WaitForAccessoriesPageToLoad();
         }
 
         [When(@"I select (.*) from category carousel")]

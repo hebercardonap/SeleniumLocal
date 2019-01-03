@@ -13,14 +13,17 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests
 {
     [TestFixture]
-    public class ParallelSteppedProcessTests : NUnitInitialize
+    public class ParallelSteppedProcessTests : Hooks.TestBase
     {
 
         [Test]
         public void SampleNUnitTest()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
-            Models.ClickFourSeatModel();
+            Models.SelectModelBySeatNumber("two");
+            Models.SelectRandomModelVersion();
+            Trims.WaitForTrimsPageToLoad();
+            Trims.ClickRandomTrim();
             Thread.Sleep(5000);
         }
     }
