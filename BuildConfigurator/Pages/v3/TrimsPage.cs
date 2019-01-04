@@ -21,6 +21,8 @@ namespace BuildConfigurator.Pages.v3
 
         public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
 
+        public NavigationBarModule NavigationBarModule { get { return new NavigationBarModule(_parallelConfig); } }
+
         private static Random rnd = new Random();
 
         public TrimsPage(ParallelConfig parallelConfig) : base(parallelConfig)

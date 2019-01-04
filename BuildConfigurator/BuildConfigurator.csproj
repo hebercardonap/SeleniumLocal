@@ -229,6 +229,7 @@
     <Compile Include="Modules\AccountModule.cs" />
     <Compile Include="Modules\CalculatorModule.cs" />
     <Compile Include="Modules\FooterModule.cs" />
+    <Compile Include="Modules\NavigationBarModule.cs" />
     <Compile Include="Modules\SignInModule.cs" />
     <Compile Include="Pages\BuildCategoryPage.cs" />
     <Compile Include="Pages\BuildColorPage.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="Pages\BuildQuotePage.cs" />
     <Compile Include="Pages\BuildTrimPage.cs" />
     <Compile Include="Modules\HeaderModule.cs" />
+    <Compile Include="Pages\PackagesPage.cs" />
     <Compile Include="Pages\PageHelpers.cs" />
     <Compile Include="Pages\v3\AccessoriesPage.cs" />
     <Compile Include="Pages\v3\ColorsPage.cs" />
@@ -271,9 +273,12 @@
     <Compile Include="TestBases\ConfirmationTestBase.cs" />
     <Compile Include="TestBases\CpqUrlTestBase.cs" />
     <Compile Include="TestBases\ModelsTestBase.cs" />
+    <Compile Include="TestBases\PackagesTestBase.cs" />
     <Compile Include="TestBases\QuoteTestBase.cs" />
     <Compile Include="TestBases\TrimsTestBase.cs" />
-    <Compile Include="Tests\ParallelSteppedProcessTests.cs" />
+    <Compile Include="Tests\FooterTests.cs" />
+    <Compile Include="Tests\HeaderTests.cs" />
+    <Compile Include="Tests\NavigationBarTests.cs" />
     <Compile Include="Tests\SteppedProcessTests.cs" />
   </ItemGroup>
   <ItemGroup>

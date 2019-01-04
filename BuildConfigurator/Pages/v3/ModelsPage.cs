@@ -21,13 +21,16 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_SIX_SEAT_MODEL = PolarisSeleniumAttribute.PolarisSeleniumSelector("6-Seat");
         private static By BY_MODELS_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodModelsCard");
         private static By BY_MODELS_SEAT_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodSeatsCard");
-        
+        private static By BY_CHOOSE_MODEL_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseModelTitle");
+
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
 
         public CalculatorModule CalculatorModule { get { return new CalculatorModule(_parallelConfig); } }
 
         public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
+
+        public NavigationBarModule NavigationBarModule { get { return new NavigationBarModule(_parallelConfig); } }
 
         private static Random rnd = new Random();
         public ModelsPage(ParallelConfig parallelConfig) : base(parallelConfig)
@@ -78,6 +81,9 @@ namespace BuildConfigurator.Pages.v3
             DriverActions.waitForElementVisibleAndEnabled(BY_MODELS_SEAT_CARDS);
         }
 
-
+        public bool IsChooseModelTitleDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_CHOOSE_MODEL_TITLE);
+        }
     }
 }

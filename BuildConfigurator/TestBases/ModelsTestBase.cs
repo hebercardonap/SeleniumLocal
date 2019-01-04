@@ -41,5 +41,6 @@ namespace BuildConfigurator.TestBases
         {
             ClickRandomModelVersion();
         }
+
     }
 }

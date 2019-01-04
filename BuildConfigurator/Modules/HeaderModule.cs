@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,12 @@ namespace BuildConfigurator.Modules
         }
 
         //private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[@class='cpq-header__icon-close']//i[@class='icon icon__close-circle']");
-        private static By BY_HEADER_CLOSE_ICON = By.XPath("//a[@class='cpq-header__icon-close']");
+        private static By BY_HEADER_CLOSE_ICON = PolarisSeleniumAttribute.PolarisSeleniumSelector("headerCloseIcon");
         private static By BY_HEADER_TITLE = By.XPath("//div[contains(@class,'title')]");
         private static By BY_NAVIGATION_BAR_CPQ_HEADER = By.XPath("//div[@id='cpq-header']");
-        private static By BY_SAVE_HEADER_ICON = By.XPath("//i[@class='icon icon__save']");
-        private static By BY_EMAIL_HEADER_ICON = By.XPath("//i[@class='icon icon__email']");
-        private static By BY_SIGN_IN_HEADER_ICON = By.XPath("//a[@class='cpq-header__identity-signin']");
+        private static By BY_SAVE_HEADER_ICON = PolarisSeleniumAttribute.PolarisSeleniumSelector("headerSaveIcon");
+        private static By BY_EMAIL_HEADER_ICON = PolarisSeleniumAttribute.PolarisSeleniumSelector("headerEmailIcon");
+        private static By BY_SIGN_IN_HEADER_ICON = PolarisSeleniumAttribute.PolarisSeleniumSelector("headerSignInLink");
         private static By BY_ACCOUNT_ICON = By.XPath("//i[@class='icon icon__account']");
 
 
@@ -87,6 +88,11 @@ namespace BuildConfigurator.Modules
         public bool IsAccountHeaderIconDisplayed()
         {
             return DriverActions.IsElementPresent(BY_ACCOUNT_ICON);
+        }
+
+        public bool IsHeaderBrandNameDisplayed(string brand)
+        {
+            return stringContainsIgnoreCase(GetHeaderBrandName(), brand);
         }
     }
 }

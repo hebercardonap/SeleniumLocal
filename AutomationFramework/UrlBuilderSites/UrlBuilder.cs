@@ -13,60 +13,61 @@ namespace AutomationFramework.UrlBuilderSites
         private static string BUILD_MODEL_URL_PART = "/build-model/";
         private static string BUILD_CATEGORY_URL_PART = "/build-category/";
         private static string NUMBER_SIGN = "#";
+        private static string SLASH = "/";
 
         public static string getRzrLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.RZR), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.RZR), getBrowserLocale(), SLASH);
         }
 
         public static string getSnoLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.SNO), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.SNO), getBrowserLocale(), SLASH);
         }
 
         public static string getIndianLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.IND), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.IND), getBrowserLocale(), SLASH);
         }
 
         public static string getMilitaryLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.MIL), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.MIL), getBrowserLocale(), SLASH);
         }
 
         public static string getSlgLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.SLG), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.SLG), getBrowserLocale(), SLASH);
         }
 
         public static string getGemLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.GEM), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.GEM), getBrowserLocale(), SLASH);
         }
 
         public static string getCommercialLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.CMV), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.CMV), getBrowserLocale(), SLASH);
         }
 
         public static string getSportsmanLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.ATV), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.ATV), getBrowserLocale(), SLASH);
         }
 
         public static string getAceLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.ACE), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.ACE), getBrowserLocale(), SLASH);
         }
 
         public static string getRangerLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.RAN), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.RAN), getBrowserLocale(), SLASH);
         }
 
         public static string getGeneralLandingPageURL()
         {
-            return string.Concat(getBaseUrl(Brand.GEN), getBrowserLocale());
+            return string.Concat(getBaseUrl(Brand.GEN), getBrowserLocale(), SLASH);
         }
 
         public static string getRzrBuildModelUrl()

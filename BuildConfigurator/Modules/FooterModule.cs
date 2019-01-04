@@ -12,10 +12,11 @@ namespace BuildConfigurator.Modules
     public class FooterModule : BasePage
     {
         private static By BY_FOOTER_STARTING_PRICE = By.XPath("//div[@class='cpq-footer__pricing-price']");
-        private static By BY_FOOTER_PAYMENT_CALC = By.XPath("//button[@class='cpq-footer__finance']");
+        private static By BY_FOOTER_PAYMENT_CALC = PolarisSeleniumAttribute.PolarisSeleniumSelector("footerCalculatorIcon");
         private static By BY_FOOTER_NEXT_BUTTON = PolarisSeleniumAttribute.PolarisSeleniumSelector("footerNextBtn");
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//button[@class='btn-next cpq-footer__cta-button']");
         private static By BY_OPEN_BUILD_SUMMARY = By.CssSelector("button[class~='cpq-footer__cta-button']");
+        private static By BY_NEXT_OPEN_BUILD_SUMMARY = PolarisSeleniumAttribute.PolarisSeleniumSelector("showBuildSummary");
 
 
         public FooterModule(ParallelConfig parallelConfig) : base(parallelConfig)
@@ -70,6 +71,11 @@ namespace BuildConfigurator.Modules
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_OPEN_BUILD_SUMMARY);
             DriverActions.clickElement(BY_OPEN_BUILD_SUMMARY);
+        }
+
+        public bool IsNextOpenBuildSummaryDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_NEXT_OPEN_BUILD_SUMMARY);
         }
     }
 }

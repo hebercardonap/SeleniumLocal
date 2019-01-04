@@ -30,6 +30,7 @@ namespace BuildConfigurator.Pages.v3
         public CalculatorModule CalculatorModule { get { return new CalculatorModule(_parallelConfig); } }
 
         public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
+        public NavigationBarModule NavigationBarModule { get { return new NavigationBarModule(_parallelConfig); } }
 
         private static By BY_BUTTON_TAG_NAME = By.TagName("button");
         public AccessoriesPage(ParallelConfig parallelConfig) : base(parallelConfig)

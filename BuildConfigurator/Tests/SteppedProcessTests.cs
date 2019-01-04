@@ -16,7 +16,7 @@ namespace BuildConfigurator.Tests
     public class SteppedProcessTests : TestBase
     {
 
-        [Test]
+        [Test, Category("Ranger"), Category("Stepped Process")]
         public void RangerSteppedProcess()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);

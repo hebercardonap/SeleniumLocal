@@ -60,5 +60,10 @@ namespace BuildConfigurator.Hooks
             get { return new ConfirmationTestBase(_parallelConfig); }
         }
 
+        public PackagesTestBase Packages
+        {
+            get { return new PackagesTestBase(_parallelConfig); }
+        }
+
     }
 }

@@ -48,5 +48,10 @@ namespace AutomationFramework.Base
             Driver.Url = url;
         }
 
+        public string GetCurrentUrl()
+        {
+            return Driver.Url;
+        }
+
     }
 }
