@@ -1,4 +1,5 @@
-﻿using AutomationFramework.UrlBuilderSites;
+﻿using AutomationFramework.DataProvider;
+using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -69,5 +70,6 @@ namespace BuildConfigurator.Tests
             Accessories.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getRangerLandingPageURL());
         }
+
     }
 }

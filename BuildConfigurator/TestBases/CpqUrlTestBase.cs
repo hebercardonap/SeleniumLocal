@@ -140,5 +140,6 @@ namespace BuildConfigurator.TestBases
             else
                 Assert.Fail("Brand {0} not supported", brand);
         }
+
     }
 }

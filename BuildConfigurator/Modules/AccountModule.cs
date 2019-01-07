@@ -1,14 +1,16 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Extensions;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BuildConfigurator.Modules
 {
-    class AccountModule : BasePage
+    public class AccountModule : BasePage
     {
         private static By BY_ACCT_MODAL_CONTAINER = By.XPath("//div[@class='modal__content account-modal']");
         private static By BY_ACCT_MODAL_CLOSE_ICON = By.XPath("//i[@class='icon icon__close-circle']");
@@ -19,6 +21,8 @@ namespace BuildConfigurator.Modules
         private static By BY_ACCT_MODAL_LOG_OUT = By.CssSelector("ul[class='account-modal__navigation']>li:nth-child(5)>a");
         private static By BY_DROPDOWN_ACCT_ICON = By.XPath("//*[@class='dropdown-account__icon']");
         private static By BY_ACCT_LOGIN_LINK = By.XPath("//a[contains(@class,'link-item--log-in')]");
+        private static By BY_ACCT_LOGGED_IN_ICON = By.XPath("//*[@class='icon icon__account']");
+        private static By BY_SAVE_MODAL_BODY = By.XPath("//div[@class='modal__body']");
 
         public AccountModule(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -42,6 +46,8 @@ namespace BuildConfigurator.Modules
         public void ClickAcctModalSavedVehicles()
         {
             DriverActions.clickElement(BY_ACCT_MODAL_SAVED_VEHICLES);
+            Driver.WaitForPageLoaded();
+            WaitForSaveModalBodyToLoad();
         }
 
         public void ClickAcctModalAddresses()
@@ -71,6 +77,17 @@ namespace BuildConfigurator.Modules
             return DriverActions.IsElementPresent(BY_ACCT_LOGIN_LINK);
         }
 
+        public void ClickAcctLoggedInIcon()
+        {
+            DriverActions.waitForAjaxRequestToComplete();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
+            DriverActions.waitForElementVisibleAndEnabled(BY_ACCT_LOGGED_IN_ICON);
+            DriverActions.clickElement(BY_ACCT_LOGGED_IN_ICON);
+        }
 
+        public void WaitForSaveModalBodyToLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_SAVE_MODAL_BODY);
+        }
     }
 }

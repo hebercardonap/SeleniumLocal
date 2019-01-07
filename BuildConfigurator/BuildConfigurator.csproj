@@ -269,6 +269,7 @@
     <Compile Include="Steps\v3\ModelsPageSteps.cs" />
     <Compile Include="Steps\v3\TrimsPageSteps.cs" />
     <Compile Include="TestBases\AccessoriesTestBase.cs" />
+    <Compile Include="TestBases\AccountMgmtTestBase.cs" />
     <Compile Include="TestBases\ColorsTestBase.cs" />
     <Compile Include="TestBases\ConfirmationTestBase.cs" />
     <Compile Include="TestBases\CpqUrlTestBase.cs" />
@@ -276,9 +277,11 @@
     <Compile Include="TestBases\PackagesTestBase.cs" />
     <Compile Include="TestBases\QuoteTestBase.cs" />
     <Compile Include="TestBases\TrimsTestBase.cs" />
+    <Compile Include="Tests\AccountManagementTests.cs" />
     <Compile Include="Tests\FooterTests.cs" />
     <Compile Include="Tests\HeaderTests.cs" />
     <Compile Include="Tests\NavigationBarTests.cs" />
+    <Compile Include="Tests\PackageTests.cs" />
     <Compile Include="Tests\SteppedProcessTests.cs" />
   </ItemGroup>
   <ItemGroup>

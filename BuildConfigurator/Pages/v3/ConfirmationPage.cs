@@ -15,6 +15,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_BUILD_SUMMARY_CONFIRMATION_HEADER = By.XPath("//*[contains(@class, 'form-confirmation-build-summary-header')]");
         private static By BY_BUILD_TOTAL_PRICE = By.XPath("//*[contains(@class, 'total-price')]");
         private static By BY_SUMMARY_ADDED_ACCESSORY = By.XPath("//*[contains(@class, 'split-50')]");
+        private static By BY_WHOLEGOOD_MODEL_ID = By.XPath("//div[@class='text-align-right pull-right font-size-sm split-right']");
 
         public ConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -35,6 +36,13 @@ namespace BuildConfigurator.Pages.v3
         {
             List<IWebElement> accessories = Driver.FindElements(BY_SUMMARY_ADDED_ACCESSORY).ToList();
             return accessories.Count;
+        }
+
+        public string GetQuoteModelId()
+        {
+            string modelId = Driver.FindElement(BY_WHOLEGOOD_MODEL_ID).GetAttribute("innerHTML");
+            string model = modelId.Substring(modelId.LastIndexOf(":") + 1);
+            return model.Trim();
         }
     }
 }

@@ -65,5 +65,10 @@ namespace BuildConfigurator.Hooks
             get { return new PackagesTestBase(_parallelConfig); }
         }
 
+        public AccountMgmtTestBase AccountMgmt
+        {
+            get { return new AccountMgmtTestBase(_parallelConfig); }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.Pages;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace BuildConfigurator.TestBases
     {
         public PackagesTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
+        }
+
+        public bool VerifyModelIdChangedAfterPackageAdd(string initialModel)
+        {
+            return GetWholegoodModelId() != initialModel;
         }
     }
 }
