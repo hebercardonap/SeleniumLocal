@@ -42,22 +42,22 @@ namespace BuildConfigurator.TestBases
                 HeaderModule.ClickAccountHeaderIcon();
                 ClickAcctModalOrders();
             }
-            if (stringEqualsIgnoreCase(menu, SAVED_VEHICLES))
+            else if (stringEqualsIgnoreCase(menu, SAVED_VEHICLES))
             {
                 HeaderModule.ClickAccountHeaderIcon();
                 ClickAcctModalSavedVehicles();
             }
-            if (stringEqualsIgnoreCase(menu, ADDRESSES))
+            else if (stringEqualsIgnoreCase(menu, ADDRESSES))
             {
                 HeaderModule.ClickAccountHeaderIcon();
                 ClickAcctModalAddresses();
             }
-            if (stringEqualsIgnoreCase(menu, ACCOUNT_INFORMATION))
+            else if (stringEqualsIgnoreCase(menu, ACCOUNT_INFORMATION))
             {
                 HeaderModule.ClickAccountHeaderIcon();
                 ClickAcctModalAcctInfo();
             }
-            if (stringEqualsIgnoreCase(menu, LOGOUT))
+            else if (stringEqualsIgnoreCase(menu, LOGOUT))
             {
                 HeaderModule.ClickAccountHeaderIcon();
                 ClickAcctModalLogOut();
@@ -80,6 +80,12 @@ namespace BuildConfigurator.TestBases
                 return IsUserLoggedOut();
             else
                 return false;
+        }
+
+        public void ClickMenuOptionAndValidateExpectedPage(string menu)
+        {
+            ClickMenuFromAccountMenu(menu);
+            Assert.IsTrue(VerifyExpectedPageIsDisplayed(menu), "URL is not as expected");
         }
 
     }

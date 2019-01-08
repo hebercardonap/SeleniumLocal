@@ -74,6 +74,7 @@ namespace BuildConfigurator.Modules
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_DROPDOWN_ACCT_ICON);
             ClickDropDownAcctIcon();
+            DriverActions.waitForElementVisibleAndEnabled(BY_ACCT_LOGIN_LINK);
             return DriverActions.IsElementPresent(BY_ACCT_LOGIN_LINK);
         }
 

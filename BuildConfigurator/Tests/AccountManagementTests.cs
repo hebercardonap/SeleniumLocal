@@ -40,8 +40,18 @@ namespace BuildConfigurator.Tests
             Accessories.HeaderModule.ClickSignInHeaderIcon();
             AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);
             Accessories.WaitForAccessoriesPageToLoad();
-            AccountMgmt.ClickMenuFromAccountMenu("Orders");
-            Assert.IsTrue(AccountMgmt.VerifyExpectedPageIsDisplayed("Orders"));
+            AccountMgmt.ClickMenuOptionAndValidateExpectedPage("Orders");
+            CPQNavigate.GoToPreviousPage();
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.WaitForAccessoriesPageToLoad();
+            AccountMgmt.ClickMenuOptionAndValidateExpectedPage("Addresses");
+            CPQNavigate.GoToPreviousPage();
+            Accessories.WaitForAccessoriesPageToLoad();
+            AccountMgmt.ClickMenuOptionAndValidateExpectedPage("Account Information");
+            CPQNavigate.GoToPreviousPage();
+            Accessories.WaitForAccessoriesPageToLoad();
+            AccountMgmt.ClickMenuFromAccountMenu("Logout");
+            Assert.IsTrue(AccountMgmt.IsUserLoggedOut());
         }
     }
 }

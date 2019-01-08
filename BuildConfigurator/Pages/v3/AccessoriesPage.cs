@@ -29,6 +29,16 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_SAVED_VEHICLE_TITLE = By.XPath("//div[contains(@class,'saved-vehicles')]//div[contains(@class,'saved-vehicle__title')]");
         private static By BY_BUILD_SAVE_LINK = By.CssSelector("div[class='save-actions'] div[class='save']");
         private static By BY_DELETE_SAVED_BUTTON = By.XPath("//button[contains(@class,'saved-vehicle__delete')]");
+        private static By BY_PRP_CONTAINER = By.XPath("//div[@class='part-require-part-container']");
+        private static By BY_PRP_PRIMARY_PART_REMOVE_LINK = By.CssSelector("div[class='part-require-part-primaryPart'] div[class~='summary-accessory-info-remove']");
+        private static By BY_PRP_SECONDARY_PART_SELECT = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-remove']");
+        //private static By BY_PRP_SECONDARY_PART_DESC = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-text'] div:nth-child(1)");
+        //private static By BY_PRP_SECONDARY_PART_PART_NUMBER = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-text'] div:nth-child(2)");
+        private static By BY_PRP_SECONDARY_PART_DESC = By.XPath("div[class~='summary-accessory-info-text'] div:nth-child(1)");
+        private static By BY_PRP_SECONDARY_PART_NUMBER = By.CssSelector("div[class~='summary-accessory-info-text'] div:nth-child(2)");
+        private static By BY_PRP_SECONDARY_PARTS = PolarisSeleniumAttribute.PolarisSeleniumSelector("partRequirePartSecondaryPart");
+        private static By BY_PRP_SECONDARY_SELECT_CHILD = By.XPath(".//div[contains(@class,'summary-accessory-info-remove')]");
+        private static By BY_CONFLICT_CONTAINER = By.XPath("//div[@class='conflict-container']");
 
 
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
@@ -148,6 +158,68 @@ namespace BuildConfigurator.Pages.v3
         {
             DriverActions.clickElement(BY_DELETE_SAVED_BUTTON);
             DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public bool IsPrpContainerDisplayed()
+        {
+            WaitForPrpContainerToLoad();
+            return DriverActions.IsElementPresent(BY_PRP_CONTAINER);
+        }
+
+        public void WaitForPrpContainerToLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_PRP_CONTAINER);
+        }
+
+        public void ClickPrpPrimaryPartRemoveLink()
+        {
+            DriverActions.clickElement(BY_PRP_PRIMARY_PART_REMOVE_LINK);
+        }
+
+        public void ClickPrpSecondaryPartSelectByProductId(string productId)
+        {
+            List<IWebElement> secondaryParts = Driver.FindElements(BY_PRP_SECONDARY_PARTS).ToList();
+
+            foreach (var part in secondaryParts)
+            {
+                string productString = part.FindElement(BY_PRP_SECONDARY_PART_NUMBER).Text;
+                string product = productString.Substring(productString.LastIndexOf("#") + 1);
+
+                if (stringEqualsIgnoreCase(product, productId) || stringContainsIgnoreCase(product, productId))
+                {
+                    IWebElement select = part.FindElement(BY_PRP_SECONDARY_SELECT_CHILD);
+                    DriverActions.clickElement(select);
+                    break;
+                }
+            }
+        }
+
+        public bool AreProductIdsAddedBuildSummary(List<string> products)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_PRP_SECONDARY_PART_NUMBER).ToList();
+            foreach (var product in products)
+            {
+                foreach (var item in summaryProductIds)
+                {
+                    string productString = item.Text;
+                    string id = productString.Substring(productString.LastIndexOf("#") + 1);
+
+                    if (stringEqualsIgnoreCase(product, id))
+                    {
+                        isFound = true;
+                        break;
+                    }
+                    else
+                        isFound = false;
+                }
+            }
+            return isFound;
+        }
+
+        public void IsConflictContainerDisplayed()
+        {
+            DriverActions.IsElementPresent(BY_CONFLICT_CONTAINER);
         }
 
     }
