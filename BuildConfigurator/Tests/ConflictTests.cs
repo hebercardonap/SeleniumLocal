@@ -23,6 +23,26 @@ namespace BuildConfigurator.Tests
             Accessories.ClickCategoryByName("Cab Components");
             Accessories.ClickSubcategoryByName("Windshields");
             Accessories.ClickAccessoryAddByProductName("Flip-Down Full Windshield");
+            Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
+        }
+
+        [Test, Category("Ranger"), Category("Conflicts")]
+        public void VerifyRemovedPartFromConflictInBuildSummary()
+        {
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-crew-xp-900-sage-green");
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.ClickCategoryByName("Utility");
+            Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
+            Accessories.ClickAccessoryAddByProductName("Front Hood Storage Rack");
+            Accessories.ClickCategoryByName("Cab Components");
+            Accessories.ClickSubcategoryByName("Windshields");
+            Accessories.ClickAccessoryAddByProductName("Flip-Down Full Windshield");
+            Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
+            Accessories.ClickConflictingItemRemoveByDesc("Flip-Down Full Windshield");
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.WaitUntilBuildSummaryIsDisplayed();
+            Assert.IsFalse(Accessories.AreProductIdsAddedBuildSummary(new List<string>() { "2881919" }));
         }
     }
 }

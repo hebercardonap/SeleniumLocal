@@ -34,11 +34,12 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_PRP_SECONDARY_PART_SELECT = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-remove']");
         //private static By BY_PRP_SECONDARY_PART_DESC = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-text'] div:nth-child(1)");
         //private static By BY_PRP_SECONDARY_PART_PART_NUMBER = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-text'] div:nth-child(2)");
-        private static By BY_PRP_SECONDARY_PART_DESC = By.XPath("div[class~='summary-accessory-info-text'] div:nth-child(1)");
+        private static By BY_PRP_SECONDARY_PART_DESC = By.CssSelector("div[class~='summary-accessory-info-text'] div:nth-child(1)");
         private static By BY_PRP_SECONDARY_PART_NUMBER = By.CssSelector("div[class~='summary-accessory-info-text'] div:nth-child(2)");
         private static By BY_PRP_SECONDARY_PARTS = PolarisSeleniumAttribute.PolarisSeleniumSelector("partRequirePartSecondaryPart");
         private static By BY_PRP_SECONDARY_SELECT_CHILD = By.XPath(".//div[contains(@class,'summary-accessory-info-remove')]");
         private static By BY_CONFLICT_CONTAINER = By.XPath("//div[@class='conflict-container']");
+        private static By BY_CONFLICT_ITEMS = By.CssSelector("div[class='conflict-container'] div[class~='summary-accessory-info']");
 
 
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
@@ -217,10 +218,31 @@ namespace BuildConfigurator.Pages.v3
             return isFound;
         }
 
-        public void IsConflictContainerDisplayed()
+        public bool IsConflictContainerDisplayed()
         {
-            DriverActions.IsElementPresent(BY_CONFLICT_CONTAINER);
+            return DriverActions.IsElementPresent(BY_CONFLICT_CONTAINER);
         }
 
+        public void ClickConflictingItemRemoveByDesc(string description)
+        {
+            List<IWebElement> items = Driver.FindElements(BY_CONFLICT_ITEMS).ToList();
+
+            foreach (var item in items)
+            {
+                string itemDesc = item.FindElement(BY_PRP_SECONDARY_PART_DESC).Text;
+                if (stringContainsIgnoreCase(itemDesc, description))
+                {
+                    IWebElement remove = item.FindElement(BY_PRP_SECONDARY_SELECT_CHILD);
+                    DriverActions.clickElement(remove);
+                    break;
+                }
+            }
+
+        }
+
+        public void WaitforConflictContainerToLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_CONFLICT_CONTAINER);
+        }
     }
 }
