@@ -32,14 +32,19 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_PRP_CONTAINER = By.XPath("//div[@class='part-require-part-container']");
         private static By BY_PRP_PRIMARY_PART_REMOVE_LINK = By.CssSelector("div[class='part-require-part-primaryPart'] div[class~='summary-accessory-info-remove']");
         private static By BY_PRP_SECONDARY_PART_SELECT = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-remove']");
-        //private static By BY_PRP_SECONDARY_PART_DESC = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-text'] div:nth-child(1)");
-        //private static By BY_PRP_SECONDARY_PART_PART_NUMBER = By.CssSelector("div[class='part-require-part-secondaryParts'] div[class~='summary-accessory-info-text'] div:nth-child(2)");
         private static By BY_PRP_SECONDARY_PART_DESC = By.CssSelector("div[class~='summary-accessory-info-text'] div:nth-child(1)");
         private static By BY_PRP_SECONDARY_PART_NUMBER = By.CssSelector("div[class~='summary-accessory-info-text'] div:nth-child(2)");
         private static By BY_PRP_SECONDARY_PARTS = PolarisSeleniumAttribute.PolarisSeleniumSelector("partRequirePartSecondaryPart");
         private static By BY_PRP_SECONDARY_SELECT_CHILD = By.XPath(".//div[contains(@class,'summary-accessory-info-remove')]");
         private static By BY_CONFLICT_CONTAINER = By.XPath("//div[@class='conflict-container']");
         private static By BY_CONFLICT_ITEMS = By.CssSelector("div[class='conflict-container'] div[class~='summary-accessory-info']");
+        private static By BY_BUILD_SUMMARY_NOTES = By.XPath("//div[@class='summary-notes']");
+        private static By BY_BUILD_SUMMARY_ACCESSORIES_DESC = By.CssSelector("div[data-slnm-attr='summaryAccessoryDescription']");
+        private static By BY_BUILD_SUMMARY_ACCESORIES = By.CssSelector("div[class~='summary-accessory-info']");
+        private static By BY_BUILD_SUMMARY_REMOVE_LINK = By.CssSelector("div[data-slnm-attr='summaryAccessoryCTA']");
+        private static By BY_BUILD_SUMMARY_SAVE_ICON = By.CssSelector("button[class*='icon--save']");
+        private static By BY_BUILD_SUMMARY_EMAIL_ICON = By.CssSelector("button[class*='icon--email']");
+        private static By BY_BUILD_SUMMARY_PRINT_ICON = By.CssSelector("button[class*='icon--print']");
 
 
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
@@ -236,6 +241,8 @@ namespace BuildConfigurator.Pages.v3
                     DriverActions.clickElement(remove);
                     break;
                 }
+                else
+                    Assert.Fail("Accessory passed {0} is not present on the conflict container", description);
             }
 
         }
@@ -243,6 +250,66 @@ namespace BuildConfigurator.Pages.v3
         public void WaitforConflictContainerToLoad()
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_CONFLICT_CONTAINER);
+        }
+
+        public bool IsSummaryAdditionalNotesDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_NOTES);
+        }
+
+        public bool AreProductDescPresentBuildSummary(List<string> products)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_PRP_SECONDARY_PART_DESC).ToList();
+            foreach (var product in products)
+            {
+                foreach (var item in summaryProductIds)
+                {
+                    string productDesc = item.Text;
+
+                    if (stringContainsIgnoreCase(productDesc, product))
+                    {
+                        isFound = true;
+                        break;
+                    }
+                    else
+                        isFound = false;
+                }
+            }
+            return isFound;
+        }
+
+        public void RemoveAccessoryFromSummaryByDesc(string description)
+        {
+            List<IWebElement> accessories = Driver.FindElements(BY_BUILD_SUMMARY_ACCESORIES).ToList();
+
+            foreach (var item in accessories)
+            {
+                string desc = item.FindElement(BY_PRP_SECONDARY_PART_DESC).Text;
+                if (stringContainsIgnoreCase(desc, description))
+                {
+                    IWebElement remove = item.FindElement(BY_BUILD_SUMMARY_REMOVE_LINK);
+                    DriverActions.clickElement(remove);
+                    break;
+                }
+                else
+                    Assert.Fail("Accessory passed {0} is not present on the build summary", description);
+            }
+        }
+
+        public bool IsSummarySaveIconDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_SAVE_ICON);
+        }
+
+        public bool IsSummaryEmailIconDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_EMAIL_ICON);
+        }
+
+        public bool IsSummaryPrintIconDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_PRINT_ICON);
         }
     }
 }

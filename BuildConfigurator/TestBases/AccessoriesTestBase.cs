@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.Pages.v3;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,21 @@ namespace BuildConfigurator.TestBases
     {
         public AccessoriesTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
+        }
+
+        public void VerifyIconsAndAdditionalNotesPresent()
+        {
+            Assert.IsTrue(IsSummarySaveIconDisplayed());
+            Assert.IsTrue(IsSummaryEmailIconDisplayed());
+            Assert.IsTrue(IsSummaryPrintIconDisplayed());
+            Assert.IsTrue(IsSummaryAdditionalNotesDisplayed());
+        }
+
+        public void VerifyIconsAndAdditionalNotesNotPresent()
+        {
+            Assert.IsFalse(IsSummarySaveIconDisplayed());
+            Assert.IsFalse(IsSummaryEmailIconDisplayed());
+            Assert.IsFalse(IsSummaryPrintIconDisplayed());
         }
     }
 }

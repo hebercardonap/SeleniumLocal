@@ -18,6 +18,8 @@ namespace BuildConfigurator.TestBases
         private static string BUILD_PACKAGE_PAGE = "/build-package/";
         private static string BUILD_URL_PART = "/build/";
         private static string SLASH = "/";
+        private static string TEST_DEALER_PART_ID = "?dealerid=02040900";
+
         public CpqUrlTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -136,6 +138,22 @@ namespace BuildConfigurator.TestBases
             {
                 string buildUrl = string.Concat(UrlBuilder.getGemLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+            }
+            else
+                Assert.Fail("Brand {0} not supported", brand);
+        }
+
+        public void NavigateToBrandDealerExpUrl(string brand, string model)
+        {
+            if (stringEqualsIgnoreCase(brand, Brand.RAN))
+            {
+                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART, TEST_DEALER_PART_ID);
+                GoToUrl(url);
+            }
+            else if (stringEqualsIgnoreCase(brand, Brand.RZR))
+            {
+                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART, TEST_DEALER_PART_ID);
+                GoToUrl(url);
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);

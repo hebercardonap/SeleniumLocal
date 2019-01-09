@@ -278,6 +278,7 @@
     <Compile Include="TestBases\QuoteTestBase.cs" />
     <Compile Include="TestBases\TrimsTestBase.cs" />
     <Compile Include="Tests\AccountManagementTests.cs" />
+    <Compile Include="Tests\BuildSummaryTests.cs" />
     <Compile Include="Tests\ConflictTests.cs" />
     <Compile Include="Tests\FooterTests.cs" />
     <Compile Include="Tests\HeaderTests.cs" />
