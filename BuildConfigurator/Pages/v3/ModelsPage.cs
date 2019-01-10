@@ -65,7 +65,7 @@ namespace BuildConfigurator.Pages.v3
         public void ClickRandomModelVersion()
         {
             List<IWebElement> modelVersions = Driver.FindElements(BY_MODELS_CARDS).ToList();
-            int randomModel = rnd.Next(0, modelVersions.Count);
+            int randomModel = rnd.Next(0, modelVersions.Count - 1);
             DriverActions.clickElement(modelVersions[randomModel]);
         }
 

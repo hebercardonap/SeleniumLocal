@@ -98,7 +98,7 @@ namespace BuildConfigurator
         [BeforeScenario]
         public void Initialize()
         {
-            GetTestNames();
+            //GetTestNames();
             InitializeSettings();
 
             string currentFeature = _featureContext.FeatureInfo.Title;

@@ -230,6 +230,7 @@ namespace BuildConfigurator.Pages.v3
 
         public void ClickConflictingItemRemoveByDesc(string description)
         {
+            bool isFound = false;
             List<IWebElement> items = Driver.FindElements(BY_CONFLICT_ITEMS).ToList();
 
             foreach (var item in items)
@@ -239,12 +240,12 @@ namespace BuildConfigurator.Pages.v3
                 {
                     IWebElement remove = item.FindElement(BY_PRP_SECONDARY_SELECT_CHILD);
                     DriverActions.clickElement(remove);
+                    isFound = true;
                     break;
                 }
-                else
-                    Assert.Fail("Accessory passed {0} is not present on the conflict container", description);
             }
-
+            if (!isFound)
+                Assert.Fail("Accessory passed {0} is not present on the conflict container", description);
         }
 
         public void WaitforConflictContainerToLoad()
