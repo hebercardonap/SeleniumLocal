@@ -42,5 +42,10 @@ namespace BuildConfigurator.TestBases
             ClickRandomModelVersion();
         }
 
+        public void VerifySeatSelectionIsDisplayed()
+        {
+            Assert.Greater(GetSeatSelectionCards(), 0);
+        }
+
     }
 }

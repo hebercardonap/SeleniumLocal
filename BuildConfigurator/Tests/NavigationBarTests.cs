@@ -28,5 +28,17 @@ namespace BuildConfigurator.Tests
             Trims.NavigationBarModule.ClickModelsNavigation();
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
         }
+
+        [Test, Category("Ranger"), Category("Navigation")]
+        public void VerifyClickingModelsRevertSeatSelection()
+        {
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.NavigationBarModule.WaitForNavigationBarToLoad();
+            Accessories.NavigationBarModule.ClickModelsNavigation();
+            Models.WaitForModelsPageToLoad();
+            Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
+            Models.VerifySeatSelectionIsDisplayed();
+        }
     }
 }
