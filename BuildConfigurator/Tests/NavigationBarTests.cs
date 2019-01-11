@@ -40,5 +40,13 @@ namespace BuildConfigurator.Tests
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
             Models.VerifySeatSelectionIsDisplayed();
         }
+
+        [Test, Category("Ranger"), Category("Navigation")]
+        public void VerifyNavigationBarNotDisplayedDealerExp()
+        {
+            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, "ranger-500-sage-green");
+            Accessories.WaitForAccessoriesPageToLoad();
+            Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
+        }
     }
 }

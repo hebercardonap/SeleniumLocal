@@ -47,6 +47,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_BUILD_SUMMARY_PRINT_ICON = By.CssSelector("button[class*='icon--print']");
 
 
+
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
         private static string BUILD_NAME = "TEST BUILD " + DATE_VALUE;
 
@@ -61,6 +62,8 @@ namespace BuildConfigurator.Pages.v3
         public SignInModule SignInModule { get { return new SignInModule(_parallelConfig); } }
 
         public AccountModule AccountModule { get { return new AccountModule(_parallelConfig); } }
+
+        public Toolbar Toolbar { get { return new Toolbar(_parallelConfig); } }
 
         private static By BY_BUTTON_TAG_NAME = By.TagName("button");
         public AccessoriesPage(ParallelConfig parallelConfig) : base(parallelConfig)

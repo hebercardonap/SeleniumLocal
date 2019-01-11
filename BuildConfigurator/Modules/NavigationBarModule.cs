@@ -17,6 +17,7 @@ namespace BuildConfigurator.Modules
         private static By BY_NAV_TRIM= PolarisSeleniumAttribute.PolarisSeleniumSelector("Trim");
         private static By BY_NAV_MODELS = PolarisSeleniumAttribute.PolarisSeleniumSelector("Models");
         private static By BY_NAV_PACKAGES = PolarisSeleniumAttribute.PolarisSeleniumSelector("Packages");
+        private static By BY_NAVIGATION_CHEVRONS = By.XPath("//section[@class='cpq-title-nav'] //section[contains(@class,'navigation')]");
         public NavigationBarModule(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -49,6 +50,11 @@ namespace BuildConfigurator.Modules
         public void ClickModelsNavigation()
         {
             DriverActions.clickElement(BY_NAV_MODELS);
+        }
+
+        public bool IsNavigationBarDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_NAVIGATION_CHEVRONS);
         }
     }
 }

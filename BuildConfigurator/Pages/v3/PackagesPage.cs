@@ -26,6 +26,10 @@ namespace BuildConfigurator.Pages
         public CalculatorModule CalculatorModule { get { return new CalculatorModule(_parallelConfig); } }
 
         public FooterModule FooterModule { get { return new FooterModule(_parallelConfig); } }
+
+        public Toolbar Toolbar { get { return new Toolbar(_parallelConfig); } }
+
+
         public PackagesPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }

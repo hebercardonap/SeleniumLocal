@@ -19,5 +19,15 @@ namespace BuildConfigurator.TestBases
         {
             return GetWholegoodModelId() != initialModel;
         }
+
+        public void VerifyToolbarIconsStatePackagesPage()
+        {
+            Assert.IsTrue(Toolbar.IsFullscreenIconEnabled());
+            Assert.IsTrue(Toolbar.IsInteriorExteriorIconEnabled());
+            Assert.IsFalse(Toolbar.IsSnapshotIconEnabled());
+            Assert.IsFalse(Toolbar.IsEmailIconEnabled());
+            Assert.IsFalse(Toolbar.IsPrintIconEnabled());
+            Assert.IsFalse(Toolbar.IsRestartIconEnabled());
+        }
     }
 }

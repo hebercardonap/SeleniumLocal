@@ -102,6 +102,7 @@
     <Compile Include="Config\ConfigReader.cs" />
     <Compile Include="Config\Settings.cs" />
     <Compile Include="DataProvider\AccountDetails.cs" />
+    <Compile Include="DataProvider\ModelsPageUrl.cs" />
     <Compile Include="DataProvider\UserAccountData.cs" />
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />

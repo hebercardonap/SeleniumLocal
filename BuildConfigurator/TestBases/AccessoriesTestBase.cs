@@ -29,5 +29,15 @@ namespace BuildConfigurator.TestBases
             Assert.IsFalse(IsSummaryEmailIconDisplayed());
             Assert.IsFalse(IsSummaryPrintIconDisplayed());
         }
+
+        public void VerifyToolbarIconsAreEnabled()
+        {
+            Assert.IsTrue(Toolbar.IsFullscreenIconEnabled());
+            Assert.IsTrue(Toolbar.IsInteriorExteriorIconEnabled());
+            Assert.IsTrue(Toolbar.IsSnapshotIconEnabled());
+            Assert.IsTrue(Toolbar.IsEmailIconEnabled());
+            Assert.IsTrue(Toolbar.IsPrintIconEnabled());
+            Assert.IsTrue(Toolbar.IsRestartIconEnabled());
+        }
     }
 }
