@@ -16,7 +16,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Toolbar")]
         public void VerifyToolbarElementsAccessoryPage()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed());
             Accessories.VerifyToolbarIconsAreEnabled();
@@ -26,7 +26,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Toolbar")]
         public void VerifyToolbarElementsColorPage()
         {
-            CPQNavigate.NavigateToColorsPage(Brand.RAN, "ranger-500");
+            CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
             Assert.IsTrue(Colors.Toolbar.IsToolbarDisplayed());
             Colors.VerifyToolbarIconsStateColorPage();
@@ -36,7 +36,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Toolbar")]
         public void VerifyToolbarElementsPackagesPage()
         {
-            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RangerPackagesPageTest);
+            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
             Assert.IsTrue(Packages.Toolbar.IsToolbarDisplayed());
             Colors.VerifyToolbarIconsStateColorPage();
@@ -46,7 +46,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Toolbar")]
         public void VerifyToolbarRestartBuildFunctionality()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RangerBasicAccessoriesPage);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Wheel");
             Accessories.ClickSubcategoryByName("Trail");

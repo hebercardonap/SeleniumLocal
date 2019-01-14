@@ -28,7 +28,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Header")]
         public void VerifyTrimsPageHeaderElements()
         {
-            CPQNavigate.NavigateToTrimsPage(Brand.RAN, "ranger-500");
+            CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Trims.WaitForTrimsPageToLoad();
             Assert.IsTrue(Trims.HeaderModule.IsHeaderSignInIconDisplayed());
             Assert.IsTrue(Trims.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
@@ -39,7 +39,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Header")]
         public void VerifyColorsPageHeaderElements()
         {
-            CPQNavigate.NavigateToColorsPage(Brand.RAN, "ranger-500");
+            CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
             Assert.IsTrue(Colors.HeaderModule.IsHeaderSignInIconDisplayed());
             Assert.IsTrue(Colors.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
@@ -50,7 +50,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Header")]
         public void VerifyPackagesPageHeaderElements()
         {
-            CPQNavigate.NavigateToPackagesPage(Brand.RAN, "ranger-xp-1000-eps-steel-blue");
+            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
             Assert.IsTrue(Packages.HeaderModule.IsHeaderSignInIconDisplayed());
             Assert.IsTrue(Packages.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
@@ -61,7 +61,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Header")]
         public void VerifyAccessoriesPageHeaderElements()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsTrue(Accessories.HeaderModule.IsHeaderSignInIconDisplayed());
             Assert.IsTrue(Accessories.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));

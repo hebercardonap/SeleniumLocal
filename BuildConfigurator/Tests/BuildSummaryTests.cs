@@ -1,4 +1,5 @@
-﻿using AutomationFramework.Utils;
+﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
 using System;
@@ -15,7 +16,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("BuildSummary")]
         public void VerifySummaryDisplaysAddedAccessory()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -28,7 +29,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("BuildSummary")]
         public void VerifySummaryAccessoryRemove()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -42,7 +43,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("BuildSummary")]
         public void VerifySummaryUIIconsAndNotes()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -55,7 +56,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("BuildSummary")]
         public void VerifySummaryDealerExperience()
         {
-            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();

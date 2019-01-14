@@ -16,7 +16,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("AccountManagement")]
         public void VerifySaveBuildFunctionality()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Wheel");
             Accessories.ClickSubcategoryByName("Trail");
@@ -35,7 +35,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("AccountManagement")]
         public void VerifyAccountMenuNavigation()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.HeaderModule.ClickSignInHeaderIcon();
             AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);

@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.DataProvider;
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
@@ -20,7 +21,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Navigation")]
         public void VerifyBackNavigationBar()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.NavigationBarModule.WaitForNavigationBarToLoad();
             Accessories.NavigationBarModule.ClickColorNavigation();
@@ -32,7 +33,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Navigation")]
         public void VerifyClickingModelsRevertSeatSelection()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.NavigationBarModule.WaitForNavigationBarToLoad();
             Accessories.NavigationBarModule.ClickModelsNavigation();
@@ -44,7 +45,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Navigation")]
         public void VerifyNavigationBarNotDisplayedDealerExp()
         {
-            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
         }

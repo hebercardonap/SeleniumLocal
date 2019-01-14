@@ -1,4 +1,5 @@
-﻿using AutomationFramework.UrlBuilderSites;
+﻿using AutomationFramework.DataProvider;
+using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -28,7 +29,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Footer")]
         public void VerifyTrimsPageFooterElements()
         {
-            CPQNavigate.NavigateToTrimsPage(Brand.RAN, "ranger-500");
+            CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Trims.WaitForTrimsPageToLoad();
             Assert.IsTrue(Trims.FooterModule.IsStartingPriceDisplayed());
             Assert.IsTrue(Trims.FooterModule.IsPaymentCalculatorDisplayed());
@@ -40,7 +41,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Footer")]
         public void VerifyColorsPageHeaderElements()
         {
-            CPQNavigate.NavigateToColorsPage(Brand.RAN, "ranger-500");
+            CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
             Assert.IsTrue(Colors.FooterModule.IsStartingPriceDisplayed());
             Assert.IsTrue(Colors.FooterModule.IsPaymentCalculatorDisplayed());
@@ -52,7 +53,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Footer")]
         public void VerifyAccessoriesPageHeaderElements()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsTrue(Accessories.FooterModule.IsStartingPriceDisplayed());
             Assert.IsTrue(Accessories.FooterModule.IsPaymentCalculatorDisplayed());

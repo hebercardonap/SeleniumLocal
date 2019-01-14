@@ -1,4 +1,6 @@
-﻿using AutomationFramework.Utils;
+﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
+using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
 using System;
@@ -12,10 +14,10 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class PartRequiresPartTests : TestBase
     {
-        [Test, Category("Ranger"), Category("PartRequiresPart")]
+        [Test, Category("Ranger"), Category("PartRequiresPart"), CustomRetry(2)]
         public void VerifyPrpRuleIsTriggeredForRanger()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-500-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");

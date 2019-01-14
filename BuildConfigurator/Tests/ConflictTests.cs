@@ -1,4 +1,5 @@
-﻿using AutomationFramework.Utils;
+﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
 using System;
@@ -15,7 +16,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Conflicts")]
         public void VerifyConflictRuleIsTriggeredForRanger()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-crew-xp-900-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -29,7 +30,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Conflicts")]
         public void VerifyRemovedPartFromConflictInBuildSummary()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, "ranger-crew-xp-900-sage-green");
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");

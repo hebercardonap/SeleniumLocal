@@ -1,4 +1,5 @@
-﻿using AutomationFramework.Utils;
+﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
 using System;
@@ -15,7 +16,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Packages"), Category("Ranger")]
         public void VerifyPackageAddPersistUntilBuildSubmission()
         {
-            CPQNavigate.NavigateToPackagesPage(Brand.RAN, "ranger-xp-1000-eps-steel-blue");
+            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
             string ModelId = Packages.GetWholegoodModelId();
             Packages.AddRandomAvailablePackage();
