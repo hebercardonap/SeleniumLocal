@@ -1,32 +1,28 @@
-﻿using AutomationFramework.Base;
+﻿using AutomationFramework.DataProvider;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
-using BuildConfigurator.TestBases;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.Package
 {
     [TestFixture]
-    public class SteppedProcessTests : TestBase
+    public class RangerPackageTests : TestBase
     {
-
-        [Test, Category("Ranger"), Category("Stepped Process")]
-        public void RangerSteppedProcess()
+        [Test, Category("Packages"), Category("Ranger")]
+        public void VerifyPackageAddPersistUntilBuildSubmission()
         {
-            CPQNavigate.NavigateToModelsPage(Brand.RAN);
-            Models.SelectModelBySeatNumber("two");
-            Models.SelectRandomModelVersion();
-            Trims.WaitForTrimsPageToLoad();
-            Trims.ClickRandomTrim();
-            Colors.WaitForColorsPageToLoad();
-            Colors.ClickRandomWholegoodColor();
-            Colors.FooterModule.ClickFooterNextButton();
+            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
+            Packages.WaitForPackagesPageToLoad();
+            string ModelId = Packages.GetWholegoodModelId();
+            Packages.AddRandomAvailablePackage();
+            Assert.IsTrue(Packages.VerifyModelIdChangedAfterPackageAdd(ModelId));
+            ModelId = Packages.GetWholegoodModelId();
+            Packages.FooterModule.ClickFooterNextButton();
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Wheel");
             Accessories.ClickSubcategoryByName("Trail");
@@ -38,7 +34,7 @@ namespace BuildConfigurator.Tests
             Quote.FillQuoteFormDefaultData();
             Quote.ClickGetInternetPriceButton();
             Confirmation.WaitUntilConfirmationPageLoads();
-            Confirmation.ConfirmationPageElementsAreAsExpected();
+            Assert.AreEqual(Confirmation.GetQuoteModelId(), ModelId);
         }
     }
 }

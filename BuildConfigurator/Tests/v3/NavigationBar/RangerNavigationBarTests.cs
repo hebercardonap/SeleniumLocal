@@ -12,10 +12,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.NavigationBar
 {
     [TestFixture]
-    public class NavigationBarTests : TestBase
+    public class RangerNavigationBarTests : TestBase
     {
 
         [Test, Category("Ranger"), Category("Navigation")]

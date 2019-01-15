@@ -269,25 +269,25 @@
     <Compile Include="Steps\v3\ExtendedConfiguratorSteps.cs" />
     <Compile Include="Steps\v3\ModelsPageSteps.cs" />
     <Compile Include="Steps\v3\TrimsPageSteps.cs" />
-    <Compile Include="TestBases\AccessoriesTestBase.cs" />
-    <Compile Include="TestBases\AccountMgmtTestBase.cs" />
-    <Compile Include="TestBases\ColorsTestBase.cs" />
-    <Compile Include="TestBases\ConfirmationTestBase.cs" />
-    <Compile Include="TestBases\CpqUrlTestBase.cs" />
-    <Compile Include="TestBases\ModelsTestBase.cs" />
-    <Compile Include="TestBases\PackagesTestBase.cs" />
-    <Compile Include="TestBases\QuoteTestBase.cs" />
-    <Compile Include="TestBases\TrimsTestBase.cs" />
-    <Compile Include="Tests\AccountManagementTests.cs" />
-    <Compile Include="Tests\BuildSummaryTests.cs" />
-    <Compile Include="Tests\ConflictTests.cs" />
-    <Compile Include="Tests\FooterTests.cs" />
-    <Compile Include="Tests\HeaderTests.cs" />
-    <Compile Include="Tests\NavigationBarTests.cs" />
-    <Compile Include="Tests\PackageTests.cs" />
-    <Compile Include="Tests\PartRequiresPartTests.cs" />
-    <Compile Include="Tests\SteppedProcessTests.cs" />
-    <Compile Include="Tests\ToolbarTests.cs" />
+    <Compile Include="TestBases\v3\AccessoriesTestBase.cs" />
+    <Compile Include="TestBases\v3\AccountMgmtTestBase.cs" />
+    <Compile Include="TestBases\v3\ColorsTestBase.cs" />
+    <Compile Include="TestBases\v3\ConfirmationTestBase.cs" />
+    <Compile Include="TestBases\v3\CpqUrlTestBase.cs" />
+    <Compile Include="TestBases\v3\ModelsTestBase.cs" />
+    <Compile Include="TestBases\v3\PackagesTestBase.cs" />
+    <Compile Include="TestBases\v3\QuoteTestBase.cs" />
+    <Compile Include="TestBases\v3\TrimsTestBase.cs" />
+    <Compile Include="Tests\v3\AccountManagement\RangerAcctMgmtTests.cs" />
+    <Compile Include="Tests\v3\BuildSummary\RangerSummaryTests.cs" />
+    <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
+    <Compile Include="Tests\v3\Footer\RangerFooterTests.cs" />
+    <Compile Include="Tests\v3\Header\RangerHeaderTests.cs" />
+    <Compile Include="Tests\v3\NavigationBar\RangerNavigationBarTests.cs" />
+    <Compile Include="Tests\v3\Package\RangerPackageTests.cs" />
+    <Compile Include="Tests\v3\PartRequiresPart\RangerPartRequiresPartTests.cs" />
+    <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />
+    <Compile Include="Tests\v3\Toolbar\RangerToolbarTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -402,6 +402,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logs\" />
+    <Folder Include="Pages\v2\" />
+    <Folder Include="TestBases\v2\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

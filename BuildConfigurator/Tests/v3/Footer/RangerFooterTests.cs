@@ -9,10 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.Footer
 {
     [TestFixture]
-    public class FooterTests : TestBase
+    public class RangerFooterTests : TestBase
     {
         [Test, Category("Ranger"), Category("Footer")]
         public void VerifyModelsPageFooterElements()

@@ -9,10 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.PartRequiresPart
 {
     [TestFixture]
-    public class PartRequiresPartTests : TestBase
+    public class RangerPartRequiresPartTests : TestBase
     {
         [Test, Category("Ranger"), Category("PartRequiresPart"), CustomRetry(2)]
         public void VerifyPrpRuleIsTriggeredForRanger()

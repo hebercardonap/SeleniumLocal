@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.Toolbar
 {
     [TestFixture]
-    public class ToolbarTests : TestBase
+    public class RangerToolbarTests : TestBase
     {
         [Test, Category("Ranger"), Category("Toolbar")]
         public void VerifyToolbarElementsAccessoryPage()
@@ -53,6 +53,7 @@ namespace BuildConfigurator.Tests
             Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
             Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed());
             Accessories.Toolbar.ClickToolbarRestartIcon();
+            Accessories.ClickConfirmationBuildContinueButton();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Assert.IsFalse(Accessories.AreProductDescPresentBuildSummary(new List<string> { "Buckle- Accent" }));

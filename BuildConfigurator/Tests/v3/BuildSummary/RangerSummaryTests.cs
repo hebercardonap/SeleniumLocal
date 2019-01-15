@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.BuildSummary
 {
     [TestFixture]
-    public class BuildSummaryTests : TestBase
+    public class RangerSummaryTests : TestBase
     {
         [Test, Category("Ranger"), Category("BuildSummary")]
         public void VerifySummaryDisplaysAddedAccessory()
