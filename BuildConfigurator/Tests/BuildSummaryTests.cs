@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -13,7 +14,7 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class BuildSummaryTests : TestBase
     {
-        [Test, Category("Ranger"), Category("BuildSummary")]
+        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
         public void VerifySummaryDisplaysAddedAccessory()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -26,7 +27,7 @@ namespace BuildConfigurator.Tests
             Assert.IsTrue(Accessories.AreProductDescPresentBuildSummary(new List<string> { "Cargo Box" }));
         }
 
-        [Test, Category("Ranger"), Category("BuildSummary")]
+        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
         public void VerifySummaryAccessoryRemove()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -40,7 +41,7 @@ namespace BuildConfigurator.Tests
             Assert.IsFalse(Accessories.AreProductDescPresentBuildSummary(new List<string> { "Cargo Box" }));
         }
 
-        [Test, Category("Ranger"), Category("BuildSummary")]
+        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
         public void VerifySummaryUIIconsAndNotes()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -53,7 +54,7 @@ namespace BuildConfigurator.Tests
             Accessories.VerifyIconsAndAdditionalNotesPresent();
         }
 
-        [Test, Category("Ranger"), Category("BuildSummary")]
+        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
         public void VerifySummaryDealerExperience()
         {
             CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);

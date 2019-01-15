@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
@@ -14,7 +15,7 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class FooterTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Footer")]
+        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
         public void VerifyModelsPageFooterElements()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
@@ -26,7 +27,7 @@ namespace BuildConfigurator.Tests
             Assert.IsTrue(Models.CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Footer")]
+        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
         public void VerifyTrimsPageFooterElements()
         {
             CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -38,7 +39,7 @@ namespace BuildConfigurator.Tests
             Assert.IsTrue(Trims.CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Footer")]
+        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
         public void VerifyColorsPageHeaderElements()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -50,7 +51,7 @@ namespace BuildConfigurator.Tests
             Assert.IsTrue(Colors.CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Footer")]
+        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
         public void VerifyAccessoriesPageHeaderElements()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);

@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -13,7 +14,7 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class ToolbarTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Toolbar")]
+        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
         public void VerifyToolbarElementsAccessoryPage()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -23,7 +24,7 @@ namespace BuildConfigurator.Tests
 
         }
 
-        [Test, Category("Ranger"), Category("Toolbar")]
+        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
         public void VerifyToolbarElementsColorPage()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -33,7 +34,7 @@ namespace BuildConfigurator.Tests
 
         }
 
-        [Test, Category("Ranger"), Category("Toolbar")]
+        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
         public void VerifyToolbarElementsPackagesPage()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
@@ -43,7 +44,7 @@ namespace BuildConfigurator.Tests
 
         }
 
-        [Test, Category("Ranger"), Category("Toolbar")]
+        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
         public void VerifyToolbarRestartBuildFunctionality()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);

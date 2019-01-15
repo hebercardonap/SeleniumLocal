@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class PartRequiresPartTests : TestBase
     {
-        [Test, Category("Ranger"), Category("PartRequiresPart"), CustomRetry(2)]
+        [Test, Category("Ranger"), Category("PartRequiresPart"), CustomRetry(3)]
         public void VerifyPrpRuleIsTriggeredForRanger()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);

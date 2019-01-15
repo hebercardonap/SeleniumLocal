@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -13,7 +14,7 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class AccountManagementTests : TestBase
     {
-        [Test, Category("Ranger"), Category("AccountManagement")]
+        [Test, Category("Ranger"), Category("AccountManagement"), CustomRetry(3)]
         public void VerifySaveBuildFunctionality()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -32,7 +33,7 @@ namespace BuildConfigurator.Tests
             Accessories.DeleteSavedVehicle();
         }
 
-        [Test, Category("Ranger"), Category("AccountManagement")]
+        [Test, Category("Ranger"), Category("AccountManagement"), CustomRetry(3)]
         public void VerifyAccountMenuNavigation()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);

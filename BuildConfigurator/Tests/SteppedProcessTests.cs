@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using BuildConfigurator.TestBases;
@@ -16,7 +17,7 @@ namespace BuildConfigurator.Tests
     public class SteppedProcessTests : TestBase
     {
 
-        [Test, Category("Ranger"), Category("Stepped Process")]
+        [Test, Category("Ranger"), Category("Stepped Process"), CustomRetry(3)]
         public void RangerSteppedProcess()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);

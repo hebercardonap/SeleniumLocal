@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -13,7 +14,7 @@ namespace BuildConfigurator.Tests
     [TestFixture]
     public class PackageTests : TestBase
     {
-        [Test, Category("Packages"), Category("Ranger")]
+        [Test, Category("Packages"), Category("Ranger"), CustomRetry(3)]
         public void VerifyPackageAddPersistUntilBuildSubmission()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
