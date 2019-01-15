@@ -16,14 +16,14 @@ namespace BuildConfigurator
     [Binding]
     public class HookInitialize : TestInitializeHook
     {
-        private readonly ParallelConfig _parallelConfig;
+        //private readonly ParallelConfig _parallelConfig;
         private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;
         private readonly TakeScreenshot _takeScreenshot;
 
-        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext, TakeScreenshot takeScreenshot)
+        public HookInitialize(FeatureContext featureContext, ScenarioContext scenarioContext, TakeScreenshot takeScreenshot)
         {
-            _parallelConfig = parallelConfig;
+            //_parallelConfig = parallelConfig;
             _featureContext = featureContext;
             _scenarioContext = scenarioContext;
             _takeScreenshot = takeScreenshot;
