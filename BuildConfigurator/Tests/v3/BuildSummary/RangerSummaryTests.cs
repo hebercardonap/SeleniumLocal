@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.BuildSummary
+namespace BuildConfigurator.Tests.v3.BuildSummary
 {
     [TestFixture]
     public class RangerSummaryTests : TestBase

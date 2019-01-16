@@ -243,6 +243,17 @@
     <Compile Include="Pages\BuildQuotePage.cs" />
     <Compile Include="Pages\BuildTrimPage.cs" />
     <Compile Include="Modules\HeaderModule.cs" />
+    <Compile Include="Pages\v2\BuildCategoryPage.cs" />
+    <Compile Include="Pages\v2\BuildColorPage.cs" />
+    <Compile Include="Pages\v2\BuildConfigurePage.cs" />
+    <Compile Include="Pages\v2\BuildConfirmationPage.cs" />
+    <Compile Include="Pages\v2\BuildInfoModalPage.cs" />
+    <Compile Include="Pages\v2\BuildLoginPage.cs" />
+    <Compile Include="Pages\v2\BuildModelPage.cs" />
+    <Compile Include="Pages\v2\BuildPackagePage.cs" />
+    <Compile Include="Pages\v2\BuildQuotePage.cs" />
+    <Compile Include="Pages\v2\BuildTrimPage.cs" />
+    <Compile Include="Pages\v2\PageHelpers.cs" />
     <Compile Include="Pages\v3\PackagesPage.cs" />
     <Compile Include="Pages\PageHelpers.cs" />
     <Compile Include="Pages\v3\AccessoriesPage.cs" />
@@ -269,6 +280,16 @@
     <Compile Include="Steps\v3\ExtendedConfiguratorSteps.cs" />
     <Compile Include="Steps\v3\ModelsPageSteps.cs" />
     <Compile Include="Steps\v3\TrimsPageSteps.cs" />
+    <Compile Include="TestBases\v2\BuildCategoryTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildColorTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildConfigureTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildConfirmationTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildInfoModalTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildLoginTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildModelTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildPackageTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildQuoteTestBase.cs" />
+    <Compile Include="TestBases\v2\BuildTrimTestBase.cs" />
     <Compile Include="TestBases\v3\AccessoriesTestBase.cs" />
     <Compile Include="TestBases\v3\AccountMgmtTestBase.cs" />
     <Compile Include="TestBases\v3\ColorsTestBase.cs" />
@@ -278,6 +299,9 @@
     <Compile Include="TestBases\v3\PackagesTestBase.cs" />
     <Compile Include="TestBases\v3\QuoteTestBase.cs" />
     <Compile Include="TestBases\v3\TrimsTestBase.cs" />
+    <Compile Include="Tests\v2\Conflict\RzrConflictTests.cs" />
+    <Compile Include="Tests\v2\PartRequiresPart\RzrPartRequiresPartTests.cs" />
+    <Compile Include="Tests\v2\SteppedProcess\RzrSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\RangerAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\RangerSummaryTests.cs" />
     <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
@@ -402,8 +426,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logs\" />
-    <Folder Include="Pages\v2\" />
-    <Folder Include="TestBases\v2\" />
+    <Folder Include="Tests\v2\BuildSummary\" />
+    <Folder Include="Tests\v2\DealerExperience\" />
+    <Folder Include="Tests\v2\Features\" />
+    <Folder Include="Tests\v2\GetQuote\" />
+    <Folder Include="Tests\v2\NavigationBar\" />
+    <Folder Include="Tests\v2\Package\" />
+    <Folder Include="Tests\v2\QuoteConfirmation\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

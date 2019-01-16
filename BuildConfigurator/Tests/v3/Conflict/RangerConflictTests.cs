@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.Conflict
+namespace BuildConfigurator.Tests.v3.Conflict
 {
     [TestFixture]
     public class RangerConflictTests : TestBase

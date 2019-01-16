@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.SteppedProcess
+namespace BuildConfigurator.Tests.v3.SteppedProcess
 {
     [TestFixture]
     public class RangerSteppedProcessTests : TestBase

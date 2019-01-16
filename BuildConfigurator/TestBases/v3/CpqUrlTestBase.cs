@@ -33,7 +33,10 @@ namespace BuildConfigurator.TestBases
             if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 GoToUrl(UrlBuilder.getRangerBuildModelUrl());
-                _parallelConfig.CurrentPage = new ModelsPage(_parallelConfig);
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            {
+                GoToUrl(UrlBuilder.getRzrBuildModelUrl());
             }
             else
                 Assert.Fail("Brand {0} not supported", brandName);

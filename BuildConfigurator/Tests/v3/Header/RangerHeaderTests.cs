@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.Header
+namespace BuildConfigurator.Tests.v3.Header
 {
     [TestFixture]
     public class RangerHeaderTests : TestBase

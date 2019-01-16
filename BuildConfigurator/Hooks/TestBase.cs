@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.TestBases;
+using BuildConfigurator.TestBases.v2;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -68,6 +69,56 @@ namespace BuildConfigurator.Hooks
         public AccountMgmtTestBase AccountMgmt
         {
             get { return new AccountMgmtTestBase(_parallelConfig); }
+        }
+
+        public BuildCategoryTestBase BuildCategoryPage
+        {
+            get { return new BuildCategoryTestBase(_parallelConfig); }
+        }
+
+        public BuildColorTestBase BuildColorPage
+        {
+            get { return new BuildColorTestBase(_parallelConfig); }
+        }
+
+        public BuildConfigureTestBase BuildConfigurePage
+        {
+            get { return new BuildConfigureTestBase(_parallelConfig); }
+        }
+
+        public BuildConfirmationTestBase BuildConfirmationPage
+        {
+            get { return new BuildConfirmationTestBase(_parallelConfig); }
+        }
+
+        public BuildInfoModalTestBase BuildInfoModalPage
+        {
+            get { return new BuildInfoModalTestBase(_parallelConfig); }
+        }
+
+        public BuildLoginTestBase BuildLoginPage
+        {
+            get { return new BuildLoginTestBase(_parallelConfig); }
+        }
+
+        public BuildModelTestBase BuildModelPage
+        {
+            get { return new BuildModelTestBase(_parallelConfig); }
+        }
+
+        public BuildPackageTestBase BuildPackagePage
+        {
+            get { return new BuildPackageTestBase(_parallelConfig); }
+        }
+
+        public BuildQuoteTestBase BuildQuotePage
+        {
+            get { return new BuildQuoteTestBase(_parallelConfig); }
+        }
+
+        public BuildTrimTestBase BuildTrimPage
+        {
+            get { return new BuildTrimTestBase(_parallelConfig); }
         }
 
     }

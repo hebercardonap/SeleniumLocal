@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.NavigationBar
+namespace BuildConfigurator.Tests.v3.NavigationBar
 {
     [TestFixture]
     public class RangerNavigationBarTests : TestBase

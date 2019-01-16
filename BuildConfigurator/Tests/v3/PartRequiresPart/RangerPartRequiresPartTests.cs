@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.PartRequiresPart
+namespace BuildConfigurator.Tests.v3.PartRequiresPart
 {
     [TestFixture]
     public class RangerPartRequiresPartTests : TestBase

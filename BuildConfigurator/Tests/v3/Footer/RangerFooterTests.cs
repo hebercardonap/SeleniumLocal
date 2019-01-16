@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.Footer
+namespace BuildConfigurator.Tests.v3.Footer
 {
     [TestFixture]
     public class RangerFooterTests : TestBase

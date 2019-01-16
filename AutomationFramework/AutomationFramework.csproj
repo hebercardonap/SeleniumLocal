@@ -119,6 +119,7 @@
     <Compile Include="Utils\DriverActions.cs" />
     <Compile Include="Utils\PolarisSeleniumAttribute.cs" />
     <Compile Include="Utils\TakeScreenshot.cs" />
+    <Compile Include="Utils\TestCategories.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

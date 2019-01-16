@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.Toolbar
+namespace BuildConfigurator.Tests.v3.Toolbar
 {
     [TestFixture]
     public class RangerToolbarTests : TestBase

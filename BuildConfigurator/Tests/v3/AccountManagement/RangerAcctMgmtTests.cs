@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.AccountManagementTests
+namespace BuildConfigurator.Tests.v3.AccountManagementTests
 {
     [TestFixture]
     public class RangerAcctMgmtTests : TestBase
