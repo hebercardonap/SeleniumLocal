@@ -17,7 +17,7 @@ namespace BuildConfigurator.TestBases.v2
 
         public void VerifyConflictContainerDisplayed()
         {
-            Assert.IsTrue(IsConflictContainerDisplayed(), "Conflicct container is not displayed");
+            Assert.IsTrue(IsConflictContainerDisplayed(), "Conflict container is not displayed");
             Assert.IsTrue(IsConflictHeaderDisplayed(), "Conflict container title is not as expected");
         }
     }

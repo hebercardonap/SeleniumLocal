@@ -38,6 +38,26 @@ namespace BuildConfigurator.TestBases
             {
                 GoToUrl(UrlBuilder.getRzrBuildModelUrl());
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+            {
+                GoToUrl(UrlBuilder.getAceBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            {
+                GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.IND))
+            {
+                GoToUrl(UrlBuilder.getIndianBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
+            {
+                GoToUrl(UrlBuilder.getGemBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
+            {
+                GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }
@@ -160,6 +180,22 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);
+        }
+
+        /// <summary>
+        /// To navigate to trims page for specific brand/model
+        /// </summary>
+        /// <param name="brand">IND, ...</param>
+        /// <param name="model">scout, ...</param>
+        public void NavigateToCategoryPage(string brand)
+        {
+            if (stringEqualsIgnoreCase(Brand.IND, brand))
+            {
+                string url = UrlBuilder.GetBuildCategoryUrl(brand);
+                GoToUrl(url);
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand);
         }
 
     }

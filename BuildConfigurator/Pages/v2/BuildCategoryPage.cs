@@ -13,6 +13,7 @@ namespace BuildConfigurator.Pages.v2
     {
         private static By BY_MODELS_SECTION = By.XPath("//section[@class='wholegood-models']");
         private static By BY_MODEL = By.XPath("//section[@class='wholegood-models-section']//a");
+        private static By BY_CATEGORY_PAGE_TITLE = By.XPath("//section[@class='cpq-title-nav']");
         private static string A_TAG_NAME = "a";
         private static string LABEL_TAG_NAME = "label";
 
@@ -35,9 +36,14 @@ namespace BuildConfigurator.Pages.v2
 
         }
 
-        public void waitForModelsDisplayed()
+        public void WaitForModelsDisplayed()
         {
             DriverActions.waitforStalenessOfelement(BY_MODEL);
+        }
+
+        public void WaitForCategoryPageToLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_CATEGORY_PAGE_TITLE);
         }
     }
 }

@@ -19,6 +19,7 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_SHOPPING_TOOLS = By.XPath("//div[contains(@class,'layout__container')]//section[@id='shopping-tools']");
         private static By BY_GEM_SUMMARY_ACCESORY = By.CssSelector("div[class='quote-confirmation--build__summary-accessory-container'] div[class='quote-confirmation--build__summary-accessory']");
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//div[@class='quote-confirmation--build__summary-toggle-icon']");
+        private static By BY_GEM_BUILD_CONF_PAGE = By.CssSelector("header[class='quote-confirmation__header-container']");
 
         public BuildConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -49,6 +50,11 @@ namespace BuildConfigurator.Pages.v2
         public void ClickBuildSummaryToggleCaret()
         {
             DriverActions.clickElement(BY_BUILD_SUMMARY_TOGGLE);
+        }
+
+        public void WaitForGemConfirmationPageToLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_GEM_BUILD_CONF_PAGE);
         }
     }
 }
