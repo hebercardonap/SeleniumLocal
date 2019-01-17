@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
@@ -14,7 +15,7 @@ namespace BuildConfigurator.Tests.v3.Header
     [TestFixture]
     public class RangerHeaderTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Header")]
+        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
         public void VerifyModelsPageHeaderElements()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
@@ -25,7 +26,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header")]
+        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
         public void VerifyTrimsPageHeaderElements()
         {
             CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -36,7 +37,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header")]
+        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
         public void VerifyColorsPageHeaderElements()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -47,7 +48,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header")]
+        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
         public void VerifyPackagesPageHeaderElements()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
@@ -58,7 +59,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header")]
+        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
         public void VerifyAccessoriesPageHeaderElements()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);

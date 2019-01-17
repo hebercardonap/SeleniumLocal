@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -13,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
     [TestFixture]
     public class RangerConflictTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Conflicts")]
+        [Test, Category("Ranger"), Category("Conflicts"), CustomRetry(3)]
         public void VerifyConflictRuleIsTriggeredForRanger()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
@@ -27,7 +28,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Conflicts")]
+        [Test, Category("Ranger"), Category("Conflicts"), CustomRetry(3)]
         public void VerifyRemovedPartFromConflictInBuildSummary()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);

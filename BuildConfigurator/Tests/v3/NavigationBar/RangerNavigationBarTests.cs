@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using AutomationFramework.DataProvider;
+using AutomationFramework.Helpers;
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
@@ -18,7 +19,7 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
     public class RangerNavigationBarTests : TestBase
     {
 
-        [Test, Category("Ranger"), Category("Navigation")]
+        [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
         public void VerifyBackNavigationBar()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -30,7 +31,7 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Navigation")]
+        [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
         public void VerifyClickingModelsRevertSeatSelection()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -42,7 +43,7 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Models.VerifySeatSelectionIsDisplayed();
         }
 
-        [Test, Category("Ranger"), Category("Navigation")]
+        [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
         public void VerifyNavigationBarNotDisplayedDealerExp()
         {
             CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
