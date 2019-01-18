@@ -16,6 +16,7 @@ namespace AutomationFramework.DataProvider
 
 
         //RZR Models for test
+        public static string RZR_XP_1000_EPS_BASE_TEST = "rzr-xp-1000-eps-ride-command-edition-black-pearl";
         public static string RZR_XP_1000_EPS_CONFLICT = "rzr-xp-1000-eps-trails-rocks-edition-cruiser-black";
         public static string RZR_XP_1000_EPS_PRP = "rzr-xp-1000-eps-ride-command-edition-black-pearl";
 

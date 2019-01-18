@@ -613,6 +613,7 @@ namespace BuildConfigurator.Pages.v2
 
         public bool IsVirtualKeyboardDisplayed()
         {
+            DriverActions.waitForElementVisibleAndEnabled(BY_VIRTUAL_KYB);
             return DriverActions.IsElementPresent(BY_VIRTUAL_KYB);
         }
 

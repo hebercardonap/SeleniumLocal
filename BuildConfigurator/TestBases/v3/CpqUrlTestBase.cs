@@ -18,7 +18,8 @@ namespace BuildConfigurator.TestBases
         private static string BUILD_PACKAGE_PAGE = "/build-package/";
         private static string BUILD_URL_PART = "/build/";
         private static string SLASH = "/";
-        private static string TEST_DEALER_PART_ID = "?dealerid=02040900";
+        private static string TEST_DEALER_PART_ID = "?dealerid={0}";
+        private static string BUILD_QUOTE_URL_PART = "/rzr-s-900-white/build-quote/";
 
         public CpqUrlTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -166,16 +167,18 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Brand {0} not supported", brand);
         }
 
-        public void NavigateToBrandDealerExpUrl(string brand, string model)
+        public void NavigateToBrandDealerExpAccessoriesPage(string brand, string model, string dealerId)
         {
             if (stringEqualsIgnoreCase(brand, Brand.RAN))
             {
-                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART, TEST_DEALER_PART_ID);
+                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART, 
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
             }
             else if (stringEqualsIgnoreCase(brand, Brand.RZR))
             {
-                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART, TEST_DEALER_PART_ID);
+                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART, 
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
             }
             else
@@ -183,7 +186,7 @@ namespace BuildConfigurator.TestBases
         }
 
         /// <summary>
-        /// To navigate to trims page for specific brand/model
+        /// To navigate to category page for specific brand/model
         /// </summary>
         /// <param name="brand">IND, ...</param>
         /// <param name="model">scout, ...</param>
@@ -197,6 +200,16 @@ namespace BuildConfigurator.TestBases
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand);
         }
+
+        /// <summary>
+        /// To navigate to quote default page
+        /// </summary>
+        public void NavigateToQuoteDefaultPage()
+        {
+            string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_URL_PART);
+            GoToUrl(buildQuoteUrl);
+        }
+
 
     }
 }

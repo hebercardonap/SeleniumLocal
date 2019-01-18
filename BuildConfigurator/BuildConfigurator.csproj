@@ -306,6 +306,8 @@
     <Compile Include="Tests\v2\Conflict\IndConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\RzrConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\SlgConflictTests.cs" />
+    <Compile Include="Tests\v2\DealerExperience\DealerExperienceUITests.cs" />
+    <Compile Include="Tests\v2\GetQuote\GetQuoteFormTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AcePartRequiresPartTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AtvPartRequiresPartTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\GemPartRequiresPartTests.cs" />
@@ -445,9 +447,7 @@
   <ItemGroup>
     <Folder Include="Logs\" />
     <Folder Include="Tests\v2\BuildSummary\" />
-    <Folder Include="Tests\v2\DealerExperience\" />
     <Folder Include="Tests\v2\Features\" />
-    <Folder Include="Tests\v2\GetQuote\" />
     <Folder Include="Tests\v2\NavigationBar\" />
     <Folder Include="Tests\v2\Package\" />
     <Folder Include="Tests\v2\QuoteConfirmation\" />
