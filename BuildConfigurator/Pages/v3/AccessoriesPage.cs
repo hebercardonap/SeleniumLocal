@@ -45,6 +45,9 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_BUILD_SUMMARY_SAVE_ICON = By.CssSelector("button[class*='icon--save']");
         private static By BY_BUILD_SUMMARY_EMAIL_ICON = By.CssSelector("button[class*='icon--email']");
         private static By BY_BUILD_SUMMARY_PRINT_ICON = By.CssSelector("button[class*='icon--print']");
+        private static By BY_CONFIRMATION_BUILD_CONTENT = By.XPath("//restart-build//div[@class='confirmation-build-content']");
+        private static By BY_CONFIRMATION_BUILD_CONTINUE = By.CssSelector("button[class*='continue']");
+        private static By BY_CONFIRMATION_BUILD_SAVE = By.XPath("//restart-build//button[contains(@class,'save')]");
 
 
 
@@ -314,6 +317,17 @@ namespace BuildConfigurator.Pages.v3
         public bool IsSummaryPrintIconDisplayed()
         {
             return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_PRINT_ICON);
+        }
+
+        public void WaitForConfirmationBuildToLoad()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_CONFIRMATION_BUILD_CONTENT);
+        }
+
+        public void ClickConfirmationBuildContinueButton()
+        {
+            WaitForConfirmationBuildToLoad();
+            DriverActions.clickElement(BY_CONFIRMATION_BUILD_CONTINUE);
         }
     }
 }

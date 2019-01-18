@@ -10,10 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.Header
 {
     [TestFixture]
-    public class HeaderTests : TestBase
+    public class RangerHeaderTests : TestBase
     {
         [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
         public void VerifyModelsPageHeaderElements()

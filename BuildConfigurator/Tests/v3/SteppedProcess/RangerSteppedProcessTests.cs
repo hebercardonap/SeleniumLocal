@@ -11,10 +11,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.SteppedProcess
 {
     [TestFixture]
-    public class SteppedProcessTests : TestBase
+    public class RangerSteppedProcessTests : TestBase
     {
 
         [Test, Category("Ranger"), Category("Stepped Process"), CustomRetry(3)]

@@ -13,11 +13,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.NavigationBar
 {
     [TestFixture]
-    public class NavigationBarTests : TestBase
+    public class RangerNavigationBarTests : TestBase
     {
+        private static string DEALER_ID = "02040900";
+
 
         [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
         public void VerifyBackNavigationBar()
@@ -46,7 +48,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
         public void VerifyNavigationBarNotDisplayedDealerExp()
         {
-            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
         }

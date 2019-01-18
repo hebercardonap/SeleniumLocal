@@ -10,10 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.Footer
 {
     [TestFixture]
-    public class FooterTests : TestBase
+    public class RangerFooterTests : TestBase
     {
         [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
         public void VerifyModelsPageFooterElements()

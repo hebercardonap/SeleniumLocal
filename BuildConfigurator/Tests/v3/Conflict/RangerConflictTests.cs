@@ -9,10 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.Conflict
 {
     [TestFixture]
-    public class ConflictTests : TestBase
+    public class RangerConflictTests : TestBase
     {
         [Test, Category("Ranger"), Category("Conflicts"), CustomRetry(3)]
         public void VerifyConflictRuleIsTriggeredForRanger()

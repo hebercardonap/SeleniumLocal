@@ -18,7 +18,8 @@ namespace BuildConfigurator.TestBases
         private static string BUILD_PACKAGE_PAGE = "/build-package/";
         private static string BUILD_URL_PART = "/build/";
         private static string SLASH = "/";
-        private static string TEST_DEALER_PART_ID = "?dealerid=02040900";
+        private static string TEST_DEALER_PART_ID = "?dealerid={0}";
+        private static string BUILD_QUOTE_URL_PART = "/rzr-s-900-white/build-quote/";
 
         public CpqUrlTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -33,7 +34,30 @@ namespace BuildConfigurator.TestBases
             if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 GoToUrl(UrlBuilder.getRangerBuildModelUrl());
-                _parallelConfig.CurrentPage = new ModelsPage(_parallelConfig);
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.RZR))
+            {
+                GoToUrl(UrlBuilder.getRzrBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
+            {
+                GoToUrl(UrlBuilder.getAceBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
+            {
+                GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.IND))
+            {
+                GoToUrl(UrlBuilder.getIndianBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
+            {
+                GoToUrl(UrlBuilder.getGemBuildModelUrl());
+            }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
+            {
+                GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
             }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
@@ -143,21 +167,49 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Brand {0} not supported", brand);
         }
 
-        public void NavigateToBrandDealerExpUrl(string brand, string model)
+        public void NavigateToBrandDealerExpAccessoriesPage(string brand, string model, string dealerId)
         {
             if (stringEqualsIgnoreCase(brand, Brand.RAN))
             {
-                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART, TEST_DEALER_PART_ID);
+                string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART, 
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
             }
             else if (stringEqualsIgnoreCase(brand, Brand.RZR))
             {
-                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART, TEST_DEALER_PART_ID);
+                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART, 
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);
         }
+
+        /// <summary>
+        /// To navigate to category page for specific brand/model
+        /// </summary>
+        /// <param name="brand">IND, ...</param>
+        /// <param name="model">scout, ...</param>
+        public void NavigateToCategoryPage(string brand)
+        {
+            if (stringEqualsIgnoreCase(Brand.IND, brand))
+            {
+                string url = UrlBuilder.GetBuildCategoryUrl(brand);
+                GoToUrl(url);
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand);
+        }
+
+        /// <summary>
+        /// To navigate to quote default page
+        /// </summary>
+        public void NavigateToQuoteDefaultPage()
+        {
+            string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_URL_PART);
+            GoToUrl(buildQuoteUrl);
+        }
+
 
     }
 }

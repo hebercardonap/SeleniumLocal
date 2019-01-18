@@ -9,10 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.AccountManagementTests
 {
     [TestFixture]
-    public class AccountManagementTests : TestBase
+    public class RangerAcctMgmtTests : TestBase
     {
         [Test, Category("Ranger"), Category("AccountManagement"), CustomRetry(3)]
         public void VerifySaveBuildFunctionality()

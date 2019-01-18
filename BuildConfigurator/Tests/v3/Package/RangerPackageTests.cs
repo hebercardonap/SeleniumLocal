@@ -9,10 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.Package
 {
     [TestFixture]
-    public class PackageTests : TestBase
+    public class RangerPackageTests : TestBase
     {
         [Test, Category("Packages"), Category("Ranger"), CustomRetry(3)]
         public void VerifyPackageAddPersistUntilBuildSubmission()

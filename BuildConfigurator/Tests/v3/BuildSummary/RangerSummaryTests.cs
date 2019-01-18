@@ -9,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests
+namespace BuildConfigurator.Tests.v3.BuildSummary
 {
     [TestFixture]
-    public class BuildSummaryTests : TestBase
+    public class RangerSummaryTests : TestBase
     {
+        private static string DEALER_ID = "02040900";
+
         [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
         public void VerifySummaryDisplaysAddedAccessory()
         {
@@ -57,7 +59,7 @@ namespace BuildConfigurator.Tests
         [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
         public void VerifySummaryDealerExperience()
         {
-            CPQNavigate.NavigateToBrandDealerExpUrl(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();

@@ -124,5 +124,10 @@ namespace AutomationFramework.UrlBuilderSites
         {
             return string.Concat(getBaseUrl(Brand.RAN), getBrowserLocale(), "/");
         }
+
+        public static string GetBuildCategoryUrl(string brand)
+        {
+            return string.Concat(getBaseUrl(brand), getBrowserLocale(), BUILD_CATEGORY_URL_PART);
+        }
     }
 }
