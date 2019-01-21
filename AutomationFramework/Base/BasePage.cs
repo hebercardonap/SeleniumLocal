@@ -44,5 +44,10 @@ namespace AutomationFramework.Base
             Driver.Navigate().Back();
         }
 
+        public bool UrlContains(string urlPart)
+        {
+            return stringContainsIgnoreCase(Driver.Url, urlPart);
+        }
+
     }
 }

@@ -37,7 +37,6 @@ namespace BuildConfigurator.Modules
         public void ClickLoginCTA()
         {
             DriverActions.clickElement(BY_LOG_IN_BUTTON);
-            DriverActions.waitForElementVisibleAndEnabled(BY_ACCT_LOGGED_IN_ICON);
             DriverActions.WaitForCanvassToComplete();
         }
 

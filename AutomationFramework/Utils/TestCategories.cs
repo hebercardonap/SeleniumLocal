@@ -41,5 +41,9 @@ namespace AutomationFramework.Utils
         public const string FOOTER = "Footer";
         public const string ACCESSORY_CAROUSEL = "Carousel";
         public const string CALCULATOR = "Calculator";
+        public const string SAVE_BUILD = "SaveBuild";
+        public const string UI_FEATURES = "UIFeatures";
+        public const string NAVIGATION = "Navigation";
+        public const string DATA_VALIDATION = "DataValidation";
     }
 }

@@ -184,46 +184,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PRPTests.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\v3\AccessoryConflicts\AccessoryConflictTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessoryConflictTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\BuildPageCarousel\BuildPageCarouselTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BuildPageCarouselTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\BuildPageFeatures\BuildPageFeaturesTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BuildPageFeaturesTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\BuildPagesFooter\BuildPagesFooterTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BuildPagesFooterTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\BuildPagesHeader\BuildPagesHeaderTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BuildPagesHeaderTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\PartRequiresPart\PartRequiresPartTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PartRequiresPartTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\SignInModule\SignInModuleTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SignInModuleTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\v3\SteppedProcess\RANSteppedProcessTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RANSteppedProcessTests.feature</DependentUpon>
-    </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Hooks\TestBase.cs" />
     <Compile Include="Modules\AccountModule.cs" />
@@ -307,7 +267,11 @@
     <Compile Include="Tests\v2\Conflict\RzrConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\SlgConflictTests.cs" />
     <Compile Include="Tests\v2\DealerExperience\DealerExperienceUITests.cs" />
+    <Compile Include="Tests\v2\Features\CTAFunctionalityTests.cs" />
+    <Compile Include="Tests\v2\Features\DataValidationTests.cs" />
+    <Compile Include="Tests\v2\Features\SaveBuildTests.cs" />
     <Compile Include="Tests\v2\GetQuote\GetQuoteFormTests.cs" />
+    <Compile Include="Tests\v2\NavigationBar\NavigationBarTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AcePartRequiresPartTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AtvPartRequiresPartTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\GemPartRequiresPartTests.cs" />
@@ -397,38 +361,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PRPTests.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\v3\AccessoryConflicts\AccessoryConflictTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AccessoryConflictTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\BuildPageCarousel\BuildPageCarouselTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildPageCarouselTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\BuildPageFeatures\BuildPageFeaturesTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildPageFeaturesTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\BuildPagesFooter\BuildPagesFooterTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildPagesFooterTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\BuildPagesHeader\BuildPagesHeaderTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildPagesHeaderTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\PartRequiresPart\PartRequiresPartTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PartRequiresPartTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\SignInModule\SignInModuleTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SignInModuleTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\v3\SteppedProcess\RANSteppedProcessTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RANSteppedProcessTests.feature.cs</LastGenOutput>
-    </None>
     <None Include="license" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -447,8 +379,6 @@
   <ItemGroup>
     <Folder Include="Logs\" />
     <Folder Include="Tests\v2\BuildSummary\" />
-    <Folder Include="Tests\v2\Features\" />
-    <Folder Include="Tests\v2\NavigationBar\" />
     <Folder Include="Tests\v2\Package\" />
     <Folder Include="Tests\v2\QuoteConfirmation\" />
   </ItemGroup>

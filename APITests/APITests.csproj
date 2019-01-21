@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Contracts\PriceContainer.cs" />
     <Compile Include="Contracts\Variant.cs" />
+    <Compile Include="DealerExperienceTestBase.cs" />
     <Compile Include="Endpoints\EndpointString.cs" />
     <Compile Include="Features\DEX Endpoint\DealerExperienceEndpointTest.feature.cs">
       <AutoGen>True</AutoGen>
@@ -71,6 +72,7 @@
     <Compile Include="Helpers\RestAPIHelper.cs" />
     <Compile Include="Steps\APIEndpointMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\DealerExperienceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

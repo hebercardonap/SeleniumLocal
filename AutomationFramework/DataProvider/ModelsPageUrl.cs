@@ -24,31 +24,37 @@ namespace AutomationFramework.DataProvider
         //ACE Models for test
         public static string ACE_570_EPS_CONFLICT = "ace-570-eps-ghost-gray";
         public static string ACE_570_EPS_PRP = "ace-570-eps-ghost-gray";
+        public static string ACE_570_EPS_BASE_TEST = "ace-570-eps-ghost-gray";
 
 
         //ATV Models for test
         public static string ATV_450_HO_CONFLICT = "sportsman-450-ho-indy-red";
+        public static string ATV_450_HO_BASE_TEST = "sportsman-450-ho-indy-red";
         public static string ATV_6x6_570_EPS_PRP = "sportsman-6x6-570-eps-sage-green";
 
 
         //GEM Models for test
         public static string GEM_EL_XD_CONFLICT = "el-xd";
+        public static string GEM_EL_XD_BASE_TEST = "el-xd";
         public static string GEM_EL_XD_PRP = "el-xd";
 
 
         //GEN Models for test
         public static string GENERAL_4_1000_EPS_CONFLICT = "general-4-1000-eps-matte-white-metallic";
         public static string GENERAL_1000_EPS_PRP = "general-1000-eps-deluxe-orange-rust";
+        public static string GENERAL_1000_EPS_BASE_TEST = "general-1000-eps-deluxe-orange-rust";
 
 
         //IND Models for test
         public static string INDIAN_CHIEFTAIN_CONFLICT = "chieftain-steel-gray";
         public static string INDIAN_SPRINGFIELD_PRP = "springfield-thunder-black";
+        public static string INDIAN_SPRINGFIELD_BASE_TEST = "springfield-thunder-black";
 
 
         //SLG Models for test
         public static string SLG_S_CONFLICT = "slingshot-s-white-lightning";
         public static string SLG_S_PRP = "slingshot-s-white-lightning";
+        public static string SLG_S_BASE_TEST = "slingshot-s-white-lightning";
 
     }
 }
