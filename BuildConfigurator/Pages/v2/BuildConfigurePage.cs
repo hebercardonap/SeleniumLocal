@@ -62,8 +62,8 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_INFO_BUTTON = By.CssSelector("button:nth-child(1)");
         private static By BY_REMOVE_BUTTON = By.CssSelector("button:nth-child(3)");
         private static By BY_ACCESSORY_IMAGE = By.XPath(".//img");
-        private static By BY_ACCESSORY_OVERVIEW_HEADER = By.XPath("//div[@class='modal__content']//div[@class='title2']");
-        private static By BY_RESTART_BUILD_BUTTON = By.XPath("//div[@title='Restart Build']");
+        private static By BY_ACCESSORY_OVERVIEW_HEADER = By.Id("product-more-info-dialog-title");
+        private static By BY_RESTART_BUILD_BUTTON = By.XPath("//div[@class='summary__header-restart']");
         private static By BY_CONF_CONTINUE_BUTTON = By.XPath("//button[contains(@class,'confirmation-build-continue')]");
         private static By BY_CONF_SAVE_BUTTON = By.XPath("//button[contains(@class,'confirmation-build-save')]");
         private static By BY_CONF_CANCEL_BUTTON = By.CssSelector("div[class*='confirmation-build-cancel'][data-dismiss='modal']");
