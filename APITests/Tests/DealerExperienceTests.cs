@@ -55,7 +55,8 @@ namespace APITests.Tests
             {
                 SetDealerExperienceBrandUrl(value.Key, value.Value, INVALID_DEALER);
                 CreateGetRequest();
-                Assert.AreEqual(INVALID_REQUEST_STATUS_CODE, GetResponseStatusCode(),
+                int statusCode = GetResponseStatusCode();
+                Assert.AreEqual(INVALID_REQUEST_STATUS_CODE, statusCode,
                     "Response not as expected for {0} brand and {1} year", value.Key, value.Value);
             }
         }
@@ -73,7 +74,7 @@ namespace APITests.Tests
         }
 
         [Test, Category(TestCategories.DEALER_EXPERIENCE)]
-        public void VerifyValidRequestRepsonseProperties()
+        public void VerifyValidRequestResponseProperties()
         {
             foreach (KeyValuePair<string, string> value in BRAND_VALID_YEAR)
             {
