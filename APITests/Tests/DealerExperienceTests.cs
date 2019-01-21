@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace APITests.Tests
 {
     [TestFixture]
-
+    [NonParallelizable]
+    [SingleThreadedAttribute]
     public class DealerExperienceTests : DealerExperienceTestBase
     {
         private static readonly string TEST_DEALER = "02040900";
@@ -31,7 +33,8 @@ namespace APITests.Tests
             {
                 SetDealerExperienceBrandUrl(value.Key, value.Value, TEST_DEALER);
                 CreateGetRequest();
-                Assert.AreEqual(INVALID_REQUEST_STATUS_CODE, GetResponseStatusCode(), 
+                int statusCode = GetResponseStatusCode();
+                Assert.AreEqual(INVALID_REQUEST_STATUS_CODE, statusCode, 
                     "Response not as expected for {0} brand and {1} year", value.Key, value.Value);
             }
         }
@@ -43,7 +46,8 @@ namespace APITests.Tests
             {
                 SetDealerExperienceBrandUrl(value.Key, value.Value, TEST_DEALER);
                 CreateGetRequest();
-                Assert.AreEqual(INVALID_REQUEST_STATUS_CODE, GetResponseStatusCode(),
+                int statusCode = GetResponseStatusCode();
+                Assert.AreEqual(INVALID_REQUEST_STATUS_CODE, statusCode,
                     "Response not as expected for {0} brand and {1} year", value.Key, value.Value);
             }
         }

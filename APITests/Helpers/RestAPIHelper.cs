@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace APITests.Helpers
 {
-    public static class RestAPIHelper
+    public class RestAPIHelper
     {
-        public static RestClient client;
-        public static RestRequest restRequest;
+        public RestClient client;
+        public RestRequest restRequest;
 
-        public static RestClient SetUrl(string endpoint)
+        public RestClient SetUrl(string endpoint)
         {
             return client = new RestClient(endpoint);
         }
 
-        public static RestRequest CreateGetRequest()
+        public RestRequest CreateGetRequest()
         {
             restRequest = new RestRequest(Method.GET);
             restRequest.AddHeader("Postman-Token", "e2dfeeaa-51a3-45e0-ab5c-69c4199a503e");
@@ -28,7 +28,7 @@ namespace APITests.Helpers
             return restRequest;
         }
 
-        public static IRestResponse GetResponse()
+        public IRestResponse GetResponse()
         {
             return client.Execute(restRequest);
         }

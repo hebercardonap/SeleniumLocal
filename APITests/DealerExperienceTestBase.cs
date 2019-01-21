@@ -9,33 +9,48 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace APITests
 {
     public class DealerExperienceTestBase : ApiBasePage
     {
+        RestAPIHelper restHelper;
+
+        [SetUp]
+        public void Initialize()
+        {
+            restHelper = new RestAPIHelper();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            restHelper = null;
+        }
+
         public void SetDealerExperienceBrandUrl(string brandName, string year, string dealerid)
         {
             if (stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
-                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getRzrLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                restHelper.SetUrl(string.Concat(UrlBuilder.getRzrLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
-                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getRangerLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                restHelper.SetUrl(string.Concat(UrlBuilder.getRangerLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
-                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getAceLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                restHelper.SetUrl(string.Concat(UrlBuilder.getAceLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
-                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getGeneralLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                restHelper.SetUrl(string.Concat(UrlBuilder.getGeneralLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
-                RestAPIHelper.SetUrl(string.Concat(UrlBuilder.getSportsmanLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
+                restHelper.SetUrl(string.Concat(UrlBuilder.getSportsmanLandingPageURL(), string.Format(EndpointString.DEALER_EXPERIENCE_ENDPOINT, year, dealerid)));
             }
             else
             {
@@ -45,12 +60,25 @@ namespace APITests
 
         public void CreateGetRequest()
         {
-            RestAPIHelper.CreateGetRequest();
+            restHelper.CreateGetRequest();
         }
 
         public int GetResponseStatusCode()
         {
-            return (int)RestAPIHelper.GetResponse().StatusCode;
+            int count = 0;
+            int statusCode = (int)restHelper.GetResponse().StatusCode;
+            while (statusCode == 0)
+            {
+                statusCode = (int)restHelper.GetResponse().StatusCode;
+                Thread.Sleep(500);
+                count++;
+
+                if (count == 5)
+                {
+                    break;
+                }
+            }
+            return statusCode;
         }
 
         public void ResponsePropertyValuesAsExpected(string brand)
@@ -69,7 +97,7 @@ namespace APITests
             else
                 Assert.Fail("Brand {0} not suported", brand);
 
-            var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
+            var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(restHelper.GetResponse().Content);
             for (int i = 0; i < deserialized.Count; i++)
             {
                 //Assert.IsTrue(deserialized[i].OverviewPageURL.Contains(url)); Removing this validation as Reflect is not using this for now
