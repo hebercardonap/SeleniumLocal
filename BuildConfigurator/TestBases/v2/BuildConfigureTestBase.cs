@@ -20,5 +20,12 @@ namespace BuildConfigurator.TestBases.v2
             Assert.IsTrue(IsConflictContainerDisplayed(), "Conflict container is not displayed");
             Assert.IsTrue(IsConflictHeaderDisplayed(), "Conflict container title is not as expected");
         }
+
+        public void AddRandomTiresAccessory()
+        {
+            ClickRangerTiresCategory();
+            ClickRangerTrailSubcategory();
+            ClickRandomAccessoryCardAddButton();
+        }
     }
 }

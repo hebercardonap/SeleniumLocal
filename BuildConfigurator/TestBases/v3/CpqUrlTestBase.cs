@@ -59,6 +59,10 @@ namespace BuildConfigurator.TestBases
             {
                 GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
+            {
+                GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }
