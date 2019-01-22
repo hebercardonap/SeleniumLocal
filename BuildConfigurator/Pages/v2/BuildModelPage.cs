@@ -28,6 +28,7 @@ namespace BuildConfigurator.Pages.v2
         private static string BY_FAMILY_SLIDE_CATEGORY = "//section//span[contains(text(), '{0}')]";
         private static By BY_FAMILY_CATEGORIES = By.XPath("//div[contains(@class, 'family')]//span");
         private static By BY_BUILD_MODEL_HEADER = By.XPath("//div[@class='title']");
+        private static By BY_WHOLEGOOD_CARD_TITLE_LABEL = By.CssSelector("a[class='wholegood-models-card'] div[class='wholegood-models-card-inner'] label");
 
 
 
@@ -176,6 +177,19 @@ namespace BuildConfigurator.Pages.v2
         public void WaitForBuildModelPageToLoad()
         {
             DriverActions.waitForElementPresent(BY_BUILD_MODEL_HEADER);
+        }
+
+        public List<string> GetWholegoodCardTitleLabels()
+        {
+            List<string> cardlabels = new List<string>();
+            List<IWebElement> wholegoodCardsLabels = Driver.FindElements(BY_WHOLEGOOD_CARD_TITLE_LABEL).ToList();
+
+            foreach (var item in wholegoodCardsLabels)
+            {
+                cardlabels.Add(item.Text);
+            }
+
+            return cardlabels;
         }
 
     }

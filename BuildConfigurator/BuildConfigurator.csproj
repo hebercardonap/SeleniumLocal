@@ -134,6 +134,7 @@
     <Compile Include="TestBases\v3\PackagesTestBase.cs" />
     <Compile Include="TestBases\v3\QuoteTestBase.cs" />
     <Compile Include="TestBases\v3\TrimsTestBase.cs" />
+    <Compile Include="Tests\v2\Category\CategoryPageTests.cs" />
     <Compile Include="Tests\v2\Conflict\AceConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\AtvConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\GemConflictTests.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Tests\v2\Features\DataValidationTests.cs" />
     <Compile Include="Tests\v2\Features\SaveBuildTests.cs" />
     <Compile Include="Tests\v2\GetQuote\GetQuoteFormTests.cs" />
+    <Compile Include="Tests\v2\Models\ModelsPageTests.cs" />
     <Compile Include="Tests\v2\NavigationBar\NavigationBarTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AcePartRequiresPartTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AtvPartRequiresPartTests.cs" />

@@ -35,5 +35,25 @@ namespace BuildConfigurator.TestBases.v2
             else
                 Assert.Fail("Seat option {0} is not available", seats);
         }
+
+        public bool VerifyModelsAreNotDuplicates()
+        {
+            bool areModelsUnique = true;
+            var duplicateItems = GetWholegoodCardTitleLabels().GroupBy(x => x)
+                .Where(group => group.Count() > 1)
+                .Select(group => group.Key).ToList();
+
+            if (duplicateItems.Count > 0)
+            {
+                areModelsUnique = false;
+                string duplicateValues = string.Empty;
+                foreach (var item in duplicateItems)
+                {
+                    duplicateValues += item + "\n";
+                }
+                Assert.Fail("There are duplicate models \n{0}", duplicateValues);
+            }
+            return areModelsUnique;
+        }
     }
 }
