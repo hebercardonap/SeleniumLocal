@@ -34,34 +34,42 @@ namespace BuildConfigurator.TestBases
             if (stringEqualsIgnoreCase(brandName, Brand.RAN))
             {
                 GoToUrl(UrlBuilder.getRangerBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getRangerBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.RZR))
             {
                 GoToUrl(UrlBuilder.getRzrBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getRzrBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ACE))
             {
                 GoToUrl(UrlBuilder.getAceBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getAceBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.ATV))
             {
                 GoToUrl(UrlBuilder.getSportsmanBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getSportsmanBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.IND))
             {
                 GoToUrl(UrlBuilder.getIndianBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getIndianBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEM))
             {
                 GoToUrl(UrlBuilder.getGemBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getGemBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.SLG))
             {
                 GoToUrl(UrlBuilder.getSlingshotBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getSlingshotBuildModelUrl()));
             }
             else if (stringEqualsIgnoreCase(brandName, Brand.GEN))
             {
                 GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getGeneralBuildModelUrl()));
             }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
@@ -78,6 +86,13 @@ namespace BuildConfigurator.TestBases
             {
                 string url = string.Concat(UrlBuilder.GetRangerBrandHomePage(), model, BUILD_TRIM_URL_PART);
                 GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else if (stringEqualsIgnoreCase(Brand.RZR, brand))
+            {
+                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_TRIM_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
@@ -94,6 +109,7 @@ namespace BuildConfigurator.TestBases
             {
                 string url = string.Concat(UrlBuilder.GetRangerBrandHomePage(), model, BUILD_COLOR_URL_PART);
                 GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
@@ -110,6 +126,7 @@ namespace BuildConfigurator.TestBases
             {
                 string url = string.Concat(UrlBuilder.GetRangerBrandHomePage(), model, BUILD_PACKAGE_PAGE);
                 GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
@@ -126,46 +143,55 @@ namespace BuildConfigurator.TestBases
             {
                 string buildUrl = string.Concat(UrlBuilder.getIndianLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.ATV))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.SLG))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSlgLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.GEN))
             {
                 string buildUrl = string.Concat(UrlBuilder.getGeneralLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.ACE))
             {
                 string buildUrl = string.Concat(UrlBuilder.getAceLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.RZR))
             {
                 string buildUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.SNO))
             {
                 string buildUrl = string.Concat(UrlBuilder.getSnoLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.RAN))
             {
                 string buildUrl = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Info(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.GEM))
             {
                 string buildUrl = string.Concat(UrlBuilder.getGemLandingPageURL(), model, BUILD_URL_PART);
                 GoToUrl(buildUrl);
+                Log.Error(string.Format("Navigating to URL: {0}", buildUrl));
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);
@@ -178,12 +204,14 @@ namespace BuildConfigurator.TestBases
                 string url = string.Concat(UrlBuilder.getRangerLandingPageURL(), model, BUILD_URL_PART, 
                     string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
             }
             else if (stringEqualsIgnoreCase(brand, Brand.RZR))
             {
                 string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_URL_PART, 
                     string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);
@@ -200,6 +228,8 @@ namespace BuildConfigurator.TestBases
             {
                 string url = UrlBuilder.GetBuildCategoryUrl(brand);
                 GoToUrl(url);
+                //Log.Error(string.Format("Navigating to URL: {0}", url));
+                Log.Error(string.Format("Navigating to URL: {0}", url));
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand);
@@ -212,6 +242,7 @@ namespace BuildConfigurator.TestBases
         {
             string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_URL_PART);
             GoToUrl(buildQuoteUrl);
+            Log.Info(string.Format("Navigating to URL: {0}", buildQuoteUrl));
         }
 
 

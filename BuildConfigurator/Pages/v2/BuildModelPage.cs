@@ -25,10 +25,12 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_WHOLEGOOD_CONTAINER = By.XPath("//div[@class='wholegood-container']");
         private static By BY_WHOLEGOOD_CARD = By.XPath(".//div[@class='wholegood-card']//div//h4");
         private static By BY_FAMILY_SLIDE = By.XPath("//div[@class='family family--slide']");
-        private static string BY_FAMILY_SLIDE_CATEGORY = "//section//span[contains(text(), '{0}')]";
         private static By BY_FAMILY_CATEGORIES = By.XPath("//div[contains(@class, 'family')]//span");
         private static By BY_BUILD_MODEL_HEADER = By.XPath("//div[@class='title']");
         private static By BY_WHOLEGOOD_CARD_TITLE_LABEL = By.CssSelector("a[class='wholegood-models-card'] div[class='wholegood-models-card-inner'] label");
+        private static By BY_SELECT_SEATS_DROPDOWN = By.XPath("//button[@class='cpq-title-nav-items-select']");
+        private static By BY_WHOLEGOOD_MODELS_CARDS = By.CssSelector("a[class='wholegood-models-card']");
+        private static By BY_DROPDOWN_SEAT_OPTIONS = By.CssSelector("div[class='cpq-title-nav-items-item'] div[class='cpq-title-nav-items-item-inner']");
 
 
 
@@ -190,6 +192,23 @@ namespace BuildConfigurator.Pages.v2
             }
 
             return cardlabels;
+        }
+
+        public void ClickSelectSeatsDropdown()
+        {
+            DriverActions.clickElement(BY_SELECT_SEATS_DROPDOWN);
+        }
+
+        public List<IWebElement> GetWholegoodsModelsCards()
+        {
+            List<IWebElement> wholegoodModelsCards = Driver.FindElements(BY_WHOLEGOOD_MODELS_CARDS).ToList();
+            return wholegoodModelsCards;
+        }
+
+        public void SelectRandomSeatOption()
+        {
+            List<IWebElement> seatOptions = Driver.FindElements(BY_DROPDOWN_SEAT_OPTIONS).ToList();
+            DriverActions.clickElement(seatOptions[rnd.Next(0, seatOptions.Count)]);
         }
 
     }

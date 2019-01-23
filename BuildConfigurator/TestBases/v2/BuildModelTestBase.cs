@@ -16,6 +16,8 @@ namespace BuildConfigurator.TestBases.v2
         private static string THREE = "three";
         private static string FOUR = "four";
         private static string SIX = "six";
+
+        public BuildTrimPage BuildTrimPage { get { return new BuildTrimPage(_parallelConfig); } }
         public BuildModelTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -54,6 +56,40 @@ namespace BuildConfigurator.TestBases.v2
                 Assert.Fail("There are duplicate models \n{0}", duplicateValues);
             }
             return areModelsUnique;
+        }
+
+        public bool VerifyTrimsAreNotDuplicates()
+        {
+            bool areTrimsUnique = true;
+            var duplicateItems = BuildTrimPage.GetTrimsCardTitleLabels().GroupBy(x => x)
+                .Where(group => group.Count() > 1)
+                .Select(group => group.Key).ToList();
+
+            if (duplicateItems.Count > 0)
+            {
+                areTrimsUnique = false;
+                string duplicateValues = string.Empty;
+                foreach (var item in duplicateItems)
+                {
+                    duplicateValues += item + "\n";
+                }
+                Assert.Fail("There are duplicate models \n{0}", duplicateValues);
+            }
+            return areTrimsUnique;
+        }
+
+        public void ClickEachModelAndVerifyTrimsAreNotDuplicate()
+        {
+            int categories = GetWholegoodsModelsCards().Count;
+            Assert.Greater(categories, 0, "Wholegood cards collection is null");
+
+            for (int i = 0; i < categories; i++)
+            {
+                DriverActions.clickElement(GetWholegoodsModelsCards()[i]);
+                Assert.IsTrue(VerifyTrimsAreNotDuplicates());
+                GoToPreviousPage();
+                WaitForBuildModelPageToLoad();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using log4net;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace AutomationFramework.Base
     {
 
         public readonly ParallelConfig _parallelConfig;
+
+        private ILog _log;
+        protected ILog Log => _log ?? (_log = LogManager.GetLogger(GetType()));
 
         public Base(ParallelConfig parallelConfig)
         {
@@ -51,6 +55,8 @@ namespace AutomationFramework.Base
         {
             return Driver.Url;
         }
+
+
 
     }
 }

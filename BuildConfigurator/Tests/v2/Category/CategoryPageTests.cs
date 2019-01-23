@@ -35,18 +35,5 @@ namespace BuildConfigurator.Tests.v2.Category
             BuildCategoryPage.ClickCategoryAndVerifyModelsAreNotDuplicate();
         }
 
-        private void VerifyCategoryModelsAreUnique()
-        {
-            int categories = BuildCategoryPage.GetCategoryWholegoodCards().Count;
-            for (int i = 0; i < categories; i++)
-            {
-                BuildCategoryPage.DriverActions.clickElement(BuildCategoryPage.GetCategoryWholegoodCards()[i]);
-                Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
-                BuildModelPage.GoToPreviousPage();
-                BuildCategoryPage.WaitForCategoryPageToLoad();
-            }
-        }
-
-       
     }
 }

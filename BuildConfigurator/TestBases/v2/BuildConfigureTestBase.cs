@@ -27,5 +27,15 @@ namespace BuildConfigurator.TestBases.v2
             ClickRangerTrailSubcategory();
             ClickRandomAccessoryCardAddButton();
         }
+
+        public void VerifyAccessoriesPageElements()
+        {
+            Assert.IsTrue(IsAccessorySectiondisplayed());
+            Assert.IsTrue(IsBuildSummaryButtonDisplayed());
+            Assert.IsTrue(IsCpqPageHeaderDisplayed());
+            Assert.IsTrue(IsNavigationBarDisplayed());
+            Assert.IsTrue(IsNavigationBarDisplayed());
+            Assert.IsTrue(IsCanvassDisplayed());
+        }
     }
 }

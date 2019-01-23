@@ -1,4 +1,5 @@
-﻿using AutomationFramework.Base;
+﻿using AutomationFramework.ApiUtils.ApiDataProvider;
+using AutomationFramework.Base;
 using AutomationFramework.Extensions;
 using AutomationFramework.Utils;
 using BuildConfigurator.Modules;
@@ -99,6 +100,10 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_BUILD_ACCEOSSORIES_PRODUCT_DETAILS = By.XPath(".//div[contains(@class,'build-accessories-product-details')]");
         private static By BY_BUILD_ACCESSORIES_PRODUCT_INFO = By.XPath("//div[@class='build-accessories-product-info']");
         private static By BY_BUILD_CAROUSEL_FIRST_ITEM = By.XPath("//div[@class='build-accessories-categories']//a[@class='build-accessories-category-title']");
+        private static By BY_PAGE_TITLE = By.CssSelector("div[class='title']");
+        private static By BY_CPQ_PAGE_HEADER = By.CssSelector("div[class='cpq-header']");
+        private static By BY_CANVASS_VARIANT_DISPLAY = By.CssSelector("div[class='variant-display']");
+        private static By BY_FLICKITY_SLIDER_FIRST_ITEM = By.CssSelector("div[class='flickity-slider'] button");
 
 
         private static Random rnd = new Random();
@@ -123,6 +128,8 @@ namespace BuildConfigurator.Pages.v2
         public SignInModule SignInModule { get { return new SignInModule(_parallelConfig); } }
 
         public AccountModule AccountModule { get { return new AccountModule(_parallelConfig); } }
+
+        ApiDataProvider ApiDataProvider { get { return new ApiDataProvider(); } }
 
         public BuildConfigurePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -799,6 +806,43 @@ namespace BuildConfigurator.Pages.v2
             DriverActions.waitForElementVisibleAndEnabled(BY_BUILD_CAROUSEL_FIRST_ITEM);
         }
 
+        public string GetRandomModelColorFromApi(string brand, string year, string dealerid)
+        {
+            var allModels = ApiDataProvider.GetModelsColorByBrandYear(brand, year, dealerid);
+            return allModels[rnd.Next(0, allModels.Count)];
+        }
 
+        public List<string> GetAllModelsColorsFromApi(string brand, string year, string dealerid)
+        {
+            List<string> allModelColors = ApiDataProvider.GetModelsColorByBrandYear(brand, year, dealerid);
+            Assert.IsNotNull(allModelColors, "ModelColors collection is empty");
+
+            return allModelColors;
+        }
+
+        public bool IsBuildSummaryButtonDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_BUTTON);
+        }
+
+        public bool IsPageTitleDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_PAGE_TITLE);
+        }
+
+        public bool IsAccessorySectiondisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_FLICKITY_SLIDER_FIRST_ITEM);
+        }
+
+        public bool IsCpqPageHeaderDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_CPQ_PAGE_HEADER);
+        }
+
+        public bool IsCanvassDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_CANVASS_VARIANT_DISPLAY);
+        }
     }
 }
