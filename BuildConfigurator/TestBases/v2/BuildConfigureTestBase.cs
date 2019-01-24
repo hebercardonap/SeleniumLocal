@@ -28,14 +28,14 @@ namespace BuildConfigurator.TestBases.v2
             ClickRandomAccessoryCardAddButton();
         }
 
-        public void VerifyAccessoriesPageElements()
+        public void VerifyAccessoriesPageElements(string model)
         {
-            Assert.IsTrue(IsAccessorySectiondisplayed());
-            Assert.IsTrue(IsBuildSummaryButtonDisplayed());
-            Assert.IsTrue(IsCpqPageHeaderDisplayed());
-            Assert.IsTrue(IsNavigationBarDisplayed());
-            Assert.IsTrue(IsNavigationBarDisplayed());
-            Assert.IsTrue(IsCanvassDisplayed());
+            Assert.IsTrue(IsAccessorySectiondisplayed(), "Element missing on accessories page for model {0}", model);
+            Assert.IsTrue(IsBuildSummaryButtonDisplayed(), "Element missing on accessories page for model {0}", model);
+            Assert.IsTrue(IsCpqPageHeaderDisplayed(), "Element missing on accessories page for model {0}", model);
+            Assert.IsTrue(IsNavigationBarDisplayed(), "Element missing on accessories page for model {0}", model);
+            Assert.IsTrue(IsNavigationBarDisplayed(), "Element missing on accessories page for model {0}", model);
+            Assert.IsTrue(IsCanvassDisplayed(), "Element missing on accessories page for model {0}", model);
         }
     }
 }

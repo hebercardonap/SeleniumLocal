@@ -44,7 +44,71 @@ namespace AutomationFramework.ApiUtils.ApiDataProvider
 
                 for (int i = 0; i < deserialized.Count; i++)
                 {
-                    modelsSeoName.Add(deserialized[i].OverviewPageURL);
+                    string fullBuildUrl = deserialized[i].BuildURL;
+                    int index = GetNthIndex(fullBuildUrl, '/', 4);
+                    string partialBuildUrl = fullBuildUrl.Substring(index + 1);
+                    string modelColorUrl = partialBuildUrl.Substring(0, partialBuildUrl.IndexOf("/"));
+                    modelsSeoName.Add(modelColorUrl);
+                }
+            }
+
+            return modelsSeoName;
+        }
+
+        public List<string> GetOneModelColorFromEachCategoryApi(string brand, string year, string dealerid)
+        {
+            List<string> modelsSeoName = new List<string>();
+            List<string> unique = new List<string>();
+            RestAPIHelper.SetUrl(CPQEndpointBuilder.GetDealerExpModelsEnpointByBrandYear(brand, year, dealerid));
+            RestAPIHelper.CreateGetRequest();
+
+            if (GetResponseStatusCode() == API_SUCCESS_RESPONSE_CODE)
+            {
+                var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
+
+
+                for (int i = 0; i < deserialized.Count; i++)
+                {
+                    if (!unique.Contains(deserialized[i].CategoryNames[0]))
+                    {
+                        unique.Add(deserialized[i].CategoryNames[0]);
+                        string fullBuildUrl = deserialized[i].BuildURL;
+                        int index = GetNthIndex(fullBuildUrl, '/', 4);
+                        string partialBuildUrl = fullBuildUrl.Substring(index + 1);
+                        string modelColorUrl = partialBuildUrl.Substring(0, partialBuildUrl.IndexOf("/"));
+
+                        modelsSeoName.Add(modelColorUrl);
+                    }
+                }
+            }
+
+            return modelsSeoName;
+        }
+
+        public List<string> BuildUrlPartial(string brand, string year, string dealerid)
+        {
+            List<string> modelsSeoName = new List<string>();
+            List<string> unique = new List<string>();
+            RestAPIHelper.SetUrl(CPQEndpointBuilder.GetDealerExpModelsEnpointByBrandYear(brand, year, dealerid));
+            RestAPIHelper.CreateGetRequest();
+
+            if (GetResponseStatusCode() == API_SUCCESS_RESPONSE_CODE)
+            {
+                var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
+
+
+                for (int i = 0; i < deserialized.Count; i++)
+                {
+                    if (!unique.Contains(deserialized[i].CategoryNames[0]))
+                    {
+                        unique.Add(deserialized[i].CategoryNames[0]);
+                        string buildUrl = deserialized[i].BuildURL;
+                        int index = GetNthIndex(buildUrl, '/', 4);
+                        string result = buildUrl.Substring(index + 1);
+                        string cleanedUp = result.Substring(0, result.IndexOf("/"));
+                        //string cleanedUpName = name.Substring(name.LastIndexOf("/") + 1);
+                        //modelsSeoName.Add(cleanedUpName);
+                    }
                 }
             }
 
@@ -67,6 +131,23 @@ namespace AutomationFramework.ApiUtils.ApiDataProvider
                 }
             }
             return statusCode;
+        }
+
+        private int GetNthIndex(string s, char t, int n)
+        {
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == t)
+                {
+                    count++;
+                    if (count == n)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -1;
         }
     }
 }

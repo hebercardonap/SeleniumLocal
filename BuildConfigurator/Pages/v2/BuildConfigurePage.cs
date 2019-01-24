@@ -820,6 +820,22 @@ namespace BuildConfigurator.Pages.v2
             return allModelColors;
         }
 
+        public List<string> GetOneModelsColorsEachCategoryFromApi(string brand, string year, string dealerid)
+        {
+            List<string> allModelColors = ApiDataProvider.GetOneModelColorFromEachCategoryApi(brand, year, dealerid);
+            Assert.IsNotNull(allModelColors, "ModelColors collection is empty");
+
+            return allModelColors;
+        }
+
+        public List<string> Test(string brand, string year, string dealerid)
+        {
+            List<string> allModelColors = ApiDataProvider.BuildUrlPartial(brand, year, dealerid);
+            Assert.IsNotNull(allModelColors, "ModelColors collection is empty");
+
+            return allModelColors;
+        }
+
         public bool IsBuildSummaryButtonDisplayed()
         {
             return DriverActions.IsElementPresent(BY_BUILD_SUMMARY_BUTTON);
