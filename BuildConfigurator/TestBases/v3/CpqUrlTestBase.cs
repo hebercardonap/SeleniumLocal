@@ -71,6 +71,11 @@ namespace BuildConfigurator.TestBases
                 GoToUrl(UrlBuilder.getGeneralBuildModelUrl());
                 Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getGeneralBuildModelUrl()));
             }
+            else if (stringEqualsIgnoreCase(brandName, Brand.SNO))
+            {
+                GoToUrl(UrlBuilder.getSnowBuildModelUrl());
+                Log.Info(string.Format("Navigating to URL: {0}", UrlBuilder.getSnowBuildModelUrl()));
+            }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
         }

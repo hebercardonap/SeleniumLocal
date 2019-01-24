@@ -47,5 +47,35 @@ namespace BuildConfigurator.TestBases
             Assert.Greater(GetSeatSelectionCards(), 0);
         }
 
+        public void SelectSnowCardByFamily(string family)
+        {
+            if (stringEqualsIgnoreCase(family, "rush"))
+            {
+                ClickSnoRushFamilyCard();
+            }
+            else if (stringEqualsIgnoreCase(family, "switchback"))
+            {
+                ClickSnoSwitchbackFamilyCard();
+            }
+            else if (stringEqualsIgnoreCase(family, "rmk"))
+            {
+                ClickSnoRmkFamilyCard();
+            }
+            else if (stringEqualsIgnoreCase(family, "indy"))
+            {
+                ClickSnoIndyFamilyCard();
+            }
+            else if (stringEqualsIgnoreCase(family, "voyageur"))
+            {
+                ClickSnoVoyageurFamilyCard();
+            }
+            else if (stringEqualsIgnoreCase(family, "titan"))
+            {
+                ClickSnoTitanFamilyCard();
+            }
+            else
+                Assert.Fail("SNO family {0} not available", family);
+        }
+
     }
 }

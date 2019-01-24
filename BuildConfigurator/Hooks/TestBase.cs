@@ -1,6 +1,7 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.TestBases;
 using BuildConfigurator.TestBases.v2;
+using BuildConfigurator.TestBases.v3;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -119,6 +120,16 @@ namespace BuildConfigurator.Hooks
         public BuildTrimTestBase BuildTrimPage
         {
             get { return new BuildTrimTestBase(_parallelConfig); }
+        }
+
+        public TrackTestBase Track
+        {
+            get { return new TrackTestBase(_parallelConfig); }
+        }
+
+        public EngineTestBase Engine
+        {
+            get { return new EngineTestBase(_parallelConfig); }
         }
 
     }
