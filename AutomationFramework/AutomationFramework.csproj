@@ -121,6 +121,7 @@
     <Compile Include="Helpers\HtmlTableHelper.cs" />
     <Compile Include="Helpers\LogHelpers.cs" />
     <Compile Include="Helpers\ReportingHelpers.cs" />
+    <Compile Include="Helpers\RetryDynamicAttribute.cs" />
     <Compile Include="Helpers\StringCompare.cs" />
     <Compile Include="Helpers\WebServiceHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

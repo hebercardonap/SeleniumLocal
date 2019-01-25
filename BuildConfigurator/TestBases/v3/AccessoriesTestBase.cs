@@ -39,5 +39,68 @@ namespace BuildConfigurator.TestBases
             Assert.IsTrue(Toolbar.IsPrintIconEnabled());
             Assert.IsTrue(Toolbar.IsRestartIconEnabled());
         }
+
+        public bool RemoveConlfictPartAndValidateInBuildSummary(string accessoryDesc)
+        {
+            ClickConflictingItemRemoveByDesc(accessoryDesc);
+            WaitForAccessoriesPageToLoad();
+            FooterModule.OpenBuildSummary();
+            WaitUntilBuildSummaryIsDisplayed();
+            return IsProductDescPresentBuildSummary(accessoryDesc);
+        }
+
+        public void VerifyItemsDescPresentBuildSummary(string [] itemDescriptions)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemDescriptions)
+            {
+                if (!IsProductDescPresentBuildSummary(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Item descriptions missing on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
+
+        public void VerifyItemsDescNotPresentBuildSummary(string[] itemDescriptions)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemDescriptions)
+            {
+                if (IsProductDescPresentBuildSummary(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Item descriptions present on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
+
+        public void VerifyItemsIdPresentBuildSummary(string[] itemId)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemId)
+            {
+                if (!IsProductIdsAddedBuildSummary(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Item ID missing on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
     }
 }

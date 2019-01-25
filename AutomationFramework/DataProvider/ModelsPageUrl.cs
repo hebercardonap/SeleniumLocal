@@ -56,5 +56,10 @@ namespace AutomationFramework.DataProvider
         public static string SLG_S_PRP = "slingshot-s-white-lightning";
         public static string SLG_S_BASE_TEST = "slingshot-s-white-lightning";
 
+
+        //SNO Models for test
+        public static string SNO_SWITCHBACK_600_XCR_CONFLICT = "switchback/600-switchback-xcr";
+        public static string SNO_SWITCHBACK_600_SP = "switchback/600-switchback-sp-144-es";
+
     }
 }

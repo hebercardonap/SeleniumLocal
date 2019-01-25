@@ -40,11 +40,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickSubcategoryByName("Windshields");
             Accessories.ClickAccessoryAddByProductName("Flip-Down Full Windshield");
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
-            Accessories.ClickConflictingItemRemoveByDesc("Flip-Down Full Windshield");
-            Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.FooterModule.OpenBuildSummary();
-            Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Assert.IsFalse(Accessories.AreProductIdsAddedBuildSummary(new List<string>() { "2881919" }));
+            Assert.IsFalse(Accessories.RemoveConlfictPartAndValidateInBuildSummary("Flip-Down Full Windshield"));
         }
     }
 }

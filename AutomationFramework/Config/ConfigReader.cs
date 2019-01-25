@@ -13,7 +13,9 @@ namespace AutomationFramework.Config
     {
         private static string ENVIRONMENT = "Environment";
         private static string BROWSER_LOCALE = "locale";
+        private static string RETRY_COUNT = "retryCount";
         private static string CONFIG_URL_TEMPLATE = "URL/{0}";
+
 
         public static void setFrameworkSettings()
         {

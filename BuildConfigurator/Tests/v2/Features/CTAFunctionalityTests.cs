@@ -22,10 +22,10 @@ namespace BuildConfigurator.Tests.v2.Features
             BuildConfigurePage.ClickAccessoryCategory("Protection");
             BuildConfigurePage.ClickAccessorySubCategory("Mirrors");
             BuildConfigurePage.ClickSpecificAccessoryCardAddButton("Folding Side Mirrors");
-            Assert.IsTrue(BuildConfigurePage.VerifyAccesoriesOnBuildSummary(new string[] { "2881198" }));
+            BuildConfigurePage.VerifyItemsIdsPresentBuildSummary(new string[] { "2881198" });
             BuildConfigurePage.ClickBuildRestartButton();
             BuildConfigurePage.ClickConfirmationContinueButton();
-            Assert.IsFalse(BuildConfigurePage.VerifyAccesoriesOnBuildSummary(new string[] { "2881198" }));
+            BuildConfigurePage.VerifyItemsIdsNotPresentBuildSummary(new string[] { "2881198" });
         }
 
         [Test, Category(TestCategories.UI_FEATURES), CustomRetry(3)]

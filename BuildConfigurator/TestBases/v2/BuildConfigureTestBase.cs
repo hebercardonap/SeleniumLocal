@@ -37,5 +37,41 @@ namespace BuildConfigurator.TestBases.v2
             Assert.IsTrue(IsNavigationBarDisplayed(), "Element missing on accessories page for model {0}", model);
             Assert.IsTrue(IsCanvassDisplayed(), "Element missing on accessories page for model {0}", model);
         }
+
+        public void VerifyItemsIdsPresentBuildSummary(string[] itemIds)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemIds)
+            {
+                if (!IsAccessoryIdOnBuildSummary(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Item ID missing on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
+
+        public void VerifyItemsIdsNotPresentBuildSummary(string[] itemIds)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemIds)
+            {
+                if (IsAccessoryIdOnBuildSummary(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Item ID present on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
     }
 }

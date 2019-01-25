@@ -12,23 +12,23 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.PartRequiresPart
 {
     [TestFixture]
-    public class RangerPartRequiresPartTests : TestBase
+    public class SnoPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.RAN), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
-        public void VerifyPrpRuleIsTriggeredForRanger()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        public void VerifyPrpRuleIsTriggeredForSnow()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_SP);
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Utility");
-            Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
-            Accessories.ClickAccessoryAddByProductName("XL Transport");
+            Accessories.ClickCategoryByName("Storage & Racks");
+            Accessories.ClickSubcategoryByName("Cargo Rack Bags");
+            Accessories.ClickAccessoryAddByProductName("Under Rack Bag");
             Assert.IsTrue(Accessories.IsPrpContainerDisplayed());
-            Accessories.ClickPrpSecondaryPartSelectByDesc("Latch Gun Boot Mount");
+            Accessories.ClickPrpSecondaryPartSelectByDesc("Rear Seat Rack");
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Accessories.ClickKitPackageDropDown();
-            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Latch Gun Boot Mount", "XL Transport" });
+            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Rear Seat Rack", "Under Rack Bag" });
         }
     }
 }

@@ -390,14 +390,11 @@ namespace BuildConfigurator.Pages.v2
             DriverActions.clickElement(BY_BUILD_SUMMARY_BUTTON);
         }
 
-        public bool VerifyAccesoriesOnBuildSummary(string[] values)
+        public bool IsAccessoryIdOnBuildSummary(string value)
         {
             bool isFound = false;
 
             List<IWebElement> ids = Driver.FindElements(BY_PRODUCT_ID_BUILD_SUMMARY).ToList();
-
-            foreach (var value in values)
-            {
 
                 foreach (var id in ids)
                 {
@@ -411,7 +408,6 @@ namespace BuildConfigurator.Pages.v2
                         isFound = false;
                     }
                 }
-            }
             return isFound;
         }
 
