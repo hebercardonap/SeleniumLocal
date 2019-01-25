@@ -57,7 +57,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
             Accessories.ClickConfirmationBuildContinueButton();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Assert.IsFalse(Accessories.AreProductDescPresentBuildSummary(new List<string> { "Buckle- Accent" }));
+            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Buckle- Accent" });
 
         }
     }

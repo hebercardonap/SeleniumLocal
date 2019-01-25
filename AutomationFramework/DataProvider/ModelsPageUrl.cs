@@ -60,6 +60,7 @@ namespace AutomationFramework.DataProvider
         //SNO Models for test
         public static string SNO_SWITCHBACK_600_XCR_CONFLICT = "switchback/600-switchback-xcr";
         public static string SNO_SWITCHBACK_600_SP = "switchback/600-switchback-sp-144-es";
+        public static string SNO_SWITCHBACK_600_BASE_TEST = "switchback/600-switchback-sp-144-es";
 
     }
 }

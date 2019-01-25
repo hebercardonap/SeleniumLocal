@@ -175,6 +175,7 @@
     <Compile Include="Tests\v2\Trims\TrimsPageTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\RangerAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\RangerSummaryTests.cs" />
+    <Compile Include="Tests\v3\BuildSummary\SnoSummaryTests.cs" />
     <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\SnoConflictTests.cs" />
     <Compile Include="Tests\v3\Footer\RangerFooterTests.cs" />

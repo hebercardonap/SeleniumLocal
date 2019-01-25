@@ -9,7 +9,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
     [TestFixture]
     public class SnoConflictTests : TestBase
     {
-        [Test, Category(TestCategories.SNO), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.SNO), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictRuleIsTriggeredForSno()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_XCR_CONFLICT);
@@ -22,7 +22,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
         }
 
-        [Test, Category(TestCategories.SNO), Category(TestCategories.STEPPED_PROCESS), RetryDynamicAttribute]
+        [Test, Category(TestCategories.SNO), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyRemovedPartFromConflictInBuildSummarySno()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_XCR_CONFLICT);

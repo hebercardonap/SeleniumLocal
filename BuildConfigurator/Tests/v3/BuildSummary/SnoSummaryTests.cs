@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.BuildSummary
 {
     [TestFixture]
-    public class RangerSummaryTests : TestBase
+    public class SnoSummaryTests : TestBase
     {
         private static string DEALER_ID = "02040900";
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryDisplaysAddedAccessory()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
+        public void VerifySummaryDisplaysAddedAccessorySno()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -29,10 +29,10 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Cargo Box" });
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryAccessoryRemove()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
+        public void VerifySummaryAccessoryRemoveSno()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -43,10 +43,10 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Cargo Box" });
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryUIIconsAndNotes()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
+        public void VerifySummaryUIIconsAndNotesSno()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
@@ -56,10 +56,10 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.VerifyIconsAndAdditionalNotesPresent();
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryDealerExperience()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
+        public void VerifySummaryDealerExperienceSno()
         {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
