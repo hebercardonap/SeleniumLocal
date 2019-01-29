@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
     [TestFixture]
     public class RangerToolbarTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
         public void VerifyToolbarElementsAccessoryPage()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -24,7 +24,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
 
         }
 
-        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
         public void VerifyToolbarElementsColorPage()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -34,17 +34,17 @@ namespace BuildConfigurator.Tests.v3.Toolbar
 
         }
 
-        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
         public void VerifyToolbarElementsPackagesPage()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
             Assert.IsTrue(Packages.Toolbar.IsToolbarDisplayed());
-            Colors.VerifyToolbarIconsStateColorPage();
+            Packages.VerifyToolbarIconsStatePackagesPage();
 
         }
 
-        [Test, Category("Ranger"), Category("Toolbar"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
         public void VerifyToolbarRestartBuildFunctionality()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -57,7 +57,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
             Accessories.ClickConfirmationBuildContinueButton();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Buckle- Accent" });
+            Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Buckle- Accent" });
 
         }
     }

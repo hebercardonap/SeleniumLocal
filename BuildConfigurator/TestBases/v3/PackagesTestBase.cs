@@ -22,12 +22,13 @@ namespace BuildConfigurator.TestBases
 
         public void VerifyToolbarIconsStatePackagesPage()
         {
-            Assert.IsTrue(Toolbar.IsFullscreenIconEnabled());
-            Assert.IsTrue(Toolbar.IsInteriorExteriorIconEnabled());
-            Assert.IsFalse(Toolbar.IsSnapshotIconEnabled());
-            Assert.IsFalse(Toolbar.IsEmailIconEnabled());
-            Assert.IsFalse(Toolbar.IsPrintIconEnabled());
-            Assert.IsFalse(Toolbar.IsRestartIconEnabled());
+            Assert.IsTrue(Toolbar.IsFullscreenIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsInteriorExteriorIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsSnapshotIconVisibleAndEnabled());
+            Assert.IsFalse(Toolbar.IsEmailIconVisibleAndEnabled());
+            Assert.IsFalse(Toolbar.IsPrintIconVisibleAndEnabled());
+            Assert.IsFalse(Toolbar.IsRestartIconVisibleAndEnabled());
+            Assert.IsFalse(Toolbar.IsSaveIconVisibleAndEnabled());
         }
     }
 }

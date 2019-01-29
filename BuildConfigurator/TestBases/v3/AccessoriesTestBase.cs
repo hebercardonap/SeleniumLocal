@@ -30,14 +30,22 @@ namespace BuildConfigurator.TestBases
             Assert.IsFalse(IsSummaryPrintIconDisplayed());
         }
 
+        public void VerifyBuildSummaryIconsNotPresent()
+        {
+            Assert.IsFalse(IsSummarySaveIconDisplayed());
+            Assert.IsFalse(IsSummaryEmailIconDisplayed());
+            Assert.IsFalse(IsSummaryPrintIconDisplayed());
+        }
+
         public void VerifyToolbarIconsAreEnabled()
         {
-            Assert.IsTrue(Toolbar.IsFullscreenIconEnabled());
-            Assert.IsTrue(Toolbar.IsInteriorExteriorIconEnabled());
-            Assert.IsTrue(Toolbar.IsSnapshotIconEnabled());
-            Assert.IsTrue(Toolbar.IsEmailIconEnabled());
-            Assert.IsTrue(Toolbar.IsPrintIconEnabled());
-            Assert.IsTrue(Toolbar.IsRestartIconEnabled());
+            Assert.IsTrue(Toolbar.IsFullscreenIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsInteriorExteriorIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsSnapshotIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsEmailIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsPrintIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsRestartIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsSaveIconVisibleAndEnabled());
         }
 
         public bool RemoveConlfictPartAndValidateInBuildSummary(string accessoryDesc)

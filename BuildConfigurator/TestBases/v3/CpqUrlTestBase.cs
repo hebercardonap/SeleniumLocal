@@ -218,6 +218,13 @@ namespace BuildConfigurator.TestBases
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
+            else if (stringEqualsIgnoreCase(brand, Brand.SNO))
+            {
+                string url = string.Concat(UrlBuilder.getSnoLandingPageURL(), model, BUILD_URL_PART,
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
             else
                 Assert.Fail("Brand {0} not supported", brand);
         }
