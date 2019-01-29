@@ -21,26 +21,26 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Utility");
-            Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
-            Accessories.ClickAccessoryAddByProductName("Cargo Box");
+            Accessories.ClickCategoryByName("Protection");
+            Accessories.ClickSubcategoryByName("Covers");
+            Accessories.ClickAccessoryAddByProductName("Cover - Black");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Cargo Box" });
+            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Cover - Black" });
         }
 
         [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryAccessoryRemoveSno()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Utility");
-            Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
-            Accessories.ClickAccessoryAddByProductName("Cargo Box");
+            Accessories.ClickCategoryByName("Protection");
+            Accessories.ClickSubcategoryByName("Covers");
+            Accessories.ClickAccessoryAddByProductName("Cover - Black");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.RemoveAccessoryFromSummaryByDesc("Cargo Box");
-            Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Cargo Box" });
+            Accessories.RemoveAccessoryFromSummaryByDesc("Cover - Black");
+            Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Cover - Black" });
         }
 
         [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
@@ -48,12 +48,13 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Utility");
-            Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
-            Accessories.ClickAccessoryAddByProductName("Cargo Box");
+            Accessories.ClickCategoryByName("Protection");
+            Accessories.ClickSubcategoryByName("Covers");
+            Accessories.ClickAccessoryAddByProductName("Cover - Black");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.VerifyIconsAndAdditionalNotesPresent();
+            Accessories.VerifyBuildSummaryIconsNotPresent();
+            Assert.IsTrue(Accessories.IsSummaryAdditionalNotesDisplayed());
         }
 
         [Test, Category(TestCategories.SNO), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]

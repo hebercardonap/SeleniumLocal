@@ -82,6 +82,7 @@ namespace BuildConfigurator.Modules
         {
             DriverActions.waitForAjaxRequestToComplete();
             WebDriverExtensions.WaitForPageLoaded(Driver);
+            DriverActions.WaitForCanvassToComplete();
             DriverActions.waitForElementVisibleAndEnabled(BY_ACCT_LOGGED_IN_ICON);
             DriverActions.clickElement(BY_ACCT_LOGGED_IN_ICON);
         }

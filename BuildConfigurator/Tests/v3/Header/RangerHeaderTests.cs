@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v3.Header
     [TestFixture]
     public class RangerHeaderTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyModelsPageHeaderElements()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
@@ -26,7 +26,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyTrimsPageHeaderElements()
         {
             CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -37,7 +37,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyColorsPageHeaderElements()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
@@ -48,7 +48,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyPackagesPageHeaderElements()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
@@ -59,15 +59,15 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
 
-        [Test, Category("Ranger"), Category("Header"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyAccessoriesPageHeaderElements()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsTrue(Accessories.HeaderModule.IsHeaderSignInIconDisplayed());
             Assert.IsTrue(Accessories.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
-            Assert.IsTrue(Accessories.HeaderModule.IsSaveHeaderIconDisplayed());
-            Assert.IsTrue(Accessories.HeaderModule.IsEmailHeaderIconDisplayed());
+            Assert.IsFalse(Accessories.HeaderModule.IsSaveHeaderIconDisplayed());
+            Assert.IsFalse(Accessories.HeaderModule.IsEmailHeaderIconDisplayed());
             Accessories.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getRangerLandingPageURL());
         }

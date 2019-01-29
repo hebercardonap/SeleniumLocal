@@ -22,7 +22,7 @@ namespace BuildConfigurator.Tests.v3.AccountManagementTests
             Accessories.ClickCategoryByName("Wheel");
             Accessories.ClickSubcategoryByName("Trail");
             Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
-            Accessories.HeaderModule.ClickSaveHeaderIcon();
+            Accessories.Toolbar.ClickToolbarSaveIcon();
             Accessories.EnterBuildName();
             Accessories.ClickSaveBuildModalSave();
             AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);

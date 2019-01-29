@@ -17,6 +17,7 @@ namespace BuildConfigurator.Modules
         private static By BY_TOOLBAR_PRINT_ICON = By.CssSelector("button[title*='Print your build']");
         private static By BY_TOOLBAR_RESTART_ICON = By.CssSelector("button[title*='Restart Build']");
         private static By BY_TOOLBAR_INTERIOR_EXT_ICON = By.CssSelector("button[title*='interior']");
+        private static By BY_TOOLBAR_SAVE_ICON = By.CssSelector("div[class='icon__toolbar-save']");
         public Toolbar(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -26,34 +27,39 @@ namespace BuildConfigurator.Modules
             return DriverActions.IsElementPresent(BY_TOOLBAR_CONTAINER);
         }
 
-        public bool IsFullscreenIconEnabled()
+        public bool IsFullscreenIconVisibleAndEnabled()
         {
-            return Driver.FindElement(BY_TOOLBAR_FULLSCREEN_ICON).Enabled;
+            return DriverActions.IsElementPresent(BY_TOOLBAR_FULLSCREEN_ICON);
         }
 
-        public bool IsSnapshotIconEnabled()
+        public bool IsSnapshotIconVisibleAndEnabled()
         {
-            return Driver.FindElement(BY_TOOLBAR_SNAPSHOT_ICON).Enabled;
+            return DriverActions.IsElementPresent(BY_TOOLBAR_SNAPSHOT_ICON);
         }
 
-        public bool IsEmailIconEnabled()
+        public bool IsEmailIconVisibleAndEnabled()
         {
-            return Driver.FindElement(BY_TOOLBAR_EMAIL_ICON).Enabled;
+            return DriverActions.IsElementPresent(BY_TOOLBAR_EMAIL_ICON);
         }
 
-        public bool IsPrintIconEnabled()
+        public bool IsPrintIconVisibleAndEnabled()
         {
-            return Driver.FindElement(BY_TOOLBAR_PRINT_ICON).Enabled;
+            return DriverActions.IsElementPresent(BY_TOOLBAR_PRINT_ICON);
         }
 
-        public bool IsRestartIconEnabled()
+        public bool IsRestartIconVisibleAndEnabled()
         {
-            return Driver.FindElement(BY_TOOLBAR_RESTART_ICON).Enabled;
+            return DriverActions.IsElementPresent(BY_TOOLBAR_RESTART_ICON);
         }
 
-        public bool IsInteriorExteriorIconEnabled()
+        public bool IsInteriorExteriorIconVisibleAndEnabled()
         {
-            return Driver.FindElement(BY_TOOLBAR_INTERIOR_EXT_ICON).Enabled;
+            return DriverActions.IsElementPresent(BY_TOOLBAR_INTERIOR_EXT_ICON);
+        }
+
+        public bool IsSaveIconVisibleAndEnabled()
+        {
+            return DriverActions.IsElementPresent(BY_TOOLBAR_SAVE_ICON);
         }
 
         public void ClickToolbarRestartIcon()
@@ -66,5 +72,9 @@ namespace BuildConfigurator.Modules
             DriverActions.clickElement(BY_TOOLBAR_FULLSCREEN_ICON);
         }
 
+        public void ClickToolbarSaveIcon()
+        {
+            DriverActions.clickElement(BY_TOOLBAR_SAVE_ICON);
+        }
     }
 }

@@ -47,5 +47,6 @@ namespace AutomationFramework.Utils
         public const string NAVIGATION = "Navigation";
         public const string DATA_VALIDATION = "DataValidation";
         public const string BUILD_SUMMARY = "BuildSummary";
+        public const string TOOLBAR = "Toolbar";
     }
 }
