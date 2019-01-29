@@ -1,4 +1,6 @@
-﻿using BuildConfigurator.Hooks;
+﻿using AutomationFramework.Helpers;
+using AutomationFramework.Utils;
+using BuildConfigurator.Hooks;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,36 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.SteppedProcess
 {
     [TestFixture]
-    class GenSteppedProccessTests : TestBase
+    public class GenSteppedProccessTests : TestBase
     {
+        [Test, Category(TestCategories.STEPPED_PROCESS), Category(TestCategories.GEN), CustomRetry(3)]
+        public void VerifyGenSteppedProcessTwoSeats()
+        {
+            CPQNavigate.NavigateToModelsPage(Brand.GEN);
+            BuildModelPage.ClickTwoSeat();
+            CompleteSteppedProcessAndValidate();
+        }
+
+        [Test, Category(TestCategories.STEPPED_PROCESS), Category(TestCategories.GEN), CustomRetry(3)]
+        public void VerifyGenSteppedProcessFourSeats()
+        {
+            CPQNavigate.NavigateToModelsPage(Brand.GEN);
+            BuildModelPage.ClickFourSeat();
+            CompleteSteppedProcessAndValidate();
+        }
+
+        private void CompleteSteppedProcessAndValidate()
+        {
+            BuildModelPage.ClickUniqueColorGeneralModel();
+            BuildTrimPage.ClickRandomTrim();
+            BuildConfigurePage.WaitForBuildPageToLoad();
+            BuildConfigurePage.AddRandomTiresAccessory();
+            BuildConfigurePage.ClickIamFinishedButton();
+            BuildQuotePage.WaitForBuildQuotePgeToLoad();
+            BuildQuotePage.FillQuoteFormDefaultData();
+            BuildQuotePage.ClickGetInternetPriceButton();
+            BuildConfirmationPage.WaitForBuildConfirmationPageToLoad();
+            BuildConfirmationPage.VerifyBuildconfirmationPageIsAsExpected();
+        }
     }
 }

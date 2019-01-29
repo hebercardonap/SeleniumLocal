@@ -43,14 +43,14 @@
     <Reference Include="ExtentReports, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ExtentReports.3.1.3\lib\ExtentReports.dll</HintPath>
     </Reference>
-    <Reference Include="Gherkin, Version=5.0.0.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.0\lib\net45\Gherkin.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="ImpromptuInterface, Version=6.2.2.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
       <HintPath>..\packages\ImpromptuInterface.6.2.2\lib\net40\ImpromptuInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MongoDB.Bson, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
@@ -74,13 +74,8 @@
     <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="SpecFlow.Assist.Dynamic, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.Assist.Dynamic.1.3.1\lib\45\SpecFlow.Assist.Dynamic.dll</HintPath>
-    </Reference>
-    <Reference Include="SpecFlow.Retry.Generator.SpecFlowPlugin, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.Retry.2.4.0\lib\net45\SpecFlow.Retry.Generator.SpecFlowPlugin.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -92,99 +87,11 @@
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.2.4.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
-    </Reference>
-    <Reference Include="TechTalk.SpecFlow.Generator, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.0\lib\net45\TechTalk.SpecFlow.Generator.dll</HintPath>
-    </Reference>
-    <Reference Include="TechTalk.SpecFlow.Parser, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.0\lib\net45\TechTalk.SpecFlow.Parser.dll</HintPath>
-    </Reference>
-    <Reference Include="TechTalk.SpecFlow.Utils, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.0\lib\net45\TechTalk.SpecFlow.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="WebDriver, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.14.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\AccessoryAddRemoveChange\AccessoryAddChangeRemTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessoryAddChangeRemTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\AccessoryConflicts\AccessoryConflictTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccessoryConflictTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ACESteppedFlowTest.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\ATVSteppedFlowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ATVSteppedFlowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\GEMSteppedFLowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GEMSteppedFLowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\GENSteppedFlowTest.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GENSteppedFlowTest.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\INDSteppedFlowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>INDSteppedFlowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\RANSteppedFlowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RANSteppedFlowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RZRSteppedFlowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\SLGSteppedFlowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SLGSteppedFlowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SNOSteppedFlowTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildForms\BuildQuoteFormTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BuildQuoteFormTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\BuildPageFeatures\BuildPageFeatures.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BuildPageFeatures.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\DEX\DealerExperienceBuildTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DealerExperienceBuildTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\PartRequiresPart\PRPTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRPTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Hooks\TestBase.cs" />
     <Compile Include="Modules\AccountModule.cs" />
     <Compile Include="Modules\CalculatorModule.cs" />
@@ -192,16 +99,6 @@
     <Compile Include="Modules\NavigationBarModule.cs" />
     <Compile Include="Modules\SignInModule.cs" />
     <Compile Include="Modules\Toolbar.cs" />
-    <Compile Include="Pages\BuildCategoryPage.cs" />
-    <Compile Include="Pages\BuildColorPage.cs" />
-    <Compile Include="Pages\BuildConfigurePage.cs" />
-    <Compile Include="Pages\BuildConfirmationPage.cs" />
-    <Compile Include="Pages\BuildInfoModalPage.cs" />
-    <Compile Include="Pages\BuildLoginPage.cs" />
-    <Compile Include="Pages\BuildModelPage.cs" />
-    <Compile Include="Pages\BuildPackagePage.cs" />
-    <Compile Include="Pages\BuildQuotePage.cs" />
-    <Compile Include="Pages\BuildTrimPage.cs" />
     <Compile Include="Modules\HeaderModule.cs" />
     <Compile Include="Pages\v2\BuildCategoryPage.cs" />
     <Compile Include="Pages\v2\BuildColorPage.cs" />
@@ -214,32 +111,16 @@
     <Compile Include="Pages\v2\BuildQuotePage.cs" />
     <Compile Include="Pages\v2\BuildTrimPage.cs" />
     <Compile Include="Pages\v2\PageHelpers.cs" />
+    <Compile Include="Pages\v3\EnginePage.cs" />
     <Compile Include="Pages\v3\PackagesPage.cs" />
-    <Compile Include="Pages\PageHelpers.cs" />
     <Compile Include="Pages\v3\AccessoriesPage.cs" />
     <Compile Include="Pages\v3\ColorsPage.cs" />
     <Compile Include="Pages\v3\ConfirmationPage.cs" />
     <Compile Include="Pages\v3\ModelsPage.cs" />
     <Compile Include="Pages\v3\QuotePage.cs" />
+    <Compile Include="Pages\v3\TrackPage.cs" />
     <Compile Include="Pages\v3\TrimsPage.cs" />
-    <Compile Include="Steps\BuildCategorySteps.cs" />
-    <Compile Include="Steps\BuildColorSteps.cs" />
-    <Compile Include="Steps\BuildConfigureSteps.cs" />
-    <Compile Include="Steps\BuildConfirmationSteps.cs" />
-    <Compile Include="Steps\BuildInfoModalSteps.cs" />
-    <Compile Include="Steps\BuildLoginSteps.cs" />
-    <Compile Include="Steps\BuildPackageSteps.cs" />
-    <Compile Include="Steps\BuildQuoteSteps.cs" />
-    <Compile Include="Steps\BuildTrimSteps.cs" />
-    <Compile Include="Steps\BuildModelSteps.cs" />
-    <Compile Include="Steps\ExtendedSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\v3\AccessoriesPageSteps.cs" />
-    <Compile Include="Steps\v3\ColorsPageSteps.cs" />
-    <Compile Include="Steps\v3\ConfirmationPageSteps.cs" />
-    <Compile Include="Steps\v3\ExtendedConfiguratorSteps.cs" />
-    <Compile Include="Steps\v3\ModelsPageSteps.cs" />
-    <Compile Include="Steps\v3\TrimsPageSteps.cs" />
     <Compile Include="TestBases\v2\BuildCategoryTestBase.cs" />
     <Compile Include="TestBases\v2\BuildColorTestBase.cs" />
     <Compile Include="TestBases\v2\BuildConfigureTestBase.cs" />
@@ -255,10 +136,14 @@
     <Compile Include="TestBases\v3\ColorsTestBase.cs" />
     <Compile Include="TestBases\v3\ConfirmationTestBase.cs" />
     <Compile Include="TestBases\v3\CpqUrlTestBase.cs" />
+    <Compile Include="TestBases\v3\EngineTestBase.cs" />
     <Compile Include="TestBases\v3\ModelsTestBase.cs" />
     <Compile Include="TestBases\v3\PackagesTestBase.cs" />
     <Compile Include="TestBases\v3\QuoteTestBase.cs" />
+    <Compile Include="TestBases\v3\TrackTestBase.cs" />
     <Compile Include="TestBases\v3\TrimsTestBase.cs" />
+    <Compile Include="Tests\v2\Accessories\AccessoriesPageTests.cs" />
+    <Compile Include="Tests\v2\Category\CategoryPageTests.cs" />
     <Compile Include="Tests\v2\Conflict\AceConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\AtvConflictTests.cs" />
     <Compile Include="Tests\v2\Conflict\GemConflictTests.cs" />
@@ -271,6 +156,7 @@
     <Compile Include="Tests\v2\Features\DataValidationTests.cs" />
     <Compile Include="Tests\v2\Features\SaveBuildTests.cs" />
     <Compile Include="Tests\v2\GetQuote\GetQuoteFormTests.cs" />
+    <Compile Include="Tests\v2\Models\ModelsPageTests.cs" />
     <Compile Include="Tests\v2\NavigationBar\NavigationBarTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AcePartRequiresPartTests.cs" />
     <Compile Include="Tests\v2\PartRequiresPart\AtvPartRequiresPartTests.cs" />
@@ -286,80 +172,25 @@
     <Compile Include="Tests\v2\SteppedProcess\IndSteppedProccessTests.cs" />
     <Compile Include="Tests\v2\SteppedProcess\RzrSteppedProcessTests.cs" />
     <Compile Include="Tests\v2\SteppedProcess\SlgSteppedProccessTests.cs" />
+    <Compile Include="Tests\v2\Trims\TrimsPageTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\RangerAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\RangerSummaryTests.cs" />
+    <Compile Include="Tests\v3\BuildSummary\SnoSummaryTests.cs" />
     <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
+    <Compile Include="Tests\v3\Conflict\SnoConflictTests.cs" />
     <Compile Include="Tests\v3\Footer\RangerFooterTests.cs" />
     <Compile Include="Tests\v3\Header\RangerHeaderTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\RangerNavigationBarTests.cs" />
     <Compile Include="Tests\v3\Package\RangerPackageTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\RangerPartRequiresPartTests.cs" />
+    <Compile Include="Tests\v3\PartRequiresPart\SnoPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />
+    <Compile Include="Tests\v3\SteppedProcess\SnowSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\Toolbar\RangerToolbarTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Features\AccessoryAddRemoveChange\AccessoryAddChangeRemTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AccessoryAddChangeRemTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\AccessoryConflicts\AccessoryConflictTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AccessoryConflictTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\ACESteppedFlowTest.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ACESteppedFlowTest.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\ATVSteppedFlowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ATVSteppedFlowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\GEMSteppedFLowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GEMSteppedFLowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\GENSteppedFlowTest.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GENSteppedFlowTest.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\INDSteppedFlowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>INDSteppedFlowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\RANSteppedFlowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RANSteppedFlowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\RZRSteppedFlowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RZRSteppedFlowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\SLGSteppedFlowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SLGSteppedFlowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildConfiguratorSteps\SNOSteppedFlowTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SNOSteppedFlowTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildForms\BuildQuoteFormTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildQuoteFormTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\BuildPageFeatures\BuildPageFeatures.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BuildPageFeatures.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\DEX\DealerExperienceBuildTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DealerExperienceBuildTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\PartRequiresPart\PRPTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PRPTests.feature.cs</LastGenOutput>
     </None>
     <None Include="license" />
     <None Include="packages.config">
@@ -388,11 +219,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>

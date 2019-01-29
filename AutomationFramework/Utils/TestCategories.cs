@@ -36,6 +36,7 @@ namespace AutomationFramework.Utils
         public const string PACKAGES_PAGE = "PackagesPage";
         public const string ACCESSORIES_PAGE = "AccessoriesPage";
         public const string QUOTE_PAGE = "QuotePage";
+        public const string CATEGORY_PAGE = "CategoryPage";
         public const string CONFIRMATION_PAGE = "ConfirmationPage";
         public const string HEADER = "Header";
         public const string FOOTER = "Footer";
@@ -45,5 +46,6 @@ namespace AutomationFramework.Utils
         public const string UI_FEATURES = "UIFeatures";
         public const string NAVIGATION = "Navigation";
         public const string DATA_VALIDATION = "DataValidation";
+        public const string BUILD_SUMMARY = "BuildSummary";
     }
 }

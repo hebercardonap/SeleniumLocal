@@ -22,6 +22,12 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_MODELS_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodModelsCard");
         private static By BY_MODELS_SEAT_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodSeatsCard");
         private static By BY_CHOOSE_MODEL_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseModelTitle");
+        private static By BY_SNO_TITAN_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'TITAN')]");
+        private static By BY_SNO_RUSH_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'RUSH')]");
+        private static By BY_SNO_SWITCHBACK_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'Switchback')]");
+        private static By BY_SNO_RMK_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'RMK')]");
+        private static By BY_SNO_INDY_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'INDY')]");
+        private static By BY_SNO_VOYAGEUR_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'Voyageur')]");
 
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
@@ -90,6 +96,36 @@ namespace BuildConfigurator.Pages.v3
         {
             int seatCards = Driver.FindElements(BY_MODELS_SEAT_CARDS).ToList().Count;
             return seatCards;
+        }
+
+        public void ClickSnoTitanFamilyCard()
+        {
+            DriverActions.clickElement(BY_SNO_TITAN_FAMILY);
+        }
+
+        public void ClickSnoRushFamilyCard()
+        {
+            DriverActions.clickElement(BY_SNO_RUSH_FAMILY);
+        }
+
+        public void ClickSnoSwitchbackFamilyCard()
+        {
+            DriverActions.clickElement(BY_SNO_SWITCHBACK_FAMILY);
+        }
+
+        public void ClickSnoRmkFamilyCard()
+        {
+            DriverActions.clickElement(BY_SNO_RMK_FAMILY);
+        }
+
+        public void ClickSnoIndyFamilyCard()
+        {
+            DriverActions.clickElement(BY_SNO_INDY_FAMILY);
+        }
+
+        public void ClickSnoVoyageurFamilyCard()
+        {
+            DriverActions.clickElement(BY_SNO_VOYAGEUR_FAMILY);
         }
     }
 }

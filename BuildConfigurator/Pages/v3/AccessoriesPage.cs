@@ -48,6 +48,8 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_CONFIRMATION_BUILD_CONTENT = By.XPath("//restart-build//div[@class='confirmation-build-content']");
         private static By BY_CONFIRMATION_BUILD_CONTINUE = By.CssSelector("button[class*='continue']");
         private static By BY_CONFIRMATION_BUILD_SAVE = By.XPath("//restart-build//button[contains(@class,'save')]");
+        private static By BY_SUMMARY_ACCESSORY_CTA = By.CssSelector("div[data-slnm-attr='summaryAccessoryCTA']");
+        private static By BY_KIT_PACKAGE_CARET = By.CssSelector("button[class='kit-package-item']");
 
 
 
@@ -206,6 +208,24 @@ namespace BuildConfigurator.Pages.v3
             }
         }
 
+        public void ClickPrpSecondaryPartSelectByDesc(string productDesc)
+        {
+            List<IWebElement> secondaryParts = Driver.FindElements(BY_PRP_SECONDARY_PARTS).ToList();
+
+            foreach (var part in secondaryParts)
+            {
+                string productString = part.FindElement(BY_PRP_SECONDARY_PART_DESC).Text;
+                //string product = productString.Substring(productString.LastIndexOf("#") + 1);
+
+                if (stringEqualsIgnoreCase(productString, productDesc) || stringContainsIgnoreCase(productString, productDesc))
+                {
+                    IWebElement select = part.FindElement(BY_PRP_SECONDARY_SELECT_CHILD);
+                    DriverActions.clickElement(select);
+                    break;
+                }
+            }
+        }
+
         public bool AreProductIdsAddedBuildSummary(List<string> products)
         {
             bool isFound = false;
@@ -229,6 +249,27 @@ namespace BuildConfigurator.Pages.v3
             return isFound;
         }
 
+        public bool IsProductIdsAddedBuildSummary(string productId)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_PRP_SECONDARY_PART_NUMBER).ToList();
+
+            foreach (var item in summaryProductIds)
+            {
+                string productString = item.Text;
+                string id = productString.Substring(productString.LastIndexOf("#") + 1);
+
+                if (stringEqualsIgnoreCase(productId, id))
+                {
+                    isFound = true;
+                    break;
+                }
+                else
+                    isFound = false;
+            }
+            return isFound;
+        }
+
         public bool IsConflictContainerDisplayed()
         {
             return DriverActions.IsElementPresent(BY_CONFLICT_CONTAINER);
@@ -242,7 +283,7 @@ namespace BuildConfigurator.Pages.v3
             foreach (var item in items)
             {
                 string itemDesc = item.FindElement(BY_PRP_SECONDARY_PART_DESC).Text;
-                if (stringContainsIgnoreCase(itemDesc, description))
+                if (itemDesc.Length > 0 && stringContainsIgnoreCase(itemDesc, description))
                 {
                     IWebElement remove = item.FindElement(BY_PRP_SECONDARY_SELECT_CHILD);
                     DriverActions.clickElement(remove);
@@ -282,6 +323,26 @@ namespace BuildConfigurator.Pages.v3
                     else
                         isFound = false;
                 }
+            }
+            return isFound;
+        }
+
+        public bool IsProductDescPresentBuildSummary(string productDesc)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_PRP_SECONDARY_PART_DESC).ToList();
+
+            foreach (var item in summaryProductIds)
+            {
+                string description = item.Text;
+
+                if (description.Length > 0 && stringContainsIgnoreCase(description, productDesc))
+                {
+                    isFound = true;
+                    break;
+                }
+                else
+                    isFound = false;
             }
             return isFound;
         }
@@ -328,6 +389,11 @@ namespace BuildConfigurator.Pages.v3
         {
             WaitForConfirmationBuildToLoad();
             DriverActions.clickElement(BY_CONFIRMATION_BUILD_CONTINUE);
+        }
+
+        public void ClickKitPackageDropDown()
+        {
+            DriverActions.clickElement(BY_KIT_PACKAGE_CARET);
         }
     }
 }

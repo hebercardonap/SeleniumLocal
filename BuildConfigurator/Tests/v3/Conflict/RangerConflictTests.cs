@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
     [TestFixture]
     public class RangerConflictTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Conflicts"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
         public void VerifyConflictRuleIsTriggeredForRanger()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
@@ -28,7 +28,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Conflicts"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
         public void VerifyRemovedPartFromConflictInBuildSummary()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
@@ -40,11 +40,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickSubcategoryByName("Windshields");
             Accessories.ClickAccessoryAddByProductName("Flip-Down Full Windshield");
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
-            Accessories.ClickConflictingItemRemoveByDesc("Flip-Down Full Windshield");
-            Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.FooterModule.OpenBuildSummary();
-            Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Assert.IsFalse(Accessories.AreProductIdsAddedBuildSummary(new List<string>() { "2881919" }));
+            Assert.IsFalse(Accessories.RemoveConlfictPartAndValidateInBuildSummary("Flip-Down Full Windshield"));
         }
     }
 }

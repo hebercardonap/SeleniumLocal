@@ -16,7 +16,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
     {
         private static string DEALER_ID = "02040900";
 
-        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryDisplaysAddedAccessory()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -26,10 +26,10 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.ClickAccessoryAddByProductName("Cargo Box");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Assert.IsTrue(Accessories.AreProductDescPresentBuildSummary(new List<string> { "Cargo Box" }));
+            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Cargo Box" });
         }
 
-        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryAccessoryRemove()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -40,10 +40,10 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Accessories.RemoveAccessoryFromSummaryByDesc("Cargo Box");
-            Assert.IsFalse(Accessories.AreProductDescPresentBuildSummary(new List<string> { "Cargo Box" }));
+            Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Cargo Box" });
         }
 
-        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryUIIconsAndNotes()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -56,7 +56,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.VerifyIconsAndAdditionalNotesPresent();
         }
 
-        [Test, Category("Ranger"), Category("BuildSummary"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryDealerExperience()
         {
             CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);

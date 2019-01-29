@@ -25,7 +25,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
             Assert.IsTrue(BuildConfigurePage.IsPRPHeaderDisplayed(), "Part Requires Part was nod triggered");
             BuildConfigurePage.ClickSecondaryAccessoryByProductId("2882240");
             BuildConfigurePage.ClickBuildSummaryButton();
-            Assert.IsTrue(BuildConfigurePage.VerifyAccesoriesOnBuildSummary(new string[] { "2884118", "2882240" }));
+            BuildConfigurePage.VerifyItemsIdsPresentBuildSummary(new string[] { "2884118", "2882240" });
 
         }
 
@@ -57,7 +57,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
             BuildConfigurePage.ClickSecondaryAccessoryByProductId("2884019-293");
             BuildConfigurePage.ClickBuildSummaryButton();
             BuildConfigurePage.ClickRemoveLinkByProductId("2882076");
-            Assert.IsTrue(BuildConfigurePage.VerifyAccesoriesOnBuildSummary(new string[] { "2884019-293" }));
+            BuildConfigurePage.VerifyItemsIdsPresentBuildSummary(new string[] { "2884019-293" });
 
         }
     }

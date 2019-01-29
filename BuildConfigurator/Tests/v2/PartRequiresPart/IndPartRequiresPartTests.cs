@@ -25,7 +25,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
             Assert.IsTrue(BuildConfigurePage.IsPRPHeaderDisplayed(), "Part Requires Part was not triggered");
             BuildConfigurePage.ClickSecondaryAccessoryByProductId("2879667-05");
             BuildConfigurePage.ClickBuildSummaryButton();
-            Assert.IsTrue(BuildConfigurePage.VerifyAccesoriesOnBuildSummary(new string[] { "2879674-266", "2879667-05" }));
+            BuildConfigurePage.VerifyItemsIdsPresentBuildSummary(new string[] { "2879674-266", "2879667-05" });
 
         }
     }

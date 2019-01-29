@@ -21,6 +21,9 @@ namespace BuildConfigurator.Pages.v2
         private static Random rnd = new Random();
         private static string[] RANGER_PACKAGE_TRIM = new[] { "1000 EPS Premium", "1000 EPS NorthStar Edition" };
         private static By BY_TRIM_PAGE_TITLE = By.XPath("//section[@class='cpq-title-nav']");
+        private static By BY_TRIMS_CARDS_TITLE_LABELS = By.CssSelector("a[class='trim-models-card'] div[class='trim-models-card-inner'] label");
+        private static By BY_SEE_SPECS_LINKS = By.CssSelector("div[class~='trim-models-card-fullSpec']");
+        private static By BY_SEE_SPECS_MODAL = By.CssSelector("div[class='modal__body'] div[class~='heading']");
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
 
@@ -86,6 +89,29 @@ namespace BuildConfigurator.Pages.v2
         public void WaitForTrimPageToLoad()
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_TRIM_PAGE_TITLE);
+        }
+
+        public List<string> GetTrimsCardTitleLabels()
+        {
+            List<string> trimsTitleLabels = new List<string>();
+            List<IWebElement> trimCards = Driver.FindElements(BY_TRIMS_CARDS_TITLE_LABELS).ToList();
+
+            foreach (var trim in trimCards)
+            {
+                trimsTitleLabels.Add(trim.Text);
+            }
+            return trimsTitleLabels;
+        }
+
+        public void ClickRandomSeeSpecsLink()
+        {
+            List<IWebElement> specsLinks = Driver.FindElements(BY_SEE_SPECS_LINKS).ToList();
+            DriverActions.clickElement(specsLinks[rnd.Next(0, specsLinks.Count)]);
+        }
+
+        public bool IsSeeSpecsModalDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SEE_SPECS_MODAL);
         }
     }
 }

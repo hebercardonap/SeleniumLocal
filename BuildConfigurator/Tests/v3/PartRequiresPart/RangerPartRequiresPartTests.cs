@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.PartRequiresPart
     [TestFixture]
     public class RangerPartRequiresPartTests : TestBase
     {
-        [Test, Category("Ranger"), Category("PartRequiresPart"), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPrpRuleIsTriggeredForRanger()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
@@ -23,8 +23,12 @@ namespace BuildConfigurator.Tests.v3.PartRequiresPart
             Accessories.ClickSubcategoryByName("Cargo & Bed Storage");
             Accessories.ClickAccessoryAddByProductName("XL Transport");
             Assert.IsTrue(Accessories.IsPrpContainerDisplayed());
-            Accessories.ClickPrpSecondaryPartSelectByProductId("2884106");
-            Accessories.AreProductIdsAddedBuildSummary(new List<string>() { "2884106" });
+            Accessories.ClickPrpSecondaryPartSelectByDesc("Latch Gun Boot Mount");
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.WaitUntilBuildSummaryIsDisplayed();
+            Accessories.ClickKitPackageDropDown();
+            Accessories.VerifyItemsDescPresentBuildSummary(new string[] { "Latch Gun Boot Mount", "XL Transport" });
         }
     }
 }
