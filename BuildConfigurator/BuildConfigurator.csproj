@@ -174,11 +174,13 @@
     <Compile Include="Tests\v2\SteppedProcess\SlgSteppedProccessTests.cs" />
     <Compile Include="Tests\v2\Trims\TrimsPageTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\RangerAcctMgmtTests.cs" />
+    <Compile Include="Tests\v3\AccountManagement\SnoAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\RangerSummaryTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\SnoSummaryTests.cs" />
     <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\SnoConflictTests.cs" />
     <Compile Include="Tests\v3\Footer\RangerFooterTests.cs" />
+    <Compile Include="Tests\v3\Footer\SnoFooterTests.cs" />
     <Compile Include="Tests\v3\Header\RangerHeaderTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\RangerNavigationBarTests.cs" />
     <Compile Include="Tests\v3\Package\RangerPackageTests.cs" />

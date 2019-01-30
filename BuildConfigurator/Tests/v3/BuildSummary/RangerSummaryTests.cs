@@ -53,7 +53,8 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.ClickAccessoryAddByProductName("Cargo Box");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.VerifyIconsAndAdditionalNotesPresent();
+            Accessories.VerifyBuildSummaryIconsNotPresent();
+            Assert.IsTrue(Accessories.IsSummaryAdditionalNotesDisplayed());
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
