@@ -98,6 +98,12 @@ namespace BuildConfigurator.Pages.v3
             return seatCards;
         }
 
+        public int GetSnowFamilyCardsCount()
+        {
+            int seatCards = Driver.FindElements(BY_MODELS_SEAT_CARDS).ToList().Count;
+            return seatCards;
+        }
+
         public void ClickSnoTitanFamilyCard()
         {
             DriverActions.clickElement(BY_SNO_TITAN_FAMILY);

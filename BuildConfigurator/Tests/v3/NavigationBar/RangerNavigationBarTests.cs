@@ -21,8 +21,8 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
         private static string DEALER_ID = "02040900";
 
 
-        [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
-        public void VerifyBackNavigationBar()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.NAVIGATION), RetryDynamic]
+        public void VerifyBackNavigationBarRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -33,8 +33,8 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
-        public void VerifyClickingModelsRevertSeatSelection()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.NAVIGATION), RetryDynamic]
+        public void VerifyClickingModelsRevertSeatSelectionRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -45,8 +45,8 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Models.VerifySeatSelectionIsDisplayed();
         }
 
-        [Test, Category("Ranger"), Category("Navigation"), CustomRetry(3)]
-        public void VerifyNavigationBarNotDisplayedDealerExp()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.NAVIGATION), RetryDynamic]
+        public void VerifyNavigationBarNotDisplayedDealerExpRan()
         {
             CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();

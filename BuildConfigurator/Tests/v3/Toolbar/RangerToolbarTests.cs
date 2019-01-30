@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
     public class RangerToolbarTests : TestBase
     {
         [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
-        public void VerifyToolbarElementsAccessoryPage()
+        public void VerifyToolbarElementsAccessoryPageRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -25,7 +25,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
-        public void VerifyToolbarElementsColorPage()
+        public void VerifyToolbarElementsColorPageRan()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
@@ -35,7 +35,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
-        public void VerifyToolbarElementsPackagesPage()
+        public void VerifyToolbarElementsPackagesPageRan()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
@@ -45,7 +45,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.TOOLBAR), RetryDynamic]
-        public void VerifyToolbarRestartBuildFunctionality()
+        public void VerifyToolbarRestartBuildFunctionalityRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();

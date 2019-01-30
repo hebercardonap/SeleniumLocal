@@ -182,13 +182,16 @@
     <Compile Include="Tests\v3\Footer\RangerFooterTests.cs" />
     <Compile Include="Tests\v3\Footer\SnoFooterTests.cs" />
     <Compile Include="Tests\v3\Header\RangerHeaderTests.cs" />
+    <Compile Include="Tests\v3\Header\SnoHeaderTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\RangerNavigationBarTests.cs" />
+    <Compile Include="Tests\v3\NavigationBar\SnoNavigationBarTests.cs" />
     <Compile Include="Tests\v3\Package\RangerPackageTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\RangerPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\SnoPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\SnowSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\Toolbar\RangerToolbarTests.cs" />
+    <Compile Include="Tests\v3\Toolbar\SnoToolbarTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

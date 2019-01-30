@@ -16,7 +16,7 @@ namespace BuildConfigurator.Tests.v3.Header
     public class RangerHeaderTests : TestBase
     {
         [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
-        public void VerifyModelsPageHeaderElements()
+        public void VerifyModelsPageHeaderElementsRan()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
             Models.WaitForModelsPageToLoad();
@@ -27,7 +27,7 @@ namespace BuildConfigurator.Tests.v3.Header
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
-        public void VerifyTrimsPageHeaderElements()
+        public void VerifyTrimsPageHeaderElementsRan()
         {
             CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Trims.WaitForTrimsPageToLoad();
@@ -38,7 +38,7 @@ namespace BuildConfigurator.Tests.v3.Header
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
-        public void VerifyColorsPageHeaderElements()
+        public void VerifyColorsPageHeaderElementsRan()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
@@ -49,7 +49,7 @@ namespace BuildConfigurator.Tests.v3.Header
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
-        public void VerifyPackagesPageHeaderElements()
+        public void VerifyPackagesPageHeaderElementsRan()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
@@ -60,7 +60,7 @@ namespace BuildConfigurator.Tests.v3.Header
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
-        public void VerifyAccessoriesPageHeaderElements()
+        public void VerifyAccessoriesPageHeaderElementsRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
