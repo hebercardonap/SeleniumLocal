@@ -78,6 +78,7 @@ namespace BuildConfigurator.Pages.v3
         public void WaitForAccessoriesPageToLoad()
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
+            DriverActions.WaitForCanvassToComplete();
             DriverActions.waitForElementVisibleAndEnabled(BY_ACCESSORIES_CATEGORIES);
         }
 

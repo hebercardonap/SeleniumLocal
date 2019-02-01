@@ -43,12 +43,12 @@ namespace BuildConfigurator.Tests.v3.Toolbar
             Accessories.ClickCategoryByName("Protection");
             Accessories.ClickSubcategoryByName("Covers");
             Accessories.ClickAccessoryAddByProductName("Cover - Black");
-            Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed());
+            Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed(), "Toolbar is not displayed");
             Accessories.Toolbar.ClickToolbarRestartIcon();
             Accessories.ClickConfirmationBuildContinueButton();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Undercover" });
+            Accessories.VerifyItemsDescNotPresentBuildSummary(new string[] { "Cover - Black" });
 
         }
     }

@@ -23,6 +23,7 @@ namespace AutomationFramework.Config
             Settings.IsLog = ConfigurationManager.AppSettings["isLog"].ToString() ?? "Y";
             Settings.LogPath = ConfigurationManager.AppSettings["logPath"].ToString();
             Settings.BrowserType = (BrowserType)Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings["browser"]);
+            Settings.Browser = ConfigurationManager.AppSettings["browser"];
         }
         public static string getEnvironment()
         {

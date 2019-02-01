@@ -18,18 +18,20 @@ namespace AutomationFramework.Base
         
         public void InitializeSettings()
         {
-            ConfigReader.setFrameworkSettings();
-            //LogHelpers.CreateLogFile();
+            //ConfigReader.setFrameworkSettings();
             OpenBrowser(Settings.BrowserType);
+        }
 
-            //LogHelpers.Write("Initialized Framework");
+        public void SetFrameworkSettings()
+        {
+            ConfigReader.setFrameworkSettings();
         }
 
         private void TurnOnWait()
         {
             _parallelConfig.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
-            //_parallelConfig.Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(60);
-            //_parallelConfig.Driver.Manage().Cookies.DeleteAllCookies();
+            _parallelConfig.Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(20);
+            _parallelConfig.Driver.Manage().Cookies.DeleteAllCookies();
             _parallelConfig.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _parallelConfig.Driver.Manage().Window.Maximize();
         }
