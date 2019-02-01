@@ -18,10 +18,8 @@ namespace BuildConfigurator.Hooks
 {
     public class TestBase : TestInitializeHook
     {
-        //private static ExtentReports report = ReportingManager.Instance;
+
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
-        ExtentTest test;
-        //ReportingTasks _reportingTasks = new ReportingTasks(report);
 
         [SetUp]
         public void Initialize()

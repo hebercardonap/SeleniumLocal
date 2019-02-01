@@ -194,6 +194,7 @@
     <Compile Include="Tests\v3\Package\RangerPackageTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\RangerPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\SnoPartRequiresPartTests.cs" />
+    <Compile Include="Tests\v3\QuoteConfirmation\QuoteConfirmationPageTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\SnowSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\Toolbar\RangerToolbarTests.cs" />

@@ -16,6 +16,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_BUILD_TOTAL_PRICE = By.XPath("//*[contains(@class, 'total-price')]");
         private static By BY_SUMMARY_ADDED_ACCESSORY = By.XPath("//*[contains(@class, 'split-50')]");
         private static By BY_WHOLEGOOD_MODEL_ID = By.XPath("//div[@class='text-align-right pull-right font-size-sm split-right']");
+        private static By BY_SUMMARY_PRINT_BUTTON = By.CssSelector("button[class~='summary-print']");
 
         public ConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -43,6 +44,11 @@ namespace BuildConfigurator.Pages.v3
             string modelId = Driver.FindElement(BY_WHOLEGOOD_MODEL_ID).GetAttribute("innerHTML");
             string model = modelId.Substring(modelId.LastIndexOf(":") + 1);
             return model.Trim();
+        }
+
+        public bool IsSummaryPrintLinkDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SUMMARY_PRINT_BUTTON);
         }
     }
 }

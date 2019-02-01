@@ -28,6 +28,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_POSTAL_CODE_VALIDATION_ERROR = By.XPath("//div[@data-form-mapping='DealerLocator']//span[contains(@class,'Error')]");
         private static By BY_AGE_CHECKBOX_VALIDATION_ERROR = By.XPath("//div[@data-f-type='choice']//span[@class='Form__Element__ValidationError']");
         private static By BY_SELECTED_DEALER_NAME = By.XPath("//div[contains(@class,'dlecb__dealer-name')]");
+        private static By BY_QUOTE_PAGE_TITLE = By.CssSelector("h1[class~='heading-generic__heading']");
         public QuotePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -146,6 +147,11 @@ namespace BuildConfigurator.Pages.v3
         public void WaitForDealerNameToBeDisplayed()
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_SELECTED_DEALER_NAME);
+        }
+
+        public void ClickAwayForFocusQuotePage()
+        {
+            DriverActions.clickElement(BY_QUOTE_PAGE_TITLE);
         }
     }
 }
