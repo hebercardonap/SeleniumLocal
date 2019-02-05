@@ -1,18 +1,18 @@
-﻿using AventStack.ExtentReports;
+﻿using AutomationFramework.Extensions;
+using AventStack.ExtentReports;
+using log4net;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.Reporting
 {
     public class ReportTestManager
     {
         private static Dictionary<string, ExtentTest> testList = new Dictionary<string, ExtentTest>();
+        ILog log;
 
         [ThreadStatic]
         private static ExtentTest _parentTest;
@@ -59,12 +59,19 @@ namespace AutomationFramework.Reporting
         public static void FinalizeTest()
         {
             var status = TestContext.CurrentContext.Result.Outcome.Status;
-            var stacktrace = string.IsNullOrEmpty(TestContext.CurrentContext.Result.StackTrace)
-                ? ""
-                : string.Format("<pre>{0}</pre>", TestContext.CurrentContext.Result.Message);
+            var message = string.Empty;
+            var stacktrace = string.Empty;
+            if (!string.IsNullOrEmpty(TestContext.CurrentContext.Result.StackTrace))
+            {
+                message = string.Format("<pre>{0}</pre>", TestContext.CurrentContext.Result.Message);
+                stacktrace = TestContext.CurrentContext.Result.StackTrace;
+            }
+
+            //var stacktrace = string.IsNullOrEmpty(TestContext.CurrentContext.Result.StackTrace)
+            //    ? ""
+            //    : string.Format("<pre>{0}</pre>", TestContext.CurrentContext.Result.Message);
 
             Status logStatus;
-
             switch (status)
             {
                 case TestStatus.Failed:
@@ -80,7 +87,7 @@ namespace AutomationFramework.Reporting
                     logStatus = Status.Pass;
                     break;
             }
-            GetTest().Log(logStatus, "Test ended with " + logStatus + stacktrace);
+            GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace);
         }
     }
 }

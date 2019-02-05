@@ -5,6 +5,7 @@ using AventStack.ExtentReports.Reporter;
 using BuildConfigurator.TestBases;
 using BuildConfigurator.TestBases.v2;
 using BuildConfigurator.TestBases.v3;
+using log4net;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using System;
@@ -20,6 +21,7 @@ namespace BuildConfigurator.Hooks
     {
 
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+        ILog log;
 
         [SetUp]
         public void Initialize()
