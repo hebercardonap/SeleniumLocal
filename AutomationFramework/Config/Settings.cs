@@ -22,6 +22,8 @@ namespace AutomationFramework.Config
 
         public static BrowserType BrowserType { get; set; }
 
+        public static string Browser { get; set; }
+
         public static SqlConnection ApplicationCon { get; set; }
 
         public static string Environment { get; set; }

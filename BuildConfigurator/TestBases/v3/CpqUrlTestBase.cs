@@ -15,6 +15,7 @@ namespace BuildConfigurator.TestBases
     {
         private static string BUILD_TRIM_URL_PART = "/build-trim/";
         private static string BUILD_COLOR_URL_PART = "/build-color/";
+        private static string BUILD_ENGINE_URL_PART = "/build-engine/";
         private static string BUILD_PACKAGE_PAGE = "/build-package/";
         private static string BUILD_URL_PART = "/build/";
         private static string SLASH = "/";
@@ -90,6 +91,29 @@ namespace BuildConfigurator.TestBases
             if (stringEqualsIgnoreCase(Brand.RAN, brand))
             {
                 string url = string.Concat(UrlBuilder.GetRangerBrandHomePage(), model, BUILD_TRIM_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else if (stringEqualsIgnoreCase(Brand.RZR, brand))
+            {
+                string url = string.Concat(UrlBuilder.getRzrLandingPageURL(), model, BUILD_TRIM_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+        }
+
+        /// <summary>
+        /// To navigate to track page for specific brand/family/model
+        /// </summary>
+        /// <param name="brand">RZR, RAN, ...</param>
+        /// <param name="model">switchback/pro-s, ...</param>
+        public void NavigateToTrackPage(string brand, string model)
+        {
+            if (stringEqualsIgnoreCase(Brand.SNO, brand))
+            {
+                string url = string.Concat(UrlBuilder.getSnoLandingPageURL(), model, BUILD_TRIM_URL_PART);
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
@@ -257,6 +281,21 @@ namespace BuildConfigurator.TestBases
             Log.Info(string.Format("Navigating to URL: {0}", buildQuoteUrl));
         }
 
-
+        /// <summary>
+        /// To navigate to engine page for specific brand/family/model
+        /// </summary>
+        /// <param name="brand">RZR, RAN, ...</param>
+        /// <param name="model">rush/pro-s, ...</param>
+        public void NavigateToEnginePage(string brand, string model)
+        {
+            if (stringEqualsIgnoreCase(Brand.SNO, brand))
+            {
+                string url = string.Concat(UrlBuilder.getSnoLandingPageURL(), model, BUILD_ENGINE_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else
+                Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+        }
     }
 }

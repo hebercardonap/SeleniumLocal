@@ -47,6 +47,11 @@ namespace BuildConfigurator.TestBases
             Assert.Greater(GetSeatSelectionCards(), 0);
         }
 
+        public void VerifySnowFamilyCardsDisplayed()
+        {
+            Assert.Greater(GetSnowFamilyCardsCount(), 0);
+        }
+
         public void SelectSnowCardByFamily(string family)
         {
             if (stringEqualsIgnoreCase(family, "rush"))

@@ -15,8 +15,8 @@ namespace BuildConfigurator.Tests.v3.Footer
     [TestFixture]
     public class RangerFooterTests : TestBase
     {
-        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
-        public void VerifyModelsPageFooterElements()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyModelsPageFooterElementsRan()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
             Models.WaitForModelsPageToLoad();
@@ -27,8 +27,8 @@ namespace BuildConfigurator.Tests.v3.Footer
             Assert.IsTrue(Models.CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
-        public void VerifyTrimsPageFooterElements()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyTrimsPageFooterElementsRan()
         {
             CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Trims.WaitForTrimsPageToLoad();
@@ -39,8 +39,8 @@ namespace BuildConfigurator.Tests.v3.Footer
             Assert.IsTrue(Trims.CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
-        public void VerifyColorsPageHeaderElements()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyColorsPageFooterElementsRan()
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
@@ -51,8 +51,8 @@ namespace BuildConfigurator.Tests.v3.Footer
             Assert.IsTrue(Colors.CalculatorModule.IsPaymentCalculatorDisplayed());
         }
 
-        [Test, Category("Ranger"), Category("Footer"), CustomRetry(3)]
-        public void VerifyAccessoriesPageHeaderElements()
+        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyAccessoriesPageFooterElementsRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();

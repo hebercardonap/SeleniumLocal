@@ -12,16 +12,16 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.AccountManagement
 {
     [TestFixture]
-    public class RangerAcctMgmtTests : TestBase
+    public class SnoAcctMgmtTests : TestBase
     {
-        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCOUNT_MGMT), RetryDynamic]
-        public void VerifySaveBuildFunctionalityRan()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.ACCOUNT_MGMT), RetryDynamic]
+        public void VerifySaveBuildFunctionalitySno()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Wheel");
-            Accessories.ClickSubcategoryByName("Trail");
-            Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
+            Accessories.ClickCategoryByName("Protection");
+            Accessories.ClickSubcategoryByName("Covers");
+            Accessories.ClickAccessoryAddByProductName("Cover - Black");
             Accessories.Toolbar.ClickToolbarSaveIcon();
             Accessories.EnterBuildName();
             Accessories.ClickSaveBuildModalSave();
@@ -33,10 +33,10 @@ namespace BuildConfigurator.Tests.v3.AccountManagement
             Accessories.DeleteSavedVehicle();
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCOUNT_MGMT), RetryDynamic]
-        public void VerifyAccountMenuNavigationRan()
+        [Test, Category(TestCategories.SNO), Category(TestCategories.ACCOUNT_MGMT), RetryDynamic]
+        public void VerifyAccountMenuNavigationSno()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.SNO, ModelPageUrl.SNO_SWITCHBACK_600_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.HeaderModule.ClickSignInHeaderIcon();
             AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);

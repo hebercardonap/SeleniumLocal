@@ -11,6 +11,8 @@ namespace BuildConfigurator.TestBases
 {
     public class AccessoriesTestBase : AccessoriesPage
     {
+        private string ICON_NOT_EXPECTED_ERROR = "Icon {0} was not expected to be displayed";
+        private string ICON__EXPECTED_ERROR = "Icon {0} was expected to be displayed";
         public AccessoriesTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -25,27 +27,27 @@ namespace BuildConfigurator.TestBases
 
         public void VerifyIconsAndAdditionalNotesNotPresent()
         {
-            Assert.IsFalse(IsSummarySaveIconDisplayed());
-            Assert.IsFalse(IsSummaryEmailIconDisplayed());
-            Assert.IsFalse(IsSummaryPrintIconDisplayed());
+            Assert.IsFalse(IsSummarySaveIconDisplayed(), string.Format(ICON_NOT_EXPECTED_ERROR, "save"));
+            Assert.IsFalse(IsSummaryEmailIconDisplayed(), string.Format(ICON_NOT_EXPECTED_ERROR, "email"));
+            Assert.IsFalse(IsSummaryPrintIconDisplayed(), string.Format(ICON_NOT_EXPECTED_ERROR, "print"));
         }
 
         public void VerifyBuildSummaryIconsNotPresent()
         {
-            Assert.IsFalse(IsSummarySaveIconDisplayed());
-            Assert.IsFalse(IsSummaryEmailIconDisplayed());
-            Assert.IsFalse(IsSummaryPrintIconDisplayed());
+            Assert.IsFalse(IsSummarySaveIconDisplayed(), string.Format(ICON_NOT_EXPECTED_ERROR, "save"));
+            Assert.IsFalse(IsSummaryEmailIconDisplayed(), string.Format(ICON_NOT_EXPECTED_ERROR, "email"));
+            Assert.IsFalse(IsSummaryPrintIconDisplayed(), string.Format(ICON_NOT_EXPECTED_ERROR, "print"));
         }
 
         public void VerifyToolbarIconsAreEnabled()
         {
-            Assert.IsTrue(Toolbar.IsFullscreenIconVisibleAndEnabled());
-            Assert.IsTrue(Toolbar.IsInteriorExteriorIconVisibleAndEnabled());
-            Assert.IsTrue(Toolbar.IsSnapshotIconVisibleAndEnabled());
-            Assert.IsTrue(Toolbar.IsEmailIconVisibleAndEnabled());
-            Assert.IsTrue(Toolbar.IsPrintIconVisibleAndEnabled());
-            Assert.IsTrue(Toolbar.IsRestartIconVisibleAndEnabled());
-            Assert.IsTrue(Toolbar.IsSaveIconVisibleAndEnabled());
+            Assert.IsTrue(Toolbar.IsFullscreenIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "full screen"));
+            Assert.IsTrue(Toolbar.IsInteriorExteriorIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "interior/exterior"));
+            Assert.IsTrue(Toolbar.IsSnapshotIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "sanpshot"));
+            Assert.IsTrue(Toolbar.IsEmailIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "email"));
+            Assert.IsTrue(Toolbar.IsPrintIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "print"));
+            Assert.IsTrue(Toolbar.IsRestartIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "restart"));
+            Assert.IsTrue(Toolbar.IsSaveIconVisibleAndEnabled(), string.Format(ICON__EXPECTED_ERROR, "save"));
         }
 
         public bool RemoveConlfictPartAndValidateInBuildSummary(string accessoryDesc)

@@ -1,10 +1,15 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Reporting;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
 using BuildConfigurator.TestBases;
 using BuildConfigurator.TestBases.v2;
 using BuildConfigurator.TestBases.v3;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +19,34 @@ namespace BuildConfigurator.Hooks
     public class TestBase : TestInitializeHook
     {
 
+        private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+
         [SetUp]
         public void Initialize()
         {
+            ReportTestManager.CreateTest(TestContext.CurrentContext.Test.Name);
             InitializeSettings();
         }
 
         [TearDown]
         public void CleanUp()
         {
+            ReportTestManager.FinalizeTest();
             _parallelConfig.Driver.Close();
             _parallelConfig.Driver.Quit();
+        }
+
+        [OneTimeSetUp]
+        public void ReportInitialize()
+        {
+            SetFrameworkSettings();
+            ReportTestManager.CreateParentTest(GetType().Name);
+        }
+
+        [OneTimeTearDown]
+        public void ReportTearDown()
+        {
+            ReportingManager.Instance.Flush();
         }
 
         public CpqUrlTestBase CPQNavigate

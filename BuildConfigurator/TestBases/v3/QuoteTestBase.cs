@@ -24,5 +24,18 @@ namespace BuildConfigurator.TestBases
             WaitForDealerNameToBeDisplayed();
             ClickAgeCheckBox();
         }
+
+        public void FillDealerExpQuoteFormDefaultData()
+        {
+            SetFirstName();
+            ClickAwayForFocusQuotePage();
+            SetLastName();
+            ClickAwayForFocusQuotePage();
+            SetEmail();
+            ClickAwayForFocusQuotePage();
+            SetPhoneNumber();
+            ClickAwayForFocusQuotePage();
+            ClickAgeCheckBox();
+        }
     }
 }
