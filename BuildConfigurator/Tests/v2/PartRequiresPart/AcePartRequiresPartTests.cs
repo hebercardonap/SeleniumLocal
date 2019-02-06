@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [TestFixture]
     public class AcePartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.ACE), Category(TestCategories.PART_REQUIRES_PART), CustomRetry(3)]
+        [Test, Category(TestCategories.ACE), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredAce()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_PRP);

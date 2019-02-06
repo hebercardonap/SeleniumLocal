@@ -18,7 +18,7 @@ namespace BuildConfigurator.Tests.v2.NavigationBar
         private static string BUILD_TRIM_PART_URL = "/build-trim";
         private static string BUILD_MODEL_PART_URL = "/build-model";
 
-        [Test, Category(TestCategories.NAVIGATION), CustomRetry(3)]
+        [Test, Category(TestCategories.NAVIGATION), RetryDynamic]
         public void VerifyNavigationBarAndIconsPresent()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
@@ -29,7 +29,7 @@ namespace BuildConfigurator.Tests.v2.NavigationBar
             Assert.IsTrue(BuildConfigurePage.IsSummaryAccessorySocialDisplayed(), "Social share icons are not displayed");
         }
 
-        [Test, Category(TestCategories.NAVIGATION), CustomRetry(3)]
+        [Test, Category(TestCategories.NAVIGATION), RetryDynamic]
         public void VerifyRzrNavigationBack()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);

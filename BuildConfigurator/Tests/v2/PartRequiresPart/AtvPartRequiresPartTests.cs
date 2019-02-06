@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [TestFixture]
     public class AtvPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.ATV), Category(TestCategories.PART_REQUIRES_PART), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredAtv()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_6x6_570_EPS_PRP);

@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
     [TestFixture]
     public class RangerConflictTests : TestBase
     {
-        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictRuleIsTriggeredForRanger()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
@@ -28,7 +28,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyRemovedPartFromConflictInBuildSummary()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);

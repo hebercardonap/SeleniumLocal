@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.GetQuote
     [TestFixture]
     public class GetQuoteFormTests : TestBase
     {
-        [Test, Category(TestCategories.QUOTE_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
         public void VerifyFirstNameValidationError()
         {
             CPQNavigate.NavigateToQuoteDefaultPage();
@@ -29,7 +29,7 @@ namespace BuildConfigurator.Tests.v2.GetQuote
 
         }
 
-        [Test, Category(TestCategories.QUOTE_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
         public void VerifyLastNameValidationError()
         {
             CPQNavigate.NavigateToQuoteDefaultPage();
@@ -44,7 +44,7 @@ namespace BuildConfigurator.Tests.v2.GetQuote
 
         }
 
-        [Test, Category(TestCategories.QUOTE_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
         public void VerifyEmailValidationError()
         {
             CPQNavigate.NavigateToQuoteDefaultPage();
@@ -59,7 +59,7 @@ namespace BuildConfigurator.Tests.v2.GetQuote
 
         }
 
-        [Test, Category(TestCategories.QUOTE_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
         public void VerifyInvalidEmailValidationError()
         {
             CPQNavigate.NavigateToQuoteDefaultPage();
@@ -75,7 +75,7 @@ namespace BuildConfigurator.Tests.v2.GetQuote
 
         }
 
-        [Test, Category(TestCategories.QUOTE_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
         public void VerifyAgeCheckboxValidationError()
         {
             CPQNavigate.NavigateToQuoteDefaultPage();

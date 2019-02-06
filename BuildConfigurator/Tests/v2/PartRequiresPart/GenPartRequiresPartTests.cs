@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [TestFixture]
     public class GenPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.GEN), Category(TestCategories.PART_REQUIRES_PART), CustomRetry(3)]
+        [Test, Category(TestCategories.GEN), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredGen()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEN, ModelPageUrl.GENERAL_1000_EPS_PRP);

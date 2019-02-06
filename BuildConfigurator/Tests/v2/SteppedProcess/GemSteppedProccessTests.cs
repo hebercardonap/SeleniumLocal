@@ -13,7 +13,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [TestFixture]
     public class GemSteppedProccessTests : TestBase
     {
-        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyGemSteppedProcessPassenger()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEM);
@@ -33,7 +33,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             Assert.IsTrue(BuildConfirmationPage.GetGemAddedAccessoriesCount() > 0);
         }
 
-        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyGemSteppedProcessUtility()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEM);

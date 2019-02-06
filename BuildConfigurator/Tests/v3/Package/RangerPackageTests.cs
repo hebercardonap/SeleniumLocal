@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.Package
     [TestFixture]
     public class RangerPackageTests : TestBase
     {
-        [Test, Category("Packages"), Category("Ranger"), CustomRetry(3)]
+        [Test, Category("Packages"), Category("Ranger"), RetryDynamic]
         public void VerifyPackageAddPersistUntilBuildSubmission()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);

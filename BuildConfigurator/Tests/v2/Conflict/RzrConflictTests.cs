@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [TestFixture]
     public class RzrConflictTests : TestBase
     {
-        [Test, Category(TestCategories.RZR), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
+        [Test, Category(TestCategories.RZR), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredRzr()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_CONFLICT);
