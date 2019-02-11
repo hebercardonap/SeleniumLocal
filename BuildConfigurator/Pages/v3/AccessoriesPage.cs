@@ -50,6 +50,8 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_CONFIRMATION_BUILD_SAVE = By.XPath("//restart-build//button[contains(@class,'save')]");
         private static By BY_SUMMARY_ACCESSORY_CTA = By.CssSelector("div[data-slnm-attr='summaryAccessoryCTA']");
         private static By BY_KIT_PACKAGE_CARET = By.CssSelector("button[class='kit-package-item']");
+        private static By BY_PRODUCT_DETAILS_LINK = By.CssSelector("button[data-slnm-attr='productDetailsLink']");
+        private static By BY_PRODUCT_INFO_DESCRIPTION = By.CssSelector("div[class='build-accessories-product-info-description']");
 
 
 
@@ -134,6 +136,27 @@ namespace BuildConfigurator.Pages.v3
                     IWebElement button = product.FindElement(BY_ACCESSORY_PRODUCT_CTA);
                     DriverActions.ScrollToElement(button);
                     DriverActions.clickElement(button);
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Fail("The product with name {0} is not present", productName);
+        }
+
+        public void ClickProductDetailsLinkByDesc(string productName)
+        {
+            bool isFound = false;
+            List<IWebElement> products = Driver.FindElements(BY_ACCESORIES_PRODUCT).ToList();
+            foreach (var product in products)
+            {
+                string productLabel = product.Text;
+                if (stringEqualsIgnoreCase(productLabel, productName)
+                    || stringContainsIgnoreCase(productLabel, productName))
+                {
+                    isFound = true;
+                    IWebElement detailsLinks = product.FindElement(BY_PRODUCT_DETAILS_LINK);
+                    DriverActions.ScrollToElement(detailsLinks);
+                    DriverActions.clickElement(detailsLinks);
                     break;
                 }
             }
@@ -395,6 +418,11 @@ namespace BuildConfigurator.Pages.v3
         public void ClickKitPackageDropDown()
         {
             DriverActions.clickElement(BY_KIT_PACKAGE_CARET);
+        }
+
+        public bool IsProductInfoDescDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_PRODUCT_INFO_DESCRIPTION);
         }
     }
 }
