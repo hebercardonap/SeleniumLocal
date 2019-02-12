@@ -23,7 +23,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
             BuildConfigurePage.ClickAccessorySubCategory("Storage & Bed Accessories");
             BuildConfigurePage.ClickSpecificAccessoryCardAddButton("Spare Tire Carrier");
             BuildConfigurePage.ClickAccessoryCategory("Protection");
-            BuildConfigurePage.ClickAccessorySubCategory("Custom Cage Systems");
+            BuildConfigurePage.ClickAccessorySubCategory("Cage Systems");
             BuildConfigurePage.ClickSpecificAccessoryCardAddButton("Cage system - Black");
             BuildConfigurePage.VerifyConflictContainerDisplayed();
         }
