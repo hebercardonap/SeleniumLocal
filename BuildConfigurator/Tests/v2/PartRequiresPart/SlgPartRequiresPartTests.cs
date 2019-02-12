@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [TestFixture]
     public class SlgPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.SLG), Category(TestCategories.PART_REQUIRES_PART), CustomRetry(3)]
+        [Test, Category(TestCategories.SLG), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredSlg()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.SLG, ModelPageUrl.SLG_S_PRP);

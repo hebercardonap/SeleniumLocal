@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [TestFixture]
     public class IndConflictTests : TestBase
     {
-        [Test, Category(TestCategories.GEM), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredInd()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.IND, ModelPageUrl.INDIAN_CHIEFTAIN_CONFLICT);

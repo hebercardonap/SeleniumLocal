@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.Features
     [TestFixture]
     public class CTAFunctionalityTests : TestBase
     {
-        [Test, Category(TestCategories.UI_FEATURES), CustomRetry(3)]
+        [Test, Category(TestCategories.UI_FEATURES), RetryDynamic]
         public void VerifyRzrRestartBuildFunctionality()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
@@ -28,7 +28,7 @@ namespace BuildConfigurator.Tests.v2.Features
             BuildConfigurePage.VerifyItemsIdsNotPresentBuildSummary(new string[] { "2881198" });
         }
 
-        [Test, Category(TestCategories.UI_FEATURES), CustomRetry(3)]
+        [Test, Category(TestCategories.UI_FEATURES), RetryDynamic]
         public void VerifyAccessoryImageOpensOverview()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);

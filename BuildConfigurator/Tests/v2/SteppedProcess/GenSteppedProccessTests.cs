@@ -13,7 +13,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [TestFixture]
     public class GenSteppedProccessTests : TestBase
     {
-        [Test, Category(TestCategories.STEPPED_PROCESS), Category(TestCategories.GEN), CustomRetry(3)]
+        [Test, Category(TestCategories.STEPPED_PROCESS), Category(TestCategories.GEN), RetryDynamic]
         public void VerifyGenSteppedProcessTwoSeats()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEN);
@@ -21,7 +21,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.STEPPED_PROCESS), Category(TestCategories.GEN), CustomRetry(3)]
+        [Test, Category(TestCategories.STEPPED_PROCESS), Category(TestCategories.GEN), RetryDynamic]
         public void VerifyGenSteppedProcessFourSeats()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEN);

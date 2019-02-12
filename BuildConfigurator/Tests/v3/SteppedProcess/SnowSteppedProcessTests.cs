@@ -13,7 +13,7 @@ namespace BuildConfigurator.Tests.v3.SteppedProcess
     [TestFixture]
     class SnowSteppedProcessTests : TestBase
     {
-        [Test, Category(TestCategories.SNO), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.SNO), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void SnowSteppedProcess()
         {
             CPQNavigate.NavigateToModelsPage(Brand.SNO);

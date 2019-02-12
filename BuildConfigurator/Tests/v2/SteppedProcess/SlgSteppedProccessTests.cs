@@ -13,14 +13,14 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [TestFixture]
     public class SlgSteppedProccessTests : TestBase
     {
-        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifySlgSteppedProcessS()
         {
             CPQNavigate.NavigateToModelsPage(Brand.SLG);
             BuildModelPage.ClickSlingshotByVersion("S");
         }
 
-        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifySlgSteppedProcessTouring()
         {
             CPQNavigate.NavigateToModelsPage(Brand.SLG);
@@ -28,7 +28,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifySlgSteppedProcessSL()
         {
             CPQNavigate.NavigateToModelsPage(Brand.SLG);
@@ -36,7 +36,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteTrimSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifySlgSteppedProcessSLR()
         {
             CPQNavigate.NavigateToModelsPage(Brand.SLG);

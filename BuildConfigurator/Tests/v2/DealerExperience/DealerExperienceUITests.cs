@@ -16,7 +16,7 @@ namespace BuildConfigurator.Tests.v2.DealerExperience
     {
         private static string DEALER_ID = "02040900";
 
-        [Test, Category(TestCategories.DEALER_EXPERIENCE), CustomRetry(3)]
+        [Test, Category(TestCategories.DEALER_EXPERIENCE), RetryDynamic]
         public void VerifyUIElementsHiddenDealerExp()
         {
             CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST, DEALER_ID);
@@ -25,7 +25,7 @@ namespace BuildConfigurator.Tests.v2.DealerExperience
             Assert.IsFalse(BuildConfigurePage.IsIconContainerDisplayed());
         }
 
-        [Test, Category(TestCategories.DEALER_EXPERIENCE), CustomRetry(3)]
+        [Test, Category(TestCategories.DEALER_EXPERIENCE), RetryDynamic]
         public void VerifyVirtualKeyboardDealerExp()
         {
             CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST, DEALER_ID);

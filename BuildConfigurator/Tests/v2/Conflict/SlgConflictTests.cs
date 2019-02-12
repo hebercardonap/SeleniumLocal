@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [TestFixture]
     public class SlgConflictTests : TestBase
     {
-        [Test, Category(TestCategories.SLG), Category(TestCategories.ACCESSORY_CONFLICTS), CustomRetry(3)]
+        [Test, Category(TestCategories.SLG), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredSlg()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.SLG, ModelPageUrl.SLG_S_CONFLICT);

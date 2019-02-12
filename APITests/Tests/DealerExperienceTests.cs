@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 namespace APITests.Tests
 {
     [TestFixture]
-    [NonParallelizable]
-    [SingleThreadedAttribute]
     public class DealerExperienceTests : DealerExperienceTestBase
     {
         private static readonly string TEST_DEALER = "02040900";

@@ -13,7 +13,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [TestFixture]
     public class AtvSteppedProccessTests : TestBase
     {
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyAtvSteppedProcessOneSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);
@@ -22,7 +22,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyAtvSteppedProcessTwoSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);

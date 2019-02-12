@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.Features
     [TestFixture]
     public class SaveBuildTests : TestBase
     {
-        [Test, Category(TestCategories.SAVE_BUILD), Category(TestCategories.RZR), CustomRetry(1)]
+        [Test, Category(TestCategories.SAVE_BUILD), Category(TestCategories.RZR), RetryDynamic]
         public void VerifyRzrSaveBuildFunctionality()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);

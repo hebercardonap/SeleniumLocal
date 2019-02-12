@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [TestFixture]
     public class GemPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.GEM), Category(TestCategories.PART_REQUIRES_PART), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredGem()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_PRP);
@@ -26,7 +26,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
 
         }
 
-        [Test, Category(TestCategories.GEM), Category(TestCategories.PART_REQUIRES_PART), CustomRetry(3)]
+        [Test, Category(TestCategories.GEM), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPrpPersistsAfterConflictGem()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_PRP);

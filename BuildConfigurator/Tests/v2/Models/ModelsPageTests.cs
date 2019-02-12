@@ -13,14 +13,14 @@ namespace BuildConfigurator.Tests.v2.Models
     [TestFixture]
     public class ModelsPageTests : TestBase
     {
-        [Test, Category(TestCategories.IND), Category(TestCategories.MODELS_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.IND), Category(TestCategories.MODELS_PAGE), RetryDynamic]
         public void VerifyNotDuplicateModelsInd()
         {
             CPQNavigate.NavigateToModelsPage(Brand.IND);
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.RZR), Category(TestCategories.MODELS_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.RZR), Category(TestCategories.MODELS_PAGE), RetryDynamic]
         public void VerifyNotDuplicateModelsRzr()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RZR);
@@ -34,7 +34,7 @@ namespace BuildConfigurator.Tests.v2.Models
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.MODELS_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.MODELS_PAGE), RetryDynamic]
         public void VerifyNotDuplicateModelsAtv()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);
@@ -45,14 +45,14 @@ namespace BuildConfigurator.Tests.v2.Models
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.ACE), Category(TestCategories.MODELS_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.ACE), Category(TestCategories.MODELS_PAGE), RetryDynamic]
         public void VerifyNotDuplicateModelsAce()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ACE);
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.GEN), Category(TestCategories.MODELS_PAGE), CustomRetry(3)]
+        [Test, Category(TestCategories.GEN), Category(TestCategories.MODELS_PAGE), RetryDynamic]
         public void VerifyNotDuplicateModelsGen()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEN);

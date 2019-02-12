@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     public class IndSteppedProccessTests : TestBase
     {
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyIndSteppedProcessScout()
         {
             CPQNavigate.NavigateToCategoryPage(Brand.IND);
@@ -23,7 +23,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyIndSteppedProcessChief()
         {
             CPQNavigate.NavigateToCategoryPage(Brand.IND);
@@ -32,7 +32,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyIndSteppedProcessSpringfield()
         {
             CPQNavigate.NavigateToCategoryPage(Brand.IND);
@@ -41,7 +41,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyIndSteppedProcessChieftain()
         {
             CPQNavigate.NavigateToCategoryPage(Brand.IND);
@@ -50,7 +50,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyIndSteppedProcessRoadmaster()
         {
             CPQNavigate.NavigateToCategoryPage(Brand.IND);
@@ -59,7 +59,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), CustomRetry(3)]
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyIndSteppedProcessDarkhorse()
         {
             CPQNavigate.NavigateToCategoryPage(Brand.IND);
