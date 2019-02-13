@@ -32,7 +32,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             BuildQuotePage.FillQuoteFormDefaultData();
             BuildQuotePage.ClickGetInternetPriceButton();
             BuildConfirmationPage.WaitForBuildConfirmationPageToLoad();
-            BuildConfirmationPage.VerifyBuildconfirmationPageIsAsExpected();
+            BuildConfirmationPage.VerifyNewBuildConfirmationAsExpected();
         }
 
         [Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
@@ -54,7 +54,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             BuildQuotePage.FillQuoteFormDefaultData();
             BuildQuotePage.ClickGetInternetPriceButton();
             BuildConfirmationPage.WaitForBuildConfirmationPageToLoad();
-            BuildConfirmationPage.VerifyBuildconfirmationPageIsAsExpected();
+            BuildConfirmationPage.VerifyNewBuildConfirmationAsExpected();
         }
 
         [Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
@@ -76,7 +76,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             BuildQuotePage.FillQuoteFormDefaultData();
             BuildQuotePage.ClickGetInternetPriceButton();
             BuildConfirmationPage.WaitForBuildConfirmationPageToLoad();
-            BuildConfirmationPage.VerifyBuildconfirmationPageIsAsExpected();
+            BuildConfirmationPage.VerifyNewBuildConfirmationAsExpected();
         }
     }
 }

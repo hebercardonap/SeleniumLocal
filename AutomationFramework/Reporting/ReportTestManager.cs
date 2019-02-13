@@ -42,10 +42,6 @@ namespace AutomationFramework.Reporting
                 _childTest = _parentTest.CreateNode(testName);
                 testList.Add(testName, _childTest);
             }
-            else
-            {
-                _childTest = testList[testName];
-            }
             return _childTest;
         }
 

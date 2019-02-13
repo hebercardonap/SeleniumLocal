@@ -83,7 +83,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             BuildQuotePage.FillQuoteFormDefaultData();
             BuildQuotePage.ClickGetInternetPriceButton();
             BuildConfirmationPage.WaitForBuildConfirmationPageToLoad();
-            BuildConfirmationPage.VerifyBuildconfirmationPageIsAsExpected();
+            BuildConfirmationPage.VerifyNewBuildConfirmationAsExpected();
         }
     }
 }
