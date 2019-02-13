@@ -32,13 +32,10 @@ namespace BuildConfigurator.Tests.v3.UIFeatures
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickSubcategoryByName("Ride Command");
             Packages.ClickPackageDetailsLinkByDesc("Ride Command");
             Assert.IsTrue(Packages.IsPackageInfoDescDisplayed(), "Package Info Details is not displayed");
             Packages.ClickSubProductDetailsLinkByDesc("Touch Display");
             Assert.IsTrue(Packages.IsSubProductInfoDescDisplayed(), "Sub product Info Details is not displayed");
-            Packages.ClickSubProductDetailsLinkByDesc("Touch Display");
-            Assert.IsFalse(Packages.IsSubProductInfoDescDisplayed(), "Sub product Info Details is not hidden");
         }
     }
 }
