@@ -18,7 +18,15 @@ namespace BuildConfigurator.TestBases.v2
         public void VerifyBuildconfirmationPageIsAsExpected()
         {
             Assert.IsTrue(IsTotalPriceDisplayed());
-            Assert.IsTrue(GetAddedAccessoriesCount() > 0);
+            Assert.IsTrue(GetAddedAccessoriesCount() > 0, "Accessories not present on build confirmation");
+        }
+
+        public void VerifyNewBuildConfirmationAsExpected()
+        {
+            Assert.IsTrue(IsTotalPriceDisplayed(), "Total price was not displayed");
+            Assert.IsTrue(IsConfirmWholegoodNameDisplayed(), "Wholegood name not displayed on build confirmation");
+            Assert.IsTrue(IsWholegoodImgDisplayed(), "Wholegood image not displayed on build confirmation");
+            Assert.IsTrue(GetAddedAccessoryCountNewConfirmation() > 0, "Accessories not present on build confirmation");
         }
     }
 }

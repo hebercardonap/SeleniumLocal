@@ -20,6 +20,11 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_GEM_SUMMARY_ACCESORY = By.CssSelector("div[class='quote-confirmation--build__summary-accessory-container'] div[class='quote-confirmation--build__summary-accessory']");
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//div[@class='quote-confirmation--build__summary-toggle-icon']");
         private static By BY_GEM_BUILD_CONF_PAGE = By.CssSelector("header[class='quote-confirmation__header-container']");
+        private static By BY_WHOLEGOOD_SUMMARY_TITLE = By.CssSelector("span[class~='display-block']");
+        private static By BY_SUMMARY_PRINT_LINK = By.CssSelector("button[class~='summary-print']");
+        private static By BY_WHOLEGOOD_IMG = By.CssSelector("img[class~='img-responsive']");
+        private static By BY_NEW_ACCESSORY_CONF_SUMMARY = By.XPath("//div[@class='added-products'] //div[contains(@class,'product border')]");
+
 
         public BuildConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -41,6 +46,12 @@ namespace BuildConfigurator.Pages.v2
             return addedAccessories.Count;
         }
 
+        public int GetAddedAccessoryCountNewConfirmation()
+        {
+            List<IWebElement> addedAccessories = Driver.FindElements(BY_NEW_ACCESSORY_CONF_SUMMARY).ToList();
+            return addedAccessories.Count;
+        }
+
         public int GetGemAddedAccessoriesCount()
         {
             List<IWebElement> addedAccessories = Driver.FindElements(BY_GEM_SUMMARY_ACCESORY).ToList();
@@ -55,6 +66,21 @@ namespace BuildConfigurator.Pages.v2
         public void WaitForGemConfirmationPageToLoad()
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_GEM_BUILD_CONF_PAGE);
+        }
+
+        public bool IsConfirmWholegoodNameDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_WHOLEGOOD_SUMMARY_TITLE);
+        }
+
+        public bool IsSummaryPrintDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SUMMARY_PRINT_LINK);
+        }
+
+        public bool IsWholegoodImgDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_WHOLEGOOD_IMG);
         }
     }
 }
