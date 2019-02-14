@@ -52,6 +52,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_KIT_PACKAGE_CARET = By.CssSelector("button[class='kit-package-item']");
         private static By BY_PRODUCT_DETAILS_LINK = By.CssSelector("button[data-slnm-attr='productDetailsLink']");
         private static By BY_PRODUCT_INFO_DESCRIPTION = By.CssSelector("div[class='build-accessories-product-info-description']");
+        private static By BY_KIT_PACKAGE_SUMMARY_INFO = By.CssSelector("div[class='kit-package__header summary-accessory-info']");
 
 
 
@@ -361,6 +362,26 @@ namespace BuildConfigurator.Pages.v3
                 string description = item.Text;
 
                 if (description.Length > 0 && stringContainsIgnoreCase(description, productDesc))
+                {
+                    isFound = true;
+                    break;
+                }
+                else
+                    isFound = false;
+            }
+            return isFound;
+        }
+
+        public bool IsKitPackageDescPresentBuildSummary(string kitPackage)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_KIT_PACKAGE_SUMMARY_INFO).ToList();
+
+            foreach (var item in summaryProductIds)
+            {
+                string description = item.Text;
+
+                if (description.Length > 0 && stringContainsIgnoreCase(description, kitPackage))
                 {
                     isFound = true;
                     break;

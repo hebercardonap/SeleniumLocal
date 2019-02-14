@@ -27,7 +27,19 @@ namespace BuildConfigurator.Pages
         private static By BY_ACCESORIES_PRODUCT = PolarisSeleniumAttribute.PolarisSeleniumSelector("buildAccessoryProduct");
         private static By BY_PRODUCT_DETAILS_LINK = By.CssSelector("button[data-slnm-attr='productDetailsLink']");
         private static By BY_PACKAGE_INFO_DESCRIPTION = By.CssSelector("div[class='build-accessories-product-info-description']");
+        private static By BY_BUILD_SAVE_NAME_TXT = By.Id("build-model-save-vehicle-name");
+        private static By BY_BUILD_SAVE_LINK = By.CssSelector("div[class='save-actions'] div[class='save']");
+        private static By BY_PACKAGE_NAMES = By.XPath("//div[@class='build-accessories-subcategory-header']//button");
+        private static By BY_PACKAGE_SUBCATEGORY_BTN = By.CssSelector("button[class='build-accessories-subcategory-title']");
+        private static By BY_PACKAGE_SUBCATEGORY_HEADERS = By.XPath("//div[@class='build-accessories-subcategory-header']");
+        private static By BY_SUBCATEGORY_EXPAND_COLLAPSE_SYMBOL = By.CssSelector("div[class~='build-accessories-symbol']");
+
         private static By BY_BUTTON_TAG_NAME = By.TagName("button");
+        private static string CLASS = "class";
+        private static string PLUS = "plus";
+
+        private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+        private static string BUILD_NAME = "TEST BUILD " + DATE_VALUE;
 
         private static Random rnd = new Random();
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
@@ -119,6 +131,7 @@ namespace BuildConfigurator.Pages
 
         public void ClickPackageDetailsLinkByDesc(string productName)
         {
+            ClickByPackageNameExpandIfNeeded(productName);
             bool isFound = false;
             List<IWebElement> products = Driver.FindElements(BY_ACCESORIES_PRODUCT).ToList();
             foreach (var product in products)
@@ -138,9 +151,92 @@ namespace BuildConfigurator.Pages
                 Assert.Fail("The product with name {0} is not present", productName);
         }
 
+        public void ClickAddPackageByDesc(string productName)
+        {
+            ClickByPackageNameExpandIfNeeded(productName);
+            bool isFound = false;
+            List<IWebElement> products = Driver.FindElements(BY_ACCESORIES_PRODUCT).ToList();
+            foreach (var product in products)
+            {
+                string productLabel = product.Text;
+                if (stringEqualsIgnoreCase(productLabel, productName)
+                    || stringContainsIgnoreCase(productLabel, productName))
+                {
+                    isFound = true;
+                    IWebElement productCTA = product.FindElement(BY_CHILD_ADD_BUTTON);
+                    DriverActions.ScrollToElement(productCTA);
+                    DriverActions.clickElement(productCTA);
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Fail("The product with name {0} is not present", productName);
+        }
+
         public bool IsPackageInfoDescDisplayed()
         {
             return DriverActions.IsElementPresent(BY_PACKAGE_INFO_DESCRIPTION);
+        }
+
+        public void EnterBuildName()
+        {
+            Driver.FindElement(BY_BUILD_SAVE_NAME_TXT).SendKeys(BUILD_NAME);
+        }
+
+        public void ClickSaveBuildModalSave()
+        {
+            DriverActions.clickElement(BY_BUILD_SAVE_LINK);
+        }
+
+        public void ClickPackageByName(string package)
+        {
+            bool isFound = false;
+            List<IWebElement> packages = Driver.FindElements(BY_PACKAGE_NAMES).ToList();
+
+            foreach (var item in packages)
+            {
+                string packageText = item.Text;
+                if (stringEqualsIgnoreCase(packageText, package)
+                    || stringContainsIgnoreCase(packageText, package))
+                {
+                    isFound = true;
+                    DriverActions.clickElement(item);
+                    break;
+                }
+            }
+            if (!isFound)
+                Assert.Fail("The package with name {0} is not present", package);
+        
+        }
+
+        public string GetSymbolValue(IWebElement element)
+        {
+            string symbolValue = element.FindElement(BY_SUBCATEGORY_EXPAND_COLLAPSE_SYMBOL).GetAttribute(CLASS);
+            return symbolValue;
+        }
+
+        public void ClickByPackageNameExpandIfNeeded(string packageName)
+        {
+            bool isFound = false;
+            List<IWebElement> packages = Driver.FindElements(BY_PACKAGE_SUBCATEGORY_HEADERS).ToList();
+
+            foreach (var item in packages)
+            {
+                string packageBtnText = item.Text;
+                if (stringEqualsIgnoreCase(packageBtnText, packageName)
+                    || stringContainsIgnoreCase(packageBtnText, packageName))
+                {
+                    isFound = true;
+                    string symbol = GetSymbolValue(item);
+                    if (stringContainsIgnoreCase(symbol, PLUS))
+                    {
+                        DriverActions.clickElement(item);
+                        break;
+                    }
+                }
+            }
+            if (!isFound)
+                Assert.Fail("The package with name {0} is not present", packageName);
         }
     }
 }

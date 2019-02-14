@@ -24,7 +24,7 @@ namespace BuildConfigurator.Tests.v2.NavigationBar
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
             BuildConfigurePage.WaitForBuildPageToLoad();
             Assert.IsTrue(BuildConfigurePage.IsNavigationBarDisplayed(), "Navigation bar is not present");
-            Assert.True(BuildConfigurePage.IsIconContainerDisplayed(), "Icon container is not displayed");
+            Assert.IsTrue(BuildConfigurePage.IsIconContainerDisplayed(), "Icon container is not displayed");
             BuildConfigurePage.ClickBuildSummaryButton();
             Assert.IsTrue(BuildConfigurePage.IsSummaryAccessorySocialDisplayed(), "Social share icons are not displayed");
         }

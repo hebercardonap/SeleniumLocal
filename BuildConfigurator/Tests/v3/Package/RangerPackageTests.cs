@@ -14,7 +14,8 @@ namespace BuildConfigurator.Tests.v3.Package
     [TestFixture]
     public class RangerPackageTests : TestBase
     {
-        [Test, Category("Packages"), Category("Ranger"), RetryDynamic]
+        [Test, Category(TestCategories.PACKAGES_PAGE), Category(TestCategories.RAN), RetryDynamic]
+        [Ignore("Ignoring this tests as id is not changing until submission is done")]
         public void VerifyPackageAddPersistUntilBuildSubmission()
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
@@ -37,5 +38,26 @@ namespace BuildConfigurator.Tests.v3.Package
             Confirmation.WaitUntilConfirmationPageLoads();
             Assert.AreEqual(Confirmation.GetQuoteModelId(), ModelId);
         }
+
+        [Test, Category(TestCategories.PACKAGES_PAGE), Category(TestCategories.RAN), RetryDynamic]
+        public void VerifyPackageAddPersistsAfterBuildSaved()
+        {
+            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
+            Packages.WaitForPackagesPageToLoad();
+            Packages.ClickAddPackageByDesc("Ride Command");
+            Packages.FooterModule.ClickFooterNextButton();
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.ClickCategoryByName("Wheel");
+            Accessories.ClickSubcategoryByName("Trail");
+            Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
+            Accessories.Toolbar.ClickToolbarSaveIcon();
+            Accessories.EnterBuildName();
+            Accessories.ClickSaveBuildModalSave();
+            AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Ride Command" });
+        }
+
     }
 }

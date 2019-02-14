@@ -73,7 +73,25 @@ namespace BuildConfigurator.TestBases
 
             if (itemsMissing.Count > 0)
             {
-                Assert.Fail("Item descriptions missing on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+                Assert.Fail("Item descriptions missing on build summary: \n{0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
+
+        public void VerifyKitPackageDescPresentBuildSummary(string[] itemDescriptions)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemDescriptions)
+            {
+                if (!IsKitPackageDescPresentBuildSummary(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Kit/Package descriptions missing on build summary: \n{0}", string.Join("\n", itemsMissing.ToArray()));
             }
         }
 
@@ -91,7 +109,7 @@ namespace BuildConfigurator.TestBases
 
             if (itemsMissing.Count > 0)
             {
-                Assert.Fail("Item descriptions present on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+                Assert.Fail("Item descriptions present on build summary: \n{0}", string.Join("\n", itemsMissing.ToArray()));
             }
         }
 
@@ -109,8 +127,16 @@ namespace BuildConfigurator.TestBases
 
             if (itemsMissing.Count > 0)
             {
-                Assert.Fail("Item ID missing on build summary: {0}", string.Join("\n", itemsMissing.ToArray()));
+                Assert.Fail("Item ID missing on build summary: \n{0}", string.Join("\n", itemsMissing.ToArray()));
             }
+        }
+
+        public void OpenSavedBuildAndDelete()
+        {
+            AccountModule.ClickAcctLoggedInIcon();
+            AccountModule.ClickAcctModalSavedVehicles();
+            Assert.IsTrue(VerifySavedBuildIsPresent());
+            DeleteSavedVehicle();
         }
     }
 }

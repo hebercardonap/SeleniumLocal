@@ -66,5 +66,26 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Accessories.VerifyIconsAndAdditionalNotesNotPresent();
         }
+
+        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
+        public void VerifyKitAddedDisplayedSummary()
+        {
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.ClickCategoryByName("Utility");
+            Accessories.ClickSubcategoryByName("Plow Systems");
+            Accessories.ClickAccessoryAddByProductName("Steel Blade");
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.WaitUntilBuildSummaryIsDisplayed();
+            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Plow System" });
+            Accessories.Toolbar.ClickToolbarSaveIcon();
+            Accessories.EnterBuildName();
+            Accessories.ClickSaveBuildModalSave();
+            AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Plow System" });
+            Accessories.OpenSavedBuildAndDelete();
+        }
     }
 }

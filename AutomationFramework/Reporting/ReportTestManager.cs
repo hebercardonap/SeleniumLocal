@@ -12,10 +12,9 @@ namespace AutomationFramework.Reporting
     public class ReportTestManager
     {
         private static Dictionary<string, ExtentTest> testList = new Dictionary<string, ExtentTest>();
-        ILog log;
 
         [ThreadStatic]
-        private static ExtentTest _parentTest;
+        private static ExtentTest _parentTest;  
 
         [ThreadStatic]
         private static ExtentTest _childTest;
