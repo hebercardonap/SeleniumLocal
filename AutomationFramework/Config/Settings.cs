@@ -36,6 +36,8 @@ namespace AutomationFramework.Config
 
         public static string ReportPath { get; set; }
 
+        public static int RetryCount { get; set; }
+
         private static bool _fileCreated = false;
         public static bool FileCreated
         {

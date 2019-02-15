@@ -24,6 +24,7 @@ namespace AutomationFramework.Config
             Settings.LogPath = ConfigurationManager.AppSettings["logPath"].ToString();
             Settings.BrowserType = (BrowserType)Enum.Parse(typeof(BrowserType), ConfigurationManager.AppSettings["browser"]);
             Settings.Browser = ConfigurationManager.AppSettings["browser"];
+            Settings.RetryCount = Convert.ToInt32(ConfigurationManager.AppSettings["retryCount"]);
         }
         public static string getEnvironment()
         {

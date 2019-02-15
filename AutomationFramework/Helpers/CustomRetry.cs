@@ -73,7 +73,8 @@ namespace AutomationFramework.Helpers
                         && results != ResultState.SetUpError
                         && results != ResultState.SetUpFailure
                         && results != ResultState.TearDownError
-                        && results != ResultState.ChildFailure)
+                        && results != ResultState.ChildFailure
+                        && results != ResultState.Cancelled)
                     {
                         break;
                     }

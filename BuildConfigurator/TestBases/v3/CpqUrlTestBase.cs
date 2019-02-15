@@ -20,7 +20,7 @@ namespace BuildConfigurator.TestBases
         private static string BUILD_URL_PART = "/build/";
         private static string SLASH = "/";
         private static string TEST_DEALER_PART_ID = "?dealerid={0}";
-        private static string BUILD_QUOTE_URL_PART = "/rzr-s-900-white/build-quote/";
+        private static string BUILD_QUOTE_URL_PART = "rzr-s-900-white/build-quote/";
 
         public CpqUrlTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
