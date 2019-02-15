@@ -33,6 +33,7 @@ namespace BuildConfigurator.Pages
         private static By BY_PACKAGE_SUBCATEGORY_BTN = By.CssSelector("button[class='build-accessories-subcategory-title']");
         private static By BY_PACKAGE_SUBCATEGORY_HEADERS = By.XPath("//div[@class='build-accessories-subcategory-header']");
         private static By BY_SUBCATEGORY_EXPAND_COLLAPSE_SYMBOL = By.CssSelector("div[class~='build-accessories-symbol']");
+        private static By BY_PACKAGE_SUBPRODUCT_LABELS = By.CssSelector("div[class~='build-accessories-product-info-subproduct'] div[class='build-accessories-product-title-label']");
 
         private static By BY_BUTTON_TAG_NAME = By.TagName("button");
         private static string CLASS = "class";
@@ -237,6 +238,19 @@ namespace BuildConfigurator.Pages
             }
             if (!isFound)
                 Assert.Fail("The package with name {0} is not present", packageName);
+        }
+
+        public List<string> GetPackageSubproductsNames()
+        {
+            List<string> subproducts = new List<string>();
+            List<IWebElement> subproductsElements = Driver.FindElements(BY_PACKAGE_SUBPRODUCT_LABELS).ToList();
+
+            foreach (var item in subproductsElements)
+            {
+                subproducts.Add(item.Text);
+            }
+
+            return subproducts;
         }
     }
 }

@@ -87,5 +87,21 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Plow System" });
             Accessories.OpenSavedBuildAndDelete();
         }
+
+        [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
+        public void VerifyPackageSubproductsSummary()
+        {
+            List<string> subproducts = new List<string>();
+            CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
+            Packages.WaitForPackagesPageToLoad();
+            Packages.ClickPackageDetailsLinkByDesc("Ride Command");
+            subproducts = Packages.GetPackageSubproductsNames();
+            Packages.ClickAddPackageByDesc("Ride Command");
+            Packages.FooterModule.ClickFooterNextButton();
+            Accessories.WaitForAccessoriesPageToLoad();
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.ClickKitPackageDropDown();
+            Accessories.VerifyItemsDescPresentBuildSummary(subproducts.ToArray());
+        }
     }
 }
