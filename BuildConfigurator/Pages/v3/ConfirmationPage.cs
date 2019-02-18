@@ -17,6 +17,9 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_SUMMARY_ADDED_ACCESSORY = By.XPath("//*[contains(@class, 'split-50')]");
         private static By BY_WHOLEGOOD_MODEL_ID = By.XPath("//div[@class='text-align-right pull-right font-size-sm split-right']");
         private static By BY_SUMMARY_PRINT_BUTTON = By.CssSelector("button[class~='summary-print']");
+        private static By BY_ADDED_PACKAGES_CONTAINER = By.CssSelector("div[class='added-packages']");
+        private static By BY_ADDED_PKG_TITLES = By.CssSelector("div[class='added-packages'] h4");
+        private static By BY_PACKAGE_SUBPRODUCT_NAMES = By.CssSelector("div[class='added-packages'] div[class~='product-name']");
 
         public ConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -49,6 +52,59 @@ namespace BuildConfigurator.Pages.v3
         public bool IsSummaryPrintLinkDisplayed()
         {
             return DriverActions.IsElementPresent(BY_SUMMARY_PRINT_BUTTON);
+        }
+
+        public List<string> GetConfirmationPackageSubproductsNames()
+        {
+            List<string> subproducts = new List<string>();
+            List<IWebElement> subproductsElements = Driver.FindElements(BY_PACKAGE_SUBPRODUCT_NAMES).ToList();
+
+            foreach (var item in subproductsElements)
+            {
+                subproducts.Add(item.Text);
+            }
+
+            return subproducts;
+        }
+
+        public bool IsProductDescPresentBuildConfirmation(string productDesc)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_PACKAGE_SUBPRODUCT_NAMES).ToList();
+
+            foreach (var item in summaryProductIds)
+            {
+                string description = item.Text;
+
+                if (description.Length > 0 && stringContainsIgnoreCase(description, productDesc))
+                {
+                    isFound = true;
+                    break;
+                }
+                else
+                    isFound = false;
+            }
+            return isFound;
+        }
+
+        public bool IsPackagePresentConfirmation(string package)
+        {
+            bool isFound = false;
+            List<IWebElement> summaryProductIds = Driver.FindElements(BY_ADDED_PKG_TITLES).ToList();
+
+            foreach (var item in summaryProductIds)
+            {
+                string description = item.Text;
+
+                if (description.Length > 0 && stringContainsIgnoreCase(description, package))
+                {
+                    isFound = true;
+                    break;
+                }
+                else
+                    isFound = false;
+            }
+            return isFound;
         }
     }
 }

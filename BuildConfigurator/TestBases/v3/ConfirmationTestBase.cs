@@ -20,5 +20,41 @@ namespace BuildConfigurator.TestBases
             Assert.Greater(AccessoryAddedCount(), 0);
             Assert.IsTrue(IsBuildSummaryHeaderDisplayed());
         }
+
+        public void VerifyPkgSubproductsPresentConfirmation(string[] itemDescriptions)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemDescriptions)
+            {
+                if (!IsProductDescPresentBuildConfirmation(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Item descriptions missing on build confirmation: \n{0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
+
+        public void VerifyPackageDescPresentConfirmation(string[] itemDescriptions)
+        {
+            List<string> itemsMissing = new List<string>();
+
+            foreach (var item in itemDescriptions)
+            {
+                if (!IsPackagePresentConfirmation(item))
+                {
+                    itemsMissing.Add(item);
+                }
+            }
+
+            if (itemsMissing.Count > 0)
+            {
+                Assert.Fail("Package descriptions missing on build confirmation: \n{0}", string.Join("\n", itemsMissing.ToArray()));
+            }
+        }
     }
 }

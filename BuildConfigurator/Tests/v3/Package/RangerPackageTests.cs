@@ -15,20 +15,16 @@ namespace BuildConfigurator.Tests.v3.Package
     public class RangerPackageTests : TestBase
     {
         [Test, Category(TestCategories.PACKAGES_PAGE), Category(TestCategories.RAN), RetryDynamic]
-        [Ignore("Ignoring this tests as id is not changing until submission is done")]
-        public void VerifyPackageAddPersistUntilBuildSubmission()
+        public void VerifyPackageSubproductsConfirmationPage()
         {
+            List<string> subproducts = new List<string>();
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
-            string ModelId = Packages.GetWholegoodModelId();
-            Packages.AddRandomAvailablePackage();
-            Assert.IsTrue(Packages.VerifyModelIdChangedAfterPackageAdd(ModelId));
-            ModelId = Packages.GetWholegoodModelId();
+            Packages.ClickPackageDetailsLinkByDesc("Ride Command");
+            subproducts = Packages.GetPackageSubproductsNames();
+            Packages.ClickAddPackageByDesc("Ride Command");
             Packages.FooterModule.ClickFooterNextButton();
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Wheel");
-            Accessories.ClickSubcategoryByName("Trail");
-            Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Accessories.ClikIamFinishedButton();
@@ -36,7 +32,8 @@ namespace BuildConfigurator.Tests.v3.Package
             Quote.FillQuoteFormDefaultData();
             Quote.ClickGetInternetPriceButton();
             Confirmation.WaitUntilConfirmationPageLoads();
-            Assert.AreEqual(Confirmation.GetQuoteModelId(), ModelId);
+            Confirmation.VerifyPackageDescPresentConfirmation(new string[] { "Ride Command" });
+            Confirmation.VerifyPkgSubproductsPresentConfirmation(subproducts.ToArray());
         }
 
         [Test, Category(TestCategories.PACKAGES_PAGE), Category(TestCategories.RAN), RetryDynamic]
