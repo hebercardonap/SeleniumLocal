@@ -25,11 +25,11 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickCategoryByName("Cab Components");
             Accessories.ClickSubcategoryByName("Windshields");
             Accessories.ClickAccessoryAddByProductName("Flip-Down Full Windshield");
-            Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
+            Assert.IsTrue(Accessories.IsConflictContainerDisplayed(), "Conflict container not displayed as expected");
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
-        public void VerifyRemovedPartFromConflictInBuildSummary()
+        public void VerifyRemovedPartFromConflictInBuildSummaryRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_CREW_XP900_SAGE_GREEN_CONFLICT);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -39,8 +39,9 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickCategoryByName("Cab Components");
             Accessories.ClickSubcategoryByName("Windshields");
             Accessories.ClickAccessoryAddByProductName("Flip-Down Full Windshield");
-            Assert.IsTrue(Accessories.IsConflictContainerDisplayed());
-            Assert.IsFalse(Accessories.RemoveConlfictPartAndValidateInBuildSummary("Flip-Down Full Windshield"));
+            Assert.IsTrue(Accessories.IsConflictContainerDisplayed(), "Conflict container not displayed as expected");
+            Assert.IsFalse(Accessories.RemoveConlfictPartAndValidateInBuildSummary("Flip-Down Full Windshield"),
+                "Conflicting part was not removed from build summary");
         }
     }
 }

@@ -17,7 +17,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         private static string DEALER_ID = "02040900";
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryDisplaysAddedAccessory()
+        public void VerifySummaryDisplaysAddedAccessoryRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -30,7 +30,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryAccessoryRemove()
+        public void VerifySummaryAccessoryRemoveRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -44,7 +44,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryUIIconsAndNotes()
+        public void VerifySummaryUIIconsAndNotesRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -54,11 +54,11 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Accessories.VerifyBuildSummaryIconsNotPresent();
-            Assert.IsTrue(Accessories.IsSummaryAdditionalNotesDisplayed());
+            Assert.IsTrue(Accessories.IsSummaryAdditionalNotesDisplayed(), "Additional Notes section was not displayed");
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryDealerExperience()
+        public void VerifySummaryDealerExperienceRan()
         {
             CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -68,7 +68,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifyKitAddedDisplayedSummary()
+        public void VerifyKitAddedDisplayedSummaryRan()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
@@ -89,7 +89,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         }
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifyPackageSubproductsSummary()
+        public void VerifyPackageSubproductsSummaryRan()
         {
             List<string> subproducts = new List<string>();
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);

@@ -1,6 +1,5 @@
 ﻿using AutomationFramework.DataProvider;
 using AutomationFramework.Helpers;
-using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
 using NUnit.Framework;
@@ -13,12 +12,13 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.Footer
 {
     [TestFixture]
-    public class RangerFooterTests : TestBase
+    [Ignore("ATV is not on CPQ v3 yet")]
+    public class AtvFooterTests : TestBase
     {
-        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
-        public void VerifyModelsPageFooterElementsRan()
+        [Test, Category(TestCategories.ATV), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyModelsPageFooterElementsAtv()
         {
-            CPQNavigate.NavigateToModelsPage(Brand.RAN);
+            CPQNavigate.NavigateToModelsPage(Brand.ATV);
             Models.WaitForModelsPageToLoad();
             Assert.IsTrue(Models.FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
             Assert.IsTrue(Models.FooterModule.IsPaymentCalculatorDisplayed(), "Payment calculator icon is not displayed");
@@ -27,10 +27,10 @@ namespace BuildConfigurator.Tests.v3.Footer
             Assert.IsTrue(Models.CalculatorModule.IsPaymentCalculatorDisplayed(), "Payment Calculator is not displayed");
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
-        public void VerifyTrimsPageFooterElementsRan()
+        [Test, Category(TestCategories.ATV), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyTrimsPageFooterElementsAtv()
         {
-            CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
+            CPQNavigate.NavigateToTrimsPage(Brand.ATV, ModelPageUrl.ATV_450_TRIM_COLOR_PAGE);
             Trims.WaitForTrimsPageToLoad();
             Assert.IsTrue(Models.FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
             Assert.IsTrue(Models.FooterModule.IsPaymentCalculatorDisplayed(), "Payment calculator icon is not displayed");
@@ -39,10 +39,10 @@ namespace BuildConfigurator.Tests.v3.Footer
             Assert.IsTrue(Trims.CalculatorModule.IsPaymentCalculatorDisplayed(), "Payment Calculator is not displayed");
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
-        public void VerifyColorsPageFooterElementsRan()
+        [Test, Category(TestCategories.ATV), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyColorsPageFooterElementsAtv()
         {
-            CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
+            CPQNavigate.NavigateToColorsPage(Brand.ATV, ModelPageUrl.ATV_450_TRIM_COLOR_PAGE);
             Colors.WaitForColorsPageToLoad();
             Assert.IsTrue(Colors.FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
             Assert.IsTrue(Colors.FooterModule.IsPaymentCalculatorDisplayed(), "Payment calculator icon is not displayed");
@@ -51,10 +51,10 @@ namespace BuildConfigurator.Tests.v3.Footer
             Assert.IsTrue(Colors.CalculatorModule.IsPaymentCalculatorDisplayed(), "Payment Calculator is not displayed");
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.FOOTER), RetryDynamic]
-        public void VerifyAccessoriesPageFooterElementsRan()
+        [Test, Category(TestCategories.ATV), Category(TestCategories.FOOTER), RetryDynamic]
+        public void VerifyAccessoriesPageFooterElementsAtv()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsTrue(Colors.FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
             Assert.IsTrue(Colors.FooterModule.IsPaymentCalculatorDisplayed(), "Payment calculator icon is not displayed");

@@ -20,8 +20,8 @@ namespace BuildConfigurator.Tests.v3.Header
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);
             Models.WaitForModelsPageToLoad();
-            Assert.IsTrue(Models.HeaderModule.IsHeaderSignInIconDisplayed());
-            Assert.IsTrue(Models.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
+            Assert.IsTrue(Models.HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign In is not displayed");
+            Assert.IsTrue(Models.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"), "Header brand name not displayed");
             Models.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
@@ -31,8 +31,8 @@ namespace BuildConfigurator.Tests.v3.Header
         {
             CPQNavigate.NavigateToTrimsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Trims.WaitForTrimsPageToLoad();
-            Assert.IsTrue(Trims.HeaderModule.IsHeaderSignInIconDisplayed());
-            Assert.IsTrue(Trims.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
+            Assert.IsTrue(Trims.HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign In is not displayed");
+            Assert.IsTrue(Trims.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"), "Header brand name not displayed");
             Trims.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
@@ -42,8 +42,8 @@ namespace BuildConfigurator.Tests.v3.Header
         {
             CPQNavigate.NavigateToColorsPage(Brand.RAN, ModelPageUrl.RANGER_500_MODEL);
             Colors.WaitForColorsPageToLoad();
-            Assert.IsTrue(Colors.HeaderModule.IsHeaderSignInIconDisplayed());
-            Assert.IsTrue(Colors.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
+            Assert.IsTrue(Colors.HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign In is not displayed");
+            Assert.IsTrue(Colors.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"), "Header brand name not displayed");
             Trims.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
@@ -53,8 +53,8 @@ namespace BuildConfigurator.Tests.v3.Header
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
-            Assert.IsTrue(Packages.HeaderModule.IsHeaderSignInIconDisplayed());
-            Assert.IsTrue(Packages.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
+            Assert.IsTrue(Packages.HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign In is not displayed");
+            Assert.IsTrue(Packages.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"), "Header brand name not displayed");
             Packages.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.GetRangerBrandHomePage());
         }
@@ -64,10 +64,10 @@ namespace BuildConfigurator.Tests.v3.Header
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
-            Assert.IsTrue(Accessories.HeaderModule.IsHeaderSignInIconDisplayed());
-            Assert.IsTrue(Accessories.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"));
-            Assert.IsFalse(Accessories.HeaderModule.IsSaveHeaderIconDisplayed());
-            Assert.IsFalse(Accessories.HeaderModule.IsEmailHeaderIconDisplayed());
+            Assert.IsTrue(Accessories.HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign In is not displayed");
+            Assert.IsTrue(Accessories.HeaderModule.IsHeaderBrandNameDisplayed("Ranger"), "Header brand name not displayed");
+            Assert.IsFalse(Accessories.HeaderModule.IsSaveHeaderIconDisplayed(), "Save icon was not expected to be displayed");
+            Assert.IsFalse(Accessories.HeaderModule.IsEmailHeaderIconDisplayed(), "Email icon was not expected to be displayed");
             Accessories.HeaderModule.ClickHeaderCloseIcon();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getRangerLandingPageURL());
         }

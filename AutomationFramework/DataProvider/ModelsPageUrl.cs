@@ -31,6 +31,7 @@ namespace AutomationFramework.DataProvider
         public static string ATV_450_HO_CONFLICT = "sportsman-450-ho-indy-red";
         public static string ATV_450_HO_BASE_TEST = "sportsman-450-ho-indy-red";
         public static string ATV_6x6_570_EPS_PRP = "sportsman-6x6-570-eps-sage-green";
+        public static string ATV_450_TRIM_COLOR_PAGE = "sportsman-450";
 
 
         //GEM Models for test

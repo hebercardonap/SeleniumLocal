@@ -17,7 +17,7 @@ namespace BuildConfigurator.Tests.v3.SteppedProcess
     public class RangerSteppedProcessTests : TestBase
     {
 
-        [Test, Category("Ranger"), Category("Stepped Process"), RetryDynamic]
+        [Test, Category(TestCategories.RAN), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void RangerSteppedProcess()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RAN);

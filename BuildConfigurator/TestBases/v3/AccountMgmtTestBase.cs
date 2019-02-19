@@ -85,7 +85,7 @@ namespace BuildConfigurator.TestBases
         public void ClickMenuOptionAndValidateExpectedPage(string menu)
         {
             ClickMenuFromAccountMenu(menu);
-            Assert.IsTrue(VerifyExpectedPageIsDisplayed(menu), "URL is not as expected");
+            Assert.IsTrue(VerifyExpectedPageIsDisplayed(menu), "URL for {0} menu option is not as expected", menu);
         }
 
     }
