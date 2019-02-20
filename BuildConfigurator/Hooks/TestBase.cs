@@ -160,7 +160,7 @@ namespace BuildConfigurator.Hooks
         private void GetTestNames()
         {
             // Load the assembly containing your fixtures
-            Assembly a = Assembly.LoadFrom(@"C:\Users\hcardo\Selenium\CPQ\SeleniumFramework\APITests\bin\Debug\APITests.dll");
+            Assembly a = Assembly.LoadFrom(@"C:\Users\hcardo\Selenium\CPQ\SeleniumFramework\BuildConfigurator\bin\Debug\BuildConfigurator.dll");
             var testNames = string.Empty;
             // Foreach public class that is a TestFixture and not Ignored
             foreach (var c in a.GetTypes()
@@ -196,7 +196,7 @@ namespace BuildConfigurator.Hooks
                         }
                     }
                     // Print out the test name
-                    testNames += string.Format("{0}, {1}\n", c.ToString(), m.Name);
+                    testNames += string.Format("{0}.{1}\n", c.ToString(), m.Name);
                 }
             }
 

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.BuildSummary
 {
     [TestFixture]
-    [Ignore("ATV is not in CPQ v3 yet")]
+    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvSummaryTests : TestBase
     {
         private static string DEALER_ID = "02040900";

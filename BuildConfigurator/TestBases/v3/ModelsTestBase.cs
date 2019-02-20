@@ -44,7 +44,7 @@ namespace BuildConfigurator.TestBases
 
         public void VerifySeatSelectionIsDisplayed()
         {
-            Assert.Greater(GetSeatSelectionCards(), 0);
+            Assert.Greater(GetSeatSelectionCards(), 0, "Seat selection cards are not present");
         }
 
         public void VerifySnowFamilyCardsDisplayed()

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.AccountManagement
 {
     [TestFixture]
-    [Ignore("ATV is not in CPQ v3 yet")]
+    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvAcctMgmtTests : TestBase
     {
         [Test, Category(TestCategories.ATV), Category(TestCategories.ACCOUNT_MGMT), RetryDynamic]

@@ -19,7 +19,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES);
             Accessories.WaitForAccessoriesPageToLoad();
-            Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed());
+            Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed(), "Toolbar was not displayed");
             Accessories.VerifyToolbarIconsAreEnabled();
 
         }
@@ -39,7 +39,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
         {
             CPQNavigate.NavigateToPackagesPage(Brand.RAN, ModelPageUrl.RANGER_XP1000_EPS_STEEL_BLUE_PACKAGES);
             Packages.WaitForPackagesPageToLoad();
-            Assert.IsTrue(Packages.Toolbar.IsToolbarDisplayed());
+            Assert.IsTrue(Packages.Toolbar.IsToolbarDisplayed(), "Toolbar was not displayed");
             Packages.VerifyToolbarIconsStatePackagesPage();
 
         }
@@ -52,7 +52,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
             Accessories.ClickCategoryByName("Wheel");
             Accessories.ClickSubcategoryByName("Trail");
             Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
-            Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed());
+            Assert.IsTrue(Accessories.Toolbar.IsToolbarDisplayed(), "Toolbar was not displayed");
             Accessories.Toolbar.ClickToolbarRestartIcon();
             Accessories.ClickConfirmationBuildContinueButton();
             Accessories.FooterModule.OpenBuildSummary();

@@ -1,26 +1,23 @@
-﻿using AutomationFramework.Base;
-using AutomationFramework.Helpers;
+﻿using AutomationFramework.Helpers;
 using AutomationFramework.Utils;
 using BuildConfigurator.Hooks;
-using BuildConfigurator.TestBases;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace BuildConfigurator.Tests.v3.SteppedProcess
 {
     [TestFixture]
-    public class RangerSteppedProcessTests : TestBase
+    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
+    public class AtvSteppedProcess : TestBase
     {
-
-        [Test, Category(TestCategories.RAN), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
-        public void VerifySteppedProcessRan()
+        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        public void VerifySteppedProcessAtv()
         {
-            CPQNavigate.NavigateToModelsPage(Brand.RAN);
+            CPQNavigate.NavigateToModelsPage(Brand.ATV);
             Models.SelectModelBySeatNumber("two");
             Models.SelectRandomModelVersion();
             Trims.WaitForTrimsPageToLoad();
@@ -29,9 +26,9 @@ namespace BuildConfigurator.Tests.v3.SteppedProcess
             Colors.ClickRandomWholegoodColor();
             Colors.FooterModule.ClickFooterNextButton();
             Accessories.WaitForAccessoriesPageToLoad();
-            Accessories.ClickCategoryByName("Wheel");
-            Accessories.ClickSubcategoryByName("Trail");
-            Accessories.ClickAccessoryAddByProductName("Buckle- Accent");
+            Accessories.ClickCategoryByName("Protection");
+            Accessories.ClickSubcategoryByName("Handguards");
+            Accessories.ClickAccessoryAddByProductName("Handguards");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
             Accessories.ClikIamFinishedButton();
