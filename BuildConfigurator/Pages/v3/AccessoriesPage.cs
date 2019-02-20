@@ -359,7 +359,7 @@ namespace BuildConfigurator.Pages.v3
 
             foreach (var item in summaryProductIds)
             {
-                string description = item.Text;
+                string description = item.GetAttribute("innerHTML");
 
                 if (description.Length > 0 && stringContainsIgnoreCase(description, productDesc))
                 {

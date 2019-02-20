@@ -26,7 +26,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getSnoLandingPageURL());
         }
 
-        [Test, Category(TestCategories.RAN), Category(TestCategories.HEADER), RetryDynamic]
+        [Test, Category(TestCategories.SNO), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyTrackPageHeaderElementsSno()
         {
             CPQNavigate.NavigateToTrackPage(Brand.SNO, ModelPageUrl.SNO_TRACK_ENGINE_PAGE_MODEL);
