@@ -56,5 +56,14 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Package descriptions missing on build confirmation: \n{0}", string.Join("\n", itemsMissing.ToArray()));
             }
         }
+
+        public void VerifyConfirmationModelNameMatcUrlModel(string url)
+        {
+            string confirmationModelName = GetConfirmationModelName();
+            string formattedName = confirmationModelName.Replace(" ", "-");
+
+            Assert.IsTrue(stringContainsIgnoreCase(url, formattedName), 
+                "Model Name {0} on confirmation page does not match model in selected url {1}", formattedName, url);
+        }
     }
 }

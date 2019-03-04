@@ -297,5 +297,6 @@ namespace BuildConfigurator.TestBases
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
         }
+
     }
 }

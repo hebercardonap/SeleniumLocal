@@ -157,6 +157,11 @@ namespace BuildConfigurator.Hooks
             get { return new EngineTestBase(_parallelConfig); }
         }
 
+        public OptionsTestBase Options
+        {
+            get { return new OptionsTestBase(_parallelConfig); }
+        }
+
         private void GetTestNames()
         {
             // Load the assembly containing your fixtures

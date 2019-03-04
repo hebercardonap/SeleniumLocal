@@ -824,6 +824,13 @@ namespace BuildConfigurator.Pages.v2
             return allModelColors;
         }
 
+        public string GetBuildUrlFromApi(string brand, string year, string dealerid)
+        {
+            string buildUrls = ApiDataProvider.GetAllBuildUrls(brand, year, dealerid);
+            string buildUrlsString = string.Empty;
+            return buildUrls;
+        }
+
         public List<string> Test(string brand, string year, string dealerid)
         {
             List<string> allModelColors = ApiDataProvider.BuildUrlPartial(brand, year, dealerid);

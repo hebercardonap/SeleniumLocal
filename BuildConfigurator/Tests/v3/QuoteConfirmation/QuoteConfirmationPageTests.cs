@@ -32,7 +32,8 @@ namespace BuildConfigurator.Tests.v3.QuoteConfirmation
             Quote.FillDealerExpQuoteFormDefaultData();
             Quote.ClickGetInternetPriceButton();
             Confirmation.WaitUntilConfirmationPageLoads();
-            Assert.IsFalse(Confirmation.IsSummaryPrintLinkDisplayed(), "Print summary is present on the page");
+            Assert.IsFalse(Confirmation.IsSummaryPrintLinkDisplayed(), 
+                "Print summary is present on the page for dealer experience URL");
         }
     }
 }

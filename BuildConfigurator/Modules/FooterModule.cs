@@ -44,6 +44,18 @@ namespace BuildConfigurator.Modules
             DriverActions.clickElement(BY_FOOTER_NEXT_BUTTON);
         }
 
+        public void ClickFooterNextButtonOpenSummary()
+        {
+            if (DriverActions.IsElementPresent(BY_FOOTER_NEXT_BUTTON))
+            {
+                DriverActions.clickElement(BY_FOOTER_NEXT_BUTTON);
+            }
+            else
+            {
+                OpenBuildSummary();
+            }
+        }
+
         public void ClickFooterPaymentCalculator()
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_FOOTER_PAYMENT_CALC);

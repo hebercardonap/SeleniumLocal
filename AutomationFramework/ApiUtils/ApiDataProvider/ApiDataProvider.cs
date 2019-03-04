@@ -106,13 +106,55 @@ namespace AutomationFramework.ApiUtils.ApiDataProvider
                         int index = GetNthIndex(buildUrl, '/', 4);
                         string result = buildUrl.Substring(index + 1);
                         string cleanedUp = result.Substring(0, result.IndexOf("/"));
-                        //string cleanedUpName = name.Substring(name.LastIndexOf("/") + 1);
-                        //modelsSeoName.Add(cleanedUpName);
                     }
                 }
             }
 
             return modelsSeoName;
+        }
+
+        public List<string> GetBuildUrls(string brand, string year, string dealerid)
+        {
+            List<string> buildUrls = new List<string>();
+            List<string> unique = new List<string>();
+            RestAPIHelper.SetUrl(CPQEndpointBuilder.GetDealerExpModelsEnpointByBrandYear(brand, year, dealerid));
+            RestAPIHelper.CreateGetRequest();
+            string buildUrlsString = string.Empty;
+            if (GetResponseStatusCode() == API_SUCCESS_RESPONSE_CODE)
+            {
+                var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
+
+
+                for (int i = 0; i < deserialized.Count; i++)
+                {
+                    string buildUrl = deserialized[i].BuildURL.Substring(0, deserialized[i].BuildURL.LastIndexOf("?"));
+                    buildUrls.Add(buildUrl);
+                }
+            }
+
+            return buildUrls;
+        }
+
+        public string GetAllBuildUrls(string brand, string year, string dealerid)
+        {
+            List<string> modelsSeoName = new List<string>();
+            List<string> unique = new List<string>();
+            RestAPIHelper.SetUrl(CPQEndpointBuilder.GetDealerExpModelsEnpointByBrandYear(brand, year, dealerid));
+            RestAPIHelper.CreateGetRequest();
+            string buildUrlsString = string.Empty;
+            if (GetResponseStatusCode() == API_SUCCESS_RESPONSE_CODE)
+            {
+                var deserialized = SimpleJson.SimpleJson.DeserializeObject<List<Variant>>(RestAPIHelper.GetResponse().Content);
+
+
+                for (int i = 0; i < deserialized.Count; i++)
+                {
+                        string buildUrl = deserialized[i].BuildURL;
+                        buildUrlsString += buildUrl + "\n";
+                }
+            }
+
+            return buildUrlsString;
         }
 
         private int GetResponseStatusCode()

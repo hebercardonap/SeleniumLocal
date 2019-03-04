@@ -49,5 +49,6 @@ namespace AutomationFramework.Utils
         public const string BUILD_SUMMARY = "BuildSummary";
         public const string TOOLBAR = "Toolbar";
         public const string ACCOUNT_MGMT = "AccountManagement";
+        public const string SNOWCHECK = "SnowCheck";
     }
 }

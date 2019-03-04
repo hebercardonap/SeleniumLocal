@@ -20,6 +20,8 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_ADDED_PACKAGES_CONTAINER = By.CssSelector("div[class='added-packages']");
         private static By BY_ADDED_PKG_TITLES = By.CssSelector("div[class='added-packages'] h4");
         private static By BY_PACKAGE_SUBPRODUCT_NAMES = By.CssSelector("div[class='added-packages'] div[class~='product-name']");
+        private static By BY_OPTIONS_ACCESSORIES_SECTION = By.CssSelector("div[class~='added-accessories']");
+        private static By BY_CONFIRMATION_MODEL_NAME = By.CssSelector("div div div[class~='border-bottom-sm'] h4");
 
         public ConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -105,6 +107,16 @@ namespace BuildConfigurator.Pages.v3
                     isFound = false;
             }
             return isFound;
+        }
+
+        public bool IsOptionsSectionDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_OPTIONS_ACCESSORIES_SECTION);
+        }
+
+        public string GetConfirmationModelName()
+        {
+            return Driver.FindElement(BY_CONFIRMATION_MODEL_NAME).Text;
         }
     }
 }
