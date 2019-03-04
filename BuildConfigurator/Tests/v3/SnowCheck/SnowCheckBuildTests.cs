@@ -19,7 +19,7 @@ namespace BuildConfigurator.Tests.v3.SnowCheck
         ApiDataProvider ApiDataProvider { get { return new ApiDataProvider(); } }
 
         [Test, Category(TestCategories.SNOWCHECK), RetryDynamic]
-        public void VerifySnowCheckBuildRushFamily()
+        public void VerifySnowCheckBuilds()
         {
             List<string> snowBuildUrls = ApiDataProvider.GetBuildUrls(Brand.SNO, YEAR, DEALER);
 
