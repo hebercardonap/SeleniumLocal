@@ -20,10 +20,12 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_GEM_SUMMARY_ACCESORY = By.CssSelector("div[class='quote-confirmation--build__summary-accessory-container'] div[class='quote-confirmation--build__summary-accessory']");
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//div[@class='quote-confirmation--build__summary-toggle-icon']");
         private static By BY_GEM_BUILD_CONF_PAGE = By.CssSelector("header[class='quote-confirmation__header-container']");
-        private static By BY_WHOLEGOOD_SUMMARY_TITLE = By.CssSelector("span[class~='display-block']");
+        private static By BY_WHOLEGOOD_SUMMARY_TITLE = By.CssSelector("div div div[class~='border-bottom-sm'] h4");
         private static By BY_SUMMARY_PRINT_LINK = By.CssSelector("button[class~='summary-print']");
         private static By BY_WHOLEGOOD_IMG = By.CssSelector("img[class~='img-responsive']");
-        private static By BY_NEW_ACCESSORY_CONF_SUMMARY = By.XPath("//div[@class='added-products'] //div[contains(@class,'product border')]");
+        //private static By BY_NEW_ACCESSORY_CONF_SUMMARY = By.XPath("//div[@class='added-products'] //div[contains(@class,'product border')]");
+        private static By BY_NEW_ACCESSORY_CONF_SUMMARY = By.CssSelector("div[class~='product-name']");
+        private static By BY_UPDATED_ADDED_ACCESSORIES_SELECTOR = By.CssSelector("div[class~='product-name']");
 
 
         public BuildConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)

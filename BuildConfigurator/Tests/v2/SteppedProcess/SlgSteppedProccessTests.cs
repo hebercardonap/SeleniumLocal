@@ -18,6 +18,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
         {
             CPQNavigate.NavigateToModelsPage(Brand.SLG);
             BuildModelPage.ClickSlingshotByVersion("S");
+            CompleteSteppedProcessAndValidate();
         }
 
         [Test, Category(TestCategories.GEM), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]

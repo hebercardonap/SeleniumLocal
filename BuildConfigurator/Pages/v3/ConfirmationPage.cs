@@ -14,7 +14,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_CONFIRMATION_MSG_CONTAINER = By.CssSelector("div[class~='form-confirmation-place-holder-block']");
         private static By BY_BUILD_SUMMARY_CONFIRMATION_HEADER = By.XPath("//*[contains(@class, 'form-confirmation-build-summary-header')]");
         private static By BY_BUILD_TOTAL_PRICE = By.XPath("//*[contains(@class, 'total-price')]");
-        private static By BY_SUMMARY_ADDED_ACCESSORY = By.XPath("//*[contains(@class, 'split-50')]");
+        private static By BY_SUMMARY_ADDED_ACCESSORY = By.CssSelector("div[class~='product-name']");
         private static By BY_WHOLEGOOD_MODEL_ID = By.XPath("//div[@class='text-align-right pull-right font-size-sm split-right']");
         private static By BY_SUMMARY_PRINT_BUTTON = By.CssSelector("button[class~='summary-print']");
         private static By BY_ADDED_PACKAGES_CONTAINER = By.CssSelector("div[class='added-packages']");

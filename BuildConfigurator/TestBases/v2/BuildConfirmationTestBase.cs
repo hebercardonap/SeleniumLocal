@@ -18,7 +18,7 @@ namespace BuildConfigurator.TestBases.v2
         public void VerifyBuildconfirmationPageIsAsExpected()
         {
             Assert.IsTrue(IsTotalPriceDisplayed());
-            Assert.IsTrue(GetAddedAccessoriesCount() > 0, "Accessories not present on build confirmation");
+            Assert.IsTrue(GetAddedAccessoryCountNewConfirmation() > 0, "Accessories not present on build confirmation");
         }
 
         public void VerifyNewBuildConfirmationAsExpected()
