@@ -205,6 +205,7 @@
     <Compile Include="Tests\v3\PartRequiresPart\SnoPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\QuoteConfirmation\QuoteConfirmationPageTests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckBuildTests.cs" />
+    <Compile Include="Tests\v3\SnowCheck\SnowCheckNavigationTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\AtvSteppedProcess.cs" />
     <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\SnowSteppedProcessTests.cs" />

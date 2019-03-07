@@ -15,6 +15,7 @@ namespace BuildConfigurator.Pages.v3
     {
         private static By BY_WHOLEGOOD_COLORS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodColorItem");
         private static By BY_CHOOSE_COLOR_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseColorTitle");
+        private static By BY_STOCK_MODEL_INFO = By.CssSelector("span[class~='model-family-info-colorOptions']");
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
 
@@ -48,6 +49,11 @@ namespace BuildConfigurator.Pages.v3
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
             DriverActions.waitForElementVisibleAndEnabled(BY_CHOOSE_COLOR_TITLE);
+        }
+
+        public bool IsStockModelInfoDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_STOCK_MODEL_INFO);
         }
 
     }

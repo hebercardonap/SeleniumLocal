@@ -17,7 +17,8 @@ namespace BuildConfigurator.Modules
         private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//button[@class='btn-next cpq-footer__cta-button']");
         private static By BY_OPEN_BUILD_SUMMARY = By.CssSelector("button[class~='cpq-footer__cta-button']");
         private static By BY_NEXT_OPEN_BUILD_SUMMARY = PolarisSeleniumAttribute.PolarisSeleniumSelector("showBuildSummary");
-
+        private static By BY_FOOTER_WIDGET_CONTAINER = By.CssSelector("div[id*='poll_container'] div[id*='poll']");
+        private static By BY_FOOTER_WIDGET_CARET = By.CssSelector("a span[class*='widget_icon']");
 
         public FooterModule(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -40,8 +41,16 @@ namespace BuildConfigurator.Modules
 
         public void ClickFooterNextButton()
         {
+            if (IsWidgetContainerDisplayed())
+                DriverActions.clickElement(BY_FOOTER_WIDGET_CARET);
+
             DriverActions.waitForElementVisibleAndEnabled(BY_FOOTER_NEXT_BUTTON);
             DriverActions.clickElement(BY_FOOTER_NEXT_BUTTON);
+        }
+
+        public bool IsWidgetContainerDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_FOOTER_WIDGET_CONTAINER);
         }
 
         public void ClickFooterNextButtonOpenSummary()

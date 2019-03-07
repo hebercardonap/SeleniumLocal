@@ -12,6 +12,14 @@ namespace BuildConfigurator.Pages.v3
     public class OptionsPage : BasePage
     {
         private static By BY_SUBSTEP_INPUT = By.XPath("//section[@class='substep-options-title']//section[@class='substep-options-title-items-input']");
+        private static By BY_OPTIONS_TITLE_HEADING = By.CssSelector("section[class='substep-options-title'] button[class='substep-options-title-heading']");
+        private static By BY_SUBSTEP_OPTIONS = By.CssSelector("section[class='substep-options-title']");
+        private static By BY_OPTION_HEADING = By.CssSelector("button[class='substep-options-title-heading'] span:nth-child(1)");
+        private static By BY_SUBSTEP_OPTIONS_LIST = By.XPath("//section[@class='substep-options-title']//li");
+        private static By BY_SUBSTEP_RADIO_BUTTON = By.CssSelector("input[class='radio']");
+
+        private static By SPAN_TAG_NAME = By.TagName("span");
+
         public OptionsPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -58,6 +66,82 @@ namespace BuildConfigurator.Pages.v3
                 FooterModule.ClickFooterNextButton();
             }
             FooterModule.OpenBuildSummary();
+        }
+
+        public bool IsOptionTitleHeadingDisplayed(string title)
+        {
+            bool isFound = false;
+            List<IWebElement> options = Driver.FindElements(BY_OPTIONS_TITLE_HEADING).ToList();
+
+            foreach (var item in options)
+            {
+                string optionTitle = item.Text;
+                if (stringContainsIgnoreCase(optionTitle, title))
+                {
+                    isFound = true;
+                    break;
+                }
+            }
+            return isFound;
+        }
+
+        public bool ClickOptionHeadingByName(string option)
+        {
+            bool isFound = false;
+            List<IWebElement> headings = Driver.FindElements(BY_SUBSTEP_OPTIONS).ToList();
+
+            foreach (var item in headings)
+            {
+                string headingTxt = item.FindElement(BY_OPTION_HEADING).Text;
+                if (stringContainsIgnoreCase(headingTxt, option))
+                {
+                    isFound = true;
+                    DriverActions.clickElement(item);
+                    break;
+                }
+            }
+            return isFound;
+        }
+
+        public bool ClickSubstepOptionByTitle(string optionName)
+        {
+            bool isFound = false;
+            List<IWebElement> substepOptions = Driver.FindElements(BY_SUBSTEP_OPTIONS_LIST).ToList();
+
+            foreach (var item in substepOptions)
+            {
+                string substepOption = item.FindElement(SPAN_TAG_NAME).Text;
+                if (substepOption.Length > 0 && stringContainsIgnoreCase(substepOption, optionName))
+                {
+                    isFound = true;
+                    DriverActions.clickElement(item);
+                    break;
+                }
+            }
+            return isFound;
+        }
+
+        public int GetOptionCheckedSubstepOptions(string optionName)
+        {
+            int checkedItems = 0;
+            List<IWebElement> substepOptions = Driver.FindElements(BY_SUBSTEP_OPTIONS).ToList();
+
+            foreach (var item in substepOptions)
+            {
+                //string substepOption = item.FindElement(SPAN_TAG_NAME).Text;BY_OPTION_HEADING
+                string substepOption = item.FindElement(BY_OPTION_HEADING).Text;
+                if (substepOption.Length > 0 && stringContainsIgnoreCase(substepOption, optionName))
+                {
+                    List<IWebElement> radioButtons = item.FindElements(BY_SUBSTEP_RADIO_BUTTON).ToList();
+                    foreach (var radio in radioButtons)
+                    {
+                        if (radio.Selected)
+                            checkedItems++;
+                    }
+                    break;
+                }
+            }
+            return checkedItems;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.Pages.v3;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ namespace BuildConfigurator.TestBases.v3
         {
         }
 
-        public void ClickRandomVisibleSubstepInput()
+        public void VerifyDefaultSubstepOptionSelected(string option)
         {
-
+            Assert.AreEqual(GetOptionCheckedSubstepOptions(option), 1, "{0} checked options are not as expected");
         }
     }
 }

@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v3.SnowCheck
     public class SnowCheckBuildTests : TestBase
     {
         private static string YEAR = "2020";
-        private static string DEALER = "02040900";
+        private static string DEALER = "54321";
         ApiDataProvider ApiDataProvider { get { return new ApiDataProvider(); } }
 
         [Ignore("So we do not submit builds to prod")]
