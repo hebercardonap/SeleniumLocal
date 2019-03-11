@@ -18,6 +18,7 @@ namespace BuildConfigurator.TestBases
         private static string BUILD_ENGINE_URL_PART = "/build-engine/";
         private static string BUILD_PACKAGE_PAGE = "/build-package/";
         private static string BUILD_URL_PART = "/build/";
+        private static string BUILD_CATEGORY_URL_PART = "/build-category/";
         private static string SLASH = "/";
         private static string TEST_DEALER_PART_ID = "?dealerid={0}";
         private static string BUILD_QUOTE_URL_PART = "rzr-s-900-white/build-quote/";
@@ -265,7 +266,14 @@ namespace BuildConfigurator.TestBases
                 string url = UrlBuilder.GetBuildCategoryUrl(brand);
                 GoToUrl(url);
                 //Log.Error(string.Format("Navigating to URL: {0}", url));
-                Log.Error(string.Format("Navigating to URL: {0}", url));
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            if (stringEqualsIgnoreCase(Brand.SNO, brand))
+            {
+                string url = UrlBuilder.GetBuildCategoryUrl(brand);
+                GoToUrl(url);
+                //Log.Error(string.Format("Navigating to URL: {0}", url));
+                Log.Info(string.Format("Navigating to URL: {0}", url));
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand);

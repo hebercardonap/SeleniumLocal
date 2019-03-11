@@ -56,5 +56,10 @@ namespace BuildConfigurator.Pages.v3
             return DriverActions.IsElementPresent(BY_STOCK_MODEL_INFO);
         }
 
+        public bool IsChooseColorTitleDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_CHOOSE_COLOR_TITLE);
+        }
+
     }
 }

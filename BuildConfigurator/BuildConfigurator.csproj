@@ -117,6 +117,7 @@
     <Compile Include="Pages\v2\BuildQuotePage.cs" />
     <Compile Include="Pages\v2\BuildTrimPage.cs" />
     <Compile Include="Pages\v2\PageHelpers.cs" />
+    <Compile Include="Pages\v3\CategoryPage.cs" />
     <Compile Include="Pages\v3\EnginePage.cs" />
     <Compile Include="Pages\v3\OptionsPage.cs" />
     <Compile Include="Pages\v3\PackagesPage.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="TestBases\v2\BuildTrimTestBase.cs" />
     <Compile Include="TestBases\v3\AccessoriesTestBase.cs" />
     <Compile Include="TestBases\v3\AccountMgmtTestBase.cs" />
+    <Compile Include="TestBases\v3\CategoryTestBase.cs" />
     <Compile Include="TestBases\v3\ColorsTestBase.cs" />
     <Compile Include="TestBases\v3\ConfirmationTestBase.cs" />
     <Compile Include="TestBases\v3\CpqUrlTestBase.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="Tests\v3\PartRequiresPart\SnoPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\QuoteConfirmation\QuoteConfirmationPageTests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckBuildTests.cs" />
+    <Compile Include="Tests\v3\SnowCheck\SnowCheckCTATests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckNavigationTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\AtvSteppedProcess.cs" />
     <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />

@@ -53,6 +53,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_PRODUCT_DETAILS_LINK = By.CssSelector("button[data-slnm-attr='productDetailsLink']");
         private static By BY_PRODUCT_INFO_DESCRIPTION = By.CssSelector("div[class='build-accessories-product-info-description']");
         private static By BY_KIT_PACKAGE_SUMMARY_INFO = By.CssSelector("div[class='kit-package__header summary-accessory-info']");
+        private static By BY_CHOOSE_ACCESSORIES_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseAccessoriesTitle");
 
 
 
@@ -444,6 +445,11 @@ namespace BuildConfigurator.Pages.v3
         public bool IsProductInfoDescDisplayed()
         {
             return DriverActions.IsElementPresent(BY_PRODUCT_INFO_DESCRIPTION);
+        }
+
+        public bool IsChooseAccessoriesTitleDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_CHOOSE_ACCESSORIES_TITLE);
         }
     }
 }

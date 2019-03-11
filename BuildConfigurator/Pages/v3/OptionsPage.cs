@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Utils;
 using BuildConfigurator.Modules;
 using OpenQA.Selenium;
 using System;
@@ -17,6 +18,9 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_OPTION_HEADING = By.CssSelector("button[class='substep-options-title-heading'] span:nth-child(1)");
         private static By BY_SUBSTEP_OPTIONS_LIST = By.XPath("//section[@class='substep-options-title']//li");
         private static By BY_SUBSTEP_RADIO_BUTTON = By.CssSelector("input[class='radio']");
+        private static By BY_OPTIONS_BUILD_SUMMARY_DIALOG = By.Id("build-summary-dialog");
+        private static By BY_OPTION_PAGE_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseOptionTitle");
+        private static By BY_SUMMARY_ADD_ADDITIONAL_ACCESSORIES = By.CssSelector("div[class~='summary-accessory-add-additional'] a");
 
         private static By SPAN_TAG_NAME = By.TagName("span");
 
@@ -128,7 +132,6 @@ namespace BuildConfigurator.Pages.v3
 
             foreach (var item in substepOptions)
             {
-                //string substepOption = item.FindElement(SPAN_TAG_NAME).Text;BY_OPTION_HEADING
                 string substepOption = item.FindElement(BY_OPTION_HEADING).Text;
                 if (substepOption.Length > 0 && stringContainsIgnoreCase(substepOption, optionName))
                 {
@@ -142,6 +145,21 @@ namespace BuildConfigurator.Pages.v3
                 }
             }
             return checkedItems;
+        }
+
+        public bool IsOptionsBuildSummaryDialogDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_OPTIONS_BUILD_SUMMARY_DIALOG);
+        }
+
+        public string GetOptionsPageTitle()
+        {
+            return Driver.FindElement(BY_OPTION_PAGE_TITLE).Text;
+        }
+
+        public void ClickSummaryAddAdditionalAccessories()
+        {
+            DriverActions.clickElement(BY_SUMMARY_ADD_ADDITIONAL_ACCESSORIES);
         }
     }
 }
