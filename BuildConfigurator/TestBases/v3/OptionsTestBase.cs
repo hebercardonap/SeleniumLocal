@@ -40,5 +40,25 @@ namespace BuildConfigurator.TestBases.v3
         {
             return stringContainsIgnoreCase(GetOptionsPageTitle(), title);
         }
+
+        public bool VerifySubstepListOptionsNotDuplicate(string option)
+        {
+            bool areSubstepOptionsUnique = true;
+            var duplicateItems = GetSubstepListOptionsTitle(option).GroupBy(x => x)
+                .Where(group => group.Count() > 1)
+                .Select(group => group.Key).ToList();
+
+            if (duplicateItems.Count > 0)
+            {
+                areSubstepOptionsUnique = false;
+                string duplicateValues = string.Empty;
+                foreach (var item in duplicateItems)
+                {
+                    duplicateValues += item + "\n";
+                }
+                Assert.Fail("There are duplicate substep options \n{0}", duplicateValues);
+            }
+            return areSubstepOptionsUnique;
+        }
     }
 }

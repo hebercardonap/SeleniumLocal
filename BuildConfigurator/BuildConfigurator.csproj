@@ -208,6 +208,7 @@
     <Compile Include="Tests\v3\QuoteConfirmation\QuoteConfirmationPageTests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckBuildTests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckCTATests.cs" />
+    <Compile Include="Tests\v3\SnowCheck\SnowCheckDataTests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckNavigationTests.cs" />
     <Compile Include="Tests\v3\SteppedProcess\AtvSteppedProcess.cs" />
     <Compile Include="Tests\v3\SteppedProcess\RangerSteppedProcessTests.cs" />

@@ -23,6 +23,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_SUMMARY_ADD_ADDITIONAL_ACCESSORIES = By.CssSelector("div[class~='summary-accessory-add-additional'] a");
 
         private static By SPAN_TAG_NAME = By.TagName("span");
+        private static By LIST_TAG_NAME = By.TagName("li");
 
         public OptionsPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -145,6 +146,29 @@ namespace BuildConfigurator.Pages.v3
                 }
             }
             return checkedItems;
+        }
+
+        public List<string> GetSubstepListOptionsTitle(string option)
+        {
+            List<string> substepOptionNames = new List<string>();
+            List<IWebElement> options = Driver.FindElements(BY_SUBSTEP_OPTIONS).ToList();
+
+            foreach (var item in options)
+            {
+                string optionTitle = item.Text;
+                if (optionTitle.Length > 0 && stringContainsIgnoreCase(optionTitle, option))
+                {
+                    List<IWebElement> substepOptionLists = item.FindElements(LIST_TAG_NAME).ToList();
+                    foreach (var substepOption in substepOptionLists)
+                    {
+                        string optionListName = substepOption.FindElement(SPAN_TAG_NAME).Text;
+                        if(optionListName.Length > 0)
+                            substepOptionNames.Add(optionListName);
+                    }
+                    break;
+                }
+            }
+            return substepOptionNames;
         }
 
         public bool IsOptionsBuildSummaryDialogDisplayed()
