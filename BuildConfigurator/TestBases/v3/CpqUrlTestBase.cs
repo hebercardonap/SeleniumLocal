@@ -268,7 +268,7 @@ namespace BuildConfigurator.TestBases
                 //Log.Error(string.Format("Navigating to URL: {0}", url));
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
-            if (stringEqualsIgnoreCase(Brand.SNO, brand))
+            else if (stringEqualsIgnoreCase(Brand.SNO, brand))
             {
                 string url = UrlBuilder.GetBuildCategoryUrl(brand);
                 GoToUrl(url);
