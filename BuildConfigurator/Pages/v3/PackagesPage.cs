@@ -29,11 +29,12 @@ namespace BuildConfigurator.Pages
         private static By BY_PACKAGE_INFO_DESCRIPTION = By.CssSelector("div[class='build-accessories-product-info-description']");
         private static By BY_BUILD_SAVE_NAME_TXT = By.Id("build-model-save-vehicle-name");
         private static By BY_BUILD_SAVE_LINK = By.CssSelector("div[class='save-actions'] div[class='save']");
-        private static By BY_PACKAGE_NAMES = By.XPath("//div[@class='build-accessories-subcategory-header']//button");
+        private static By BY_PACKAGE_NAMES = PolarisSeleniumAttribute.PolarisSeleniumSelector("productTitleLabel");
         private static By BY_PACKAGE_SUBCATEGORY_BTN = By.CssSelector("button[class='build-accessories-subcategory-title']");
         private static By BY_PACKAGE_SUBCATEGORY_HEADERS = By.XPath("//div[@class='build-accessories-subcategory-header']");
         private static By BY_SUBCATEGORY_EXPAND_COLLAPSE_SYMBOL = By.CssSelector("div[class~='build-accessories-symbol']");
         private static By BY_PACKAGE_SUBPRODUCT_LABELS = By.CssSelector("div[class~='build-accessories-product-info-subproduct'] div[class='build-accessories-product-title-label']");
+        private static By BY_FACTORY_INSTALLED_DROPDOWN = By.CssSelector("div[class~='build-accessories-subcategory-header']");
 
         private static By BY_BUTTON_TAG_NAME = By.TagName("button");
         private static string CLASS = "class";
@@ -132,7 +133,7 @@ namespace BuildConfigurator.Pages
 
         public void ClickPackageDetailsLinkByDesc(string productName)
         {
-            ClickByPackageNameExpandIfNeeded(productName);
+            ExpandFactoryInstalledDropDownIfNeeded();
             bool isFound = false;
             List<IWebElement> products = Driver.FindElements(BY_ACCESORIES_PRODUCT).ToList();
             foreach (var product in products)
@@ -154,7 +155,7 @@ namespace BuildConfigurator.Pages
 
         public void ClickAddPackageByDesc(string productName)
         {
-            ClickByPackageNameExpandIfNeeded(productName);
+            ExpandFactoryInstalledDropDownIfNeeded();
             bool isFound = false;
             List<IWebElement> products = Driver.FindElements(BY_ACCESORIES_PRODUCT).ToList();
             foreach (var product in products)
@@ -216,28 +217,14 @@ namespace BuildConfigurator.Pages
             return symbolValue;
         }
 
-        public void ClickByPackageNameExpandIfNeeded(string packageName)
+        public void ExpandFactoryInstalledDropDownIfNeeded()
         {
-            bool isFound = false;
-            List<IWebElement> packages = Driver.FindElements(BY_PACKAGE_SUBCATEGORY_HEADERS).ToList();
-
-            foreach (var item in packages)
+            IWebElement factoryInstalledDropDown = Driver.FindElement(BY_FACTORY_INSTALLED_DROPDOWN);
+            string sym = GetSymbolValue(factoryInstalledDropDown);
+            if (stringContainsIgnoreCase(sym, PLUS))
             {
-                string packageBtnText = item.Text;
-                if (stringEqualsIgnoreCase(packageBtnText, packageName)
-                    || stringContainsIgnoreCase(packageBtnText, packageName))
-                {
-                    isFound = true;
-                    string symbol = GetSymbolValue(item);
-                    if (stringContainsIgnoreCase(symbol, PLUS))
-                    {
-                        DriverActions.clickElement(item);
-                        break;
-                    }
-                }
+                DriverActions.clickElement(factoryInstalledDropDown);
             }
-            if (!isFound)
-                Assert.Fail("The package with name {0} is not present", packageName);
         }
 
         public List<string> GetPackageSubproductsNames()

@@ -34,7 +34,7 @@ namespace BuildConfigurator.Tests.v3.UIFeatures
             Accessories.WaitForAccessoriesPageToLoad();
             Packages.ClickPackageDetailsLinkByDesc("Ride Command");
             Assert.IsTrue(Packages.IsPackageInfoDescDisplayed(), "Package Info Details is not displayed");
-            Packages.ClickSubProductDetailsLinkByDesc("Touch Display");
+            Packages.ClickSubProductDetailsLinkByDesc("Display");
             Assert.IsTrue(Packages.IsSubProductInfoDescDisplayed(), "Sub product Info Details is not displayed");
         }
     }

@@ -18,10 +18,11 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_WHOLEGOOD_MODEL_ID = By.XPath("//div[@class='text-align-right pull-right font-size-sm split-right']");
         private static By BY_SUMMARY_PRINT_BUTTON = By.CssSelector("button[class~='summary-print']");
         private static By BY_ADDED_PACKAGES_CONTAINER = By.CssSelector("div[class='added-packages']");
-        private static By BY_ADDED_PKG_TITLES = By.CssSelector("div[class='added-packages'] h4");
+        private static By BY_ADDED_PKG_TITLES = By.CssSelector("div[class='added-packages'] div[class='product-name-group']");
         private static By BY_PACKAGE_SUBPRODUCT_NAMES = By.CssSelector("div[class='added-packages'] div[class~='product-name']");
         private static By BY_OPTIONS_ACCESSORIES_SECTION = By.CssSelector("div[class~='added-accessories']");
         private static By BY_CONFIRMATION_MODEL_NAME = By.CssSelector("div div div[class~='border-bottom-sm'] h4");
+        private static By BY_KIT_PACKAGE_ICON_ARROW = By.CssSelector("span[class~='product-name-group-icon']");
 
         public ConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -67,6 +68,15 @@ namespace BuildConfigurator.Pages.v3
             }
 
             return subproducts;
+        }
+
+        public void ClickKitPackageDropdownArrow()
+        {
+            List<IWebElement> kitPackageArrows = Driver.FindElements(BY_KIT_PACKAGE_ICON_ARROW).ToList();
+            foreach (var item in kitPackageArrows)
+            {
+                DriverActions.clickElement(item);
+            }
         }
 
         public bool IsProductDescPresentBuildConfirmation(string productDesc)

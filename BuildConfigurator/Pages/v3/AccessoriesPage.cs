@@ -54,7 +54,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_PRODUCT_INFO_DESCRIPTION = By.CssSelector("div[class='build-accessories-product-info-description']");
         private static By BY_KIT_PACKAGE_SUMMARY_INFO = By.CssSelector("div[class='kit-package__header summary-accessory-info']");
         private static By BY_CHOOSE_ACCESSORIES_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseAccessoriesTitle");
-
+        private static By BY_SUBCATEGORY_TITLE = By.CssSelector("button[class='build-accessories-subcategory-title']");
 
 
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
@@ -108,10 +108,10 @@ namespace BuildConfigurator.Pages.v3
         public void ClickSubcategoryByName(string subCategoryName)
         {
             bool isFound = false;
-            List<IWebElement> subCategories = Driver.FindElements(BY_ACCESSORY_SUBCATEGORY).ToList();
+            List<IWebElement> subCategories = Driver.FindElements(BY_SUBCATEGORY_TITLE).ToList();
             foreach (var subCategory in subCategories)
             {
-                string subcategoryText = subCategory.FindElement(BY_BUTTON_TAG_NAME).Text.Trim();
+                string subcategoryText = subCategory.Text;
                 if ((subcategoryText.Length != 0) && (stringEqualsIgnoreCase(subcategoryText, subCategoryName)
                     || stringContainsIgnoreCase(subcategoryText, subCategoryName)))
                 {

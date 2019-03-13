@@ -33,6 +33,7 @@ namespace BuildConfigurator.Tests.v3.Package
             Quote.ClickGetInternetPriceButton();
             Confirmation.WaitUntilConfirmationPageLoads();
             Confirmation.VerifyPackageDescPresentConfirmation(new string[] { "Ride Command" });
+            Confirmation.ClickKitPackageDropdownArrow();
             Confirmation.VerifyPkgSubproductsPresentConfirmation(subproducts.ToArray());
         }
 

@@ -26,6 +26,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
 
         }
 
+        [Ignore("As per GEM rules file recently updated, there is no conflict to be replicated")]
         [Test, Category(TestCategories.GEM), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPrpPersistsAfterConflictGem()
         {
