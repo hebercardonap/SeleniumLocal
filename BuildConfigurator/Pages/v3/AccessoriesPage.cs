@@ -395,6 +395,7 @@ namespace BuildConfigurator.Pages.v3
 
         public void RemoveAccessoryFromSummaryByDesc(string description)
         {
+            bool isFound = false;
             List<IWebElement> accessories = Driver.FindElements(BY_BUILD_SUMMARY_ACCESORIES).ToList();
 
             foreach (var item in accessories)
@@ -404,11 +405,14 @@ namespace BuildConfigurator.Pages.v3
                 {
                     IWebElement remove = item.FindElement(BY_BUILD_SUMMARY_REMOVE_LINK);
                     DriverActions.clickElement(remove);
+                    isFound = true;
                     break;
                 }
                 else
-                    Assert.Fail("Accessory passed {0} is not present on the build summary", description);
+                    isFound = false;
             }
+            if(!isFound)
+                Assert.Fail("Accessory passed {0} is not present on the build summary", description);
         }
 
         public bool IsSummarySaveIconDisplayed()

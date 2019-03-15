@@ -14,6 +14,7 @@ namespace BuildConfigurator.Pages.v3
     public class ColorsPage : BasePage
     {
         private static By BY_WHOLEGOOD_COLORS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodColorItem");
+        private static By BY_WHOLEGOOD_COLORS_CONTAINER = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodColorsContainer");
         private static By BY_CHOOSE_COLOR_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseColorTitle");
         private static By BY_STOCK_MODEL_INFO = By.CssSelector("span[class~='model-family-info-colorOptions']");
 
@@ -42,7 +43,7 @@ namespace BuildConfigurator.Pages.v3
         public void WaitForColorsPageToLoad()
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
-            DriverActions.waitForElementVisibleAndEnabled(BY_WHOLEGOOD_COLORS);
+            DriverActions.waitForElementVisibleAndEnabled(BY_WHOLEGOOD_COLORS_CONTAINER);
         }
 
         public void WaitForChooseColorTitleToDisplay()

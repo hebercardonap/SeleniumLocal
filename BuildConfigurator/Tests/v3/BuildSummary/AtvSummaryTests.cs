@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.BuildSummary
 {
     [TestFixture]
-    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
+    //[Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvSummaryTests : TestBase
     {
         private static string DEALER_ID = "02040900";
@@ -31,9 +31,9 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         }
 
         [Test, Category(TestCategories.ATV), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
-        public void VerifySummaryAccessoryRemoveRan()
+        public void VerifySummaryAccessoryRemoveAtv()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.ATV_450_HO_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Protection");
             Accessories.ClickSubcategoryByName("Handguards");
@@ -47,7 +47,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         [Test, Category(TestCategories.ATV), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryUIIconsAndNotesAtv()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.ATV_450_HO_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Protection");
             Accessories.ClickSubcategoryByName("Handguards");
@@ -61,7 +61,7 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         [Test, Category(TestCategories.ATV), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifySummaryDealerExperienceAtv()
         {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.ATV_450_HO_BASE_TEST, DEALER_ID);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
@@ -71,21 +71,21 @@ namespace BuildConfigurator.Tests.v3.BuildSummary
         [Test, Category(TestCategories.ATV), Category(TestCategories.BUILD_SUMMARY), RetryDynamic]
         public void VerifyKitAddedDisplayedSummaryAtv()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.ATV_450_HO_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Utility");
             Accessories.ClickSubcategoryByName("Plow Systems");
-            Accessories.ClickAccessoryAddByProductName("Steel Blade");
+            Accessories.ClickAccessoryAddByProductName("Steel Plow Blade");
             Accessories.FooterModule.OpenBuildSummary();
             Accessories.WaitUntilBuildSummaryIsDisplayed();
-            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Poly Plow Blade System" });
+            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Steel Plow Blade System" });
             Accessories.Toolbar.ClickToolbarSaveIcon();
             Accessories.EnterBuildName();
             Accessories.ClickSaveBuildModalSave();
             AccountMgmt.Login(UserAccountData.NON_EMPLOYEE_1);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.FooterModule.OpenBuildSummary();
-            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Poly Plow Blade System" });
+            Accessories.VerifyKitPackageDescPresentBuildSummary(new string[] { "Steel Plow Blade System" });
             Accessories.OpenSavedBuildAndDelete();
         }
     }

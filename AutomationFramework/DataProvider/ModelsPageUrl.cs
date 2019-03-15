@@ -19,12 +19,14 @@ namespace AutomationFramework.DataProvider
         public static string RZR_XP_1000_EPS_BASE_TEST = "rzr-xp-1000-eps-ride-command-edition-black-pearl";
         public static string RZR_XP_1000_EPS_CONFLICT = "rzr-xp-1000-eps-trails-rocks-edition-cruiser-black";
         public static string RZR_XP_1000_EPS_PRP = "rzr-xp-1000-eps-ride-command-edition-black-pearl";
+        public static string RZR_XP_1000_MODEL = "rzr-xp-1000-eps";
 
 
         //ACE Models for test
         public static string ACE_570_EPS_CONFLICT = "ace-570-eps-ghost-gray";
         public static string ACE_570_EPS_PRP = "ace-570-eps-ghost-gray";
         public static string ACE_570_EPS_BASE_TEST = "ace-570-eps-ghost-gray";
+        public static string ACE_570_EPS_MODEL = "ace-570-eps";
 
 
         //ATV Models for test
