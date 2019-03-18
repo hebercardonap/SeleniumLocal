@@ -46,6 +46,7 @@ namespace AutomationFramework.DataProvider
         public static string GENERAL_4_1000_EPS_CONFLICT = "general-4-1000-eps-matte-white-metallic";
         public static string GENERAL_1000_EPS_PRP = "general-1000-eps-deluxe-orange-rust";
         public static string GENERAL_1000_EPS_BASE_TEST = "general-1000-eps-deluxe-orange-rust";
+        public static string GENERAL_1000_EPS_TRIM_COLOR_PAGE = "general-1000-eps-deluxe";
 
 
         //IND Models for test

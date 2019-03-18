@@ -101,6 +101,12 @@ namespace BuildConfigurator.TestBases
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
+            else if (stringEqualsIgnoreCase(Brand.GEN, brand))
+            {
+                string url = string.Concat(UrlBuilder.getGeneralLandingPageURL(), model, BUILD_TRIM_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
         }
@@ -150,6 +156,12 @@ namespace BuildConfigurator.TestBases
             else if (stringEqualsIgnoreCase(Brand.ACE, brand))
             {
                 string url = string.Concat(UrlBuilder.getAceLandingPageURL(), model, BUILD_COLOR_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else if (stringEqualsIgnoreCase(Brand.GEN, brand))
+            {
+                string url = string.Concat(UrlBuilder.getGeneralLandingPageURL(), model, BUILD_COLOR_URL_PART);
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
