@@ -19,6 +19,8 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_THREE_SEAT_MODEL = PolarisSeleniumAttribute.PolarisSeleniumSelector("3-Seat");
         private static By BY_FOUR_SEAT_MODEL = PolarisSeleniumAttribute.PolarisSeleniumSelector("4-Seat");
         private static By BY_SIX_SEAT_MODEL = PolarisSeleniumAttribute.PolarisSeleniumSelector("6-Seat");
+        private static By BY_GEM_PASSENGER_LSV = PolarisSeleniumAttribute.PolarisSeleniumSelector("Passenger LSV");
+        private static By BY_GEM_UTILITY_LSV = PolarisSeleniumAttribute.PolarisSeleniumSelector("Utility LSV");
         private static By BY_MODELS_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodModelsCard");
         private static By BY_MODELS_SEAT_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodSeatsCard");
         private static By BY_CHOOSE_MODEL_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseModelTitle");
@@ -132,6 +134,16 @@ namespace BuildConfigurator.Pages.v3
         public void ClickSnoVoyageurFamilyCard()
         {
             DriverActions.clickElement(BY_SNO_VOYAGEUR_FAMILY);
+        }
+
+        public void ClickGemPassengerModelsFamily()
+        {
+            DriverActions.clickElement(BY_GEM_PASSENGER_LSV);
+        }
+
+        public void ClickGemUtilityModelsFamily()
+        {
+            DriverActions.clickElement(BY_GEM_UTILITY_LSV);
         }
     }
 }

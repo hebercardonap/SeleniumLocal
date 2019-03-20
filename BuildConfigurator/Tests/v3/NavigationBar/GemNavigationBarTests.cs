@@ -12,24 +12,23 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.NavigationBar
 {
     [TestFixture]
-    public class AceNavigationBarTests : TestBase
+    public class GemNavigationBarTests : TestBase
     {
-        
         private static string DEALER_ID = "54321";
 
-        [Test, Category(TestCategories.ACE), Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyBackNavigationBarAce()
+        [Test, Category(TestCategories.GEM), Category(TestCategories.NAVIGATION), RetryDynamic]
+        public void VerifyBackNavigationBarGem()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_BASE_TEST);
             Accessories.NavigationBarModule.WaitForNavigationBarToLoad();
             Accessories.NavigationBarModule.ClickModelsNavigation();
-            Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
+            Assert.IsTrue(Models.IsChooseModelTitleDisplayed(), "Choose Model title is not displayed");
         }
 
-        [Test, Category(TestCategories.ACE), Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyNavigationBarNotDisplayedDealerExpAce()
+        [Test, Category(TestCategories.GEM), Category(TestCategories.NAVIGATION), RetryDynamic]
+        public void VerifyNavigationBarNotDisplayedDealerExpGem()
         {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_BASE_TEST, DEALER_ID);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_BASE_TEST, DEALER_ID);
             Accessories.WaitForAccessoriesPageToLoad();
             Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
         }

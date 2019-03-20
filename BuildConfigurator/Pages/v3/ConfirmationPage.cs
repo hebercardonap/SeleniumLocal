@@ -23,6 +23,8 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_OPTIONS_ACCESSORIES_SECTION = By.CssSelector("div[class~='added-accessories']");
         private static By BY_CONFIRMATION_MODEL_NAME = By.CssSelector("div div div[class~='border-bottom-sm'] h4");
         private static By BY_KIT_PACKAGE_ICON_ARROW = By.CssSelector("span[class~='product-name-group-icon']");
+        private static By BY_GEM_SUMMARY_ACCESORY = By.CssSelector("div[class='quote-confirmation--build__summary-accessory-container'] div[class='quote-confirmation--build__summary-accessory']");
+        private static By BY_BUILD_SUMMARY_TOGGLE = By.XPath("//div[@class='quote-confirmation--build__summary-toggle-icon']");
 
         public ConfirmationPage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -127,6 +129,17 @@ namespace BuildConfigurator.Pages.v3
         public string GetConfirmationModelName()
         {
             return Driver.FindElement(BY_CONFIRMATION_MODEL_NAME).Text;
+        }
+
+        public int GetGemAddedAccessoriesCount()
+        {
+            List<IWebElement> addedAccessories = Driver.FindElements(BY_GEM_SUMMARY_ACCESORY).ToList();
+            return addedAccessories.Count;
+        }
+
+        public void ClickBuildSummaryToggleCaret()
+        {
+            DriverActions.clickElement(BY_BUILD_SUMMARY_TOGGLE);
         }
     }
 }

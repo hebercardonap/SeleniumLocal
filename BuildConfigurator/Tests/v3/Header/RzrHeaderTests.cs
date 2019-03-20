@@ -15,6 +15,7 @@ namespace BuildConfigurator.Tests.v3.Header
     [TestFixture]
     public class RzrHeaderTests : TestBase
     {
+
         [Test, Category(TestCategories.RZR), Category(TestCategories.HEADER), RetryDynamic]
         public void VerifyModelsPageHeaderElementsRzr()
         {

@@ -281,6 +281,13 @@ namespace BuildConfigurator.TestBases
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
+            else if (stringEqualsIgnoreCase(brand, Brand.GEM))
+            {
+                string url = string.Concat(UrlBuilder.getGemLandingPageURL(), model, BUILD_URL_PART,
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
             else
                 Assert.Fail("Brand {0} not supported", brand);
         }
