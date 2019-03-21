@@ -36,6 +36,7 @@ namespace BuildConfigurator.Tests.v3.Header
             Assert.IsFalse(Accessories.HeaderModule.IsSaveHeaderIconDisplayed(), "Save icon was not expected to be displayed");
             Assert.IsFalse(Accessories.HeaderModule.IsEmailHeaderIconDisplayed(), "Email icon was not expected to be displayed");
             Accessories.HeaderModule.ClickHeaderCloseIcon();
+            Accessories.ClickConfirmationBuildContinueButton();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getGemLandingPageURL());
         }
     }

@@ -22,6 +22,7 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_BASE_TEST);
             Accessories.NavigationBarModule.WaitForNavigationBarToLoad();
             Accessories.NavigationBarModule.ClickModelsNavigation();
+            Accessories.ClickConfirmationBuildContinueButton();
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed(), "Choose Model title is not displayed");
         }
 
