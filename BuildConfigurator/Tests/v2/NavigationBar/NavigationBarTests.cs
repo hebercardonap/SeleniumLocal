@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.NavigationBar
 {
     [TestFixture]
+    [Ignore("Brand running CPQ v3 version")]
     public class NavigationBarTests : TestBase
     {
         private static string BUILD_COLOR_PART_URL = "/build-color";
@@ -19,6 +20,7 @@ namespace BuildConfigurator.Tests.v2.NavigationBar
         private static string BUILD_MODEL_PART_URL = "/build-model";
 
         [Test, Category(TestCategories.NAVIGATION), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyNavigationBarAndIconsPresent()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);

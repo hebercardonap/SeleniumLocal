@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.Conflict
 {
     [TestFixture]
+    [Ignore("Brand running CPQ v3 version")]
     public class GenConflictTests : TestBase
     {
         [Test, Category(TestCategories.GEN), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]

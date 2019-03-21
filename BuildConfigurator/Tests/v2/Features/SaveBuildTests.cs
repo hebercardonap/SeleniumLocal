@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.Features
 {
     [TestFixture]
+    [Ignore("Brand running CPQ v3 version")]
     public class SaveBuildTests : TestBase
     {
         [Test, Category(TestCategories.SAVE_BUILD), Category(TestCategories.RZR), RetryDynamic]

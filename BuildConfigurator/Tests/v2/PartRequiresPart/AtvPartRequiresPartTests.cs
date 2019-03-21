@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.PartRequiresPart
 {
     [TestFixture]
+    [Ignore("Brand running CPQ v3 version")]
     public class AtvPartRequiresPartTests : TestBase
     {
         [Test, Category(TestCategories.ATV), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]

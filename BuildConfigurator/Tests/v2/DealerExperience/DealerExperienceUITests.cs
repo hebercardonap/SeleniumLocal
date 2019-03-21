@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.DealerExperience
 {
     [TestFixture]
+    [Ignore("Brand running CPQ v3 version")]
     public class DealerExperienceUITests : TestBase
     {
         private static string DEALER_ID = "02040900";

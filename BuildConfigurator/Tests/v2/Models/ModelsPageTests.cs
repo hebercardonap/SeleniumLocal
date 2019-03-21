@@ -21,6 +21,7 @@ namespace BuildConfigurator.Tests.v2.Models
         }
 
         [Test, Category(TestCategories.RZR), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsRzr()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RZR);
@@ -35,6 +36,7 @@ namespace BuildConfigurator.Tests.v2.Models
         }
 
         [Test, Category(TestCategories.ATV), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsAtv()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);
@@ -46,6 +48,7 @@ namespace BuildConfigurator.Tests.v2.Models
         }
 
         [Test, Category(TestCategories.ACE), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsAce()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ACE);
@@ -53,6 +56,7 @@ namespace BuildConfigurator.Tests.v2.Models
         }
 
         [Test, Category(TestCategories.GEN), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsGen()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEN);

@@ -17,6 +17,7 @@ namespace BuildConfigurator.Tests.v2.Accessories
         private static readonly string MODELS_YEAR = "2019";
 
         [Test, Category(TestCategories.RZR), Category(TestCategories.ACCESSORIES_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyPageUpForRandomModelsRzr()
         {
             List<string> modelColors = BuildConfigurePage.GetOneModelsColorsEachCategoryFromApi(Brand.RZR, MODELS_YEAR, TEST_DEALER_ID);
@@ -43,6 +44,7 @@ namespace BuildConfigurator.Tests.v2.Accessories
         }
 
         [Test, Category(TestCategories.GEN), Category(TestCategories.ACCESSORIES_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyPageUpForRandomModelsGen()
         {
             List<string> modelColors = BuildConfigurePage.GetOneModelsColorsEachCategoryFromApi(Brand.GEN, MODELS_YEAR, TEST_DEALER_ID);
@@ -56,6 +58,7 @@ namespace BuildConfigurator.Tests.v2.Accessories
         }
 
         [Test, Category(TestCategories.ACE), Category(TestCategories.ACCESSORIES_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyPageUpForRandomModelsAce()
         {
             List<string> modelColors = BuildConfigurePage.GetOneModelsColorsEachCategoryFromApi(Brand.ACE, MODELS_YEAR, TEST_DEALER_ID);
@@ -69,6 +72,7 @@ namespace BuildConfigurator.Tests.v2.Accessories
         }
 
         [Test, Category(TestCategories.ATV), Category(TestCategories.ACCESSORIES_PAGE), RetryDynamic]
+        [Ignore("Brand running CPQ v3 version")]
         public void VerifyPageUpForRandomModelsAtv()
         {
             List<string> modelColors = BuildConfigurePage.GetOneModelsColorsEachCategoryFromApi(Brand.ATV, MODELS_YEAR, TEST_DEALER_ID);

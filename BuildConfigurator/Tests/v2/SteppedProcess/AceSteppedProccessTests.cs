@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.SteppedProcess
 {
     [TestFixture]
+    [Ignore("Brand running CPQ v3 version")]
     public class AceSteppedProccessTests : TestBase
     {
         [Test, Category(TestCategories.ACE), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
