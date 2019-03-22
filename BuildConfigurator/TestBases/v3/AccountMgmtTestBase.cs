@@ -31,6 +31,7 @@ namespace BuildConfigurator.TestBases
 
         public void Login(UserAccountData userData)
         {
+            SignInModule.WaitForLoginModuleEnabled();
             SignInModule.EnterEmailAndPasswordValue(userData);
             SignInModule.ClickLoginCTA();
         }
