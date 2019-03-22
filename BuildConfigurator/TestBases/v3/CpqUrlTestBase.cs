@@ -107,6 +107,12 @@ namespace BuildConfigurator.TestBases
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
+            else if (stringEqualsIgnoreCase(Brand.ATV, brand))
+            {
+                string url = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), model, BUILD_TRIM_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
         }
@@ -162,6 +168,12 @@ namespace BuildConfigurator.TestBases
             else if (stringEqualsIgnoreCase(Brand.GEN, brand))
             {
                 string url = string.Concat(UrlBuilder.getGeneralLandingPageURL(), model, BUILD_COLOR_URL_PART);
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else if (stringEqualsIgnoreCase(Brand.ATV, brand))
+            {
+                string url = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), model, BUILD_COLOR_URL_PART);
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));
             }
@@ -284,6 +296,13 @@ namespace BuildConfigurator.TestBases
             else if (stringEqualsIgnoreCase(brand, Brand.GEM))
             {
                 string url = string.Concat(UrlBuilder.getGemLandingPageURL(), model, BUILD_URL_PART,
+                    string.Format(TEST_DEALER_PART_ID, dealerId));
+                GoToUrl(url);
+                Log.Info(string.Format("Navigating to URL: {0}", url));
+            }
+            else if (stringEqualsIgnoreCase(brand, Brand.ATV))
+            {
+                string url = string.Concat(UrlBuilder.getSportsmanLandingPageURL(), model, BUILD_URL_PART,
                     string.Format(TEST_DEALER_PART_ID, dealerId));
                 GoToUrl(url);
                 Log.Info(string.Format("Navigating to URL: {0}", url));

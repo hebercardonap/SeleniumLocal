@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v3.SteppedProcess
     public class AceSteppedProcess : TestBase
     {
         [Test, Category(TestCategories.ACE), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
-        public void VerifySteppedProcessRzr()
+        public void VerifySteppedProcessAce()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ACE);
             Models.SelectRandomModelVersion();

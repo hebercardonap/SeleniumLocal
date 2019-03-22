@@ -24,7 +24,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickAccessoryAddByProductName("Spare Tire Carrier");
             Accessories.ClickCategoryByName("Protection");
             Accessories.ClickSubcategoryByName("Cage Systems");
-            Accessories.ClickAccessoryAddByProductName("Cage system - Black");
+            Accessories.ClickAccessoryAddByProductName("Cage System - Black");
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed(), "Conflict container not displayed as expected");
         }
 

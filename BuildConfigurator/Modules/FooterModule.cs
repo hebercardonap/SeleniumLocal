@@ -69,6 +69,7 @@ namespace BuildConfigurator.Modules
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_FOOTER_PAYMENT_CALC);
             DriverActions.clickElement(BY_FOOTER_PAYMENT_CALC);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         public void ClickFooterStartingPrice()

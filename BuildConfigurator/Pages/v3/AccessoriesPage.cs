@@ -98,6 +98,7 @@ namespace BuildConfigurator.Pages.v3
                 {
                     isFound = true;
                     DriverActions.clickElement(category);
+                    DriverActions.waitForAjaxRequestToComplete();
                     break;
                 }
             }
@@ -117,6 +118,7 @@ namespace BuildConfigurator.Pages.v3
                 {
                     isFound = true;
                     DriverActions.clickElement(subCategory);
+                    DriverActions.waitForAjaxRequestToComplete();
                     break;
                 }
             }
@@ -138,6 +140,7 @@ namespace BuildConfigurator.Pages.v3
                     IWebElement button = product.FindElement(BY_ACCESSORY_PRODUCT_CTA);
                     DriverActions.ScrollToElement(button);
                     DriverActions.clickElement(button);
+                    DriverActions.waitForAjaxRequestToComplete();
                     break;
                 }
             }

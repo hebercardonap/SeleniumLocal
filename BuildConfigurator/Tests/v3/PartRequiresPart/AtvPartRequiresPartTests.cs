@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.PartRequiresPart
 {
     [TestFixture]
-    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvPartRequiresPartTests : TestBase
     {
         [Test, Category(TestCategories.ATV), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]

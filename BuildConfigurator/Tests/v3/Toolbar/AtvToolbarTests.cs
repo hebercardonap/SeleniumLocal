@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.Toolbar
 {
     [TestFixture]
-    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvToolbarTests : TestBase
     {
         [Test, Category(TestCategories.ATV), Category(TestCategories.TOOLBAR), RetryDynamic]
@@ -38,7 +37,7 @@ namespace BuildConfigurator.Tests.v3.Toolbar
         [Test, Category(TestCategories.ATV), Category(TestCategories.TOOLBAR), RetryDynamic]
         public void VerifyToolbarRestartBuildFunctionalityAtv()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RAN, ModelPageUrl.ATV_450_HO_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST);
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Protection");
             Accessories.ClickSubcategoryByName("Handguards");

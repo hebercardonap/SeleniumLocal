@@ -17,13 +17,10 @@ namespace BuildConfigurator.Tests.v3.SteppedProcess
         public void VerifySteppedProcessGen()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEN);
-            Models.SelectModelBySeatNumber("two");
+            Models.SelectModelBySeatNumber("four");
             Models.SelectRandomModelVersion();
             Trims.WaitForTrimsPageToLoad();
             Trims.ClickRandomTrim();
-            Colors.WaitForColorsPageToLoad();
-            Colors.ClickRandomWholegoodColor();
-            Colors.FooterModule.ClickFooterNextButton();
             Accessories.WaitForAccessoriesPageToLoad();
             Accessories.ClickCategoryByName("Wheel & Tire Sets");
             Accessories.ClickSubcategoryByName("Trail");
