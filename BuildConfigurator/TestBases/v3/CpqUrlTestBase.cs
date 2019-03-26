@@ -23,6 +23,8 @@ namespace BuildConfigurator.TestBases
         private static string TEST_DEALER_PART_ID = "?dealerid={0}";
         private static string BUILD_QUOTE_URL_PART = "rzr-s-900-white/build-quote/";
 
+        public ModalsDialogPage ModalsDialogPage { get { return new ModalsDialogPage(_parallelConfig); } }
+
         public CpqUrlTestBase(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -80,6 +82,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Brand {0} not supported", brandName);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         /// <summary>
@@ -115,6 +119,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         /// <summary>
@@ -138,6 +144,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         /// <summary>
@@ -179,6 +187,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         /// <summary>
@@ -196,6 +206,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         /// <summary>
@@ -261,6 +273,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         public void NavigateToBrandDealerExpAccessoriesPage(string brand, string model, string dealerId)
@@ -334,6 +348,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
         /// <summary>
@@ -361,6 +377,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
+
+            ModalsDialogPage.HandlePurposePromptModal();
         }
 
     }

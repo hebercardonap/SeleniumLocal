@@ -119,6 +119,7 @@
     <Compile Include="Pages\v2\PageHelpers.cs" />
     <Compile Include="Pages\v3\CategoryPage.cs" />
     <Compile Include="Pages\v3\EnginePage.cs" />
+    <Compile Include="Pages\v3\ModalsDialogPage.cs" />
     <Compile Include="Pages\v3\OptionsPage.cs" />
     <Compile Include="Pages\v3\PackagesPage.cs" />
     <Compile Include="Pages\v3\AccessoriesPage.cs" />

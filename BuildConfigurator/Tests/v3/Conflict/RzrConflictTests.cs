@@ -23,7 +23,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickSubcategoryByName("Storage & Bed Accessories");
             Accessories.ClickAccessoryAddByProductName("Spare Tire Carrier");
             Accessories.ClickCategoryByName("Protection");
-            Accessories.ClickSubcategoryByName("Cage Systems");
+            Accessories.ClickSubcategoryByName("Cage System");
             Accessories.ClickAccessoryAddByProductName("Cage System - Black");
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed(), "Conflict container not displayed as expected");
         }
@@ -37,7 +37,7 @@ namespace BuildConfigurator.Tests.v3.Conflict
             Accessories.ClickSubcategoryByName("Storage & Bed Accessories");
             Accessories.ClickAccessoryAddByProductName("Spare Tire Carrier");
             Accessories.ClickCategoryByName("Protection");
-            Accessories.ClickSubcategoryByName("Cage Systems");
+            Accessories.ClickSubcategoryByName("Cage System");
             Accessories.ClickAccessoryAddByProductName("Cage system - Black");
             Assert.IsTrue(Accessories.IsConflictContainerDisplayed(), "Conflict container not displayed as expected");
             Assert.IsFalse(Accessories.RemoveConlfictPartAndValidateInBuildSummary("Cage system - Black"),
