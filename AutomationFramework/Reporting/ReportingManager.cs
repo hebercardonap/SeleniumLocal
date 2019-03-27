@@ -20,7 +20,7 @@ namespace AutomationFramework.Reporting
 
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
 
-        private static string dir = @"P:\IS\ALL_IS\App Groups\Web\QA\CPQ\Reports";
+        private static string dir = @"\\polarisind.com\Polaris$\Medina\IS\ALL_IS\App Groups\Web\QA\CPQ\Reports";
 
         private ExtentTest _test;
 
@@ -33,7 +33,7 @@ namespace AutomationFramework.Reporting
         {
             if (extent == null)
             {
-                htmlReporter = new ExtentHtmlReporter(dir + "\\" + _reportName + "_ExtentReport.html");
+                htmlReporter = new ExtentHtmlReporter(dir + "\\" + _reportName + "_CPQ_Report.html");
                 htmlReporter.Configuration().DocumentTitle = "CPQ Tests";
                 htmlReporter.Configuration().ReportName = "CPQ Tests";
                 extent = new ExtentReports();

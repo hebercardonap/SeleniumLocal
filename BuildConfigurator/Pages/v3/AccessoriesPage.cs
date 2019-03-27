@@ -82,8 +82,8 @@ namespace BuildConfigurator.Pages.v3
         public void WaitForAccessoriesPageToLoad()
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
-            DriverActions.WaitForCanvassToComplete();
             DriverActions.waitForElementVisibleAndEnabled(BY_ACCESSORIES_CATEGORIES);
+            DriverActions.WaitForCanvassToComplete();
         }
 
         public void ClickCategoryByName(string categoryName)
@@ -457,6 +457,29 @@ namespace BuildConfigurator.Pages.v3
         public bool IsChooseAccessoriesTitleDisplayed()
         {
             return DriverActions.IsElementPresent(BY_CHOOSE_ACCESSORIES_TITLE);
+        }
+
+        public void VerifyAccessoriesPageORVUIElements()
+        {
+            Assert.IsTrue(IsChooseAccessoriesTitleDisplayed(), "Accessories page title is not present");
+            Assert.IsTrue(HeaderModule.IsNavigationBarBrandNameDisplayed(), "Navigation bar is not displayed");
+            Assert.IsTrue(HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign in is not present");
+            Assert.IsTrue(HeaderModule.IsAccountHeaderIconDisplayed(), "Account icon is not displayed");
+            Assert.IsTrue(Toolbar.IsToolbarDisplayed(), "Toolbar is not displayed");
+            Assert.IsTrue(FooterModule.IsNextOpenBuildSummaryDisplayed(), "Build Summary/Next button not displayed");
+            Assert.IsTrue(FooterModule.IsPaymentCalculatorDisplayed(), "Payment calculator is not displayed");
+            Assert.IsTrue(FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
+        }
+
+        public void VerifyAccessoriesPageGEMUIElements()
+        {
+            Assert.IsTrue(IsChooseAccessoriesTitleDisplayed(), "Accessories page title is not present");
+            Assert.IsTrue(HeaderModule.IsNavigationBarBrandNameDisplayed(), "Navigation bar is not displayed");
+            Assert.IsTrue(HeaderModule.IsHeaderSignInIconDisplayed(), "Header Sign in is not present");
+            Assert.IsTrue(HeaderModule.IsAccountHeaderIconDisplayed(), "Account icon is not displayed");
+            Assert.IsTrue(Toolbar.IsToolbarDisplayed(), "Toolbar is not displayed");
+            Assert.IsTrue(FooterModule.IsNextOpenBuildSummaryDisplayed(), "Build Summary/Next button not displayed");
+            Assert.IsTrue(FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
         }
     }
 }

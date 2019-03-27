@@ -14,6 +14,7 @@ namespace AutomationFramework.ApiUtils.ApiDataProvider
     {
         private static readonly int API_SUCCESS_RESPONSE_CODE = 200;
         RestAPIHelper RestAPIHelper = new RestAPIHelper();
+        Random rnd = new Random();
 
         public List<string> GetModelsColorByBrandYear(string brand, string year, string dealerid)
         {
@@ -32,7 +33,7 @@ namespace AutomationFramework.ApiUtils.ApiDataProvider
             return models;
         }
 
-        private List<string> GetAllModelsColorApiResponse(string brand, string year, string dealerid)
+        public List<string> GetAllModelsColorApiResponse(string brand, string year, string dealerid)
         {
             List<string> modelsSeoName = new List<string>();
             RestAPIHelper.SetUrl(CPQEndpointBuilder.GetDealerExpModelsEnpointByBrandYear(brand, year, dealerid));

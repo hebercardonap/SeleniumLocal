@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiUtils\ApiDataProvider\ApiDataProvider.cs" />
+    <Compile Include="ApiUtils\Contracts\CpqPreselect.cs" />
     <Compile Include="ApiUtils\Contracts\PriceContainer.cs" />
     <Compile Include="ApiUtils\Contracts\Variant.cs" />
     <Compile Include="ApiUtils\EndpointBuilder\CPQEndpointBuilder.cs" />

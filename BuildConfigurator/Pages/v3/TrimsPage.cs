@@ -14,6 +14,7 @@ namespace BuildConfigurator.Pages.v3
     public class TrimsPage : BasePage
     {
         private static By BY_TRIM_CARDS = PolarisSeleniumAttribute.PolarisSeleniumSelector("trimModelsCard");
+        private static By BY_TRIM_CARD_LABELS = PolarisSeleniumAttribute.PolarisSeleniumSelector("trimInnerLabel");
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
 
@@ -40,6 +41,24 @@ namespace BuildConfigurator.Pages.v3
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
             DriverActions.waitForElementVisibleAndEnabled(BY_TRIM_CARDS);
+        }
+
+        public List<IWebElement> GetTrimsCards()
+        {
+            List<IWebElement> wholegoodModelsCards = Driver.FindElements(BY_TRIM_CARDS).ToList();
+            return wholegoodModelsCards;
+        }
+
+        public List<string> GetTrimsCardTitleLabels()
+        {
+            List<string> trimsTitleLabels = new List<string>();
+            List<IWebElement> trimCards = Driver.FindElements(BY_TRIM_CARD_LABELS).ToList();
+
+            foreach (var trim in trimCards)
+            {
+                trimsTitleLabels.Add(trim.Text);
+            }
+            return trimsTitleLabels;
         }
     }
 }

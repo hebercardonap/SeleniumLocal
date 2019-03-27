@@ -82,5 +82,25 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("SNO family {0} not available", family);
         }
 
+        public bool VerifyModelsAreNotDuplicates()
+        {
+            bool areModelsUnique = true;
+            var duplicateItems = GetWholegoodCardTitleLabels().GroupBy(x => x)
+                .Where(group => group.Count() > 1)
+                .Select(group => group.Key).ToList();
+
+            if (duplicateItems.Count > 0)
+            {
+                areModelsUnique = false;
+                string duplicateValues = string.Empty;
+                foreach (var item in duplicateItems)
+                {
+                    duplicateValues += item + "\n";
+                }
+                Assert.Fail("There are duplicate models \n{0}", duplicateValues);
+            }
+            return areModelsUnique;
+        }
+
     }
 }

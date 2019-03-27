@@ -21,7 +21,7 @@ namespace AutomationFramework.Utils
             ITakesScreenshot ts = (ITakesScreenshot)_parallelConfig.Driver;
             Screenshot screenshot = ts.GetScreenshot();
             string runName = screenshotName + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
-            string drive = "P:\\IS\\ALL_IS\\App Groups\\Web\\QA\\CPQ\\Screenshots\\";
+            string drive = @"\\polarisind.com\Polaris$\Medina\IS\ALL_IS\App Groups\Web\QA\CPQ\Screenshots\";
             string imageName = drive + runName + ".jpg";
 
             if (!Directory.Exists(drive))

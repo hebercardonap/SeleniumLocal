@@ -69,7 +69,7 @@ namespace AutomationFramework.Reporting
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public static void FinalizeTest()
+        public static void FinalizeTest(string currentUrl = null, string screenShotPath = null)
         {
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var message = string.Empty;
@@ -115,7 +115,8 @@ namespace AutomationFramework.Reporting
             }
             else if (logStatus != Status.Pass && GetTestCount(testCount, TestContext.CurrentContext.Test.Name) == RETRY_COUNT)
             {
-                GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace);
+                GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace + 
+                    string.Format("Test failed at URL: {0}", currentUrl)).AddScreenCaptureFromPath(screenShotPath);
             }
         }
 

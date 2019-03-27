@@ -17,7 +17,7 @@ namespace AutomationFramework.ApiUtils.Contracts
         public string WholegoodId { get; set; }
         public string SiteWholegoodParentProduct { get; set; }
         public string[] CpqCategoryExcludes { get; set; }
-        public string[] CpqPreselect { get; set; }
+        public CpqPreselect CpqPreselect { get; set; }
         public string WholegoodMarketingName { get; set; }
         public string WholegoodNameHeading { get; set; }
         public string WholegoodNameSubheading { get; set; }

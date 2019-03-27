@@ -142,6 +142,7 @@
     <Compile Include="TestBases\v2\BuildTrimTestBase.cs" />
     <Compile Include="TestBases\v3\AccessoriesTestBase.cs" />
     <Compile Include="TestBases\v3\AccountMgmtTestBase.cs" />
+    <Compile Include="TestBases\v3\ApiDataTestBase.cs" />
     <Compile Include="TestBases\v3\CategoryTestBase.cs" />
     <Compile Include="TestBases\v3\ColorsTestBase.cs" />
     <Compile Include="TestBases\v3\ConfirmationTestBase.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Tests\v2\SteppedProcess\RzrSteppedProcessTests.cs" />
     <Compile Include="Tests\v2\SteppedProcess\SlgSteppedProccessTests.cs" />
     <Compile Include="Tests\v2\Trims\TrimsPageTests.cs" />
+    <Compile Include="Tests\v3\AccessoriesPage\AccessoriesPageTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\AceAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\AtvAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\GemAcctMgmtTests.cs" />
@@ -217,6 +219,7 @@
     <Compile Include="Tests\v3\Header\RzrHeaderTests.cs" />
     <Compile Include="Tests\v3\Header\SnoHeaderTests.cs" />
     <Compile Include="Tests\v3\Header\TetBase.cs" />
+    <Compile Include="Tests\v3\ModelsPage\ModelsPageTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\AceNavigationBarTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\AtvNavigationBarTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\GemNavigationBarTests.cs" />
@@ -251,6 +254,7 @@
     <Compile Include="Tests\v3\Toolbar\RangerToolbarTests.cs" />
     <Compile Include="Tests\v3\Toolbar\RzrToolbarTests.cs" />
     <Compile Include="Tests\v3\Toolbar\SnoToolbarTests.cs" />
+    <Compile Include="Tests\v3\TrimsPage\TrimsPageTests.cs" />
     <Compile Include="Tests\v3\UIFeatures\CTAAndLinksTests.cs" />
   </ItemGroup>
   <ItemGroup>

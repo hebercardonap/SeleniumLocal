@@ -30,6 +30,7 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_SNO_RMK_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'RMK')]");
         private static By BY_SNO_INDY_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'INDY')]");
         private static By BY_SNO_VOYAGEUR_FAMILY = By.XPath("//button[@data-slnm-attr='wholegoodSeatsCard']//div[contains(@data-slnm-attr,'Voyageur')]");
+        private static By BY_WHOLEGOOD_CARD_TITLE_LABEL = PolarisSeleniumAttribute.PolarisSeleniumSelector("wholegoodInnerLabel");
 
 
         public HeaderModule HeaderModule { get { return new HeaderModule(_parallelConfig); } }
@@ -144,6 +145,25 @@ namespace BuildConfigurator.Pages.v3
         public void ClickGemUtilityModelsFamily()
         {
             DriverActions.clickElement(BY_GEM_UTILITY_LSV);
+        }
+
+        public List<string> GetWholegoodCardTitleLabels()
+        {
+            List<string> cardlabels = new List<string>();
+            List<IWebElement> wholegoodCardsLabels = Driver.FindElements(BY_WHOLEGOOD_CARD_TITLE_LABEL).ToList();
+
+            foreach (var item in wholegoodCardsLabels)
+            {
+                cardlabels.Add(item.Text);
+            }
+
+            return cardlabels;
+        }
+
+        public List<IWebElement> GetWholegoodsModelsCards()
+        {
+            List<IWebElement> wholegoodModelsCards = Driver.FindElements(BY_MODELS_CARDS).ToList();
+            return wholegoodModelsCards;
         }
     }
 }

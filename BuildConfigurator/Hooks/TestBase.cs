@@ -1,5 +1,7 @@
-﻿using AutomationFramework.Base;
+﻿using AutomationFramework.ApiUtils.ApiDataProvider;
+using AutomationFramework.Base;
 using AutomationFramework.Reporting;
+using AutomationFramework.Utils;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using BuildConfigurator.TestBases;
@@ -22,6 +24,7 @@ namespace BuildConfigurator.Hooks
     {
 
         private static string _reportName = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
+        TakeScreenshot _takeScreenshot;
         ILog log;
 
         [SetUp]
@@ -34,7 +37,14 @@ namespace BuildConfigurator.Hooks
         [TearDown]
         public void CleanUp()
         {
-            ReportTestManager.FinalizeTest();
+            var screenshotPath = string.Empty;
+            TestStatus status = TestContext.CurrentContext.Result.Outcome.Status;
+            if (status == TestStatus.Failed)
+            {
+                _takeScreenshot = new TakeScreenshot(_parallelConfig);
+                screenshotPath = _takeScreenshot.Capture(TestContext.CurrentContext.Test.Name);
+            }
+            ReportTestManager.FinalizeTest(_parallelConfig.Driver.Url, screenshotPath);
             _parallelConfig.Driver.Close();
             _parallelConfig.Driver.Quit();
         }
@@ -165,6 +175,11 @@ namespace BuildConfigurator.Hooks
         public CategoryTestBase Category
         {
             get { return new CategoryTestBase(_parallelConfig); }
+        }
+
+        public ApiDataTestBase ApiDataTestBase
+        {
+            get { return new ApiDataTestBase();  }
         }
 
         private void GetTestNames()
