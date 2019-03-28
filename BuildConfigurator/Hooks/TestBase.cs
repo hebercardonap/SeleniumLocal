@@ -37,16 +37,29 @@ namespace BuildConfigurator.Hooks
         [TearDown]
         public void CleanUp()
         {
-            var screenshotPath = string.Empty;
-            TestStatus status = TestContext.CurrentContext.Result.Outcome.Status;
-            if (status == TestStatus.Failed)
+            try
             {
-                _takeScreenshot = new TakeScreenshot(_parallelConfig);
-                screenshotPath = _takeScreenshot.Capture(TestContext.CurrentContext.Test.Name);
+                var screenshotPath = string.Empty;
+                TestStatus status = TestContext.CurrentContext.Result.Outcome.Status;
+                if (status == TestStatus.Failed)
+                {
+                    _takeScreenshot = new TakeScreenshot(_parallelConfig);
+                    screenshotPath = _takeScreenshot.Capture(TestContext.CurrentContext.Test.Name);
+                }
+                ReportTestManager.FinalizeTest(_parallelConfig.Driver.Url, screenshotPath);
+                _parallelConfig.Driver.Close();
+                _parallelConfig.Driver.Quit();
             }
-            ReportTestManager.FinalizeTest(_parallelConfig.Driver.Url, screenshotPath);
-            _parallelConfig.Driver.Close();
-            _parallelConfig.Driver.Quit();
+            catch
+            {
+
+                ReportTestManager.FinalizeTest();
+                _parallelConfig.Driver.Close();
+                _parallelConfig.Driver.Quit();
+            }
+            //ReportTestManager.FinalizeTest();
+            //_parallelConfig.Driver.Close();
+            //_parallelConfig.Driver.Quit();
         }
 
         [OneTimeSetUp]

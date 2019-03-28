@@ -115,8 +115,13 @@ namespace AutomationFramework.Reporting
             }
             else if (logStatus != Status.Pass && GetTestCount(testCount, TestContext.CurrentContext.Test.Name) == RETRY_COUNT)
             {
-                GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace + 
+                //GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace);
+                if(screenShotPath != null)
+                GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace +
                     string.Format("Test failed at URL: {0}", currentUrl)).AddScreenCaptureFromPath(screenShotPath);
+                else
+                    GetTest().Log(logStatus, "Test ended with " + logStatus + message + stacktrace 
+                        + string.Format("Test failed at URL: {0}", currentUrl));
             }
         }
 

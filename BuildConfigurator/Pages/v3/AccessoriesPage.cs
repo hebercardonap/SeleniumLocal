@@ -103,7 +103,8 @@ namespace BuildConfigurator.Pages.v3
                 }
             }
             if (!isFound)
-                Assert.Fail("The category with name {0} is not present", categoryName);
+                throw new NoSuchElementException(string.Format("Category with name {0} was not found for model {1}"
+                    , categoryName, Driver.Url));
         }
 
         public void ClickSubcategoryByName(string subCategoryName)
@@ -123,7 +124,8 @@ namespace BuildConfigurator.Pages.v3
                 }
             }
             if (!isFound)
-                Assert.Fail("The sub category with name {0} is not present", subCategoryName);
+                throw new NoSuchElementException(string.Format("Sub category with name {0} was not found for model {1}"
+                    , subCategoryName, Driver.Url));
         }
 
         public void ClickAccessoryAddByProductName(string productName)
@@ -145,7 +147,8 @@ namespace BuildConfigurator.Pages.v3
                 }
             }
             if (!isFound)
-                Assert.Fail("The product with name {0} is not present", productName);
+                throw new NoSuchElementException(string.Format("Product with name {0} was not found for model {1}"
+                    , productName, Driver.Url));
         }
 
         public void ClickProductDetailsLinkByDesc(string productName)

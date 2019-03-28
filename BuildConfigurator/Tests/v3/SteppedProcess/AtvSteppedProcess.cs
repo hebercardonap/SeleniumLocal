@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.SteppedProcess
 {
     [TestFixture]
-    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvSteppedProcess : TestBase
     {
         [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
