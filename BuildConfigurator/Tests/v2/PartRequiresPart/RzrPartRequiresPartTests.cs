@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [Ignore("Brand running CPQ v3 version")]
     public class RzrPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.RZR), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredRzr()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_PRP);
@@ -30,7 +30,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
 
         }
 
-        [Test, Category(TestCategories.RZR), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPrpDisplayedUponSecondaryPartRemovedRzr()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_PRP);
@@ -46,7 +46,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
 
         }
 
-        [Test, Category(TestCategories.RZR), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifySecondaryAccessoryPersistPrpRzr()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_PRP);

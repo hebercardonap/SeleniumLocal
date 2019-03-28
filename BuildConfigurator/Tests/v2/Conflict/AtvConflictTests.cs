@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [Ignore("Brand running CPQ v3 version")]
     public class AtvConflictTests : TestBase
     {
-        [Test, Category(TestCategories.ATV), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
+        //[Test, Category(TestCategories.ATV), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredAtv()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_CONFLICT);

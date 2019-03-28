@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [Ignore("Brand running CPQ v3 version")]
     public class GenPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.GEN), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        //[Test, Category(TestCategories.GEN), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredGen()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEN, ModelPageUrl.GENERAL_1000_EPS_PRP);

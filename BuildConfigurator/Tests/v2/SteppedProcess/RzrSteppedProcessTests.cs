@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [Ignore("Brand running CPQ v3 version")]
     public class RzrSteppedProcessTests : TestBase
     {
-        [Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyRzrSteppedProcessOneSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RZR);
@@ -36,7 +36,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             BuildConfirmationPage.VerifyNewBuildConfirmationAsExpected();
         }
 
-        [Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyRzrSteppedProcessTwoSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RZR);
@@ -58,7 +58,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             BuildConfirmationPage.VerifyNewBuildConfirmationAsExpected();
         }
 
-        [Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyRzrSteppedProcessFourSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RZR);

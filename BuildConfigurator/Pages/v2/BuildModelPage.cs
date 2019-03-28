@@ -178,6 +178,7 @@ namespace BuildConfigurator.Pages.v2
 
         public void WaitForBuildModelPageToLoad()
         {
+            WebDriverExtensions.WaitForPageLoaded(Driver);
             DriverActions.waitForElementPresent(BY_BUILD_MODEL_HEADER);
         }
 

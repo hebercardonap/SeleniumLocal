@@ -12,10 +12,9 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.Features
 {
     [TestFixture]
-    [Ignore("Brand running CPQ v3 version")]
     public class DataValidationTests : TestBase
     {
-        [Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.RZR),  RetryDynamic]
+        //[Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.RZR),  RetryDynamic]
         public void VerifyAccessoryCardsPresentRzr()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
@@ -23,7 +22,7 @@ namespace BuildConfigurator.Tests.v2.Features
             VerifyAccessoryCardsPresent();
         }
 
-        [Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.ATV), RetryDynamic]
+        //[Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.ATV), RetryDynamic]
         public void VerifyAccessoryCardsPresentAtv()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST);
@@ -31,7 +30,7 @@ namespace BuildConfigurator.Tests.v2.Features
             VerifyAccessoryCardsPresent();
         }
 
-        [Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.ACE),  RetryDynamic]
+        //[Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.ACE),  RetryDynamic]
         public void VerifyAccessoryCardsPresentAce()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_BASE_TEST);
@@ -39,7 +38,7 @@ namespace BuildConfigurator.Tests.v2.Features
             VerifyAccessoryCardsPresent();
         }
 
-        [Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.GEN), RetryDynamic]
+        //[Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.GEN), RetryDynamic]
         public void VerifyAccessoryCardsPresentGen()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEN, ModelPageUrl.GENERAL_1000_EPS_BASE_TEST);
@@ -47,7 +46,7 @@ namespace BuildConfigurator.Tests.v2.Features
             VerifyAccessoryCardsPresent();
         }
 
-        [Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.GEM), RetryDynamic]
+        //[Test, Category(TestCategories.DATA_VALIDATION), Category(TestCategories.GEM), RetryDynamic]
         public void VerifyAccessoryCardsPresentGem()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_BASE_TEST);

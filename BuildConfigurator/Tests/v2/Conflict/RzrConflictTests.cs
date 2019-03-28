@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [Ignore("Brand running CPQ v3 version")]
     public class RzrConflictTests : TestBase
     {
-        [Test, Category(TestCategories.RZR), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredRzr()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_CONFLICT);

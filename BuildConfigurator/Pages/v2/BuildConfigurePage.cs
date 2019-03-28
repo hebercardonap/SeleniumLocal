@@ -87,6 +87,7 @@ namespace BuildConfigurator.Pages.v2
         private static By BY_NAVIGATION_COLOR = By.XPath("//a[contains(@title,'Color')]");
         private static By BY_NAVIGATION_TRIM = By.XPath("//a[contains(@title,'Trim')]");
         private static By BY_NAVIGATION_MODELS = By.XPath("//a[contains(@title,'Models')]");
+        private static By BY_NAVIGATION_CATEGORIES = By.XPath("//a[contains(@title,'Categories')]");
         private static By BY_CONFLICT_CONTAINER_ITEMS = By.XPath("//div[@class='conflict']//div[@class='summary-accessory']");
         private static By BY_CONFLICT_REMOVE_CTA = By.XPath(".//div[@class='summary-accessory-info-remove ']");
         private static By BY_SAVE_BUILD_MODAL_TITLE = By.XPath("//div[@class='save-title']");
@@ -275,7 +276,8 @@ namespace BuildConfigurator.Pages.v2
                 }
             }
             if (!isFound)
-                Assert.Fail("Accessory with description {0} was not found", accessoryTitle);
+                throw new NoSuchElementException(string.Format("Product with name {0} is not present for model {1}",
+                    accessoryTitle, Driver.Url));
 
         }
 
@@ -583,6 +585,7 @@ namespace BuildConfigurator.Pages.v2
         public void WaitForBuildPageToLoad()
         {
             WebDriverExtensions.WaitForPageLoaded(Driver);
+            DriverActions.WaitForCanvassToComplete();
             DriverActions.waitForElementVisibleAndEnabled(BY_FULL_SCREEN_BUTTON);
         }
 
@@ -641,6 +644,12 @@ namespace BuildConfigurator.Pages.v2
         {
             DriverActions.waitForElementVisibleAndEnabled(BY_NAVIGATION_MODELS);
             DriverActions.clickElement(BY_NAVIGATION_MODELS);
+        }
+
+        public void ClickCategoriesFromNavigationBar()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_NAVIGATION_CATEGORIES);
+            DriverActions.clickElement(BY_NAVIGATION_CATEGORIES);
         }
 
         public bool VerifyDataPresentForCategories()

@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildConfigurator.Tests.v3
+namespace BuildConfigurator.Tests.v3.Accessories
 {
     [TestFixture]
     public class AccessoriesPageTests : TestBase

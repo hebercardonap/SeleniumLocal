@@ -12,18 +12,17 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.NavigationBar
 {
     [TestFixture]
-    [Ignore("Brand running CPQ v3 version")]
     public class NavigationBarTests : TestBase
     {
         private static string BUILD_COLOR_PART_URL = "/build-color";
         private static string BUILD_TRIM_PART_URL = "/build-trim";
         private static string BUILD_MODEL_PART_URL = "/build-model";
+        private static string BUILD_CATEGORY_PART_URL = "/build-category";
 
         [Test, Category(TestCategories.NAVIGATION), RetryDynamic]
-        [Ignore("Brand running CPQ v3 version")]
-        public void VerifyNavigationBarAndIconsPresent()
+        public void VerifyNavigationBarAndIconsPresentV2()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.IND, ModelPageUrl.INDIAN_SPRINGFIELD_BASE_TEST);
             BuildConfigurePage.WaitForBuildPageToLoad();
             Assert.IsTrue(BuildConfigurePage.IsNavigationBarDisplayed(), "Navigation bar is not present");
             Assert.IsTrue(BuildConfigurePage.IsIconContainerDisplayed(), "Icon container is not displayed");
@@ -32,17 +31,16 @@ namespace BuildConfigurator.Tests.v2.NavigationBar
         }
 
         [Test, Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyRzrNavigationBack()
+        public void VerifyIndNavigationBackV2()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.IND, ModelPageUrl.INDIAN_SPRINGFIELD_BASE_TEST);
             BuildConfigurePage.WaitForBuildPageToLoad();
             Assert.IsTrue(BuildConfigurePage.IsNavigationBarDisplayed(), "Navigation bar is not present");
             BuildConfigurePage.ClickColorFromNavigationBar();
+            BuildColorPage.WaitForColorPageToLoad();
             Assert.IsTrue(BuildColorPage.UrlContains(BUILD_COLOR_PART_URL));
-            BuildConfigurePage.ClickTrimFromNavigationBar();
-            Assert.IsTrue(BuildTrimPage.UrlContains(BUILD_TRIM_PART_URL));
-            BuildConfigurePage.ClickModelsFromNavigationBar();
-            Assert.IsTrue(BuildModelPage.UrlContains(BUILD_MODEL_PART_URL));
+            BuildConfigurePage.ClickCategoriesFromNavigationBar();
+            Assert.IsTrue(BuildModelPage.UrlContains(BUILD_CATEGORY_PART_URL));
         }
     }
 }

@@ -39,7 +39,8 @@ namespace BuildConfigurator.Pages.v2
                 }
             }
             if (!isFound)
-                Assert.Fail("The category with name {0} is not present", elementTitleText);
+                throw new NoSuchElementException(string.Format("Item with name {0} is not present for model {1}",
+                    elementTitleText, Driver.Url));
         }
     }
 }

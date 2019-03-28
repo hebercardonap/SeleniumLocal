@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [Ignore("Brand running CPQ v3 version")]
     public class AtvPartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.ATV), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        //[Test, Category(TestCategories.ATV), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredAtv()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_6x6_570_EPS_PRP);

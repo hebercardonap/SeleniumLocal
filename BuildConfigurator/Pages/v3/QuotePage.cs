@@ -29,6 +29,8 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_AGE_CHECKBOX_VALIDATION_ERROR = By.XPath("//div[@data-f-type='choice']//span[@class='Form__Element__ValidationError']");
         private static By BY_SELECTED_DEALER_NAME = By.XPath("//div[contains(@class,'dlecb__dealer-name')]");
         private static By BY_QUOTE_PAGE_TITLE = By.CssSelector("h1[class~='heading-generic__heading']");
+        private static By BY_QUOTE_PAGE_COMMENTS_PLUS = By.CssSelector("span[class='text-area-element-custom-block-toggle__icon']");
+        private static By BY_QUOTE_PAGE_COMMENTS_TEXT_AREA = By.CssSelector("div[class='text-area-element-custom-block-content'] textarea");
         public QuotePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -152,6 +154,16 @@ namespace BuildConfigurator.Pages.v3
         public void ClickAwayForFocusQuotePage()
         {
             DriverActions.clickElement(BY_QUOTE_PAGE_TITLE);
+        }
+
+        public void ClickQuoteCommentsPlusSign()
+        {
+            DriverActions.clickElement(BY_QUOTE_PAGE_COMMENTS_PLUS);
+        }
+
+        public void EnterQuoteComments()
+        {
+            Driver.FindElement(BY_QUOTE_PAGE_COMMENTS_TEXT_AREA).SendKeys(AccountDetails.TEST_USER_1.Comments);
         }
     }
 }

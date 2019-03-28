@@ -12,32 +12,38 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.Features
 {
     [TestFixture]
-    [Ignore("Brand running CPQ v3 version")]
+
     public class CTAFunctionalityTests : TestBase
     {
         [Test, Category(TestCategories.UI_FEATURES), RetryDynamic]
-        public void VerifyRzrRestartBuildFunctionality()
+        public void VerifyRestartBuildFunctionalityv2()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
+            CPQNavigate.NavigateToCategoryPage(Brand.IND);
+            BuildCategoryPage.WaitForCategoryPageToLoad();
+            BuildCategoryPage.ClickOnIndianCategory("scout");
+            BuildModelPage.ClickRandomModel();
+            BuildColorPage.WaitForColorPageToLoad();
+            BuildColorPage.ClickColor();
+            BuildColorPage.ClickNextButton();
             BuildConfigurePage.WaitForBuildPageToLoad();
-            BuildConfigurePage.ClickAccessoryCategory("Protection");
-            BuildConfigurePage.ClickAccessorySubCategory("Mirrors");
-            BuildConfigurePage.ClickSpecificAccessoryCardAddButton("Folding Side Mirrors");
-            BuildConfigurePage.VerifyItemsIdsPresentBuildSummary(new string[] { "2881198" });
+            BuildConfigurePage.ClickAccessoryCategory("Engine");
+            BuildConfigurePage.ClickAccessorySubCategory("Intake");
+            BuildConfigurePage.ClickSpecificAccessoryCardAddButton("Intake");
+            BuildConfigurePage.VerifyItemsIdsPresentBuildSummary(new string[] { "2882519" });
             BuildConfigurePage.ClickBuildRestartButton();
             BuildConfigurePage.ClickConfirmationContinueButton();
-            BuildConfigurePage.VerifyItemsIdsNotPresentBuildSummary(new string[] { "2881198" });
+            BuildConfigurePage.VerifyItemsIdsNotPresentBuildSummary(new string[] { "2882519" });
         }
 
         [Test, Category(TestCategories.UI_FEATURES), RetryDynamic]
-        public void VerifyAccessoryImageOpensOverview()
+        public void VerifyAccessoryImageOpensOverviewv2()
         {
-            CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
+            CPQNavigate.NavigateToAccessoriesPage(Brand.IND, ModelPageUrl.INDIAN_SCOUT_ACCESSORIES_PAGE);
             BuildConfigurePage.WaitForBuildPageToLoad();
-            BuildConfigurePage.ClickAccessoryCategory("Protection");
-            BuildConfigurePage.ClickAccessorySubCategory("Mirrors");
-            BuildConfigurePage.ClickSpecificAccessoryCardImage("Folding Side Mirrors");
-            Assert.IsTrue(BuildConfigurePage.IsAccessoryOverViewDisplayed("Folding Side Mirrors"));
+            BuildConfigurePage.ClickAccessoryCategory("Engine");
+            BuildConfigurePage.ClickAccessorySubCategory("Intake");
+            BuildConfigurePage.ClickSpecificAccessoryCardInfoButton("Intake");
+            Assert.IsTrue(BuildConfigurePage.IsAccessoryOverViewDisplayed("Intake"));
         }
     }
 }

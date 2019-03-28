@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.PartRequiresPart
     [Ignore("Brand running CPQ v3 version")]
     public class AcePartRequiresPartTests : TestBase
     {
-        [Test, Category(TestCategories.ACE), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
+        //[Test, Category(TestCategories.ACE), Category(TestCategories.PART_REQUIRES_PART), RetryDynamic]
         public void VerifyPartRequiresPartTriggeredAce()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_PRP);

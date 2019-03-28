@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [Ignore("Brand running CPQ v3 version")]
     public class AtvSteppedProccessTests : TestBase
     {
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        //[Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyAtvSteppedProcessOneSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);
@@ -23,7 +23,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
             CompleteSteppedProcessAndValidate();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        //[Test, Category(TestCategories.ATV), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyAtvSteppedProcessTwoSeat()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);

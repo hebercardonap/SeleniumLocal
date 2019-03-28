@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.Features
     [Ignore("Brand running CPQ v3 version")]
     public class SaveBuildTests : TestBase
     {
-        [Test, Category(TestCategories.SAVE_BUILD), Category(TestCategories.RZR), RetryDynamic]
+        //[Test, Category(TestCategories.SAVE_BUILD), Category(TestCategories.RZR), RetryDynamic]
         public void VerifyRzrSaveBuildFunctionality()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);

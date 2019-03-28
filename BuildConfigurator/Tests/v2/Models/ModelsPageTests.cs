@@ -20,8 +20,8 @@ namespace BuildConfigurator.Tests.v2.Models
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.RZR), Category(TestCategories.MODELS_PAGE), RetryDynamic]
-        [Ignore("Brand running CPQ v3 version")]
+        //[Test, Category(TestCategories.RZR), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        //[Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsRzr()
         {
             CPQNavigate.NavigateToModelsPage(Brand.RZR);
@@ -35,8 +35,8 @@ namespace BuildConfigurator.Tests.v2.Models
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.MODELS_PAGE), RetryDynamic]
-        [Ignore("Brand running CPQ v3 version")]
+        //[Test, Category(TestCategories.ATV), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        //[Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsAtv()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ATV);
@@ -47,16 +47,16 @@ namespace BuildConfigurator.Tests.v2.Models
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.ACE), Category(TestCategories.MODELS_PAGE), RetryDynamic]
-        [Ignore("Brand running CPQ v3 version")]
+        //[Test, Category(TestCategories.ACE), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        //[Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsAce()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ACE);
             Assert.IsTrue(BuildModelPage.VerifyModelsAreNotDuplicates());
         }
 
-        [Test, Category(TestCategories.GEN), Category(TestCategories.MODELS_PAGE), RetryDynamic]
-        [Ignore("Brand running CPQ v3 version")]
+        //[Test, Category(TestCategories.GEN), Category(TestCategories.MODELS_PAGE), RetryDynamic]
+        //[Ignore("Brand running CPQ v3 version")]
         public void VerifyNotDuplicateModelsGen()
         {
             CPQNavigate.NavigateToModelsPage(Brand.GEN);

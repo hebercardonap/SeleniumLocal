@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [Ignore("Brand running CPQ v3 version")]
     public class AceConflictTests : TestBase
     {
-        [Test, Category(TestCategories.ACE), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
+        //[Test, Category(TestCategories.ACE), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredAce()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_CONFLICT);

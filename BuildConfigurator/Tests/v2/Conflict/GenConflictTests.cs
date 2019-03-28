@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [Ignore("Brand running CPQ v3 version")]
     public class GenConflictTests : TestBase
     {
-        [Test, Category(TestCategories.GEN), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
+        //[Test, Category(TestCategories.GEN), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredGen()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEN, ModelPageUrl.GENERAL_4_1000_EPS_CONFLICT);

@@ -14,7 +14,7 @@ namespace BuildConfigurator.Tests.v2.SteppedProcess
     [Ignore("Brand running CPQ v3 version")]
     public class AceSteppedProccessTests : TestBase
     {
-        [Test, Category(TestCategories.ACE), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
+        //[Test, Category(TestCategories.ACE), Category(TestCategories.STEPPED_PROCESS), RetryDynamic]
         public void VerifyAceSteppedProcess()
         {
             CPQNavigate.NavigateToModelsPage(Brand.ACE);

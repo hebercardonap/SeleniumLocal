@@ -22,6 +22,7 @@ namespace BuildConfigurator.TestBases
             SetPhoneNumber();
             SetPostalCode();
             WaitForDealerNameToBeDisplayed();
+            ClickQuoteCommentsAndEnterText();
             ClickAgeCheckBox();
         }
 
@@ -36,6 +37,13 @@ namespace BuildConfigurator.TestBases
             SetPhoneNumber();
             ClickAwayForFocusQuotePage();
             ClickAgeCheckBox();
+        }
+
+        public void ClickQuoteCommentsAndEnterText()
+        {
+            ClickQuoteCommentsPlusSign();
+            DriverActions.waitForAjaxRequestToComplete();
+            EnterQuoteComments();
         }
     }
 }

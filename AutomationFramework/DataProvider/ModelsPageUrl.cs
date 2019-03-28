@@ -53,6 +53,7 @@ namespace AutomationFramework.DataProvider
         public static string INDIAN_CHIEFTAIN_CONFLICT = "chieftain-steel-gray";
         public static string INDIAN_SPRINGFIELD_PRP = "springfield-thunder-black";
         public static string INDIAN_SPRINGFIELD_BASE_TEST = "springfield-thunder-black";
+        public static string INDIAN_SCOUT_ACCESSORIES_PAGE = "scout-sixty-ruby-metallic";
 
 
         //SLG Models for test

@@ -53,6 +53,7 @@ namespace BuildConfigurator.Pages.v2
 
         public void WaitForColorPageToLoad()
         {
+            WebDriverExtensions.WaitForPageLoaded(Driver);
             DriverActions.waitForElementVisibleAndEnabled(BY_NEXT_BUTTON);
         }
     }

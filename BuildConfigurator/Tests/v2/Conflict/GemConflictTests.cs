@@ -15,7 +15,7 @@ namespace BuildConfigurator.Tests.v2.Conflict
     [Ignore("Brand running CPQ v3 version")]
     public class GemConflictTests : TestBase
     {
-        [Test, Category(TestCategories.GEM), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
+        //[Test, Category(TestCategories.GEM), Category(TestCategories.ACCESSORY_CONFLICTS), RetryDynamic]
         public void VerifyConflictIsTriggeredGem()
         {
             CPQNavigate.NavigateToAccessoriesPage(Brand.GEM, ModelPageUrl.GEM_EL_XD_CONFLICT);
