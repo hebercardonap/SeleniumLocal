@@ -12,24 +12,23 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v2.DealerExperience
 {
     [TestFixture]
-    [Ignore("Brand running CPQ v3 version")]
     public class DealerExperienceUITests : TestBase
     {
-        private static string DEALER_ID = "02040900";
+        private static string DEALER_ID = "54321";
 
         [Test, Category(TestCategories.DEALER_EXPERIENCE), RetryDynamic]
-        public void VerifyUIElementsHiddenDealerExp()
+        public void VerifyUIElementsHiddenDealerExpV2()
         {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST, DEALER_ID);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.IND, ModelPageUrl.INDIAN_SPRINGFIELD_BASE_TEST, DEALER_ID);
             BuildConfigurePage.WaitForBuildPageToLoad();
             Assert.IsFalse(BuildConfigurePage.IsNavigationBarDisplayed());
             Assert.IsFalse(BuildConfigurePage.IsIconContainerDisplayed());
         }
 
         [Test, Category(TestCategories.DEALER_EXPERIENCE), RetryDynamic]
-        public void VerifyVirtualKeyboardDealerExp()
+        public void VerifyVirtualKeyboardDealerExpV2()
         {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST, DEALER_ID);
+            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.IND, ModelPageUrl.INDIAN_SPRINGFIELD_BASE_TEST, DEALER_ID);
             BuildConfigurePage.WaitForBuildPageToLoad();
             BuildConfigurePage.ClickCalculatorIcon();
             BuildConfigurePage.CalculatorModule.ClickMsrpField();
