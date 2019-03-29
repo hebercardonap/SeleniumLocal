@@ -12,10 +12,8 @@ using System.Threading.Tasks;
 namespace BuildConfigurator.Tests.v3.NavigationBar
 {
     [TestFixture]
-    [Ignore("ATV is not on CPQ v3 yet, Ignore flag will be removed when ATV switches to v3 UI")]
     public class AtvNavigationBarTests : TestBase
     {
-        private static string DEALER_ID = "02040900";
 
         [Test, Category(TestCategories.ATV), Category(TestCategories.NAVIGATION), RetryDynamic]
         public void VerifyBackNavigationBarAtv()
@@ -41,13 +39,5 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Models.VerifySeatSelectionIsDisplayed();
         }
 
-        [Test, Category(TestCategories.ATV), Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyNavigationBarNotDisplayedDealerExpAtv()
-        {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.ATV, ModelPageUrl.ATV_450_HO_BASE_TEST, DEALER_ID);
-            Accessories.WaitForAccessoriesPageToLoad();
-            Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed(), 
-                "Navigation bar is not expected for dealer experience");
-        }
     }
 }

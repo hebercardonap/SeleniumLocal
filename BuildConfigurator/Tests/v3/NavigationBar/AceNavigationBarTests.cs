@@ -14,8 +14,6 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
     [TestFixture]
     public class AceNavigationBarTests : TestBase
     {
-        
-        private static string DEALER_ID = "54321";
 
         [Test, Category(TestCategories.ACE), Category(TestCategories.NAVIGATION), RetryDynamic]
         public void VerifyBackNavigationBarAce()
@@ -26,12 +24,5 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
         }
 
-        [Test, Category(TestCategories.ACE), Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyNavigationBarNotDisplayedDealerExpAce()
-        {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.ACE, ModelPageUrl.ACE_570_EPS_BASE_TEST, DEALER_ID);
-            Accessories.WaitForAccessoriesPageToLoad();
-            Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
-        }
     }
 }

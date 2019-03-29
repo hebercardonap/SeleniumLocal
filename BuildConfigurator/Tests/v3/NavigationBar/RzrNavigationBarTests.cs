@@ -14,7 +14,6 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
     [TestFixture]
     public class RzrNavigationBarTests : TestBase
     {
-        private static string DEALER_ID = "54321";
 
         [Test, Category(TestCategories.RZR), Category(TestCategories.NAVIGATION), RetryDynamic]
         public void VerifyBackNavigationBarRzr()
@@ -38,14 +37,6 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Models.WaitForModelsPageToLoad();
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
             Models.VerifySeatSelectionIsDisplayed();
-        }
-
-        [Test, Category(TestCategories.RZR), Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyNavigationBarNotDisplayedDealerExpRzr()
-        {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST, DEALER_ID);
-            Accessories.WaitForAccessoriesPageToLoad();
-            Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
         }
     }
 }

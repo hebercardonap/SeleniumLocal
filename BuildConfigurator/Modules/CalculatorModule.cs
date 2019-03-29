@@ -18,6 +18,7 @@ namespace BuildConfigurator.Modules
         private static By BY_LOAN_RATE = By.XPath("//input[@id='txtLoanTerm']");
         private static By BY_CALCULATE_PAYMENTS_BUTON = By.XPath("//a[contains(@class,'payment-calculator__submit')]");
         private static By BY_PYMNT_CALC_HEADER = By.XPath("//div[contains(@class,'payment-calculator')]//h2");
+        private static By BY_CALC_VIRTUAL_KYB = By.XPath("//div[contains(@class,'ui-keyboard')]//button[@data-value='7']");
 
         public CalculatorModule(ParallelConfig parallelConfig) : base(parallelConfig)
         {
@@ -38,6 +39,12 @@ namespace BuildConfigurator.Modules
         public void ClickPaymentCalculatorHeader()
         {
             DriverActions.clickElement(BY_PYMNT_CALC_HEADER);
+        }
+
+        public bool IsCalcVirtualKeyboardDisplayed()
+        {
+            DriverActions.waitForElementVisibleAndEnabled(BY_CALC_VIRTUAL_KYB);
+            return DriverActions.IsElementPresent(BY_CALC_VIRTUAL_KYB);
         }
     }
 }

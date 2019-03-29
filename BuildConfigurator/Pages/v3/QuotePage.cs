@@ -31,6 +31,12 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_QUOTE_PAGE_TITLE = By.CssSelector("h1[class~='heading-generic__heading']");
         private static By BY_QUOTE_PAGE_COMMENTS_PLUS = By.CssSelector("span[class='text-area-element-custom-block-toggle__icon']");
         private static By BY_QUOTE_PAGE_COMMENTS_TEXT_AREA = By.CssSelector("div[class='text-area-element-custom-block-content'] textarea");
+        private static By BY_QUOTE_PAGE_HEADER_TITLE = By.CssSelector("div[class~='heading-generic__content'] h1");
+        private static By BY_QUOTE_PAGE_HEADER_MENU = By.Id("kampyle_abandon_zone");
+        private static By BY_QUOTE_PAGE_PRIVACY_TERMS = By.CssSelector("p[class='terms__anti-span-legislation']");
+        private static By BY_QUOTE_PAGE_GLOBAL_FOOTER = By.CssSelector("div[class='global-footer__wrapper']");
+        private static By BY_QUOTE_PAGE_VIRTUAL_KEYBOARD = By.CssSelector("div[class~='ui-keyboard']");
+
         public QuotePage(ParallelConfig parallelConfig) : base(parallelConfig)
         {
         }
@@ -39,6 +45,12 @@ namespace BuildConfigurator.Pages.v3
         public void SetFirstName()
         {
             Driver.FindElement(BY_FIRST_NAME_FIELD).SendKeys(AccountDetails.TEST_USER_1.FirstName);
+        }
+
+        public void ClickFirstNameTextBox()
+        {
+            DriverActions.clickElement(BY_FIRST_NAME_FIELD);
+            DriverActions.waitForAjaxRequestToComplete();
         }
 
         public void SetFirstName(string firstName)
@@ -164,6 +176,31 @@ namespace BuildConfigurator.Pages.v3
         public void EnterQuoteComments()
         {
             Driver.FindElement(BY_QUOTE_PAGE_COMMENTS_TEXT_AREA).SendKeys(AccountDetails.TEST_USER_1.Comments);
+        }
+
+        public string GetQuotePageHeaderTitle()
+        {
+            return Driver.FindElement(BY_QUOTE_PAGE_HEADER_TITLE).Text;
+        }
+
+        public bool IsQuotePageHeaderMenuDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_QUOTE_PAGE_HEADER_MENU);
+        }
+
+        public bool IsQuotePagePrivacyTermsDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_QUOTE_PAGE_PRIVACY_TERMS);
+        }
+
+        public bool IsQuotePageGlobalFooterDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_QUOTE_PAGE_GLOBAL_FOOTER);
+        }
+
+        public bool IsQuotePageVirtualKeyboardDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_QUOTE_PAGE_VIRTUAL_KEYBOARD);
         }
     }
 }

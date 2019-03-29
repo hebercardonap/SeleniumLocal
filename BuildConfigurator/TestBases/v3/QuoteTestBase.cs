@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Base;
 using BuildConfigurator.Pages.v3;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,15 @@ namespace BuildConfigurator.TestBases
             ClickQuoteCommentsPlusSign();
             DriverActions.waitForAjaxRequestToComplete();
             EnterQuoteComments();
+        }
+
+        public void VerifyQuotePageDealerExpUI()
+        {
+            Assert.IsTrue(stringContainsIgnoreCase(GetQuotePageHeaderTitle(), "Dealer Quote")
+                , "Dealer Quote title is not present");
+            Assert.IsFalse(IsQuotePageHeaderMenuDisplayed(), "Header Menu is displayed and was not expected");
+            Assert.IsFalse(IsQuotePagePrivacyTermsDisplayed(), "Privacy Terms was displayed and was not expected");
+            Assert.IsFalse(IsQuotePageGlobalFooterDisplayed(), "Global Footer is displayed and was not expected");
         }
     }
 }

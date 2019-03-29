@@ -55,7 +55,9 @@ namespace BuildConfigurator.Pages.v3
         private static By BY_KIT_PACKAGE_SUMMARY_INFO = By.CssSelector("div[class='kit-package__header summary-accessory-info']");
         private static By BY_CHOOSE_ACCESSORIES_TITLE = PolarisSeleniumAttribute.PolarisSeleniumSelector("chooseAccessoriesTitle");
         private static By BY_SUBCATEGORY_TITLE = By.CssSelector("button[class='build-accessories-subcategory-title']");
-
+        private static By BY_SUMMARY_NOTES_TEXTBOX = By.Id("summary-notes");
+        private static By BY_SUMMARY_NOTES_VIRTUAL_KEYBOARD = By.Id("summary-notes_keyboard");
+        
 
         private static string DATE_VALUE = string.Format("{0:yyyymmddhhmmss}", DateTime.Now);
         private static string BUILD_NAME = "TEST BUILD " + DATE_VALUE;
@@ -483,6 +485,17 @@ namespace BuildConfigurator.Pages.v3
             Assert.IsTrue(Toolbar.IsToolbarDisplayed(), "Toolbar is not displayed");
             Assert.IsTrue(FooterModule.IsNextOpenBuildSummaryDisplayed(), "Build Summary/Next button not displayed");
             Assert.IsTrue(FooterModule.IsStartingPriceDisplayed(), "Starting price is not displayed");
+        }
+
+        public void ClickSummaryNotesTextbox()
+        {
+            DriverActions.clickElement(BY_BUILD_SUMMARY_NOTES);
+            DriverActions.waitForAjaxRequestToComplete();
+        }
+
+        public bool IsSummaryNotesVirtualKeyboardDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_SUMMARY_NOTES_VIRTUAL_KEYBOARD);
         }
     }
 }

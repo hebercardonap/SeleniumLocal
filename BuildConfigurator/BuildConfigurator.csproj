@@ -204,6 +204,7 @@
     <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\RzrConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\SnoConflictTests.cs" />
+    <Compile Include="Tests\v3\DealerExperience\DealerExperienceTests.cs" />
     <Compile Include="Tests\v3\Footer\AceFooterTests.cs" />
     <Compile Include="Tests\v3\Footer\AtvFooterTests.cs" />
     <Compile Include="Tests\v3\Footer\GemFooterTests.cs" />

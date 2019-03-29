@@ -30,6 +30,11 @@ namespace BuildConfigurator.Modules
             DriverActions.clickElement(BY_HEADER_CLOSE_ICON);
         }
 
+        public bool IsHeaderCloseIconDisplayed()
+        {
+            return DriverActions.IsElementPresent(BY_HEADER_CLOSE_ICON);
+        }
+
         public void WaitForHeaderToBeDisplayed()
         {
             DriverActions.waitForElementPresent(BY_HEADER_TITLE);

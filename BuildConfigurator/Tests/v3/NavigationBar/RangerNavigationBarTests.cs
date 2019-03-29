@@ -18,8 +18,6 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
     [TestFixture]
     public class RangerNavigationBarTests : TestBase
     {
-        private static string DEALER_ID = "02040900";
-
 
         [Test, Category(TestCategories.RAN), Category(TestCategories.NAVIGATION), RetryDynamic]
         public void VerifyBackNavigationBarRan()
@@ -43,14 +41,6 @@ namespace BuildConfigurator.Tests.v3.NavigationBar
             Models.WaitForModelsPageToLoad();
             Assert.IsTrue(Models.IsChooseModelTitleDisplayed());
             Models.VerifySeatSelectionIsDisplayed();
-        }
-
-        [Test, Category(TestCategories.RAN), Category(TestCategories.NAVIGATION), RetryDynamic]
-        public void VerifyNavigationBarNotDisplayedDealerExpRan()
-        {
-            CPQNavigate.NavigateToBrandDealerExpAccessoriesPage(Brand.RAN, ModelPageUrl.RANGER_500_SAGE_GREEN_ACCESSORIES, DEALER_ID);
-            Accessories.WaitForAccessoriesPageToLoad();
-            Assert.IsFalse(Accessories.NavigationBarModule.IsNavigationBarDisplayed());
         }
     }
 }
