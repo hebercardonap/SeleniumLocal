@@ -57,9 +57,6 @@ namespace BuildConfigurator.Hooks
                 _parallelConfig.Driver.Close();
                 _parallelConfig.Driver.Quit();
             }
-            //ReportTestManager.FinalizeTest();
-            //_parallelConfig.Driver.Close();
-            //_parallelConfig.Driver.Quit();
         }
 
         [OneTimeSetUp]

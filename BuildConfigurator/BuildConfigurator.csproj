@@ -192,6 +192,7 @@
     <Compile Include="Tests\v3\AccountManagement\GenAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\RangerAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\RzrAcctMgmtTests.cs" />
+    <Compile Include="Tests\v3\AccountManagement\SlgAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\AccountManagement\SnoAcctMgmtTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\AtvSummaryTests.cs" />
     <Compile Include="Tests\v3\BuildSummary\RangerSummaryTests.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="Tests\v3\Conflict\GenConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\RangerConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\RzrConflictTests.cs" />
+    <Compile Include="Tests\v3\Conflict\SlgConflictTests.cs" />
     <Compile Include="Tests\v3\Conflict\SnoConflictTests.cs" />
     <Compile Include="Tests\v3\DealerExperience\DealerExperienceTests.cs" />
     <Compile Include="Tests\v3\Footer\AceFooterTests.cs" />
@@ -235,6 +237,7 @@
     <Compile Include="Tests\v3\PartRequiresPart\GenPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\RangerPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\RzrPartRequiresPartTests.cs" />
+    <Compile Include="Tests\v3\PartRequiresPart\SlgPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\SnoPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\QuoteConfirmation\QuoteConfirmationPageTests.cs" />
     <Compile Include="Tests\v3\SnowCheck\SnowCheckBuildTests.cs" />
