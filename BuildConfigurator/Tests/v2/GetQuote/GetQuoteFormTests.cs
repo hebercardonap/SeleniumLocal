@@ -14,10 +14,13 @@ namespace BuildConfigurator.Tests.v2.GetQuote
     [TestFixture]
     public class GetQuoteFormTests : TestBase
     {
+
         [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
-        public void VerifyFirstNameValidationError()
+        public void VerifyQuoteFormValidations()
         {
-            CPQNavigate.NavigateToQuoteDefaultPage();
+            CPQNavigate.NavigateToAccessoriesPage(Brand.RZR, ModelPageUrl.RZR_XP_1000_EPS_BASE_TEST);
+            Accessories.FooterModule.OpenBuildSummary();
+            Accessories.ClikIamFinishedButton();
             BuildQuotePage.WaitForBuildQuotePgeToLoad();
             BuildQuotePage.SetLastName(AccountDetails.TEST_USER_1.LastName);
             BuildQuotePage.SetEmail(AccountDetails.TEST_USER_1.Email);
@@ -26,13 +29,8 @@ namespace BuildConfigurator.Tests.v2.GetQuote
             BuildQuotePage.ClickAgeCheckBox();
             BuildQuotePage.ClickGetInternetPriceButton();
             Assert.IsTrue(BuildQuotePage.IsFirstNameValidationErrorDisplayed());
+            RefreshAndWait();
 
-        }
-
-        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
-        public void VerifyLastNameValidationError()
-        {
-            CPQNavigate.NavigateToQuoteDefaultPage();
             BuildQuotePage.WaitForBuildQuotePgeToLoad();
             BuildQuotePage.SetFirstName(AccountDetails.TEST_USER_1.FirstName);
             BuildQuotePage.SetEmail(AccountDetails.TEST_USER_1.Email);
@@ -41,13 +39,8 @@ namespace BuildConfigurator.Tests.v2.GetQuote
             BuildQuotePage.ClickAgeCheckBox();
             BuildQuotePage.ClickGetInternetPriceButton();
             Assert.IsTrue(BuildQuotePage.IsLastNameValidationErrorDisplayed());
+            RefreshAndWait();
 
-        }
-
-        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
-        public void VerifyEmailValidationError()
-        {
-            CPQNavigate.NavigateToQuoteDefaultPage();
             BuildQuotePage.WaitForBuildQuotePgeToLoad();
             BuildQuotePage.SetFirstName(AccountDetails.TEST_USER_1.FirstName);
             BuildQuotePage.SetLastName(AccountDetails.TEST_USER_1.LastName);
@@ -56,14 +49,8 @@ namespace BuildConfigurator.Tests.v2.GetQuote
             BuildQuotePage.ClickAgeCheckBox();
             BuildQuotePage.ClickGetInternetPriceButton();
             Assert.IsTrue(BuildQuotePage.IsEmailValidationErrorDisplayed());
+            RefreshAndWait();
 
-        }
-
-        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
-        public void VerifyInvalidEmailValidationError()
-        {
-            CPQNavigate.NavigateToQuoteDefaultPage();
-            BuildQuotePage.WaitForBuildQuotePgeToLoad();
             BuildQuotePage.SetFirstName(AccountDetails.TEST_USER_1.FirstName);
             BuildQuotePage.SetLastName(AccountDetails.TEST_USER_1.LastName);
             BuildQuotePage.SetEmail("invalid@");
@@ -72,14 +59,8 @@ namespace BuildConfigurator.Tests.v2.GetQuote
             BuildQuotePage.ClickAgeCheckBox();
             BuildQuotePage.ClickGetInternetPriceButton();
             Assert.IsTrue(BuildQuotePage.IsEmailValidationErrorDisplayed());
+            RefreshAndWait();
 
-        }
-
-        [Test, Category(TestCategories.QUOTE_PAGE), RetryDynamic]
-        public void VerifyAgeCheckboxValidationError()
-        {
-            CPQNavigate.NavigateToQuoteDefaultPage();
-            BuildQuotePage.WaitForBuildQuotePgeToLoad();
             BuildQuotePage.SetFirstName(AccountDetails.TEST_USER_1.FirstName);
             BuildQuotePage.SetLastName(AccountDetails.TEST_USER_1.LastName);
             BuildQuotePage.SetEmail(AccountDetails.TEST_USER_1.Email);
@@ -87,7 +68,14 @@ namespace BuildConfigurator.Tests.v2.GetQuote
             BuildQuotePage.SetPostalCode(AccountDetails.TEST_USER_1.ZipCode);
             BuildQuotePage.ClickGetInternetPriceButton();
             Assert.IsTrue(BuildQuotePage.IsAgeCheckboxValidationErrorDisplayed());
-
+            RefreshAndWait();
         }
+
+        private void RefreshAndWait()
+        {
+            BuildQuotePage.DriverActions.PageRefresh();
+            BuildQuotePage.WaitForBuildQuotePgeToLoad();
+        }
+
     }
 }

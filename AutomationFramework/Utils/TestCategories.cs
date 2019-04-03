@@ -28,6 +28,7 @@ namespace AutomationFramework.Utils
         public const string ACCESSORY_ADD = "AccessoryAdd";
         public const string ACCESSORY_REMOVE = "AccessoryRemove";
         public const string DEALER_EXPERIENCE = "DealerExperience";
+        public const string PAGE_REDIRECTS = "PageRedirects";
 
 
         //Categories by page or component

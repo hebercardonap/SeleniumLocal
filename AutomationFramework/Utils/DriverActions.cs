@@ -142,5 +142,9 @@ namespace AutomationFramework.Utils
             Thread.Sleep(5000);   
         }
 
+        public void PageRefresh()
+        {
+            Driver.Navigate().Refresh();
+        }
     }
 }

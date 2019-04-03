@@ -101,6 +101,7 @@ namespace BuildConfigurator.Pages.v2
 
         public void WaitForBuildQuotePgeToLoad()
         {
+            WebDriverExtensions.WaitForPageLoaded(Driver);
             DriverActions.waitForElementToBeEnabled(BY_FIRST_NAME_FIELD);
         }
 

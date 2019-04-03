@@ -231,6 +231,7 @@
     <Compile Include="Tests\v3\NavigationBar\RzrNavigationBarTests.cs" />
     <Compile Include="Tests\v3\NavigationBar\SnoNavigationBarTests.cs" />
     <Compile Include="Tests\v3\Package\RangerPackageTests.cs" />
+    <Compile Include="Tests\v3\PageRedirect\PageRedirectTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\AcePartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\AtvPartRequiresPartTests.cs" />
     <Compile Include="Tests\v3\PartRequiresPart\GemPartRequiresPart.cs" />
