@@ -1,9 +1,6 @@
-﻿using AutomationFramework.ApiUtils.ApiDataProvider;
-using AutomationFramework.Base;
+﻿using AutomationFramework.Base;
 using AutomationFramework.Reporting;
 using AutomationFramework.Utils;
-using AventStack.ExtentReports;
-using AventStack.ExtentReports.Reporter;
 using BuildConfigurator.TestBases;
 using BuildConfigurator.TestBases.v2;
 using BuildConfigurator.TestBases.v3;
@@ -12,11 +9,8 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BuildConfigurator.Hooks
 {

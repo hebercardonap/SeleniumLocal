@@ -171,7 +171,8 @@ namespace BuildConfigurator.Pages.v3
                 }
             }
             if (!isFound)
-                Assert.Fail("The product with name {0} is not present", productName);
+                throw new NoSuchElementException(string.Format("Product with name {0} was not found for model {1}",
+                    productName, Driver.Url));
         }
 
         public void WaitUntilBuildSummaryIsDisplayed()

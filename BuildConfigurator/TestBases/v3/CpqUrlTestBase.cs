@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Base;
+using AutomationFramework.Extensions;
 using AutomationFramework.UrlBuilderSites;
 using AutomationFramework.Utils;
 using BuildConfigurator.Pages.v3;
@@ -84,6 +85,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Brand {0} not supported", brandName);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -121,6 +123,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -146,6 +149,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -189,6 +193,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -208,6 +213,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -275,6 +281,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Brand {0} not supported", brand);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         public void NavigateToBrandDealerExpAccessoriesPage(string brand, string model, string dealerId)
@@ -330,6 +337,8 @@ namespace BuildConfigurator.TestBases
             }
             else
                 Assert.Fail("Brand {0} not supported", brand);
+
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -357,6 +366,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Band {0} or model {1} is not supported", brand);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
         /// <summary>
@@ -366,6 +376,7 @@ namespace BuildConfigurator.TestBases
         {
             string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_URL_PART);
             GoToUrl(buildQuoteUrl);
+            WebDriverExtensions.WaitForPageLoaded(Driver);
             Log.Info(string.Format("Navigating to URL: {0}", buildQuoteUrl));
         }
 
@@ -386,6 +397,7 @@ namespace BuildConfigurator.TestBases
                 Assert.Fail("Band {0} or model {1} is not supported", brand, model);
 
             ModalsDialogPage.HandlePurposePromptModal();
+            WebDriverExtensions.WaitForPageLoaded(Driver);
         }
 
     }
