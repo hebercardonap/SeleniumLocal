@@ -16,9 +16,16 @@ namespace BuildConfigurator.Tests.v3.PageRedirect
     public class PageRedirectTests : TestBase
     {
         [Test, Category(TestCategories.PAGE_REDIRECTS), RetryDynamic]
-        public void VerifyQuotePageRedirectsToHomeNoSubmissionId()
+        public void VerifyQuoteRedirectsToHomeNoSubmissionId()
         {
             CPQNavigate.NavigateToQuoteDefaultPage();
+            Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getRzrBuildModelUrl());
+        }
+
+        [Test, Category(TestCategories.PAGE_REDIRECTS), RetryDynamic]
+        public void VerifyQuoteDealerRedirectsToHomeNoSubmissionId()
+        {
+            CPQNavigate.NavigateToDealerQuoteDefaultPage();
             Assert.AreEqual(CPQNavigate.GetCurrentUrl(), UrlBuilder.getRzrBuildModelUrl());
         }
     }

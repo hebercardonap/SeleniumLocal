@@ -23,6 +23,7 @@ namespace BuildConfigurator.TestBases
         private static string SLASH = "/";
         private static string TEST_DEALER_PART_ID = "?dealerid={0}";
         private static string BUILD_QUOTE_URL_PART = "rzr-s-900-white/build-quote/";
+        private static string BUILD_QUOTE_DEALER_URL_PART = "rzr-s-900-white/build-quote-dealer/";
 
         public ModalsDialogPage ModalsDialogPage { get { return new ModalsDialogPage(_parallelConfig); } }
 
@@ -375,6 +376,17 @@ namespace BuildConfigurator.TestBases
         public void NavigateToQuoteDefaultPage()
         {
             string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_URL_PART);
+            GoToUrl(buildQuoteUrl);
+            WebDriverExtensions.WaitForPageLoaded(Driver);
+            Log.Info(string.Format("Navigating to URL: {0}", buildQuoteUrl));
+        }
+
+        /// <summary>
+        /// To navigate to dealer quote default page
+        /// </summary>
+        public void NavigateToDealerQuoteDefaultPage()
+        {
+            string buildQuoteUrl = string.Concat(UrlBuilder.getRzrLandingPageURL(), BUILD_QUOTE_DEALER_URL_PART);
             GoToUrl(buildQuoteUrl);
             WebDriverExtensions.WaitForPageLoaded(Driver);
             Log.Info(string.Format("Navigating to URL: {0}", buildQuoteUrl));
